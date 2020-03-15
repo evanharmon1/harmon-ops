@@ -42,5 +42,5 @@ export CLICOLOR=1
 # set EDITOR to bbedit (doesn't work)
 # export EDITOR="/usr/local/bin/bbedit -w --resume"
 
-# thefuck package
+# thefuck package https://github.com/nvbn/thefuck
 eval "$(thefuck --alias)"
