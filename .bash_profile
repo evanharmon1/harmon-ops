@@ -22,7 +22,7 @@ alias dclogs='docker-compose logs' #Show logs of all running containers
 # My Variables
 export dev="/Users/evan/Dropbox/dev" #Main dev folder
 export scratch="/Users/evan/Dropbox/dev/scratch" #Scratch folder for quick prototyping
-export scripts="/Users/evan/Dropbox/Codex/Programming/DevEnv/dev-env/nixEnv/bashScripts" #BASH scripts on my Mac
+export scripts="/Users/evan/Dropbox/dev/DevEnv/dev-env/nixEnv/bashScripts" #BASH scripts on my Mac
 
 # Scripts on *nix
 #export scripts="~/bin"
