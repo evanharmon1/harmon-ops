@@ -1,4 +1,6 @@
 rem Generic cmd backup script 
+rem https://www.techrepublic.com/article/how-to-quickly-back-up-just-your-data-in-windows-10-with-robocopys-multi-threaded-feature/
+rem Preserve file attributes, and date and time stamps: https://serverfault.com/questions/288631/what-switches-can-robocopy-use-to-preserve-file-and-directory-times-on-the-targe
 
 set source=C:\Some\Source\File\Path
 set destination=C:\Some\File\Path
