@@ -2,7 +2,10 @@
 A repo I use to keep track of the various CLI packages and libraries I like to use as well as BASH customizations, scripts, and a docker-compose file with images I find useful for my developer environment.
 
 ## BASH Packages
+- watch
+	- `brew install watch`
 - thefuck
+	- `brew install thefuck`
 	- https://github.com/nvbn/thefuck
 
 ## Python Packages
@@ -17,8 +20,10 @@ A repo I use to keep track of the various CLI packages and libraries I like to u
 
 ## Mac
 - Homebrew
-	- `brew install watch`
 - iTerm
 
 ## Windows
 - WSL
+- Powershell
+- cmd shell
+- Git Bash
