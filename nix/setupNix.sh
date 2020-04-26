@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Script to setup a new developer environment
+# Script to setup a new developer environment on a *nix computer
 
 echo Starting setupNix.sh
 
@@ -13,7 +13,7 @@ apt install watch
 echo Installing thefuck...
 apt install thefuck
 
-# Needed to get ipython and jupyter commands working on CLI
+# Needed to get ipython and jupyter commands working on CLI - otherwise the commands weren't recognized
 echo Installing IPython...
 apt install ipython
 echo Installing Jupyter Notebook...

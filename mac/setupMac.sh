@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Script to setup a new developer environment
+# Script to setup a new developer environment on a Mac
 
 echo Starting setupMac.sh
 
@@ -13,7 +13,7 @@ brew install watch
 echo Installing thefuck...
 brew install thefuck
 
-# Needed to get ipython and jupyter commands working on CLI
+# Needed to get ipython and jupyter commands working on CLI - otherwise the commands weren't recognized
 echo Installing IPython...
 brew install ipython
 echo Installing Jupyter Notebook...
