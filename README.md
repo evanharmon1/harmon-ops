@@ -17,6 +17,7 @@ A repo I use to keep track of the various CLI packages and libraries I like to u
 
 ## Mac
 - Homebrew
+	- `brew install watch`
 - iTerm
 
 ## Windows
