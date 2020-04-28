@@ -21,4 +21,4 @@ python/setupPython.sh
 - Powershell
 - cmd shell
 - Git Bash
-**Need to clone `for-windows` branch on windows machines due to file path incompatibilities in the mac folder. The `for-windows` branch just omits the mac folder.**
+**Need to clone `windows` branch on windows machines due to file path incompatibilities in the mac folder. The `windows` branch just omits the mac folder.**
