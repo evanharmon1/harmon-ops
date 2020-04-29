@@ -2,21 +2,20 @@
 
 # Script to setup a new developer environment on a *nix computer
 
-echo Starting setupNix.sh
+echo ......Starting setupNix.sh......
+
+apt install nodejs
+apt install python3
 
 ../git/setupGit.sh
 ../python/setupPython.sh
+../vscode/setupVsCode.sh
 
-echo Installing watch...
 apt install watch
-
-echo Installing thefuck...
 apt install thefuck
 
 # Needed to get ipython and jupyter commands working on CLI - otherwise the commands weren't recognized
-echo Installing IPython...
 apt install ipython
-echo Installing Jupyter Notebook...
 apt install jupyter
 
-echo Finished setupNix.sh
+echo ======Finished setupNix.sh======

@@ -7,11 +7,9 @@
 # - beautifulsoup
 # - requests
 
-echo Starting setupPython.sh
+echo ......Starting setupPython.sh......
 
 echo Installing jupyter notebook...
 pip3 install notebook
 
-echo Installing jupyter notebook
-
-echo Finished setupPython.sh
+echo ======Finished setupPython.sh======

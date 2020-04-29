@@ -13,16 +13,18 @@ alias mv="mv -i"
 alias cp="cp -i"
 
 # Docker Aliases
-alias dcu='docker-compose up --build -d'  #docker-compose up
-alias dcd='docker-compose down'  #docker-compose down
-alias dcr='docker-compose down && docker-compose up --build -d'  #docker-compose down then docker-compose up
-alias dcei='docker container exec -it ******* /bin/ash -l'  #Shell into to-be-named container
+alias dcu='docker-compose up --build -d'  #Detached
+alias dcd='docker-compose down'
+alias dcs='docker-compose stop'  #Stops your containers, but doesn't remove them.
+alias dcr='docker-compose down -v && docker-compose up --build -d'  #Reset (-v = remove volumes)
+alias dcei='docker container exec -it ******* /bin/ash -l'  #Shell into ****** to-be-named container
 alias dclogs='docker-compose logs' #Show logs of all running containers
 
 # My Variables
 export dev="/Users/evan/Dropbox/dev" #Main dev folder
 export scratch="/Users/evan/Dropbox/dev/scratch" #Scratch folder for quick prototyping
 export scripts="/Users/evan/Dropbox/dev/DevEnv/dev-env/nixEnv/bashScripts" #BASH scripts on my Mac
+export website="/Users/evan/Dropbox/dev/EvanHarmonWebsite/evan-harmon"
 
 # Scripts on *nix
 #export scripts="~/bin"

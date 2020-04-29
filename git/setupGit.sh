@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo Starting setupGit.sh
+echo ......Starting setupGit.sh......
 
 git config --global user.name "Evan Harmon"
 git config --global user.email "evanharmon1@gmail.com"
@@ -9,4 +9,4 @@ git config --global user.email "evanharmon1@gmail.com"
 # But you also might need to run watch with watch --color to get the colors to work. As in watch --color git status 
 git config --global color.status always
 
-echo Finished setupGit.sh
+echo ======Finished setupGit.sh======
