@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 # Script to install VS Code Extensions on a new developer environment
 # Remember `code --list-extensions`
 
-echo ......Starting setupVsCode.sh......
+echo -e "\033[1;32m  ......Starting setupVsCode.sh......  \033[0m"
 
 code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension Mit.Monokai-Polished
@@ -35,4 +35,4 @@ code --install-extension vscode-icons-team.vscode-icons
 code --install-extension wesbos.theme-cobalt2
 code --install-extension zhuangtongfa.material-theme
 
-echo ======Finished setupVsCode.sh======
+echo -e "\033[0;31m  ======Finished setupVsCode.sh======  \033[0m"

@@ -48,5 +48,15 @@ services:
 
 # Jenkins
 
+# Ansible
+
+# Puppet
+
+# Java
+
+# Ruby
+
+# Go
+
 volumes:
   dockerVol:

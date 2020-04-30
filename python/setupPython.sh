@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Script to install python packages on a new developer environment
 
@@ -7,9 +7,8 @@
 # - beautifulsoup
 # - requests
 
-echo ......Starting setupPython.sh......
+echo -e "\033[1;32m  ......Starting setupPython.sh......  \033[0m"
 
-echo Installing jupyter notebook...
 pip3 install notebook
 
-echo ======Finished setupPython.sh======
+echo -e "\033[0;31m  ======Finished setupPython.sh======  \033[0m"

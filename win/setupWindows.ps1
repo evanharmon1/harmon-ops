@@ -13,13 +13,18 @@ refreshenv
 
 choco install -y python
 choco install -y nodejs
-choco install -y vscode
 choco install -y git
+choco install -y vscode
 choco install -y notepadplusplus
 choco install -y docker-desktop
-choco install -y robo3t
 choco install -y virtualbox
+choco install -y vagrant
+choco install -y robo3t
 
-# Run the setupVsCode.sh file in powershell
+# Running bash scripts on windows needs to be tested
+bash ../python/setupPython.sh
+bash ../node/setupNode.sh
+bash ../git/setupGit.sh
+bash ../vscode/setupVsCode.sh
 
 write-output "======Finished setupWindows.ps1======"
