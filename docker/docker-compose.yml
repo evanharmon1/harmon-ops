@@ -46,6 +46,9 @@ services:
 #     volumes:
 #       - "./dockerVol:/dockerVol"
 
+volumes:
+  dockerVol:
+
 # Jenkins
 
 # Ansible
@@ -58,5 +61,12 @@ services:
 
 # Go
 
-volumes:
-  dockerVol:
+# C#
+
+# Sensu?
+
+# Grafana?
+
+# Artifactory?
+
+# Vagrant?
