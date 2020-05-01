@@ -13,11 +13,18 @@ brew install python
 brew install node
 brew install git
 brew install visual-studio-code
+brew install watch
+brew install thefuck
+
+brew install sqlite
+brew install postgresql
+brew install mongodb-community
+brew cask install robo-3t
+brew cask install java
+brew install jmeter
 brew install virtualbox
 brew install vagrant
 pip install --user ansible
-brew install watch
-brew install thefuck
 
 # Needed to get ipython and jupyter commands working on CLI - otherwise the commands weren't recognized
 brew install ipython

@@ -46,18 +46,18 @@ docker-compose.yml
 - Issue: I think I should try to get this working with the dockerVol in this repo. Might need to modify docker-compose.yml to find the repo's dockerVol.
 
 ### Docker Developer Environment on Windows
-- In order to get the dockerVol shared/mounted folder working inside running docker containers, Docker settings need to share the local C drive. Sometimes a restart is required. Sometimes you need to make sure to confirm any pop up windows about sharing volumes. I think I solved some problems by putting my docker-compose and dockerVol at the C:/ root level on Windows systems.
+- In order to get the dockerVol shared/mounted folder working inside running docker containers, Docker settings need to share the local C drive. Sometimes a restart is required. Sometimes you need to make sure to confirm any pop up windows about sharing volumes. I think I solved some problems by putting my docker-compose and dockerVol at the C:/ root level on Windows systems. There are also some Windows features that need to be enabled like Hyper-V.
 
 ## Tasks
 - Tmux config
 - Other apps
-	- mongo, sqlite, postgres, robo3t, mysql workbench, mysql, mamp, xamp
+	- mysql workbench, mysql, mamp, xamp, netstat, nmap, selenium, wireguard?
 - IDE settings? VS Code, IntelliJ, PyCharm, BBedit, etc.
 - Publish my VS Code extension and add to setupVsCode.sh
 - setupMac & setupNix - copy .bash_profile and git/.gitignore_global to ~/, but add verify prompt if it overwrites existing
+- homebrew install - might need to check if it's already installed
 - Zsh, fish
 - Terraform?
-- Java?
 - Go?
 - C#?
 - Ruby?
