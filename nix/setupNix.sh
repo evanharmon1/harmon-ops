@@ -8,6 +8,7 @@ apt update
 
 apt install software-properties-common
 
+apt install tmux
 apt install python3
 apt install nodejs
 snap install code --classic

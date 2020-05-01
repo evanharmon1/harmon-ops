@@ -8,6 +8,7 @@ brew update
 
 brew install bash # Installs newer version of Bash on top of system Bash
 chsh -s /usr/local/bin/bash
+brew install tmux
 brew install python
 brew install node
 brew install git

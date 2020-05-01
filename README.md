@@ -22,7 +22,7 @@ win/setupWindows.ps1
 **Need to clone `windows` branch on windows machines due to file path incompatibilities in the mac folder. The `windows` branch just omits the mac folder.**
 
 ## Bash
-.bash_profile
+bash/.bash_profile
 
 ### Bash Packages
 nix/setupNix.sh
@@ -50,12 +50,12 @@ docker-compose.yml
 
 ## Tasks
 - Tmux config
-- Zsh, fish
 - Other apps
 	- mongo, sqlite, postgres, robo3t, mysql workbench, mysql, mamp, xamp
-- IDE settings? VS Code, IntelliJ, etc.
+- IDE settings? VS Code, IntelliJ, PyCharm, BBedit, etc.
 - Publish my VS Code extension and add to setupVsCode.sh
 - setupMac & setupNix - copy .bash_profile and git/.gitignore_global to ~/, but add verify prompt if it overwrites existing
+- Zsh, fish
 - Terraform?
 - Java?
 - Go?
