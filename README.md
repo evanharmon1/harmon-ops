@@ -55,7 +55,6 @@ docker-compose.yml
 - IDE settings? VS Code, IntelliJ, PyCharm, BBedit, etc.
 - Publish my VS Code extension and add to setupVsCode.sh
 - setupMac & setupNix - copy .bash_profile and git/.gitignore_global to ~/, but add verify prompt if it overwrites existing
-- homebrew install - might need to check if it's already installed
 - Zsh, fish
 - Terraform?
 - Go?
@@ -67,3 +66,6 @@ docker-compose.yml
 - Sensu?
 - Grafana?
 - Artifactory?
+
+## Sources
+- https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716

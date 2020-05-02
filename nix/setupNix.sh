@@ -40,6 +40,9 @@ SNAPS=(
 
 echo -e "\033[1;32m  ......Starting setupNix.sh......  \033[0m"
 
+# Ask for the administrator password upfront
+sudo -v
+
 apt update
 
 apt-add-repository --yes --update ppa:ansible/ansible
