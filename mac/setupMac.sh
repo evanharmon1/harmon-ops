@@ -112,5 +112,3 @@ brew upgrade
 
 echo -e "\033[0;31m  ======Finished setupMac.sh======  \033[0m"
 echo -e "\033[0;33m  *Need to add /usr/local/bin/bash to the bottom of the list at /etc/shells \033[0m"
-
-support@fractureme.com
