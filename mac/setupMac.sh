@@ -1,34 +1,67 @@
 #!/bin/bash
 
 # Script to setup a new developer environment on a Mac
+# Works best, I think, if you install XCode first
 
 echo -e "\033[1;32m  ......Starting setupMac.sh......  \033[0m"
 
+# Homebrew Packages - brew install aPackage
+# Need to brew install ipython and jupyter below to get their commands working on CLI - otherwise the commands weren't recognized.
+PACKAGES=(
+    python
+    node
+    watch
+    thefuck
+    awscli
+    sqlite
+    mongodb-community
+    jmeter
+    ipython
+    jupyter
+    ffmpeg
+    git
+    graphviz
+    imagemagick
+    markdown
+    postgresql
+    tmux
+    tree
+    vim
+    wget
+)
+
+# Homebrew casks (GUI apps) - brew cask install aCask
+CASKS=(
+    visual-studio-code
+    docker
+    robo-3t
+    java
+    virtualbox
+    vagrant
+    github-desktop
+    firefox
+    postman    
+    dropbox
+    google-chrome
+    google-drive
+    iterm2
+    slack
+    vlc
+)
+
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 brew update
 
-brew install bash # Installs newer version of Bash on top of system Bash
+brew install ${PACKAGES[@]}
+
+brew cask install ${CASKS[@]}
+
+brew install bash # Installs newer version of Bash side by side system Bash
 chsh -s /usr/local/bin/bash
-brew install tmux
-brew install python
-brew install node
-brew install git
-brew install visual-studio-code
-brew install watch
-brew install thefuck
 
-brew install sqlite
-brew install postgresql
-brew install mongodb-community
-brew cask install robo-3t
-brew cask install java
-brew install jmeter
-brew install virtualbox
-brew install vagrant
 pip install --user ansible
-
-# Needed to get ipython and jupyter commands working on CLI - otherwise the commands weren't recognized
-brew install ipython
-brew install jupyter
 
 ../python/setupPython.sh
 ../node/setupNode.sh
