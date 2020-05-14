@@ -2,6 +2,28 @@
 
 # Script to install VS Code Extensions on a new developer environment
 # Remember `code --list-extensions`
+# VS Code will eventually have settings and extension syncing - https://code.visualstudio.com/docs/editor/settings-sync
+
+# Settings
+## {
+##     "workbench.sideBar.location": "right",
+##     "workbench.iconTheme": "vscode-icons",
+##     "telemetry.enableCrashReporter": false,
+##     "gitlens.advanced.telemetry.enabled": false,
+##     "code-runner.enableAppInsights": false,
+##     "telemetry.enableTelemetry": false,
+##     "editor.wordWrap": "on",
+##     "git.autofetch": true,
+##     "python.formatting.provider": "black",
+##     "python.testing.pytestEnabled": true,
+##     "update.showReleaseNotes": false,
+##     "vsicons.dontShowNewVersionMessage": true,
+##     "liveServer.settings.CustomBrowser": "firefox",
+##     "workbench.colorTheme": "Dracula",
+##     "workbench.colorCustomizations": {
+##         "editor.selectionBackground": "#00920c"
+##     }
+## }
 
 echo -e "\033[1;32m  ......Starting setupVsCode.sh......  \033[0m"
 
