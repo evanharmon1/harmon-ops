@@ -1,6 +1,11 @@
 #!/bin/bash
 
-echo -e "\033[1;32m  ......Starting setupGit.sh......  \033[0m"
+# Script to setup git on a new Mac or nix machine.
+# Subsequent modifications to .gitignore_global and .gitconfig should be backed up via mackup backup.
+# Ultimately, this script isn't particularly necessary anymore due to mackup backing up to iCloud,
+# but I want to keep the base git dotfiles in source control.
+
+echo -e "\033[0;35m  ......Starting setupGit.sh......  \033[0m"
 
 # User Config
 git config --global user.name "Evan Harmon"
@@ -13,4 +18,4 @@ git config --global core.excludesfile ~/.gitignore_global
 # But you also might need to run watch with watch --color to get the colors to work. As in watch --color git status 
 git config --global color.status always
 
-echo -e "\033[0;31m  ======Finished setupGit.sh======  \033[0m"
+echo -e "\033[1;32m  ======Finished setupGit.sh======  \033[0m"

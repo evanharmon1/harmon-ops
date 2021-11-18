@@ -30,6 +30,9 @@ PACKAGES=(
     tree
     vim
     wget
+    bb
+    bump
+    aafire
 )
 
 # Snaps - snap install aSnap

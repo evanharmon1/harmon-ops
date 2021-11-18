@@ -1,71 +1,53 @@
 # dev-env
-A repo I use to keep track of the various CLI packages and libraries I like to use as well as Bash customizations, scripts, python packages, node modules, git customizations, VS Code extensions, and a docker-compose file with docker images I find useful for my developer environment. All scripts should be idempotent.
+A git repo I maintain to help me bootstrap new computers with a developer environment customized to my liking with shell scripts, dotfiles, package managers, OS settings, IDE preferences, extensions, git customizations, shell aliases, functions, cli packages, programming languages, Docker containers, etc. It also helps me keep track of and document my evolving setup in an Infrastructure as Code (IaC) style. All scripts should be idempotent.
 
-## Mac
-mac/setupMac.sh
+## Setup a Mac
+1. Follow mac/CHECKLIST-MAC.md
+2. Run mac/setupMac.sh
+3. Periodically run mac/updateMac.sh
+	- Shell script to run periodically and/or automatically to keep Mac's software and CLI packages up to date
+	
+Uses homebrew and mackup for package management and dotfile backup/restore
 
-- Homebrew
-- iTerm
+## Setup a *nix machine (Not well-developed)
+1. Follow nix/CHECKLIST-NIX.md
+2. Run nix/setupNix.sh
 
-## *nix
-nix/setupNix.sh
-
-## Windows
-win/setupWindows.ps1
-
-- WSL2
-- Windows Terminal
-- Powershell
-- cmd shell
-- Git Bash
-
+## Setup a Windows machine (Not well-developed)
 **Need to clone `windows` branch on windows machines due to file path incompatibilities in the mac folder. The `windows` branch just omits the mac folder.**
+1. Follow win/CHECKLIST-WIN.md
+2. win/setupWindows.ps1
 
-## Bash
-bash/.bash_profile
-
-### Bash Packages
-nix/setupNix.sh
-mac/setupMac.sh
-
-## Python Packages
-python/setupPython.sh
-
-## Node Modules
-node/setupNode.sh
+## Shell Environments
+On a Mac, bash, zsh, fish, shell_vars, and shell_aliases dotfiles are backed up and restored with mackup command in setupMac.sh and updateMac.sh
 
 ## Git
-git/setupGit.sh
+
+This is automatically run from setupMac.sh
+- git/setupGit.sh
 
 ## VS Code
-vscode/setupVsCode.sh
+This is automatically run from setupMac.sh
+- IDEs/vscode/setupVsCode.sh
+
+## Python
+This is automatically run from setupMac.sh
+- languages/python/setupPython.sh
+
+## JavaScript (Not well-developed)
+This is automatically run from setupMac.sh
+- languages/javaScript/setupJavaScript.sh
+
+## Java (Not well-developed)
+This is automatically run from setupMac.sh
+- languages/java/setupJava.sh
 
 ## Docker
-docker-compose.yml
-
-- Issue: I think I should try to get this working with the dockerVol in this repo. Might need to modify docker-compose.yml to find the repo's dockerVol.
-
-### Docker Developer Environment on Windows
-- In order to get the dockerVol shared/mounted folder working inside running docker containers, Docker settings need to share the local C drive. Sometimes a restart is required. Sometimes you need to make sure to confirm any pop up windows about sharing volumes. I think I solved some problems by putting my docker-compose and dockerVol at the C:/ root level on Windows systems. There are also some Windows features that need to be enabled like Hyper-V.
-
-## Tasks
-- Tmux config
-- Other apps
-	- mysql workbench, mysql, mamp, xamp, netstat, nmap, selenium, wireguard?
-- IDE settings? VS Code, IntelliJ, PyCharm, BBedit, etc.
-- Publish my VS Code extension and add to setupVsCode.sh
-- setupMac & setupNix - copy .bash_profile and git/.gitignore_global to ~/, but add verify prompt if it overwrites existing
-- Zsh, fish
-- Terraform?
-- Go?
-- C#?
-- Ruby?
-- php?
-- Rust?
-- c++?
-- Sensu?
-- Grafana?
-- Artifactory?
+- docker-compose.yml with various useful docker images
+- A docker environment setup for Windows that makes developing on Windows easier due to bash, linux, containers, etc.
 
 ## Sources
+- homebrew
+- mas
+- mackup
 - https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716

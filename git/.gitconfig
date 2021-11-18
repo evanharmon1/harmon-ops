@@ -1,0 +1,18 @@
+# My custom .gitconfig file
+
+[user]
+	name = Evan Harmon
+	email = evanharmon1@gmail.com
+[core]
+	excludesfile = /Users/evan/.gitignore_global
+	editor = "bbedit --wait --resume"
+[merge]
+    tool = bbedit
+[mergetool "bbedit"]
+    cmd = "bbedit --wait --resume"
+[diff]
+    tool = bbedit
+[difftool "bbedit"]
+    cmd = "bbedit --wait --resume"
+[color]
+	status = always

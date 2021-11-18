@@ -1,114 +1,47 @@
 #!/bin/bash
 
 # Script to setup a new developer environment on a Mac
-# Works best, I think, if you install XCode first
+# Requires following the steps listed in CHECKLIST-MAC.md
+# (enabling iCloud, installing xCode via the Mac App Store)
+# Requires `Brewfile` in the same directory.
+# Run this script from its directory at dev-env/mac: 
+# `caffeinate -disu ./setupMac.sh`
+# Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
-# Homebrew Packages - brew install aPackage
-# Need to brew install ipython and jupyter below to get their commands working on CLI - otherwise the commands weren't recognized.
-PACKAGES=(
-    python
-    node
-    watch
-    thefuck
-    awscli
-    sqlite
-    mongodb-community
-    jmeter
-    ipython
-    jupyter
-    ffmpeg
-    git
-    graphviz
-    imagemagick
-    markdown
-    postgresql
-    tmux
-    tree
-    vim
-    wget
-)
+echo -e "\033[0;35m  ......Starting setupMac.sh......  \033[0m"
 
-# Homebrew casks (GUI apps) - brew cask install aCask
-CASKS=(
-    visual-studio-code
-    docker
-    robo-3t
-    java
-    virtualbox
-    vagrant
-    github-desktop
-    firefox
-    postman    
-    dropbox
-    google-chrome
-    google-drive
-    iterm2
-    slack
-    vlc
-)
-
-echo -e "\033[1;32m  ......Starting setupMac.sh......  \033[0m"
-
-# Ask for the administrator password upfront
-sudo -v
+# Check for and install any Apple software updates
+echo -e "\033[0;35m  ......Checking for and installing any Apple software updates......  \033[0m"
+softwareupdate -ia —verbose
 
 # Install Homebrew
 ## Check if Homebrew is already installed
+echo -e "\033[0;35m  ......Installing Homebrew if not installed......  \033[0m"
 if test ! $(which brew); then
     echo Installing Homebrew...
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-brew update
+# Installs and/or updates all listed packages in `Brewfile`
+echo -e "\033[0;35m  ......Running brew bundle to install and/or update packages in Brewfile......  \033[0m"
+brew bundle -v
+brew cleanup
 
-brew install ${PACKAGES[@]}
+# `mackup` backs up supported app configs, settings, and dotfiles like .bash_profile to iCloud and then symlinks them back to original location
+# .mackup.cfg specifies cloud storage destination. It needs to be in home directory
+# mackup config needs the .mackup.cfg in the home directory and a ~/.mackup directory with
+# my myCustomFiles.cfg file, but all those should be part of what mackup backup and mackup restore handles
+echo -e "\033[0;35m  ......Running mackup restore to symlink existing app config, settings, and dotfiles from iCloud to their default local locations......  \033[0m"
+mackup restore
 
-brew cask install ${CASKS[@]}
+# Configure Mac settings with terminal commands
+echo -e "\033[0;35m  ......Configuring Mac settings with terminal commands......  \033[0m"
+configureMacSettings.sh
 
-brew install bash # Installs newer version of Bash side by side the system Bash
-chsh -s /usr/local/bin/bash
-
-pip install --user ansible
-
-../python/setupPython.sh
-../node/setupNode.sh
+echo -e "\033[0;35m  ......Running setupGit.sh......  \033[0m"
 ../git/setupGit.sh
-../vscode/setupVsCode.sh
 
-# MacOS Settings
-echo "Setting Dock to auto-hide and removing the auto-hiding delay"
-defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float 0
-defaults write com.apple.dock autohide-time-modifier -float 0
+# ../python/setupPython.sh
+# ../javascript/setupJavascript.sh
 
-echo "Expanding the save panel by default"
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
-
-echo "Disable Smart Quotes in system and Messages"
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
-
-echo "Showing all filename extensions in Finder by default"
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-echo "Showing status bar in Finder by default"
-defaults write com.apple.finder ShowStatusBar -bool true
-
-echo "Allowing text selection in Quick Look/Preview in Finder by default"
-defaults write com.apple.finder QLEnableTextSelection -bool true
-
-echo "Displaying full POSIX path as Finder window title"
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
-
-echo "Disabling the warning when changing a file extension"
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
-echo "Use column view in all Finder windows by default"
-defaults write com.apple.finder FXPreferredViewStyle Clmv
-
-brew upgrade
-
-echo -e "\033[0;31m  ======Finished setupMac.sh======  \033[0m"
-echo -e "\033[0;33m  *Need to add /usr/local/bin/bash to the bottom of the list at /etc/shells \033[0m"
+echo -e "\033[1;32m  ======Finished setupMac.sh======  \033[0m"

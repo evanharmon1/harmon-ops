@@ -1,0 +1,274 @@
+# Assumes installation of homebrew, git, and Xcode via Mac App Store so the store is authenticated.
+
+# Partially-generated using brew bundle dump --describe, then modified
+
+# Run on new machine from the dev-env repo folder with:
+# `sudo caffeinate -disu softwareupdate -ia —verbose; caffeinate -disu brew bundle -v; caffeinate -disu brew cleanup; caffeinate -disu brew doctor —-verbose`
+
+# Keep system updated with a service that runs:
+# `sudo caffeinate -disu softwareupdate -ia —verbose; caffeinate -disu brew bundle -v; caffeinate -disu brew cleanup; mackup backup; mackup restore`
+
+# TODO: script mackup restore with config from dropbox
+
+
+##### Repos #####
+tap "homebrew/cask"
+tap "homebrew/bundle"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+
+
+##### Base packages to install on most machines #####
+# Mac App Store command-line interface
+brew "mas"
+brew "mackup"
+mas "1Password 7", id: 1333542190
+mas "1Blocker", id: 1365531024
+mas "Acorn", id: 1547371478
+mas "Amphetamine", id: 937984704
+mas "BBEdit", id: 404009241
+mas "Cardhop", id: 1290358394
+mas "Copy 'Em", id: 876540291
+mas "Dark Reader for Safari", id: 1438243180
+mas "Deliveries", id: 290986013
+mas "Drafts", id: 1435957248
+mas "Fantastical", id: 975937182
+mas "Fireplace Live HD", id: 468630933
+mas "GarageBand", id: 682658836
+mas "Geekbench 5", id: 1478447657
+mas "Highlights", id: 1498912833
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "Koi Pond 3D Lite", id: 534867956
+mas "Mactracker", id: 430255202
+mas "Magnet", id: 441258766
+mas "Notability", id: 360593530
+mas "Numbers", id: 409203825
+mas "OmniOutliner", id: 1142578772
+mas "Pages", id: 409201541
+mas "Reeder", id: 880001334
+mas "Scapple", id: 568020055
+mas "Screens", id: 1224268771
+mas "Speedtest", id: 1153157709
+mas "StopTheMadness", id: 1376402589
+mas "The Unarchiver", id: 425424353
+mas "Noizio", id: 928871589
+mas "Hush Nag Blocker", id: 1544743900
+mas "Xcode", id: 497799835
+mas "Amazon Prime Video", id: 545519333
+cask "vlc"
+cask "handbrake"
+cask "backblaze"
+# cask "dropbox"
+cask "protonvpn"
+cask "transmission"
+cask "iterm2"
+cask "bettertouchtool"
+cask "google-chrome"
+cask "foldingtext"
+cask "typora"
+cask "textexpander"
+cask "mission-control-plus"
+cask "bartender"
+cask "batteries"
+cask "superduper"
+cask "visual-studio-code"
+# Interpreted, interactive, object-oriented programming language
+brew "python"
+cask "xee"
+cask "inkscape"
+brew "speedtest-cli"
+brew "terminal-notifier"
+brew "alerter"
+cask "appcleaner"
+
+
+##### CLI Packages #####
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+brew "fish"
+brew "curl"
+brew "wget"
+brew "grep"
+brew "rsync"
+brew "tldr"
+brew "thefuck"
+brew "cheat"
+### Git ###
+brew "git"
+brew "grv"
+brew "git-delta"
+# Homebrew's Git is installed into /usr/local/bin which has a priority in the PATH environment variable.
+brew "vim"
+# Terminal multiplexer
+brew "tmux"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Programmatically correct mistyped console commands
+brew "ffmpeg"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+brew "htop"
+brew "glances"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Port scanning utility for large networks
+brew "nmap"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Watch files and take action when they change
+brew "watchman"
+brew "jq"
+brew "jo"
+brew "dnstracer"
+brew "asciinema"
+brew "lolcat"
+brew "cmatrix"
+brew "cowsay"
+brew "fortune"
+brew "espeak"
+brew "asciiquarium"
+brew "pv"
+brew "aview"
+brew "bat"
+brew "netcat"
+brew "sd"
+brew "ripgrep"
+brew "mosh"
+
+brew "fzf"
+brew "fd"
+brew "exa"
+
+##### Optional Developer Packages #####
+brew "screen"
+brew "go"
+brew "cmake"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+cask "dash"
+cask "transmit"
+cask "insomnia"
+cask "postman"
+cask "sourcetree"
+brew "packer"
+cask "vagrant"
+brew "jupyterlab"
+cask "docker"
+# cask "virtualbox" # homebrew fails to install
+cask "gitkraken"
+cask "nteract"
+brew "ipython"
+# GTK+ dialog boxes for the command-line
+brew "zenity"
+mas "System Designer", id: 1102494854
+mas "CotEditor", id: 1024640650
+cask "ngrok"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+brew "lighttpd"
+brew "nginx"
+brew "httpd"
+brew "ncurses"
+### Databases ###
+brew "sqlite"
+# Object-relational database system
+brew "postgresql"
+# Open source relational database management system
+brew "mysql"
+cask "mysqlworkbench"
+cask "mamp"
+# cask "xampp" # mamp is better than xampp
+tap "mongodb/brew"
+brew "mongodb-community@5.0"
+# MongoDB management tool
+cask "robo-3t"
+cask "mongodb-compass"
+### Java ###
+# Open-source build automation tool based on the Groovy and Kotlin DSL
+brew "gradle"
+# Java-based project management
+brew "maven"
+cask "intellij-idea-ce"
+brew "openjdk"
+### JavaScript ###
+# Platform built on V8 to build network applications
+brew "node", link: false
+# JavaScript package manager
+brew "yarn"
+# Language for application scale JavaScript development
+brew "typescript"
+### Python ###
+# Python version management
+brew "pyenv"
+cask "pycharm-ce"
+cask "dbvisualizer"
+cask "gitup"
+brew "mitmproxy"
+brew "jmeter"
+brew "selenium-server"
+cask "github"
+# TODO: Gitlab
+
+
+##### Other Optional Packages I want for me #####
+mas "Be Focused Pro", id: 961632517
+mas "com.apptorium.Workspaces", id: 1219826448
+mas "Delicious Library", id: 635124250
+mas "Disk Speed Test", id: 425264550
+mas "Expressions", id: 913158085
+mas "Mobile Mouse Server", id: 412814284
+mas "MultiMarkdown Composer", id: 1275176220
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "Poolsuite FM", id: 1514817810
+mas "PopClip", id: 445189367
+mas "Simplenote", id: 692867256
+mas "Slack", id: 803453959
+mas "Spark", id: 1176895641
+mas "Studies", id: 1071676469
+mas "TaskPaper", id: 1090940630
+mas "Things", id: 904280696
+mas "Trello", id: 1278508951
+mas "WireGuard", id: 1451685025
+mas "WriteRoom", id: 417967324
+mas "Twitter", id: 1482454543
+mas "GoodNotes", id: 1444383602
+cask "discord"
+cask "firefox"
+# Collection of services for Markdown-formatted text
+cask "markdown-service-tools"
+cask "zoom"
+cask "tinderbox"
+cask "obsidian"
+cask "fastscripts"
+cask "keyboard-maestro"
+mas "Banktivity", id: 1480779512
+cask "mosaic"
+cask "istat-menus"
+cask "xbar"
+cask "bunch"
+cask "hazel"
+cask "tunnelblick"
+# brew "wireshark" # homebrew install fails
+# cask "wireshark" # homebrew install fails
+cask "default-folder-x"
+cask "brave-browser"
+mas "ColorSlurp", id: 1287239339
+
+
+##### Optional Games Packages #####
+cask "steam"
+cask "battle-net"
+mas "Steam Link", id: 1246969117
+cask "dolphin"
+# cask "boxer"
+cask "openemu"
