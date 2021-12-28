@@ -1,18 +1,25 @@
-# My custom .gitconfig file
-
 [user]
 	name = Evan Harmon
 	email = evanharmon1@gmail.com
 [core]
 	excludesfile = /Users/evan/.gitignore_global
-	editor = "bbedit --wait --resume"
+	editor = mate --wait
 [merge]
-    tool = bbedit
-[mergetool "bbedit"]
-    cmd = "bbedit --wait --resume"
+    tool = codium
+[mergetool "codium"]
+    cmd = codium --wait --new-window $MERGED
 [diff]
-    tool = bbedit
-[difftool "bbedit"]
-    cmd = "bbedit --wait --resume"
+    tool = codium
+[difftool "codium"]
+    cmd = codium --wait --new-window --diff $LOCAL $REMOTE
 [color]
 	status = always
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+# Conditional to use a specific .gitconfig file if repo is in the specified folder. E.g., for work git user.
+# Trailing slash should make it apply to all subfolders as well.
+[includeIf "gitdir:~/Local/RevLogical/"]
+	path = ~/Local/RevLogical/.gitconfig

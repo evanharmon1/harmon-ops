@@ -1,10 +1,25 @@
 # My custom .bashrc file
 
-# source aliases file
-source ~/.shell_aliases
+source ~/.dotfiles/.aliases
+source ~/.dotfiles/.env
+source ~/.dotfiles/.functions
 
-# source vars file
-source ~/.shell_vars
+#============================================================================
+#                               Bash Terminal Customization
+#============================================================================
+# GREP Customization to turn matches red like is default on most *nix systems
+export GREP_OPTIONS='--color=auto'
+
+# old - single line: export PS1=" 👾 \[\e[34;140m\] \u@\h \[\e[35;40m\]\w \[\e[0m\]\$ "
+export PS1=" 👾 \[\e[34;140m\] \u@\h \[\e[35;40m\]\w \[\e[0m\]\n✇ $ "
+export CLICOLOR=1
+
+
+#============================================================================
+#                               PATH
+#============================================================================
+# homebrew & my dev scripts
+export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin
 
 # Scripts on *nix
 #export scripts="~/bin"
@@ -13,17 +28,29 @@ source ~/.shell_vars
 #    PATH="$HOME/bin:$PATH"
 #fi
 
-# GREP Customization to turn matches red like is default on most *nix systems
-export GREP_OPTIONS='--color=auto'
 
-# Terminal Customization
-# old - single line: export PS1=" 👾 \[\e[34;140m\] \u@\h \[\e[35;40m\]\w \[\e[0m\]\$ "
-export PS1=" 👾 \[\e[34;140m\] \u@\h \[\e[35;40m\]\w \[\e[0m\]\n✇ $ "
-export CLICOLOR=1
-
-# Set default terminal editor. E.g., for git, etc.
-export EDITOR=bbedit
+#============================================================================
+#                    Set default terminal editor
+#============================================================================
+export EDITOR="codium --wait --new-window"
 export VISUAL="$EDITOR"
 
-# Ansible
+
+#============================================================================
+#                               Python
+#============================================================================
+# pyenv
+PATH=$(pyenv root)/shims:$PATH
+
+
+#============================================================================
+#                               Ansible
+#============================================================================
 ANSIBLE_CONFIG=~/.ansible.cfg
+
+
+#============================================================================
+#                               Terraform
+#============================================================================
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

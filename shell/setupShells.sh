@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # This script is not needed on a Mac if you setup mackup as the setupMac.sh script does.
-cp .shell_aliases ~
-cp .shell_vars ~
+mkdir ~/.dotfiles
+cp .aliases ~/.dotfiles
+cp .env ~/.dotfiles
+cp .functions ~/.dotfiles
 
 # setup bash
 cp bash/.bashrc ~

@@ -3,26 +3,20 @@ A git repo I maintain to help me bootstrap new computers with a developer enviro
 
 ## Setup a Mac
 1. Follow mac/CHECKLIST-MAC.md
-2. Run mac/setupMac.sh
-3. Periodically run mac/updateMac.sh
-	- Shell script to run periodically and/or automatically to keep Mac's software and CLI packages up to date
-	
-Uses homebrew and mackup for package management and dotfile backup/restore
 
 ## Setup a *nix machine (Not well-developed)
 1. Follow nix/CHECKLIST-NIX.md
 2. Run nix/setupNix.sh
 
 ## Setup a Windows machine (Not well-developed)
-**Need to clone `windows` branch on windows machines due to file path incompatibilities in the mac folder. The `windows` branch just omits the mac folder.**
+**Might Need to clone to a fresh `windows` branch from master for windows machines due to file path incompatibilities in the mac folder. You would need to delete the mac folder on that branch to avoid the errors.**
 1. Follow win/CHECKLIST-WIN.md
 2. win/setupWindows.ps1
 
 ## Shell Environments
-On a Mac, bash, zsh, fish, shell_vars, and shell_aliases dotfiles are backed up and restored with mackup command in setupMac.sh and updateMac.sh
+On a Mac, bash, zsh, and fish dotfiles are backed up and restored with mackup command in setupMac.sh and updateMac.sh. My other global custom dotfiles like shell_vars and shell_aliases are stored in ~/.dotfiles and configured to be backed up and restored with mackup backup/restore.
 
 ## Git
-
 This is automatically run from setupMac.sh
 - git/setupGit.sh
 
@@ -47,7 +41,7 @@ This is automatically run from setupMac.sh
 - A docker environment setup for Windows that makes developing on Windows easier due to bash, linux, containers, etc.
 
 ## Sources
-- homebrew
-- mas
-- mackup
+- [Homebrew](https://brew.sh/)
+- [mas](https://github.com/mas-cli/mas)
+- [mackup](https://github.com/lra/mackup)
 - https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716

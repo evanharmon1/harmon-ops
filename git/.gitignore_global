@@ -1,9 +1,3 @@
-# My custom .gitignore_global file
-
-# Sources for useful .gitignore targets
-# - https://gist.github.com/octocat/9257657
-# - https://github.com/github/gitignore
-
 # Compiled source #
 ###################
 *.com

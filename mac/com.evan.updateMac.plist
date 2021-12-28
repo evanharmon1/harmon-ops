@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--This plist file defines an Apple launchd/launchctl service to run my upgradeMac.sh script.-->
+<!--This file needs to be copied to /Users/evan/Library/LaunchAgents-->
+<!--Enable with launchctl load /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist-->
+<!--Disable with launchctl load /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist-->
+
+<!--Need absolute paths to script.-->
+<plist version="1.0">
+<dict>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/sbin:/opt/homebrew/bin:/Users/evan/bin:/Users/evan/Dropbox/dev/DevEnv/dev-env/mac</string>
+  </dict>
+  
+  <key>Label</key>
+  <string>com.evan.updateMac</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/evan/Dropbox/dev/DevEnv/dev-env/mac/updateMac.sh</string>
+  </array>
+
+  <key>Nice</key>
+  <integer>1</integer>
+
+  <!--Runs automatically once a week on Saturday at 11:15AM.-->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key>
+    <integer>6</integer>
+    <key>Hour</key>
+    <integer>11</integer>
+    <key>Minute</key>
+    <integer>15</integer>
+  </dict>
+
+  <!--Runs automatically at startup.-->
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!--Creates error log file here:-->
+  <key>StandardErrorPath</key>
+  <string>/tmp/updateMac.err</string>
+
+  <!--Creates output log file here:-->
+  <key>StandardOutPath</key>
+  <string>/tmp/updateMac.out</string>
+</dict>
+</plist>
