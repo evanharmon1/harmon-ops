@@ -392,16 +392,27 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
 
 - ed25519 is newer and better, but might not be supported by default, e.g., Ubuntu
 - [x] `ssh-keygen -t ed25519 -C "id_personal"`
-- [x] `ssh-keygen -t rsa -b 4096 -C "id_personal_rsa"`
+- [ ] `ssh-keygen -t rsa -b 4096 -C "id_personal_rsa"`
 - [x] `ssh-keygen -t ed25519 -C "id_<work_name>"`
 - [x] `ssh-keygen -t rsa -b 4096 -C "id_<work_name>_rsa"`
 - [x] Save in 1Password
 
 #### Add ssh Keys to Apple Keychain to Avoid re-entering Passphrase
-- [ ] `ssh-add -K id_personal`
-- [ ] `ssh-add -K id_personal_rsa`
-- [ ] `ssh-add -K id_<work_name>`
-- [ ] `ssh-add -K id_<work_name>_rsa`
+- [x] `ssh-add --apple-use-keychain .ssh/id_personal`
+- [ ] `ssh-add --apple-use-keychain .ssh/id_personal_rsa`
+- [ ] `ssh-add --apple-use-keychain .ssh/id_<work_name>`
+- [ ] `ssh-add --apple-use-keychain .ssh/id_<work_name>_rsa`
+
+#### Add any hosts to `~/.ssh/config` file
+
+- E.g.:
+
+  ```
+  **# GitHub.com - Personal**
+  Host github.com
+    PreferredAuthentications publickey
+    IdentityFile ~/.ssh/id_personal
+  ```
 
 ### Environment Secrets
 
