@@ -1,0 +1,11 @@
+# Development Python packages to be installed globally
+
+numpy
+pandas
+beautifulsoup
+requests
+bcrypt
+docker-compose
+PyYAML
+pandoc
+cookiecutter
