@@ -1,17 +1,17 @@
 [user]
 	name = Evan Harmon
-	email = evanharmon1@gmail.com
+	email = evan@evanharmon.com
 [core]
 	excludesfile = /Users/evan/.gitignore_global
 	editor = mate --wait
 [merge]
-    tool = codium
-[mergetool "codium"]
-    cmd = codium --wait --new-window $MERGED
+    tool = nova
+[mergetool "nova"]
+    cmd = nova --wait $MERGED
 [diff]
-    tool = codium
-[difftool "codium"]
-    cmd = codium --wait --new-window --diff $LOCAL $REMOTE
+    tool = nova
+[difftool "nova"]
+    cmd = nova --wait --diff $LOCAL $REMOTE
 [color]
 	status = always
 [filter "lfs"]
@@ -23,3 +23,5 @@
 # Trailing slash should make it apply to all subfolders as well.
 [includeIf "gitdir:~/Local/RevLogical/"]
 	path = ~/Local/RevLogical/.gitconfig
+[init]
+	templateDir = /Users/evan/.git-template

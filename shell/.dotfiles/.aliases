@@ -12,9 +12,10 @@ alias mv="mv -iv"
 alias cp="cp -riv"
 
 # Docker Aliases
-alias dcu='docker-compose up --build -d'  #Detached
+alias dcu='docker-compose up -d'  #Detached
 alias dcd='docker-compose down'
 alias dcs='docker-compose stop'  #Stops your containers, but doesn't remove them.
 alias dcr='docker-compose down -v && docker-compose up --build -d'  #Reset (-v = remove volumes)
 alias dcei='docker container exec -it ******* /bin/ash -l'  #Shell into ****** to-be-named container
 alias dclogs='docker-compose logs' #Show logs of all running containers
+alias dsp="docker system prune --all"

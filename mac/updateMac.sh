@@ -60,7 +60,7 @@ cp ~/.bashrc ~/Dropbox/dev/DevEnv/dev-env/shell/bash
 cp ~/.zshrc ~/Dropbox/dev/DevEnv/dev-env/shell/zsh
 # cp ~/.fishsomething ~/Dropbox/dev/DevEnv/dev-env/shell/fish
 
-cp -r ~/.dotfiles ~/Dropbox/dev/DevEnv/dev-env/shell/.dotfiles
+cp -r ~/.dotfiles ~/Dropbox/dev/DevEnv/dev-env/shell/
 
 cp ~/.gitconfig ~/Dropbox/dev/DevEnv/dev-env/git
 cp ~/.gitignore_global ~/Dropbox/dev/DevEnv/dev-env/git

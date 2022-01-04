@@ -3,6 +3,7 @@
 # Use VS Code settings sync instead of this script.
 # Script to install VS Code Extensions on a new machine
 # You can generate all currently installed extensions with `code --list-extensions`
+# Extensions are specified by their unique identifier on the VS Code Marketplace
 # VS Code now has settings and extension syncing - https://code.visualstudio.com/docs/editor/settings-sync so I shouldn't use these scripts
 # to setup new machines. I only use this file and settings.json to get my most important settings and extension in version control
 # as a sort of canonical base, in case I ever want to setup VS Code from scratch again.

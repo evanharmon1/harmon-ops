@@ -32,7 +32,7 @@ export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin
 #============================================================================
 #                    Set default terminal editor
 #============================================================================
-export EDITOR="codium --wait --new-window"
+export EDITOR="nova --recent"
 export VISUAL="$EDITOR"
 
 

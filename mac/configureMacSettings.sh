@@ -933,19 +933,20 @@ defaults write com.twitter.twitter-mac ShowFullNames -bool true
 #============================================================================
 # These didn't work reliably so probably better to use SwiftDefaultApps preference pane
 # Set VSCodium for plain text, config files, etc.
-duti -s com.visualstudio.code.oss txt
-duti -s com.visualstudio.code.oss pem
-duti -s com.visualstudio.code.oss pub
-duti -s com.visualstudio.code.oss ini
-duti -s com.visualstudio.code.oss xml
-duti -s com.visualstudio.code.oss yaml
-duti -s com.visualstudio.code.oss json
-duti -s com.visualstudio.code.oss diff
-duti -s com.visualstudio.code.oss conf
-duti -s com.visualstudio.code.oss old
-duti -s com.visualstudio.code.oss plist
-duti -s com.visualstudio.code.oss log
-duti -s com.visualstudio.code.oss csv
+duti -s com.panic.Nova txt
+duti -s com.panic.Nova pem
+duti -s com.panic.Nova pub
+duti -s com.panic.Nova ini
+duti -s com.panic.Nova xml
+duti -s com.panic.Nova yaml
+duti -s com.panic.Nova json
+duti -s com.panic.Nova diff
+duti -s com.panic.Nova conf
+duti -s com.panic.Nova old
+duti -s com.panic.Nova plist
+duti -s com.panic.Nova log
+duti -s com.panic.Nova csv
+duti -s com.panic.Nova bunch
 
 # Set Nova for plain text files with no extension
 echo 'com.visualstudio.code.oss   public.plain-text all' | duti

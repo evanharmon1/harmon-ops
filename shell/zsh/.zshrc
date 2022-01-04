@@ -13,7 +13,7 @@ export ZSH="/Users/evan/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,10 +72,10 @@ ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/ 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git macos dirhistory bgnotify per-directory-history)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -138,7 +138,7 @@ export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin
 #============================================================================
 #                    Set default terminal editor
 #============================================================================
-export EDITOR="codium --wait --new-window"
+export EDITOR="nova --recent"
 export VISUAL="$EDITOR"
 
 

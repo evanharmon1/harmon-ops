@@ -315,8 +315,15 @@ Checklist for setting up a new Mac from scratch.
 - [x] Install themes
   - [x] [Download from](https://blog.hogbaysoftware.com/tagged/writeroomtheme)
   - [x] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
-
   - [x] Set default theme as SolarizedDarkWriteRoomTheme
+
+## Fonts
+
+- [ ] Change iTerm and VS Code Terminal to Powerline Font
+  - [ ] ITerm2 > Preferences > Profiles > Text > Change Font
+    - [ ] Meslo LG DZ for Powerline
+  - [ ] Open Settings
+    - [ ] Terminal Integrated font family: Meslo LG L DZ for Powerline
 
 ## 9. Set Default "open with" for file types.
 

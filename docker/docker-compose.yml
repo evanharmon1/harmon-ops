@@ -1,8 +1,18 @@
 version: '3'
 
 services:
-  ubuntu:
-    image: ubuntu:latest
+  # ubuntu:
+  #   image: ubuntu:latest
+  #   ports:
+  #     - '9999:9999'
+  #   tty: true
+  #   command: 'bash'
+  #   working_dir: /dockerVol
+  #   volumes:
+  #     - "./dockerVol:/dockerVol"
+
+  fedora:
+    image: fedora:latest
     ports:
       - '9999:9999'
     tty: true
@@ -11,25 +21,25 @@ services:
     volumes:
       - "./dockerVol:/dockerVol"
 
-  node:
-    image: node:latest
-    ports:
-      - '8888:8888'
-    tty: true
-    command: 'bash'
-    working_dir: /dockerVol
-    volumes:
-      - "./dockerVol:/dockerVol"
+  # node:
+  #   image: node:latest
+  #   ports:
+  #     - '8888:8888'
+  #   tty: true
+  #   command: 'bash'
+  #   working_dir: /dockerVol
+  #   volumes:
+  #     - "./dockerVol:/dockerVol"
 
-  python:
-    image: python:3.8
-    ports:
-      - '3333:3333'
-    tty: true
-    command: 'bash'
-    working_dir: /dockerVol
-    volumes:
-      - "./dockerVol:/dockerVol"
+  # python:
+  #   image: python:3.8
+  #   ports:
+  #     - '3333:3333'
+  #   tty: true
+  #   command: 'bash'
+  #   working_dir: /dockerVol
+  #   volumes:
+  #     - "./dockerVol:/dockerVol"
 
 #   activemq:
 #     image: rmohr/activemq:latest

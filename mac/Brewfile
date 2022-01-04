@@ -109,6 +109,7 @@ cask "forklift"
 mas "Forecast Bar", id: 982710545
 cask "cheatsheet"
 cask "customshortcuts"
+cask "duplicacy-web-edition"
 
 
 #============================================================================
@@ -212,6 +213,7 @@ mas "ColorSlurp", id: 1287239339
 mas "Jira Cloud by Atlassian", id: 1475897096
 cask "datadog-agent"
 cask "royal-tsx"
+brew "pre-commit"
 #                               Text Editors & IDEs
 #-----------------------------------------------------------------------------
 cask "vscodium"
@@ -225,7 +227,7 @@ cask "mu-editor"
 #-----------------------------------------------------------------------------
 cask "docker"
 brew "hashicorp/tap/packer"
-brew "vagrant"
+brew "vagrant" # Doesn't work - no Apple Silicon?
 brew "nginx"
 brew "httpd"
 brew "lighttpd"
@@ -235,7 +237,19 @@ brew "lighttpd"
 brew "awscli"
 brew "kubernetes-cli"
 brew "minikube"
+#                               Terraform & Dependencies
+#-----------------------------------------------------------------------------
 brew "hashicorp/tap/terraform"
+brew "tfenv"
+brew "terraform-docs"
+brew "terragrunt"
+brew "tflint"
+brew "tfsec"
+brew "coreutils"
+brew "checkov"
+brew "terrascan"
+brew "infracost"
+
 #                               Databases
 #-----------------------------------------------------------------------------
 brew "postgresql"
@@ -333,6 +347,7 @@ mas "Overcast", id: 888422857
 mas "Apollo", id: 979274575
 cask "obs"
 cask "choosy"
+cask "zotero"
 
 
 #============================================================================
