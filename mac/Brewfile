@@ -9,7 +9,7 @@
 # `sudo caffeinate -disu softwareupdate -ia —verbose; caffeinate -disu brew bundle -v; caffeinate -disu brew cleanup;
 
 #============================================================================
-#							   Repos
+#                       Repos
 #============================================================================
 tap "homebrew/core"
 tap "homebrew/services"
@@ -22,7 +22,7 @@ tap "hashicorp/tap"
 
 
 #============================================================================
-#							   Base Packages
+#                       Base Packages
 #============================================================================
 # to install on most machines 
 brew "mas" # Mac App Store command-line interface
@@ -113,7 +113,7 @@ cask "duplicacy-web-edition"
 
 
 #============================================================================
-#							   CLI Packages
+#                       CLI Packages
 #============================================================================
 brew "bash"
 brew "zsh"
@@ -163,7 +163,7 @@ brew "pidof"
 brew "p7zip"
 brew "dockutil"
 brew "duti"
-#                               Fun
+#             Fun
 #-----------------------------------------------------------------------------
 brew "asciinema"
 brew "lolcat"
@@ -172,7 +172,7 @@ brew "cowsay"
 brew "fortune"
 brew "espeak"
 brew "asciiquarium"
-#                               Git
+#             Git
 #-----------------------------------------------------------------------------
 brew "git"
 brew "git-lfs"
@@ -185,7 +185,7 @@ cask "gitup"
 
 
 #============================================================================
-#                               Optional Developer Packages
+#                       Optional Developer Packages
 #============================================================================
 brew "go"
 brew "ruby"
@@ -214,7 +214,7 @@ mas "Jira Cloud by Atlassian", id: 1475897096
 cask "datadog-agent"
 cask "royal-tsx"
 brew "pre-commit"
-#                               Text Editors & IDEs
+#             Text Editors & IDEs
 #-----------------------------------------------------------------------------
 cask "vscodium"
 cask "nova"
@@ -223,7 +223,7 @@ cask "jetbrains-toolbox"
 cask "sublime-text"
 mas "CotEditor", id: 1024640650
 cask "mu-editor"
-#                               Servers & Virtualization
+#             Servers & Virtualization
 #-----------------------------------------------------------------------------
 cask "docker"
 brew "hashicorp/tap/packer"
@@ -232,12 +232,13 @@ brew "nginx"
 brew "httpd"
 brew "lighttpd"
 # cask "virtualbox" # homebrew fails to install - Apple Silicon? 11-27-2021
-#                               Cloud & Kubernetes
+#             Cloud & Kubernetes
 #-----------------------------------------------------------------------------
 brew "awscli"
 brew "kubernetes-cli"
 brew "minikube"
-#                               Terraform & Dependencies
+brew "eksctl"
+#             Terraform & Dependencies
 #-----------------------------------------------------------------------------
 brew "hashicorp/tap/terraform"
 brew "tfenv"
@@ -250,7 +251,7 @@ brew "checkov"
 brew "terrascan"
 brew "infracost"
 
-#                               Databases
+#             Databases
 #-----------------------------------------------------------------------------
 brew "postgresql"
 brew "mysql"
@@ -264,17 +265,17 @@ brew "mongodb-community@5.0"
 cask "db-browser-for-sqlite"
 cask "mamp"
 cask "dbvisualizer"
-#                               Java
+#             Java
 #-----------------------------------------------------------------------------
 brew "openjdk"
 brew "gradle"
 brew "maven"
-#                               JavaScript
+#             JavaScript
 #-----------------------------------------------------------------------------
 brew "node"
 brew "yarn"
 brew "typescript"
-#                               Python
+#             Python
 #-----------------------------------------------------------------------------
 brew "ipython"
 brew "pandoc" # Swiss-army knife of markup format conversion
@@ -285,13 +286,13 @@ brew "readline"
 brew "sqlite3"
 brew "xz"
 brew "zlib"
-#                               Work - RevLogical
+#             Work - RevLogical
 #-----------------------------------------------------------------------------
 mas "Retail Rebel", id: 1519939193
 
 
 #============================================================================
-#                               Other Optional Packages
+#                       Other Optional Packages
 #============================================================================
 cask "obsidian"
 cask "transmit"
@@ -351,7 +352,7 @@ cask "zotero"
 
 
 #============================================================================
-#                               Optional Games Packages
+#                       Optional Games Packages
 #============================================================================
 cask "steam"
 mas "Steam Link", id: 1246969117
@@ -363,7 +364,7 @@ cask "twitch"
 
 
 #============================================================================
-# Inactive
+#                       Inactive
 #============================================================================
 # cask "onyx"
 # cask "ubar"
