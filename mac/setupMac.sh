@@ -74,6 +74,16 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 
 #============================================================================
+#                       Bash
+#============================================================================
+#             [sexy-bash-prompt](https://github.com/twolfson/sexy-bash-prompt)
+#------------------------------------------------------------------------------
+# Their one-line installation didn't work last time. I needed to do their
+# manual install method.
+(cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
+
+
+#============================================================================
 #                               fish
 #============================================================================
 # TODO: tide and/or oh-my-fish

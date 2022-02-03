@@ -11,12 +11,21 @@ services:
   #   volumes:
   #     - "./dockerVol:/dockerVol"
 
-  fedora:
-    image: fedora:latest
+  # fedora:
+  #   image: fedora:latest
+  #   ports:
+  #     - '9999:9999'
+  #   tty: true
+  #   command: 'bash'
+  #   working_dir: /dockerVol
+  #   volumes:
+  #     - "./dockerVol:/dockerVol"
+
+  nginx:
+    image: nginx:stable-alpine
     ports:
       - '9999:9999'
     tty: true
-    command: 'bash'
     working_dir: /dockerVol
     volumes:
       - "./dockerVol:/dockerVol"

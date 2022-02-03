@@ -19,7 +19,7 @@ Checklist for setting up a new Mac from scratch.
 ## 2. Sign into **iCloud** and enable everything to start syncing
 - [x] All on, including keychain
 - [x] Turn on sync desktop and documents
-- [ ] Choose profile pic
+- [x] Choose profile pic
 - [ ] Optimize Mac Storage - yes for laptop? No for server.
 - [ ] private relay - yes, when out of beta
 
@@ -133,17 +133,17 @@ Checklist for setting up a new Mac from scratch.
     - Pass input as arguments
   - `open -n -b "com.visualstudio.code.oss" --args "$*" `
 
-- [ ] Install Brett Terpstra's Markdown Service Tools
+- [x] Install Brett Terpstra's Markdown Service Tools
   - [Markdown Service Tools - BrettTerpstra.com](https://brettterpstra.com/projects/markdown-service-tools/)
 
 
 ### Settings > Security & Privacy
-- [ ] Require password 5 seconds after sleep or screen saver
-- [ ] Use Apple Watch to unlock Mac
-- [ ] Filevault on
+- [x] Require password 5 seconds after sleep or screen saver
+- [x] Use Apple Watch to unlock Mac
+- [x] Filevault on
 
 ### Settings > Software Update
-- [ ] Turn off "Keep Mac up to date" and don't check for updates. Let my updateMac.sh service do it.
+- [x] Turn off "Keep Mac up to date" and don't check for updates. Let my updateMac.sh service do it.
 
 ### Settings > Network
 - [ ] Turn off auto join for alternate networks. Otherwise it will connect to those sometimes.
@@ -234,10 +234,13 @@ Checklist for setting up a new Mac from scratch.
 
 ## 8. Configure Remaining 3rd Party App Settings (todo)
 ### Open all applications:
-- login, if necessary
-- accept/deny notifiactions
+
 - register licenses, if necessary
+
+- login/setup sync, if necessary
+- accept/deny notifiactions
 - start at login, if necessary
+- Install browser extensions, if necessary
 
 ### Make webapps local with Fluid.app or Unite.app
 - [x] Google Voice and add to Dock after Slack
@@ -293,7 +296,7 @@ Checklist for setting up a new Mac from scratch.
 
 ### Drafts
 
-- Install Extensions
+- [ ] Install Extensions
   - (Synced with iCloud)
   - Append to Obsidian, etc.
 
@@ -308,7 +311,9 @@ Checklist for setting up a new Mac from scratch.
 
 ### Workspaces (todo)
 
-### Bunch (todo)
+### Bunch
+
+- [x] Make sure bunches are working correctly
 
 ### WriteRoom
 
@@ -319,17 +324,17 @@ Checklist for setting up a new Mac from scratch.
 
 ## Fonts
 
-- [ ] Change iTerm and VS Code Terminal to Powerline Font
-  - [ ] ITerm2 > Preferences > Profiles > Text > Change Font
-    - [ ] Meslo LG DZ for Powerline
-  - [ ] Open Settings
-    - [ ] Terminal Integrated font family: Meslo LG L DZ for Powerline
+- [x] Change iTerm and VS Code Terminal to Powerline Font
+  - [x] ITerm2 > Preferences > Profiles > Text > Change Font
+    - [x] Meslo LG DZ for Powerline
+  - [x] Open Settings
+    - [x] Terminal Integrated font family: Meslo LG L DZ for Powerline
 
 ## 9. Set Default "open with" for file types.
 
 - If duti tool in configureMacSettings.sh didn't work, use SwiftDefaultApps Mac Preference Pane app to fill in the gaps. If neither the duti tool or the SwiftDefaultApps app works, then fall back on the manual/normal method of going to that file type's Get Info panel in Finder and changing it with Open with: > Change All....
 
-- [x] VSCodium: general text or no extension, config files, git, bash scripting, sh, dotfiles, etc.
+- [x] Nova: general text or no extension, config files, git, bash scripting, sh, dotfiles, etc.
   - [x] txt
   - [x] pem
   - [x] pub
@@ -340,7 +345,11 @@ Checklist for setting up a new Mac from scratch.
   - [x] diff
   - [x] conf
   - [x] old
-
+  - [x] plist
+  - [x] log
+  - [x] csv
+  - [x] bunch
+  
 - [x] VS Code: py, js, ts, go, java, etc. any serious programming.
 
 - [x] Typora: md
@@ -357,8 +366,26 @@ Checklist for setting up a new Mac from scratch.
 
 Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2FPlatforms%2FCustom Apple Hotkeys)
 
+## Install and Configure Browser Extensions
+
+- Safari, Firefox, Chrome
+- [ ] 1Password
+- [ ] LastPass
+- [ ] SuperAgent
+- [ ] DarkReader
+- [ ] StopTheMadness
+- [ ] Hush
+- [ ] Choosy
+- [ ] IINA
+- [ ] Downie
+- [ ] Vinegar
+- [ ] Diigo?
+- [ ] Jetbrains?
+- [ ] AdBlock (non-Safari)?
+- [ ] React Developer Tools?
+
 ## 12. Open at Login
-- [ ] Bartender
+- [x] Bartender
 - [ ] Batteries
 - [ ] BeFocused
 - [ ] Duplicati?
@@ -370,7 +397,7 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
 - [x] Music
 - [x] Noizio
 - [ ] Workspaces?
-- [ ] Bunch?
+- [x] Bunch
 - [x] 1Password
 - [x] Amphetamine
 - [x] Backtrack
@@ -389,6 +416,8 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
 - [x] OBS
 - [x] TaskPaper
 - [x] Obsidian
+- [ ] Session
+- [ ] Yoink
 
 ## 13. Menubar
 

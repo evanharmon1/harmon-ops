@@ -138,7 +138,7 @@ export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin
 #============================================================================
 #                    Set default terminal editor
 #============================================================================
-export EDITOR="nova --recent"
+export EDITOR="code --new-window --wait"
 export VISUAL="$EDITOR"
 
 

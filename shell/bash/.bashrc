@@ -32,7 +32,7 @@ export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin
 #============================================================================
 #                    Set default terminal editor
 #============================================================================
-export EDITOR="nova --recent"
+export EDITOR="code --new-window --wait"
 export VISUAL="$EDITOR"
 
 
@@ -54,3 +54,7 @@ ANSIBLE_CONFIG=~/.ansible.cfg
 #============================================================================
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+# Run twolfson/sexy-bash-prompt
+. ~/.bash_prompt
+# Run twolfson/sexy-bash-prompt
+. ~/.bash_prompt

@@ -110,6 +110,7 @@ mas "Forecast Bar", id: 982710545
 cask "cheatsheet"
 cask "customshortcuts"
 cask "duplicacy-web-edition"
+mas "Yoink", id: 457622435
 
 
 #============================================================================
@@ -185,114 +186,7 @@ cask "gitup"
 
 
 #============================================================================
-#                       Optional Developer Packages
-#============================================================================
-brew "go"
-brew "ruby"
-brew "ansible"
-cask "postman"
-brew "screen"
-brew "cmake"
-cask "dash"
-cask "insomnia"
-brew "jupyterlab"
-cask "nteract"
-brew "zenity" # GTK+ dialog boxes for the command-line
-mas "System Designer", id: 1102494854
-cask "ngrok"
-brew "ncurses"
-brew "mitmproxy"
-brew "jmeter"
-brew "selenium-server"
-brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
-brew "shfmt" # Autoformat shell script source code
-mas "quiver", id: 866773894
-cask "teacode"
-cask "fig"
-mas "ColorSlurp", id: 1287239339
-mas "Jira Cloud by Atlassian", id: 1475897096
-cask "datadog-agent"
-cask "royal-tsx"
-brew "pre-commit"
-#             Text Editors & IDEs
-#-----------------------------------------------------------------------------
-cask "vscodium"
-cask "nova"
-brew "neovim"
-cask "jetbrains-toolbox"
-cask "sublime-text"
-mas "CotEditor", id: 1024640650
-cask "mu-editor"
-#             Servers & Virtualization
-#-----------------------------------------------------------------------------
-cask "docker"
-brew "hashicorp/tap/packer"
-brew "vagrant" # Doesn't work - no Apple Silicon?
-brew "nginx"
-brew "httpd"
-brew "lighttpd"
-# cask "virtualbox" # homebrew fails to install - Apple Silicon? 11-27-2021
-#             Cloud & Kubernetes
-#-----------------------------------------------------------------------------
-brew "awscli"
-brew "kubernetes-cli"
-brew "minikube"
-brew "eksctl"
-#             Terraform & Dependencies
-#-----------------------------------------------------------------------------
-brew "hashicorp/tap/terraform"
-brew "tfenv"
-brew "terraform-docs"
-brew "terragrunt"
-brew "tflint"
-brew "tfsec"
-brew "coreutils"
-brew "checkov"
-brew "terrascan"
-brew "infracost"
-
-#             Databases
-#-----------------------------------------------------------------------------
-brew "postgresql"
-brew "mysql"
-cask "mysqlworkbench"
-brew "sqlite"
-cask "sqlitestudio"
-tap "mongodb/brew"
-cask "robo-3t"
-cask "mongodb-compass"
-brew "mongodb-community@5.0"
-cask "db-browser-for-sqlite"
-cask "mamp"
-cask "dbvisualizer"
-#             Java
-#-----------------------------------------------------------------------------
-brew "openjdk"
-brew "gradle"
-brew "maven"
-#             JavaScript
-#-----------------------------------------------------------------------------
-brew "node"
-brew "yarn"
-brew "typescript"
-#             Python
-#-----------------------------------------------------------------------------
-brew "ipython"
-brew "pandoc" # Swiss-army knife of markup format conversion
-#	pyenv & its dependencies
-brew "pyenv"
-brew "openssl"
-brew "readline"
-brew "sqlite3"
-brew "xz"
-brew "zlib"
-#             Work - RevLogical
-#-----------------------------------------------------------------------------
-mas "Retail Rebel", id: 1519939193
-
-
-#============================================================================
-#                       Other Optional Packages
+#                       Optional Packages
 #============================================================================
 cask "obsidian"
 cask "transmit"
@@ -349,6 +243,119 @@ mas "Apollo", id: 979274575
 cask "obs"
 cask "choosy"
 cask "zotero"
+cask "cleanshot"
+mas "Session - Pomodoro Focus Timer", id: 1521432881
+
+
+#============================================================================
+#                       Optional Developer Packages
+#============================================================================
+brew "go"
+brew "ruby"
+brew "ansible"
+cask "postman"
+brew "screen"
+brew "cmake"
+cask "dash"
+cask "insomnia"
+brew "jupyterlab"
+cask "nteract"
+brew "zenity" # GTK+ dialog boxes for the command-line
+mas "System Designer", id: 1102494854
+cask "ngrok"
+brew "ncurses"
+brew "mitmproxy"
+brew "jmeter"
+brew "selenium-server"
+brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
+brew "shfmt" # Autoformat shell script source code
+mas "quiver", id: 866773894
+cask "teacode"
+cask "fig"
+mas "ColorSlurp", id: 1287239339
+mas "Jira Cloud by Atlassian", id: 1475897096
+cask "datadog-agent"
+cask "royal-tsx"
+brew "pre-commit"
+cask "figma"
+mas "ProxyMan", id: 1551292695
+#             Text Editors & IDEs
+#-----------------------------------------------------------------------------
+cask "vscodium"
+cask "nova"
+brew "neovim"
+cask "jetbrains-toolbox"
+cask "sublime-text"
+mas "CotEditor", id: 1024640650
+cask "mu-editor"
+#             Servers & Virtualization
+#-----------------------------------------------------------------------------
+cask "docker"
+brew "hashicorp/tap/packer"
+brew "vagrant" # Doesn't work - no Apple Silicon?
+brew "nginx"
+brew "httpd"
+brew "lighttpd"
+# cask "virtualbox" # homebrew fails to install - Apple Silicon? 11-27-2021
+#             Cloud & Kubernetes
+#-----------------------------------------------------------------------------
+brew "awscli"
+brew "kubernetes-cli"
+brew "minikube"
+brew "eksctl"
+brew "helm"
+#             Terraform & Dependencies
+#-----------------------------------------------------------------------------
+brew "hashicorp/tap/terraform"
+brew "tfenv"
+brew "terraform-docs"
+brew "terragrunt"
+brew "tflint"
+brew "tfsec"
+brew "coreutils"
+brew "checkov"
+brew "terrascan"
+brew "infracost"
+
+#             Databases
+#-----------------------------------------------------------------------------
+brew "postgresql"
+brew "mysql"
+cask "mysqlworkbench"
+brew "sqlite"
+cask "sqlitestudio"
+tap "mongodb/brew"
+cask "robo-3t"
+cask "mongodb-compass"
+brew "mongodb-community@5.0"
+cask "db-browser-for-sqlite"
+cask "mamp"
+cask "dbvisualizer"
+cask "tableplus"
+#             Java
+#-----------------------------------------------------------------------------
+brew "openjdk"
+brew "gradle"
+brew "maven"
+#             JavaScript
+#-----------------------------------------------------------------------------
+brew "node"
+brew "yarn"
+brew "typescript"
+#             Python
+#-----------------------------------------------------------------------------
+brew "ipython"
+brew "pandoc" # Swiss-army knife of markup format conversion
+#	pyenv & its dependencies
+brew "pyenv"
+brew "openssl"
+brew "readline"
+brew "sqlite3"
+brew "xz"
+brew "zlib"
+#             Work - RevLogical
+#-----------------------------------------------------------------------------
+mas "Retail Rebel", id: 1519939193
 
 
 #============================================================================
