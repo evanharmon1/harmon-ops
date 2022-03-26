@@ -4,7 +4,7 @@ Checklist for setting up a new Mac from scratch.
 ## 1. **Install macOS** from scratch
 - [x] Full Name: Evan Harmon
 - [x] Account Name: evan
-	- [x] Recover passwoed from iCloud option: no
+	- [x] Recover password from iCloud option: no
 - [x] FindMy: yes
 - [x] Location Services: yes
 - [x] Analytics: no
@@ -322,6 +322,10 @@ Checklist for setting up a new Mac from scratch.
   - [x] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
   - [x] Set default theme as SolarizedDarkWriteRoomTheme
 
+### Yoink
+
+- [ ] Configure extensions, services, behavior, etc.
+
 ## Fonts
 
 - [x] Change iTerm and VS Code Terminal to Powerline Font
@@ -417,7 +421,7 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
 - [x] TaskPaper
 - [x] Obsidian
 - [ ] Session
-- [ ] Yoink
+- [x] Yoink
 
 ## 13. Menubar
 

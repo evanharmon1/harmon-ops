@@ -111,6 +111,7 @@ cask "cheatsheet"
 cask "customshortcuts"
 cask "duplicacy-web-edition"
 mas "Yoink", id: 457622435
+cask "music-bar"
 
 
 #============================================================================
@@ -164,6 +165,7 @@ brew "pidof"
 brew "p7zip"
 brew "dockutil"
 brew "duti"
+brew "7-zip"
 #             Fun
 #-----------------------------------------------------------------------------
 brew "asciinema"
@@ -282,6 +284,7 @@ mas "ProxyMan", id: 1551292695
 #             Text Editors & IDEs
 #-----------------------------------------------------------------------------
 cask "vscodium"
+cask "vs-code-insiders"
 cask "nova"
 brew "neovim"
 cask "jetbrains-toolbox"
@@ -342,6 +345,7 @@ brew "maven"
 brew "node"
 brew "yarn"
 brew "typescript"
+brew "gatsby-cli"
 #             Python
 #-----------------------------------------------------------------------------
 brew "ipython"

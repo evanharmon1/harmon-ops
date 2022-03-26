@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # My custom .bashrc file
 
 source ~/.dotfiles/.aliases
@@ -58,3 +63,8 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 . ~/.bash_prompt
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####

@@ -3,15 +3,15 @@
 	email = evan@evanharmon.com
 [core]
 	excludesfile = /Users/evan/.gitignore_global
-	editor = mate --wait
+	editor = code-insiders --wait --new-window
 [merge]
-    tool = nova
-[mergetool "nova"]
-    cmd = nova --wait $MERGED
+    tool = code-insiders
+[mergetool "code-insiders"]
+    cmd = code-insiders --new-window --wait $MERGED
 [diff]
-    tool = nova
-[difftool "nova"]
-    cmd = nova --wait --diff $LOCAL $REMOTE
+    tool = code-insiders
+[difftool "code-insiders"]
+    cmd = code-insiders --wait --new-window --diff $LOCAL $REMOTE
 [color]
 	status = always
 [filter "lfs"]
@@ -23,5 +23,9 @@
 # Trailing slash should make it apply to all subfolders as well.
 [includeIf "gitdir:~/Local/RevLogical/"]
 	path = ~/Local/RevLogical/.gitconfig
+[includeIf "gitdir:~/Local/AltRevLogical/"]
+	path = ~/Local/AltRevLogical/.gitconfig
 [init]
 	templateDir = /Users/evan/.git-template
+[alias]
+	ll = log --graph --oneline --decorate

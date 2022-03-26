@@ -22,13 +22,13 @@ code --install-extension ms-python.vscode-pylance
 code --install-extension ms-python.python
 code --install-extension vscode-icons-team.vscode-icons
 code --install-extension Gruntfuggly.todo-tree
-code --install-extension CoenraadS.bracket-pair-colorizer-2
 code --install-extension mechatroner.rainbow-csv
 code --install-extension oderwat.indent-rainbow
+code --install-extension johnpapa.vscode-peacock
 
 
 
-# Inactive
+# Inactive For now
 # code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 # code --install-extension dbaeumer.vscode-eslint
 # code --install-extension ms-mssql.mssql
