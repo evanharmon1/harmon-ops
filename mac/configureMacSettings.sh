@@ -21,6 +21,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #                               General UI/UX  
 #============================================================================
 # Set computer name (as done via System Preferences → Sharing)
+# TODO: Make these variables that the script prompts for
 sudo scutil --set ComputerName "Evan's MacBook Pro 2021"
 sudo scutil --set HostName "Evan's MacBook Pro 2021"
 sudo scutil --set LocalHostName "Evans-MacBook-Pro-2021"
