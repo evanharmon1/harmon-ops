@@ -13,6 +13,7 @@ Checklist for setting up a new Mac from scratch.
 - [x] Improve Siri: no
 - [x] FileVault encryption: yes
 	- [x] Recover passwoed from iCloud option: no
+	- [x] Store FileVault Encryption key
 - [x] Apple Pay: setup
 - [x] Appearance: Auto
 
@@ -20,31 +21,52 @@ Checklist for setting up a new Mac from scratch.
 - [x] All on, including keychain
 - [x] Turn on sync desktop and documents
 - [x] Choose profile pic
-- [ ] Optimize Mac Storage - yes for laptop? No for server.
+- [x] Optimize Mac Storage - yes for laptop? No for server.
 - [ ] private relay - yes, when out of beta
 
 ## 3. Authenticate Mac App Store & setup xCode
 - [x] Install xCode via Mac App Store
 - [x] Open xCode
 	- [x] It will ask to install Rosetta - yes
-	- [x] Install git command line tools.
+	- homebrew installs git so you don't need to have xcode install git anymore
 
 ## 4. Download **Dropbox** and start syncing so I can get my Dropbox dev folder with **dev-env** repo and setupMac.sh
 - [x] Turn on accessbility: yes?
 - [x] Verify when deleting off of Dropbox: No
-- [x] Share screenshots and recordings using Dropbox: Yes
+- [x] Share screenshots and recordings using Dropbox: No (Use CleanShot X)
 - [x] Choose Folders to sync:
 	- [x] Everything
-- [x] Files stored with: Local (not online-only)
+- [x] New files stored with: Local (not online-only)
 - [x] Smart sync: No
 - [x] Store in default location - Users/evan/Dropbox
 
-## 5. Run **setupMac.sh** from its directory at ~/Dropbox/dev/DevEnv/dev-env/mac
+## 5. Run **setupMac.sh** from its directory at dev-env/mac
+- [x] Install homebrew (which also installs git from xCode):
+
+  ` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+
+  - [x] And run the 2 commands that homebrew tells you to run to add brew to your PATH.
+
+- [x] Apple Software Update - macOS & App Store
+
+- [x] clean reboot
+
 - [x] Double check setupMac.sh
-	- [x] Verify Brewfile packages are what you want
-	- [x] Check what dotfiles from Mackup in iCloud will be linked over to the local machine and delete any from iCloud that are not wanted.
+
+  - [x] Duplicate the Brewfile and name it after that machine so you can maintain a list for each machine if you want.
+  - [x] Verify Brewfile packages are what you want (some need to be uncommented due to some always reinstalling)
+  - [x] Check what dotfiles from Mackup in iCloud will be linked over to the local machine and delete any from iCloud that are not wanted.
+  - [x] Make a backup of the Mackup directory in iCloud
+    - In case the mackup restore command messes up
+  - [ ] Check what settings you want from configureMacSettings.sh, or if you want to even use that script.
+
 - [x] Clean reboot
+
 - [x] `caffeinate -disu ./setupMac.sh`
+
+  - [x] Usually needs a few Mac password prompts
+  - [x] After sexy-bash-prompt install, you need to type exit to get out of the bash env that loads so the setupMac.sh script continues.
+
 
 ## 5. Connect Peripherals
 - [x] Keyboards
@@ -143,7 +165,7 @@ Checklist for setting up a new Mac from scratch.
 - [x] Filevault on
 
 ### Settings > Software Update
-- [x] Turn off "Keep Mac up to date" and don't check for updates. Let my updateMac.sh service do it.
+- [x] Turn on everything automatic
 
 ### Settings > Network
 - [ ] Turn off auto join for alternate networks. Otherwise it will connect to those sometimes.
@@ -245,11 +267,11 @@ Checklist for setting up a new Mac from scratch.
 ### Make webapps local with Fluid.app or Unite.app
 - [x] Google Voice and add to Dock after Slack
 - [x] Google Meet and add to dock after Google Voice
-- [x] Confluence?
+- [x] Confluence
+- [x] Jira
 
 ### iTerm
-- [x] iTerm: import iterm/EvansDefault.json to iterm profiles and set as default
-- [x] Hotkey - open iTerm - Double tap ctrl
+- Handled by Mackup
 
 ### VS Code
 - [x] Install command line tools
@@ -328,16 +350,13 @@ Checklist for setting up a new Mac from scratch.
 
 ## Fonts
 
-- [x] Change iTerm and VS Code Terminal to Powerline Font
-  - [x] ITerm2 > Preferences > Profiles > Text > Change Font
-    - [x] Meslo LG DZ for Powerline
-  - [x] Open Settings
-    - [x] Terminal Integrated font family: Meslo LG L DZ for Powerline
+- Change iTerm and VS Code Terminal to Powerline Font
+  - Powerline font is installed by setupMac.sh and Mackup restores iTerm and VS Code settings
 
 ## 9. Set Default "open with" for file types.
 
 - If duti tool in configureMacSettings.sh didn't work, use SwiftDefaultApps Mac Preference Pane app to fill in the gaps. If neither the duti tool or the SwiftDefaultApps app works, then fall back on the manual/normal method of going to that file type's Get Info panel in Finder and changing it with Open with: > Change All....
-
+- [x] VS Code Insiders: shell and git editor
 - [x] Nova: general text or no extension, config files, git, bash scripting, sh, dotfiles, etc.
   - [x] txt
   - [x] pem
@@ -353,15 +372,10 @@ Checklist for setting up a new Mac from scratch.
   - [x] log
   - [x] csv
   - [x] bunch
-  
 - [x] VS Code: py, js, ts, go, java, etc. any serious programming.
-
 - [x] Typora: md
-
 - [x] Transmit: ftp
-
 - [x] Mail: email
-
 - [x] IINA: Multimedia (mov, mp4, aac, mkv, etc.)
 
 ## 10. Configure Custom Hotkeys

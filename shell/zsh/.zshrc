@@ -1,8 +1,5 @@
-
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # My custom .zshrc file
 
 #============================================================================
@@ -143,7 +140,7 @@ export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin
 #============================================================================
 #                    Set default terminal editor
 #============================================================================
-export EDITOR="code --new-window --wait"
+export EDITOR="code-insiders --new-window --wait"
 export VISUAL="$EDITOR"
 
 
@@ -166,7 +163,5 @@ ANSIBLE_CONFIG=~/.ansible.cfg
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the end of this file.
-[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
-#### END FIG ENV VARIABLES ####
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
