@@ -3,7 +3,7 @@
 <!--This plist file defines an Apple launchd/launchctl service to run my upgradeMac.sh script.-->
 <!--This file needs to be copied to /Users/evan/Library/LaunchAgents-->
 <!--Enable with launchctl load /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist-->
-<!--Disable with launchctl load /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist-->
+<!--Disable with launchctl disable /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist-->
 
 <!--Need absolute paths to script.-->
 <plist version="1.0">

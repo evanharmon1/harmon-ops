@@ -21,14 +21,11 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 #                               General UI/UX  
 #============================================================================
 # Set computer name (as done via System Preferences → Sharing)
-echo "Enter Computer Name (e.g., Evan's MacBook Pro 2021):"
-read COMPUTER_NAME
-sudo scutil --set ComputerName "$COMPUTER_NAME"
-sudo scutil --set HostName "$COMPUTER_NAME"
-echo "Enter Local Host Name which CAN'T HAVE SPACES (e.g., Evans-MacBook-Pro-2021):"
-read LOCAL_HOST_NAME
-sudo scutil --set LocalHostName "$LOCAL_HOST_NAME"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$COMPUTER_NAME"
+# TODO: Make these variables that the script prompts for.
+sudo scutil --set ComputerName "Evan's MacBook Pro 2021"
+sudo scutil --set HostName "Evan's MacBook Pro 2021"
+sudo scutil --set LocalHostName "Evans-MacBook-Pro-2021"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Evan's MacBook Pro 2021"
 
 # Disable the sound effects on boot
 # sudo nvram SystemAudioVolume=" "
@@ -105,7 +102,7 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-# sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Disable Notification Center and remove the menu bar icon
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2> /dev/null
@@ -136,9 +133,9 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 #============================================================================
 
 # Trackpad: enable tap to click for this user and for the login screen
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Trackpad: map bottom right corner to right-click
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
@@ -150,7 +147,7 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 #defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
-# defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -179,7 +176,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # defaults write NSGlobalDomain AppleMetricUnits -bool false
 
 # Show language menu in the top right corner of the boot screen
-# sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 #sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
@@ -192,25 +189,25 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 #============================================================================
 
 # Enable lid wakeup
-# sudo pmset -a lidwake 1
+sudo pmset -a lidwake 1
 
 # Restart automatically on power loss
-# sudo pmset -a autorestart 1
+sudo pmset -a autorestart 1
 
 # Restart automatically if the computer freezes
-# sudo systemsetup -setrestartfreeze on
+sudo systemsetup -setrestartfreeze on
 
 # Sleep the display after 30 minutes
-# sudo pmset -a displaysleep 30
+sudo pmset -a displaysleep 30
 
 # Disable machine sleep while charging
-# sudo pmset -c sleep 0
+sudo pmset -c sleep 0
 
 # Set machine sleep to 5 minutes on battery
-# sudo pmset -b sleep 45
+sudo pmset -b sleep 45
 
 # Set standby delay to 24 hours (default is 1 hour)
-# sudo pmset -a standbydelay 86400
+sudo pmset -a standbydelay 86400
 
 # Never go into computer sleep mode
 #sudo systemsetup -setcomputersleep Off > /dev/null
@@ -289,7 +286,7 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # Keep folders on top when sorting by name
-# defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
@@ -313,9 +310,9 @@ defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 # Automatically open a new Finder window when a volume is mounted
-# defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-# defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-# defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Show item info near icons on the desktop and in other icon views
 #/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo true" ~/Library/Preferences/com.apple.finder.plist
@@ -351,7 +348,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 write com.apple.finder FXRemoveOldTrashItems -bool true
 
 # Enable AirDrop over Ethernet and on unsupported Macs running Lion
-# defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Show the ~/Library folder
 #chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
@@ -368,7 +365,7 @@ write com.apple.finder FXRemoveOldTrashItems -bool true
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	General -bool true \
 	OpenWith -bool true \
-	Preview -bool true
+	Privileges -bool true
 
 #============================================================================
 #                               Dock, Dashboard, and hot corners
@@ -480,6 +477,7 @@ dockutil --remove all
 
 # Add desired apps to Dock in order
 dockutil --add /System/Applications/ForkLift.app
+dockutil --add /Applications/Transmit.app
 dockutil --add /System/Applications/'System Preferences'.app
 dockutil --add /System/Applications/Launchpad.app
 dockutil --add /Applications/Safari.app
@@ -488,8 +486,9 @@ dockutil --add /Applications/Firefox.app
 dockutil --add /System/Applications/Messages.app
 dockutil --add /System/Applications/Mail.app
 dockutil --add /Applications/Slack.app
-dockutil --add /Applications/Slack2.app
+dockutil --add /System/Applications/Calendar.app
 dockutil --add /Applications/Fantastical.app
+dockutil --add /System/Applications/Contacts.app
 dockutil --add /Applications/Cardhop.app
 dockutil --add /System/Applications/Reminders.app
 dockutil --add /Applications/Things3.app
@@ -500,13 +499,13 @@ dockutil --add /Applications/Obsidian.app
 dockutil --add /Applications/Typora.app
 dockutil --add /Applications/Banktivity.app
 dockutil --add /System/Applications/Music.app
+dockutil --add /System/Applications/TV.app
 dockutil --add /Applications/'1Password 7'.app
 dockutil --add /Applications/iTerm.app
 dockutil --add /Applications/Nova.app
 dockutil --add /Applications/'Visual Studio Code'.app
 dockutil --add /Applications/Dash.app
-dockutil --add /Applications/Postman.app
-dockutil --add /Applications/Trello.app
+dockutil --add /Applications/Insomnia.app
 
 # Add Downloads folder to dock with grid view
 dockutil --add '~/Dropbox/Devices/Downloads' --view grid --display folder

@@ -28,7 +28,7 @@ tap "hashicorp/tap"
 brew "mas" # Mac App Store command-line interface
 brew "mackup"
 mas "1Password 7", id: 1333542190
-# mas "1Blocker", id: 1365531024 # always tries to reinstall so comment out after initial install on Mac
+# mas "1Blocker", id: 1365531024 # always tries to reinstall
 mas "Acorn", id: 1547371478
 mas "Amphetamine", id: 937984704
 mas "BBEdit", id: 404009241
@@ -41,7 +41,7 @@ mas "Fantastical", id: 975937182
 mas "Fireplace Live HD", id: 468630933
 mas "GarageBand", id: 682658836
 mas "Geekbench 5", id: 1478447657
-# mas "Highlights", id: 1498912833 # always tries to reinstall so comment out after initial install on Mac
+# mas "Highlights", id: 1498912833 # always tries to reinstall
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
@@ -59,7 +59,7 @@ mas "StopTheMadness", id: 1376402589
 mas "The Unarchiver", id: 425424353
 mas "Noizio", id: 928871589
 mas "Hush Nag Blocker", id: 1544743900
-mas "Amazon Prime Video", id: 545519333 # always tries to reinstall so comment out after initial install on Mac
+# mas "Amazon Prime Video", id: 545519333 # always tries to reinstall
 cask "vlc"
 cask "handbrake"
 cask "backblaze"
@@ -85,8 +85,8 @@ cask "iina"
 cask "gimp"
 cask "qlcolorcode"
 cask "qlstephen"
-cask "plex-media-player" # More of a TV/10-ft interface? Not plex-media-server.
-cask "plex" # More of a regular desktop app? Not plex-media-server.
+cask "plex-media-player" # More of a TV/10-ft interface?
+cask "plex" # More of a regular desktop app?
 cask "swiftdefaultappsprefpane"
 cask "google-earth-pro"
 cask "balenaetcher"
@@ -101,7 +101,7 @@ cask "path-finder"
 cask "carbon-copy-cloner"
 cask "houdahspot"
 cask "raycast"
-# mas "Honey for Safari", id: 1472777122 # always tries to reinstall so comment out after initial install on Mac
+mas "Honey for Safari", id: 1472777122
 mas "Vinegar - Tube Cleaner", id: 1591303229
 mas "Moom", id: 419330170
 cask "forklift"
@@ -111,9 +111,6 @@ cask "customshortcuts"
 cask "duplicacy-web-edition"
 mas "Yoink", id: 457622435
 cask "music-bar"
-cask "obsidian"
-mas "Mobile Mouse Server", id: 412814284
-cask "firefox"
 
 
 #============================================================================
@@ -192,10 +189,10 @@ cask "gitup"
 #============================================================================
 #                       Optional Packages
 #============================================================================
+cask "obsidian"
 cask "transmit"
 mas "TaskPaper", id: 1090940630
 mas "PopClip", id: 445189367
-mas "Session - Pomodoro Focus Timer", id: 1521432881
 mas "Be Focused Pro", id: 961632517
 mas "com.apptorium.Workspaces", id: 1219826448
 cask "bunch"
@@ -213,6 +210,7 @@ mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Delicious Library", id: 635124250
 mas "Disk Speed Test", id: 425264550
 mas "Expressions", id: 913158085
+mas "Mobile Mouse Server", id: 412814284
 mas "MultiMarkdown Composer", id: 1275176220
 mas "Poolsuite FM", id: 1514817810
 mas "Simplenote", id: 692867256
@@ -222,14 +220,16 @@ mas "WriteRoom", id: 417967324
 mas "Twitter", id: 1482454543
 mas "GoodNotes", id: 1444383602
 cask "discord"
+cask "firefox"
 cask "markdown-service-tools"
 cask "zoom"
 cask "tinderbox"
 cask "tunnelblick"
 mas "Type2Phone", id: 472717129
-cask "wireshark"
+cask "wireshark" # homebrew install fails 11-27-2021
 cask "default-folder-x"
 cask "brave-browser"
+cask "fluid" # for Google Voice or any other webapps I want as local apps
 cask "vivaldi"
 cask "micro-snitch"
 cask "little-snitch"
@@ -239,12 +239,14 @@ cask "google-drive"
 # cask "plex-media-server" # Install only for servers
 mas "LastPass Password Manager", id: 926036361
 mas "Pastel", id: 413897608
-# mas "Overcast", id: 888422857 # Install failed
-# mas "Apollo", id: 979274575 # Install failed
+mas "Overcast", id: 888422857
+mas "Apollo", id: 979274575
 cask "obs"
 cask "choosy"
 cask "zotero"
 cask "cleanshot"
+mas "Session - Pomodoro Focus Timer", id: 1521432881
+cask "hyper"
 
 
 #============================================================================
@@ -254,10 +256,10 @@ brew "go"
 brew "ruby"
 brew "ansible"
 cask "postman"
-cask "insomnia"
 brew "screen"
 brew "cmake"
 cask "dash"
+cask "insomnia"
 brew "jupyterlab"
 cask "nteract"
 brew "zenity" # GTK+ dialog boxes for the command-line
@@ -269,6 +271,7 @@ brew "jmeter"
 brew "selenium-server"
 brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
 brew "shfmt" # Autoformat shell script source code
+mas "quiver", id: 866773894
 cask "teacode"
 cask "fig"
 mas "ColorSlurp", id: 1287239339
@@ -277,23 +280,26 @@ cask "datadog-agent"
 cask "royal-tsx"
 brew "pre-commit"
 cask "figma"
+mas "ProxyMan", id: 1551292695
 #             Text Editors & IDEs
 #-----------------------------------------------------------------------------
-cask "visual-studio-code-insiders"
+cask "vs-code-insiders"
 cask "vscodium"
-cask "jetbrains-toolbox" # For pycharm, IntelliJ, etc.
 brew "neovim"
+cask "jetbrains-toolbox"
 cask "sublime-text"
+cask "textmate"
+mas "CotEditor", id: 1024640650
 cask "mu-editor"
 #             Servers & Virtualization
 #-----------------------------------------------------------------------------
 cask "docker"
 brew "hashicorp/tap/packer"
-# brew "vagrant" # Failed to install - no Apple Silicon? 2022-03-27
+brew "vagrant" # Doesn't work - no Apple Silicon?
 brew "nginx"
 brew "httpd"
 brew "lighttpd"
-# cask "virtualbox" # homebrew fails to install - no Apple Silicon? 2022-03-27
+# cask "virtualbox" # homebrew fails to install - Apple Silicon? 11-27-2021
 #             Cloud & Kubernetes
 #-----------------------------------------------------------------------------
 brew "awscli"
@@ -303,7 +309,7 @@ brew "eksctl"
 brew "helm"
 #             Terraform & Dependencies
 #-----------------------------------------------------------------------------
-# brew "hashicorp/tap/terraform" update warns due to tfenv managing the terraform binary so comment out for updateMac.sh
+brew "hashicorp/tap/terraform"
 brew "tfenv"
 brew "terraform-docs"
 brew "terragrunt"
@@ -325,10 +331,10 @@ tap "mongodb/brew"
 cask "robo-3t"
 cask "mongodb-compass"
 brew "mongodb-community@5.0"
-cask "tableplus" # Current favorite DBMS interface
 cask "db-browser-for-sqlite"
 cask "mamp"
 cask "dbvisualizer"
+cask "tableplus"
 #             Java
 #-----------------------------------------------------------------------------
 brew "openjdk"
@@ -340,8 +346,6 @@ brew "node"
 brew "yarn"
 brew "typescript"
 brew "gatsby-cli"
-brew "netlify-cli"
-
 #             Python
 #-----------------------------------------------------------------------------
 brew "ipython"
@@ -355,7 +359,7 @@ brew "xz"
 brew "zlib"
 #             Work - RevLogical
 #-----------------------------------------------------------------------------
-# mas "Retail Rebel", id: 1519939193
+mas "Retail Rebel", id: 1519939193
 
 
 #============================================================================
@@ -365,6 +369,7 @@ cask "steam"
 mas "Steam Link", id: 1246969117
 # cask "battle-net" # doesn't install right now - 12-05-2021
 cask "dolphin"
+# cask "boxer" # Didn't install right - Apple Silicon? 11-27-2021
 cask "openemu"
 cask "twitch"
 
@@ -373,22 +378,18 @@ cask "twitch"
 #                       Inactive
 #============================================================================
 # cask "onyx"
+# cask "ubar"
 # cask "scrivener"
 # cask "skype"
 # cask "google-chat"
 # cask "pycharm-ce" # use JetBrains Toolbox instead
 # cask "intellij-idea-ce" # use JetBrains Toolbox instead
 # cask "xampp" # mamp is better than xampp
-# cask "dropbox" # needs to install first. So, easier to just do it manually.
-# mas "Xcode", id: 497799835 # needs to install first. So, easier to just do it manually.
-# cask "launchbar" #Trying raycast
-# cask "alfred" #Trying raycast
+# cask "dropbox" # needs to install first.
+# mas "Xcode", id: 497799835 # needs to install first.
+# cask "launchbar"
+# cask "alfred"
 # cask "razer-synapse" # too buggy 
 # mas "Magnet", id: 441258766 # Using moom instead
 # cask "mosaic" # Using moom instead
 # mas "DevUtils", id: 1533756032 # Costs money
-# mas "quiver", id: 866773894 # Using obsidian and then maybe dendron
-# cask "textmate"
-# mas "CotEditor", id: 1024640650
-# cask "fluid" # for Google Voice or any other webapps I want as local apps (Using Unite now)
-# cask "hyper" # Use iTerm instead

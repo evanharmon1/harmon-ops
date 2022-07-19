@@ -26,20 +26,8 @@ terminal-notifier -title "Starting updateMac.sh Script" \
 -sound Blow
 
 #============================================================================
-# Apple Software Updates
-#============================================================================
-echo -e "\033[0;35m  ......Checking for and installing any Apple software updates......  \033[0m"
-softwareupdate -ia —verbose
-
-#============================================================================
 # Homebrew
 #============================================================================
-# Check if Homebrew is already installed
-if test ! $(which brew); then
-	echo -e "\033[0;35m  ......Installing Homebrew......  \033[0m"
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
-
 # Installs and/or updates all listed packages in `Brewfile`
 echo -e "\033[0;35m  ......Running brew bundle to install and/or update packages in Brewfile......  \033[0m"
 BREWOUTPUT=$(brew bundle -v --file /Users/evan/Dropbox/dev/DevEnv/dev-env/mac/Brewfile)

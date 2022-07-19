@@ -5,13 +5,13 @@
 	excludesfile = /Users/evan/.gitignore_global
 	editor = code-insiders --wait --new-window
 [merge]
-    tool = code-insiders
+	tool = code-insiders
 [mergetool "code-insiders"]
-    cmd = code-insiders --new-window --wait $MERGED
+	cmd = code-insiders --new-window --wait $MERGED
 [diff]
-    tool = code-insiders
+	tool = code-insiders
 [difftool "code-insiders"]
-    cmd = code-insiders --wait --new-window --diff $LOCAL $REMOTE
+	cmd = code-insiders --wait --new-window --diff $LOCAL $REMOTE
 [color]
 	status = always
 [filter "lfs"]

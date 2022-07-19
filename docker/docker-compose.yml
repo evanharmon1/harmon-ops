@@ -1,15 +1,15 @@
 version: '3'
 
 services:
-  # ubuntu:
-  #   image: ubuntu:latest
-  #   ports:
-  #     - '9999:9999'
-  #   tty: true
-  #   command: 'bash'
-  #   working_dir: /dockerVol
-  #   volumes:
-  #     - "./dockerVol:/dockerVol"
+  ubuntu:
+    image: ubuntu:latest
+    ports:
+      - '9998:9998'
+    tty: true
+    command: 'bash'
+    working_dir: /dockerVol
+    volumes:
+      - "./dockerVol:/dockerVol"
 
   # fedora:
   #   image: fedora:latest
