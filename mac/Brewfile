@@ -301,6 +301,7 @@ brew "kubernetes-cli"
 brew "minikube"
 brew "eksctl"
 brew "helm"
+brew "firebase-cli"
 #             Terraform & Dependencies
 #-----------------------------------------------------------------------------
 # brew "hashicorp/tap/terraform" update warns due to tfenv managing the terraform binary so comment out for updateMac.sh
@@ -337,6 +338,7 @@ brew "maven"
 #             JavaScript
 #-----------------------------------------------------------------------------
 brew "node"
+brew "nvm"
 brew "yarn"
 brew "typescript"
 brew "gatsby-cli"
