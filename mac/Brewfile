@@ -302,6 +302,7 @@ brew "minikube"
 brew "eksctl"
 brew "helm"
 brew "firebase-cli"
+brew "netlify-cli"
 #             Terraform & Dependencies
 #-----------------------------------------------------------------------------
 # brew "hashicorp/tap/terraform" update warns due to tfenv managing the terraform binary so comment out for updateMac.sh
@@ -342,7 +343,6 @@ brew "nvm"
 brew "yarn"
 brew "typescript"
 brew "gatsby-cli"
-brew "netlify-cli"
 
 #             Python
 #-----------------------------------------------------------------------------
@@ -355,6 +355,13 @@ brew "readline"
 brew "sqlite3"
 brew "xz"
 brew "zlib"
+
+#             Security
+#------------------------------------------------------------------------------
+brew "semgrep"
+tap "snyk/tap"
+brew "snyk"
+
 #             Work - RevLogical
 #-----------------------------------------------------------------------------
 # mas "Retail Rebel", id: 1519939193

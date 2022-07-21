@@ -163,5 +163,14 @@ ANSIBLE_CONFIG=~/.ansible.cfg
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
+#==============================================================================
+#                       nvm
+#==============================================================================
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+#==============================================================================
+#                       Fig
+#==============================================================================
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"

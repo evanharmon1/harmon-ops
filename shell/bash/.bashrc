@@ -56,10 +56,21 @@ ANSIBLE_CONFIG=~/.ansible.cfg
 #============================================================================
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
-# Run twolfson/sexy-bash-prompt
-. ~/.bash_prompt
+
+#==============================================================================
+#                       Sexy Bash Prompt
+#==============================================================================
 # Run twolfson/sexy-bash-prompt
 . ~/.bash_prompt
 
+#==============================================================================
+#                       nvm
+#==============================================================================
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+#==============================================================================
+#                       Fig
+#==============================================================================
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && . "$HOME/.fig/shell/bashrc.post.bash"
