@@ -165,6 +165,7 @@ brew "cmake" #Cross-platform make
 #                       Personal Packages
 #==============================================================================
 # For personal machines, in addition to core
+cask "alfred" 
 mas "Screens", id: 1224268771
 cask "typora"
 mas "Mactracker", id: 430255202
@@ -173,7 +174,7 @@ mas "Deliveries", id: 290986013
 mas "Fantastical", id: 975937182
 mas "Fireplace Live HD", id: 468630933
 mas "GarageBand", id: 682658836
-# mas "Highlights", id: 1498912833 # always tries to reinstall so comment out after initial install on Mac
+mas "Highlights", id: 1498912833 # always tries to reinstall so comment out after initial install on Mac
 cask "plex" # More of a regular desktop app? Not plex-media-server.
 cask "plex-media-player" # More of a TV/10-ft interface? Not plex-media-server.
 mas "iMovie", id: 408981434
@@ -274,6 +275,7 @@ brew "ansible"
 brew "screen"
 brew "jupyterlab"
 brew "zenity" # GTK+ dialog boxes for the command-line
+mas "Xcode", id: 497799835 
 mas "System Designer", id: 1102494854
 brew "ncurses" #Text-based UI library
 brew "jmeter"
@@ -369,6 +371,7 @@ brew "snyk"
 #             Work - 
 #------------------------------------------------------------------------------
 # mas "Jira Cloud by Atlassian", id: 1475897096
+# cask "microsoft-teams"
 
 
 #==============================================================================
@@ -409,9 +412,7 @@ cask "twitch"
 # cask "intellij-idea-ce" # use JetBrains Toolbox instead
 # cask "xampp" # mamp is better than xampp
 # cask "dropbox" # needs to install first. So, easier to just do it manually.
-# mas "Xcode", id: 497799835 # needs to install first. So, easier to just do it manually.
 # cask "launchbar" #Trying raycast
-# cask "alfred" #Trying raycast
 # cask "razer-synapse" # too buggy 
 # mas "Magnet", id: 441258766 # Using moom instead
 # cask "mosaic" # Using moom instead
@@ -421,4 +422,3 @@ cask "twitch"
 # mas "CotEditor", id: 1024640650
 # cask "fluid" # for Google Voice or any other webapps I want as local apps (Using Unite now)
 # cask "hyper" # Use iTerm instead
-# cask "microsoft-teams"
