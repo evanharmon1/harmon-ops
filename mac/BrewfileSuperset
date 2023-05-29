@@ -44,10 +44,12 @@ cask "obsidian"
 cask "iterm2"
 cask "warp"
 cask "1password"
+cask "1password-cli"
 cask "bettertouchtool"
 cask "vlc"
-cask "nova"
 cask "visual-studio-code"
+cask "visual-studio-code-insiders"
+cask "nova"
 cask "mission-control-plus"
 cask "firefox"
 cask "daisydisk"
@@ -58,7 +60,6 @@ cask "protonvpn"
 cask "transmission"
 cask "textexpander"
 cask "superduper"
-brew "python"
 cask "appcleaner"
 cask "qlcolorcode" #QuickLook plugin for source code with syntax highlighting.
 cask "qlstephen" # QuickLook plugin that lets you view plain text files without a file extension
@@ -83,16 +84,16 @@ cask "tunnelblick"
 mas "Due", id: 524373870
 mas "Pastel", id: 413897608
 mas "ColorSlurp", id: 1287239339
-cask "wireshark"
 cask "cleanshot"
-cask "visual-studio-code-insiders"
 cask "fig"
-cask "insomnia"
-cask "nteract"
-cask "tableplus" # Current favorite DBMS interface
+brew "python"
 brew "pyenv"
 brew "node"
 brew "nvm"
+cask "tableplus" # Current favorite DBMS interface
+cask "nteract"
+cask "insomnia"
+cask "wireshark"
 #             CLI
 #------------------------------------------------------------------------------
 brew "bash"
@@ -151,17 +152,21 @@ brew "espeak" #Text to speech, software speech synthesizer
 brew "cowsay"
 brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
 brew "shfmt" # Autoformat shell script source code
+mas "Cardhop", id: 1290358394
+mas "Acorn", id: 1547371478
+brew "mitmproxy" #Intercept, modify, replay, save HTTP/S traffic
+brew "pre-commit"
+cask "ngrok" #Reverse proxy, secure introspectable tunnels to localhost
+brew "cmake" #Cross-platform make
 
 
 #==============================================================================
 #                       Personal Packages
 #==============================================================================
 # For personal machines, in addition to core
+mas "Screens", id: 1224268771
 cask "typora"
 mas "Mactracker", id: 430255202
-mas "Screens", id: 1224268771
-mas "Acorn", id: 1547371478
-mas "Cardhop", id: 1290358394
 mas "Dark Reader for Safari", id: 1438243180
 mas "Deliveries", id: 290986013
 mas "Fantastical", id: 975937182
@@ -191,7 +196,6 @@ cask "xee"
 cask "inkscape"
 cask "iina"
 cask "gimp"
-cask "downie"
 cask "hook"
 cask "swiftdefaultappsprefpane"
 cask "google-earth-pro"
@@ -202,61 +206,34 @@ cask "unite"
 cask "path-finder"
 cask "batteries"
 cask "houdahspot"
-cask "raycast"
-# mas "Honey for Safari", id: 1472777122 # always tries to reinstall so comment out after initial install on Mac
+mas "Honey for Safari", id: 1472777122 # always tries to reinstall so comment out after initial install on Mac
 mas "Vinegar - Tube Cleaner", id: 1591303229
 mas "Forecast Bar", id: 982710545
 cask "duplicacy-web-edition"
 cask "music-bar"
 cask "drawio"
-cask "transmit"
-mas "TaskPaper", id: 1090940630
 cask "notion"
-mas "PopClip", id: 445189367
-cask "bunch"
-cask "keyboard-maestro"
 cask "fastscripts"
 mas "Slack", id: 803453959
-mas "Things", id: 904280696
-cask "hazel"
 mas "Paprika Recipe Manager 3", id: 1303222628
-mas "Disk Speed Test", id: 425264550
 mas "WriteRoom", id: 417967324
-mas "Trello", id: 1278508951
 mas "Simplenote", id: 692867256
 mas "Poolsuite FM", id: 1514817810
-mas "MultiMarkdown Composer", id: 1275176220
-mas "Expressions", id: 913158085
 cask "discord"
-cask "wireshark"
 cask "tinderbox"
-cask "markdown-service-tools"
-cask "tunnelblick"
 cask "default-folder-x"
-mas "Due", id: 524373870
 mas "Backtrack - Record Past Audio", id: 1477089520
-mas "Pastel", id: 413897608
-# mas "Overcast", id: 888422857 # Install failed
-# mas "Apollo", id: 979274575 # Install failed
+mas "Overcast", id: 888422857 # Install failed
+mas "Apollo", id: 979274575 # Install failed
 cask "choosy"
 cask "zotero"
-cask "cleanshot"
 brew "aspell" # dependency for Terpstra's SearchLink
 #             Development
 #------------------------------------------------------------------------------
-cask "fig"
-cask "1password-cli"
 brew "ipython"
 brew "pandoc" # Swiss-army knife of markup format conversion
-brew "node"
-brew "nvm"
 cask "postman"
-cask "insomnia"
 cask "dash"
-cask "nteract"
-mas "ColorSlurp", id: 1287239339
-cask "visual-studio-code-insiders"
-cask "tableplus" # Current favorite DBMS interface
 cask "sourcetree"
 #             Fun CLI
 #------------------------------------------------------------------------------
@@ -270,28 +247,22 @@ brew "asciiquarium"
 #==============================================================================
 #                       Optional Packages
 #==============================================================================
-# Optional for personal machines
+# Optional packages
 cask "zoom"
 mas "Banktivity", id: 1480779512
-mas "Session - Pomodoro Focus Timer", id: 1521432881
-mas "Be Focused Pro", id: 961632517
-mas "com.apptorium.Workspaces", id: 1219826448
 mas "Spark", id: 1176895641
-mas "Studies", id: 1071676469
 cask "istat-menus"
 cask "xbar"
 mas "Delicious Library", id: 635124250
 mas "WireGuard", id: 1451685025
 mas "Twitter", id: 1482454543
-mas "GoodNotes", id: 1444383602
 mas "Type2Phone", id: 472717129
-cask "brave-browser"
-cask "vivaldi"
 cask "micro-snitch"
 cask "little-snitch"
 cask "google-drive"
-mas "LastPass Password Manager", id: 926036361
 cask "obs"
+mas "Studies", id: 1071676469
+mas "Be Focused Pro", id: 961632517
 
 
 #==============================================================================
@@ -302,24 +273,19 @@ brew "go"
 brew "ruby"
 brew "ansible"
 brew "screen"
-brew "cmake"
 brew "jupyterlab"
 brew "zenity" # GTK+ dialog boxes for the command-line
 mas "System Designer", id: 1102494854
-cask "ngrok"
-brew "ncurses"
-brew "mitmproxy"
+brew "ncurses" #Text-based UI library
 brew "jmeter"
 brew "selenium-server"
-
 cask "teacode"
 cask "datadog-agent"
 cask "royal-tsx"
-brew "pre-commit"
 cask "figma"
 #             Text Editors & IDEs
 #------------------------------------------------------------------------------
-cask "vscodium"
+cask "vscodium" #Much slower than VS Code and Insiders
 cask "jetbrains-toolbox" # For pycharm, IntelliJ, etc.
 brew "neovim"
 cask "sublime-text"
@@ -333,11 +299,11 @@ cask "gitup"
 #------------------------------------------------------------------------------
 cask "docker"
 brew "hashicorp/tap/packer"
-# brew "vagrant" # Failed to install - no Apple Silicon? 2022-03-27
+brew "vagrant" # Failed to install - no Apple Silicon? 2022-03-27
 brew "nginx"
 brew "httpd"
 brew "lighttpd"
-# cask "virtualbox" # homebrew fails to install - no Apple Silicon? 2022-03-27
+cask "virtualbox" # homebrew fails to install - no Apple Silicon? 2022-03-27
 #             Cloud & Kubernetes
 #------------------------------------------------------------------------------
 brew "awscli"
@@ -388,13 +354,12 @@ brew "angular-cli"
 
 #             Python
 #------------------------------------------------------------------------------
-#	pyenv & its dependencies?
-brew "pyenv"
-brew "openssl" # For pyenv & its dependencies?
-brew "readline" # For pyenv & its dependencies?
-brew "sqlite3" # For pyenv & its dependencies?
-brew "xz" # For pyenv & its dependencies?
-brew "zlib" # For pyenv & its dependencies?
+#	pyenv dependencies?
+# brew "openssl" # For pyenv & its dependencies?
+# brew "readline" # For pyenv & its dependencies?
+# brew "sqlite3" # For pyenv & its dependencies?
+# brew "xz" # For pyenv & its dependencies?
+# brew "zlib" # For pyenv & its dependencies?
 
 #             Security
 #-------------------------------------------------------------------------------
@@ -430,6 +395,12 @@ cask "twitch"
 #==============================================================================
 #                       Inactive
 #==============================================================================
+# mas "LastPass Password Manager", id: 926036361
+# cask "brave-browser"
+# cask "vivaldi"
+# mas "GoodNotes", id: 1444383602
+# mas "Session - Pomodoro Focus Timer", id: 1521432881
+# mas "com.apptorium.Workspaces", id: 1219826448
 # brew "fish" - using zsh, oh-mh-zsh, fig, etc. for now
 # cask "onyx"
 # cask "scrivener"
