@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to setup a new developer environment on a Mac
+# Script to setup a new Mac Server
 # Follow the prerequisite steps listed in CHECKLIST-MAC.md
 # E.g., install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 # Requires `Brewfile` in the same directory.
@@ -32,7 +32,6 @@ brew cleanup
 echo -e "\033[0;35m  ......Making Directories and Symbolic Links......  \033[0m"
 mkdir /Users/evan/bin
 mkdir /Users/evan/Local
-mkdir /Users/evan/Local/Banktivity
 mkdir /Users/evan/Local/TorrentsIncomplete
 ln -s /Users/evan/Dropbox/dev /Users/evan
 ln -s /Users/evan/Dropbox/dev/DevScripts/dev-scripts /Users/evan/bin
@@ -57,29 +56,15 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 
 #============================================================================
-#                               fish
-#============================================================================
-# TODO: tide and/or oh-my-fish
-
-
-#============================================================================
 #                               Python
 #============================================================================
-# ../python/setupPython.sh
+# TODO: ../python/setupPython.sh
 
 
 #============================================================================
 #                               JavaScript
 #============================================================================
-# ../javascript/setupJavascript.sh
-
-
-#============================================================================
-#                               VS Code
-#============================================================================
-# Shouldn't need this anymore with VS Code Settings Sync
-# echo -e "\033[0;35m  ......Installing Fonts......  \033[0m"
-# ../IDEs/vscode/setupVsCode.sh
+# TODO: ../javascript/setupJavascript.sh
 
 
 #============================================================================

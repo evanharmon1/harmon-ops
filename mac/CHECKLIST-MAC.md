@@ -1,21 +1,21 @@
 # CHECKLIST-MAC.md
-Checklist for setting up a new Mac from scratch.
+Checklist for setting up a new Mac server from scratch.
 
 ## 1. **Install macOS** from scratch
-- [x] Full Name? Evan Harmon
-- [x] Account Name? evan
-	- [x] Recover password from iCloud option? no
-- [x] FindMy? yes
-- [x] Location Services? yes
-- [x] Analytics? no
-- [x] Screentime? no
-- [x] Siri? Yes
-- [x] Improve Siri? No
-- [x] FileVault encryption? yes
-	- [x] Recover passwoed from iCloud option? No
+- [x] Full Name: Evan Harmon
+- [x] Account Name: evan
+	- [x] Recover password from iCloud option: no
+- [x] FindMy: yes
+- [x] Location Services: yes
+- [x] Analytics: no
+- [x] Screentime: no
+- [x] Siri: no
+- [x] Improve Siri: no
+- [x] FileVault encryption: yes
+	- [x] Recover passwoed from iCloud option: no
 	- [x] Store FileVault Encryption recovery key in password manager
-- [x] Apple Pay? setup
-- [x] Appearance? Auto
+- [x] Apple Pay: No
+- [x] Appearance: Auto
 
 ## 2. Sign into **iCloud** and enable everything to start syncing
 - [x] All on, including keychain
@@ -25,14 +25,14 @@ Checklist for setting up a new Mac from scratch.
 - [x] private relay - yes
 
 ## 3. Download **Dropbox** and start syncing so I can get my Dropbox dev folder with **dev-env** repo and setupMac.sh
-- [x] Turn on accessbility: yes?
 - [x] Verify when deleting off of Dropbox: No
 - [x] Share screenshots and recordings using Dropbox: No (Use CleanShot X)
+- [x] Upload Photos: No
+- [x] Ask to backup connected external drives: No
 - [x] Choose Folders to sync:
 	- [x] only the dev-env folder for now so you can start the installation scripts, then enable specific folders after installation scripts complete
 - [x] Default for new files - stored with: Local (not online-only)
 - [x] Smart sync: No
-- [x] Store in default location - Users/evan/Dropbox
 
 ## 4. Authenticate Mac App Store, download Amphetamine, & install xCode CLI tools
 (homebrew installs git so you don't need to have xcode install git anymore)
@@ -111,7 +111,7 @@ Checklist for setting up a new Mac from scratch.
 	- [x] Google Mail only, not calendar, etc.
 	
 ### Settings > Wallet & Apple Pay
-- [x] Enable
+- [x] Don't Setup
 
 ### Settings > Users & Groups
 - In general, it's easier to just have most people be admins. It's kind of annoying otherwise where they can't even restart the computer, etc.
@@ -250,9 +250,7 @@ Checklist for setting up a new Mac from scratch.
 
 ## 8. Configure Remaining App Settings (todo)
 ### Open all applications:
-
 - register licenses, if necessary
-
 - login/setup sync, if necessary
 - accept/deny notifiactions
 - start at login, if necessary
@@ -261,8 +259,6 @@ Checklist for setting up a new Mac from scratch.
 ### Make webapps local with Fluid.app or Unite.app
 - [x] Google Voice and add to Dock after Slack
 - [x] Google Meet and add to dock after Google Voice
-- [x] Confluence
-- [x] Jira
 
 ### Apple Mail
 - [x] Set Mailbox behaviors (arhive, draft folders, etc.)
@@ -273,7 +269,7 @@ Checklist for setting up a new Mac from scratch.
 ### VS Code
 - [x] Install command line tools
 
-### VS Codium
+### VS Code Insider's
 - [x] Install command line tools
 
 ### TextMate
@@ -308,27 +304,15 @@ Checklist for setting up a new Mac from scratch.
 ### Raycast
 - [ ] Configure Extensions
 
+## Alfred
+
 ### Drafts
 - [ ] Install Extensions
   - (Synced with iCloud)
   - Append to Obsidian, etc.
 
-### Banktivity
-  - [ ] Setup sync to `Local` folder
-
-### OBS
-- [x] Setup OBS profile
-
-### Workspaces (todo)
-
 ### Bunch
 - [x] Make sure bunches are working correctly
-
-### WriteRoom
-- [x] Install themes
-  - [x] [Download from](https://blog.hogbaysoftware.com/tagged/writeroomtheme)
-  - [x] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
-  - [x] Set default theme as SolarizedDarkWriteRoomTheme
 
 ### Yoink
 - [ ] Configure extensions, services, behavior, etc.
@@ -383,45 +367,29 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
 - [ ] React Developer Tools?
 
 ## 12. Open at Login
-- [x] Bartender
-- [ ] Batteries
-- [ ] BeFocused
 - [ ] Duplicati?
 - [ ] Fantastical?
-- [ ] FastScripts?
-- [ ] Launchbar?
 - [ ] Mission Control Plus
 - [ ] Mobile Mouse Server
-- [x] Music
-- [x] Noizio
-- [ ] Workspaces?
 - [x] Bunch
 - [x] 1Password
 - [x] Amphetamine
-- [x] Backtrack
 - [x] BetterTouchTool
 - [x] Cardhop
 - [x] Copyem
 - [x] Dropbox
-- [x] Google Voice
 - [x] Mail
 - [x] Messages
 - [x] Raycast
-- [x] Slack
 - [x] TextExpander
 - [x] Things
 - [x] Forklift
-- [x] OBS
-- [x] TaskPaper
-- [x] Obsidian
-- [ ] Session
 - [x] Yoink
 
 ## 13. Menubar
 
 ## 14. Put secrets like ssh, certs, vpn, etc. in environment
 ### ssh Keys
-
 #### Generate ssh Keys with Passphrase in `~/.ssh` Folder
 - ed25519 is newer and better, but might not be supported by default, e.g., Ubuntu
 - [x] `ssh-keygen -t ed25519 -C "id_personal"`
