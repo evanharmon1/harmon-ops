@@ -1,5 +1,5 @@
 # CHECKLIST-MAC.md
-Checklist for setting up a new Mac from scratch.
+Checklist for setting up a new Mac server from scratch.
 
 ## 1. **Install macOS** from scratch
 - [x] Full Name: Evan Harmon
@@ -8,8 +8,8 @@ Checklist for setting up a new Mac from scratch.
 - [x] FindMy: yes
 - [x] Location Services: yes
 - [x] Analytics: no
-- [x] Screentime: yes
-- [x] Siri: yes
+- [x] Screentime: no
+- [x] Siri: no
 - [x] Improve Siri: no
 - [x] FileVault encryption: yes
 	- [x] Recover passwoed from iCloud option: no
@@ -21,7 +21,7 @@ Checklist for setting up a new Mac from scratch.
 - [x] All on, including keychain
 - [x] Turn on sync desktop and documents
 - [x] Choose profile pic
-- [x] Optimize Mac Storage - yes for personal computer, no for server?
+- [x] Optimize Mac Storage - Yes, if OS drive is small, no if you want to replicate iCloud to the server.
 - [x] private relay - yes
 
 ## 3. Download **Dropbox** and start syncing so I can get my Dropbox dev folder with **dev-env** repo and setupMac.sh
@@ -29,7 +29,7 @@ Checklist for setting up a new Mac from scratch.
 - [x] Verify when deleting off of Dropbox: No
 - [x] Share screenshots and recordings using Dropbox: No (Use CleanShot X)
 - [x] Choose Folders to sync:
-	- [x] only the dev-env folder for now so you can start the installation scripts, then enable all the folders for a personal machine, or just dev folder for a server, after installation scripts complete
+	- [x] only the dev-env folder for now so you can start the installation scripts, then enable specific folders after installation scripts complete
 - [x] Default for new files - stored with: Local (not online-only)
 - [x] Smart sync: No
 - [x] Store in default location - Users/evan/Dropbox
@@ -39,22 +39,25 @@ Checklist for setting up a new Mac from scratch.
 - [x] Install Amphetamine via Mac App Store
 - [x] `xcode-select --install` (Install xCode CLI Tools)
 
-## 5. Run **setupMac.sh** from its directory at dev-env/mac
+## 5. Install Homebrew, update macOS and App Store apps, clean reboot
 - [x] Install homebrew (which also installs git from xCode?):
   ` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
   - [x] And run the 2 commands that homebrew tells you to run to add brew to your PATH.
 - [x] Apple Software Update - macOS & App Store
 - [x] clean reboot
+
+## 6. Switch to the mac-server branch on dev-env and create Brewfile for this machine
+  - [x] Duplicate the BrewfileSuperSet file and name it Brewfile
+  - [x] Verify Brewfile packages are what you want for this machine
+
+## 7. Run **setupMac.sh** from its directory at dev-env/mac
 - [x] Double check setupMac.sh
-  - [x] Duplicate the Brewfile and name it after that machine so you can maintain a list for each machine if you want.
-  - [x] Verify Brewfile packages are what you want (some need to be uncommented due to some always reinstalling)
   - [x] Check what dotfiles from Mackup in iCloud will be linked over to the local machine and delete any from iCloud that are not wanted.
   - [x] Make a backup of the Mackup directory in iCloud
     - In case the mackup restore command messes up
   - [ ] Check what settings you want from configureMacSettings.sh, or if you want to even use that script.
-- [x] Clean reboot
 - [x] `caffeinate -disu ./setupMac.sh`
-  - [x] Usually needs a few Mac password prompts
+  - [x] Usually needs a few Mac password prompts, so check it periodically
   - [x] After sexy-bash-prompt install, you need to type exit to get out of the bash env that loads so the setupMac.sh script continues.
 
 ## 5. Connect Peripherals
