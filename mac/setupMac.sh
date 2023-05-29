@@ -1,11 +1,8 @@
 #!/bin/bash
 
 # Script to setup a new developer environment on a Mac
-# Requires following the steps listed in CHECKLIST-MAC.md
-#   - Enable iCloud
-#   - Install Dropbox
-#   - Install xCode via the Mac App Store (so the App Store is authenticated)
-#   - Install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+# Follow the prerequisite steps listed in CHECKLIST-MAC.md
+# E.g., install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 # Requires `Brewfile` in the same directory.
 # Run this script from its directory at dev-env/mac: 
 # `caffeinate -disu ./setupMac.sh`

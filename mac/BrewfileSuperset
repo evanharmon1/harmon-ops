@@ -1,0 +1,425 @@
+# My list of packages to install on new machines with homebrew
+
+# Assumes installation of homebrew, git, and that the Mac App Store is authenticated.
+# Run on new machine from the dev-env repo folder with:
+# `caffeinate -disu brew bundle -v; caffeinate -disu brew cleanup; caffeinate -disu brew doctor —-verbose`
+
+# Keep system updated with a service that runs:
+# `caffeinate -disu brew bundle -v; caffeinate -disu brew cleanup;
+
+#==============================================================================
+#                       Repos
+#==============================================================================
+tap "homebrew/core"
+tap "homebrew/services"
+tap "homebrew/cask"
+tap "homebrew/bundle"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-versions"
+tap "homebrew/cask-fonts"
+tap "hashicorp/tap"
+tap "ttscoff/thelab" # https://brettterpstra.com
+
+
+#==============================================================================
+#                       Core Packages
+#==============================================================================
+# To install on all machines - servers, personal, dev, etc.
+brew "mas" # Mac App Store command-line interface
+brew "mackup"
+# mas "1Blocker", id: 1365531024 # always tries to reinstall so comment out after initial install on Mac
+mas "Amphetamine", id: 937984704
+mas "BBEdit", id: 404009241
+mas "Copy 'Em", id: 876540291
+mas "Drafts", id: 1435957248
+mas "Geekbench 5", id: 1478447657
+mas "Speedtest", id: 1153157709
+mas "StopTheMadness", id: 1376402589
+mas "The Unarchiver", id: 425424353
+mas "Hush Nag Blocker", id: 1544743900
+mas "Yoink", id: 457622435
+mas "Mobile Mouse Server", id: 412814284
+mas "Moom", id: 419330170
+cask "iterm2"
+cask "warp"
+cask "bettertouchtool"
+cask "vlc"
+cask "nova"
+cask "visual-studio-code"
+cask "mission-control-plus"
+cask "firefox"
+cask "daisydisk"
+cask "backblaze"
+cask "balenaetcher"
+cask "betterzip"
+cask "forklift"
+cask "protonvpn"
+cask "transmission"
+cask "typora"
+cask "textexpander"
+cask "superduper"
+brew "python"
+cask "appcleaner"
+cask "qlcolorcode" #QuickLook plugin for source code with syntax highlighting.
+cask "qlstephen" # QuickLook plugin that lets you view plain text files without a file extension
+cask "carbon-copy-cloner"
+cask "cheatsheet"
+cask "customshortcuts"
+#             CLI
+#------------------------------------------------------------------------------
+brew "bash"
+brew "zsh"
+brew "curl"
+brew "wget"
+brew "grep"
+brew "rsync"
+brew "git"
+brew "git-lfs"
+brew "git-delta"
+brew "tldr"
+brew "thefuck"
+brew "wtfutil"
+brew "cheat"
+brew "vim"
+brew "tmux" # Terminal multiplexer
+brew "neofetch" # Fast, highly customisable system info script
+brew "tree" # Display directories as trees (with optional color/HTML output)
+brew "htop"
+brew "nmap" # Port scanning utility for large networks
+brew "watch" # Executes a program periodically, showing output fullscreen
+brew "watchman" # Watch files and take action when they change
+brew "jq"
+brew "yq"
+brew "jo"
+brew "dnstracer"
+brew "netcat"
+brew "openssh"
+brew "openssl"
+brew "ssh-copy-id"
+brew "speedtest-cli"
+brew "terminal-notifier"
+brew "alerter"
+brew "pstree"
+brew "p7zip"
+brew "dockutil"
+brew "duti"
+brew "7-zip"
+
+
+#==============================================================================
+#                       Personal Packages
+#==============================================================================
+# For personal machines, in addition to core
+cask "obsidian"
+mas "Mactracker", id: 430255202
+mas "Screens", id: 1224268771
+mas "Acorn", id: 1547371478
+mas "Cardhop", id: 1290358394
+mas "Dark Reader for Safari", id: 1438243180
+mas "Deliveries", id: 290986013
+mas "Fantastical", id: 975937182
+mas "Fireplace Live HD", id: 468630933
+mas "GarageBand", id: 682658836
+# mas "Highlights", id: 1498912833 # always tries to reinstall so comment out after initial install on Mac
+cask "plex" # More of a regular desktop app? Not plex-media-server.
+cask "plex-media-player" # More of a TV/10-ft interface? Not plex-media-server.
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "Koi Pond 3D Lite", id: 534867956
+mas "Notability", id: 360593530
+mas "Numbers", id: 409203825
+mas "OmniOutliner", id: 1142578772
+mas "Pages", id: 409201541
+mas "Reeder", id: 880001334
+mas "Scapple", id: 568020055
+mas "Noizio", id: 928871589
+mas "Amazon Prime Video", id: 545519333 # always tries to reinstall so comment out after initial install on Mac
+cask "bartender"
+cask "google-chrome"
+cask "foldingtext"
+cask "xee"
+cask "inkscape"
+cask "iina"
+cask "gimp"
+cask "downie"
+cask "hook"
+cask "swiftdefaultappsprefpane"
+cask "google-earth-pro"
+cask "handbrake"
+cask "audacity"
+cask "permute"
+cask "unite"
+cask "path-finder"
+cask "batteries"
+cask "houdahspot"
+cask "raycast"
+# mas "Honey for Safari", id: 1472777122 # always tries to reinstall so comment out after initial install on Mac
+mas "Vinegar - Tube Cleaner", id: 1591303229
+mas "Forecast Bar", id: 982710545
+cask "duplicacy-web-edition"
+cask "music-bar"
+cask "drawio"
+cask "transmit"
+mas "TaskPaper", id: 1090940630
+cask "notion"
+mas "PopClip", id: 445189367
+cask "bunch"
+cask "keyboard-maestro"
+cask "fastscripts"
+mas "Slack", id: 803453959
+mas "Things", id: 904280696
+cask "hazel"
+mas "Paprika Recipe Manager 3", id: 1303222628
+mas "Disk Speed Test", id: 425264550
+mas "WriteRoom", id: 417967324
+mas "Trello", id: 1278508951
+mas "Simplenote", id: 692867256
+mas "Poolsuite FM", id: 1514817810
+mas "MultiMarkdown Composer", id: 1275176220
+mas "Expressions", id: 913158085
+cask "discord"
+cask "wireshark"
+cask "tinderbox"
+cask "markdown-service-tools"
+cask "tunnelblick"
+cask "default-folder-x"
+mas "Due", id: 524373870
+mas "Backtrack - Record Past Audio", id: 1477089520
+mas "Pastel", id: 413897608
+# mas "Overcast", id: 888422857 # Install failed
+# mas "Apollo", id: 979274575 # Install failed
+cask "choosy"
+cask "zotero"
+cask "cleanshot"
+brew "aspell" # dependency for Terpstra's SearchLink
+#             Development
+#------------------------------------------------------------------------------
+cask "fig"
+brew "ipython"
+brew "pandoc" # Swiss-army knife of markup format conversion
+brew "node"
+brew "nvm"
+cask "postman"
+cask "insomnia"
+cask "dash"
+cask "nteract"
+mas "ColorSlurp", id: 1287239339
+cask "visual-studio-code-insiders"
+cask "tableplus" # Current favorite DBMS interface
+cask "sourcetree"
+#             CLI
+#------------------------------------------------------------------------------
+brew "lynx"
+brew "ffmpeg"
+brew "glances"
+brew "imagemagick" # Tools and libraries to manipulate images in many formats
+brew "pv"
+brew "aview"
+brew "bat"
+brew "sd"
+brew "ripgrep"
+brew "mosh"
+brew "fzf"
+brew "fd"
+brew "exa"
+brew "fish"
+brew "pidof"
+brew "gather-cli" # https://brettterpstra.com/projects/gather-cli/
+#             Fun CLI
+#------------------------------------------------------------------------------
+brew "asciinema"
+brew "lolcat"
+brew "cmatrix"
+brew "cowsay"
+brew "fortune"
+brew "espeak"
+brew "asciiquarium"
+
+
+#==============================================================================
+#                       Optional Packages
+#==============================================================================
+# Optional for personal machines
+cask "zoom"
+mas "Banktivity", id: 1480779512
+mas "Session - Pomodoro Focus Timer", id: 1521432881
+mas "Be Focused Pro", id: 961632517
+mas "com.apptorium.Workspaces", id: 1219826448
+mas "Spark", id: 1176895641
+mas "Studies", id: 1071676469
+cask "istat-menus"
+cask "xbar"
+mas "Delicious Library", id: 635124250
+mas "WireGuard", id: 1451685025
+mas "Twitter", id: 1482454543
+mas "GoodNotes", id: 1444383602
+mas "Type2Phone", id: 472717129
+cask "brave-browser"
+cask "vivaldi"
+cask "micro-snitch"
+cask "little-snitch"
+cask "google-drive"
+mas "LastPass Password Manager", id: 926036361
+cask "obs"
+
+
+#==============================================================================
+#                       Additional Developer Packages
+#==============================================================================
+# For personal machines that might be used for development
+brew "go"
+brew "ruby"
+brew "ansible"
+brew "screen"
+brew "cmake"
+brew "jupyterlab"
+brew "zenity" # GTK+ dialog boxes for the command-line
+mas "System Designer", id: 1102494854
+cask "ngrok"
+brew "ncurses"
+brew "mitmproxy"
+brew "jmeter"
+brew "selenium-server"
+brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
+brew "shfmt" # Autoformat shell script source code
+cask "teacode"
+cask "datadog-agent"
+cask "royal-tsx"
+brew "pre-commit"
+cask "figma"
+#             Text Editors & IDEs
+#------------------------------------------------------------------------------
+cask "vscodium"
+cask "jetbrains-toolbox" # For pycharm, IntelliJ, etc.
+brew "neovim"
+cask "sublime-text"
+cask "mu-editor"
+#             Git
+#------------------------------------------------------------------------------
+cask "github"
+cask "gitkraken"
+cask "gitup"
+#             Servers & Virtualization
+#------------------------------------------------------------------------------
+cask "docker"
+brew "hashicorp/tap/packer"
+# brew "vagrant" # Failed to install - no Apple Silicon? 2022-03-27
+brew "nginx"
+brew "httpd"
+brew "lighttpd"
+# cask "virtualbox" # homebrew fails to install - no Apple Silicon? 2022-03-27
+#             Cloud & Kubernetes
+#------------------------------------------------------------------------------
+brew "awscli"
+brew "kubernetes-cli"
+brew "minikube"
+brew "eksctl"
+brew "helm"
+brew "firebase-cli"
+brew "netlify-cli"
+#             Terraform & Dependencies
+#------------------------------------------------------------------------------
+# brew "hashicorp/tap/terraform" update warns due to tfenv managing the terraform binary so comment out for updateMac.sh
+brew "tfenv"
+brew "terraform-docs"
+brew "terragrunt"
+brew "tflint"
+brew "tfsec"
+brew "coreutils"
+brew "checkov"
+brew "terrascan"
+brew "infracost"
+
+#             Databases
+#------------------------------------------------------------------------------
+brew "postgresql"
+brew "mysql"
+cask "mysqlworkbench"
+brew "sqlite"
+cask "sqlitestudio"
+tap "mongodb/brew"
+cask "robo-3t"
+cask "mongodb-compass"
+brew "mongodb-community@5.0"
+cask "db-browser-for-sqlite"
+cask "mamp"
+cask "dbvisualizer"
+#             Java
+#------------------------------------------------------------------------------
+brew "openjdk"
+brew "gradle"
+brew "maven"
+#             JavaScript
+#-----------------------------------------------------------------------------
+brew "yarn"
+brew "typescript"
+brew "gatsby-cli"
+brew "angular-cli"
+
+#             Python
+#------------------------------------------------------------------------------
+#	pyenv & its dependencies?
+brew "pyenv"
+brew "openssl" # For pyenv & its dependencies?
+brew "readline" # For pyenv & its dependencies?
+brew "sqlite3" # For pyenv & its dependencies?
+brew "xz" # For pyenv & its dependencies?
+brew "zlib" # For pyenv & its dependencies?
+
+#             Security
+#-------------------------------------------------------------------------------
+brew "semgrep"
+tap "snyk/tap"
+brew "snyk"
+
+#             Work - 
+#------------------------------------------------------------------------------
+# mas "Jira Cloud by Atlassian", id: 1475897096
+
+
+#==============================================================================
+#                       Additional Games Packages
+#==============================================================================
+# For personal machines that might be used for games
+cask "steam"
+mas "Steam Link", id: 1246969117
+# cask "battle-net" # doesn't install right now - 12-05-2021
+cask "dolphin"
+cask "openemu"
+cask "twitch"
+
+
+#==============================================================================
+#                       Optional Server Packages
+#==============================================================================
+# For servers, depending on type
+# cask "plex-media-server" # Install only for servers
+# cask "screens-connect"
+
+
+#==============================================================================
+#                       Inactive
+#==============================================================================
+# mas "1Password 7", id: 1333542190 (1password 8 not in mac app store anymore)
+# cask "onyx"
+# cask "scrivener"
+# cask "skype"
+# cask "google-chat"
+# cask "pycharm-ce" # use JetBrains Toolbox instead
+# cask "intellij-idea-ce" # use JetBrains Toolbox instead
+# cask "xampp" # mamp is better than xampp
+# cask "dropbox" # needs to install first. So, easier to just do it manually.
+# mas "Xcode", id: 497799835 # needs to install first. So, easier to just do it manually.
+# cask "launchbar" #Trying raycast
+# cask "alfred" #Trying raycast
+# cask "razer-synapse" # too buggy 
+# mas "Magnet", id: 441258766 # Using moom instead
+# cask "mosaic" # Using moom instead
+# mas "DevUtils", id: 1533756032 # Costs money
+# mas "quiver", id: 866773894 # Using obsidian and then maybe dendron
+# cask "textmate"
+# mas "CotEditor", id: 1024640650
+# cask "fluid" # for Google Voice or any other webapps I want as local apps (Using Unite now)
+# cask "hyper" # Use iTerm instead
+# cask "microsoft-teams"

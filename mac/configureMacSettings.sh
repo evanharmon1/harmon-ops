@@ -485,28 +485,35 @@ dockutil --add /System/Applications/Launchpad.app
 dockutil --add /Applications/Safari.app
 dockutil --add /Applications/'Google Chrome'.app
 dockutil --add /Applications/Firefox.app
+dockutil --add /Applications/Reader.app
 dockutil --add /System/Applications/Messages.app
 dockutil --add /System/Applications/Mail.app
 dockutil --add /Applications/Slack.app
 dockutil --add /Applications/Slack2.app
+dockutil --add /Applications/Discord.app
+# Google Voice Unite Web App
+# Google Meet Unite Web App
+dockutil --add /System/Applications/Calendar.app
 dockutil --add /Applications/Fantastical.app
 dockutil --add /Applications/Cardhop.app
-dockutil --add /System/Applications/Reminders.app
 dockutil --add /Applications/Things3.app
 dockutil --add /Applications/TaskPaper.app
+dockutil --add /Applications/Trello.app
 dockutil --add /Applications/Drafts.app
-dockutil --add /System/Applications/Notes.app
 dockutil --add /Applications/Obsidian.app
-dockutil --add /Applications/Typora.app
-dockutil --add /Applications/Banktivity.app
+dockutil --add /Applications/Notion.app
 dockutil --add /System/Applications/Music.app
-dockutil --add /Applications/'1Password 7'.app
+dockutil --add /System/Applications/Maps.app
+dockutil --add /Applications/'Screens'.app
+dockutil --add /Applications/'1Password'.app
 dockutil --add /Applications/iTerm.app
+dockutil --add /Applications/Warp.app
 dockutil --add /Applications/Nova.app
 dockutil --add /Applications/'Visual Studio Code'.app
 dockutil --add /Applications/Dash.app
 dockutil --add /Applications/Postman.app
-dockutil --add /Applications/Trello.app
+# Jira Unite Web App
+# Confluence Unite Web App
 
 # Add Downloads folder to dock with grid view
 dockutil --add '~/Dropbox/Devices/Downloads' --view grid --display folder

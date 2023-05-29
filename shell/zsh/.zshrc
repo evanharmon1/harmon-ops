@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # My custom .zshrc file
 
 #============================================================================
@@ -77,7 +77,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/ 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos dirhistory bgnotify per-directory-history)
+plugins=(git macos dirhistory bgnotify per-directory-history colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,8 +126,8 @@ export GREP_OPTIONS='--color=auto'
 #============================================================================
 #                               PATH
 #============================================================================
-# homebrew & my dev scripts
-export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin
+# homebrew, my dev scripts, and the gcloud CLI
+export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin:/Users/evan/google-cloud-sdk/bin
 
 # Scripts on *nix
 #export scripts="~/bin"
@@ -172,5 +172,6 @@ source $(brew --prefix nvm)/nvm.sh
 #==============================================================================
 #                       Fig
 #==============================================================================
+
 # Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

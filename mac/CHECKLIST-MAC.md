@@ -13,7 +13,7 @@ Checklist for setting up a new Mac from scratch.
 - [x] Improve Siri: no
 - [x] FileVault encryption: yes
 	- [x] Recover passwoed from iCloud option: no
-	- [x] Store FileVault Encryption key
+	- [x] Store FileVault Encryption recovery key in password manager
 - [x] Apple Pay: setup
 - [x] Appearance: Auto
 
@@ -21,59 +21,47 @@ Checklist for setting up a new Mac from scratch.
 - [x] All on, including keychain
 - [x] Turn on sync desktop and documents
 - [x] Choose profile pic
-- [x] Optimize Mac Storage - yes for laptop? No for server.
-- [ ] private relay - yes, when out of beta
+- [x] Optimize Mac Storage - yes for personal computer, no for server?
+- [x] private relay - yes
 
-## 3. Authenticate Mac App Store & setup xCode
-- [x] Install xCode via Mac App Store
-- [x] Open xCode
-	- [x] It will ask to install Rosetta - yes
-	- homebrew installs git so you don't need to have xcode install git anymore
-
-## 4. Download **Dropbox** and start syncing so I can get my Dropbox dev folder with **dev-env** repo and setupMac.sh
+## 3. Download **Dropbox** and start syncing so I can get my Dropbox dev folder with **dev-env** repo and setupMac.sh
 - [x] Turn on accessbility: yes?
 - [x] Verify when deleting off of Dropbox: No
 - [x] Share screenshots and recordings using Dropbox: No (Use CleanShot X)
 - [x] Choose Folders to sync:
-	- [x] Everything
-- [x] New files stored with: Local (not online-only)
+	- [x] only the dev-env folder for now so you can start the installation scripts, then enable all the folders for a personal machine, or just dev folder for a server, after installation scripts complete
+- [x] Default for new files - stored with: Local (not online-only)
 - [x] Smart sync: No
 - [x] Store in default location - Users/evan/Dropbox
 
+## 4. Authenticate Mac App Store, download Amphetamine, & install xCode CLI tools
+(homebrew installs git so you don't need to have xcode install git anymore)
+- [x] Install Amphetamine via Mac App Store
+- [x] `xcode-select --install` (Install xCode CLI Tools)
+
 ## 5. Run **setupMac.sh** from its directory at dev-env/mac
-- [x] Install homebrew (which also installs git from xCode):
-
+- [x] Install homebrew (which also installs git from xCode?):
   ` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-
   - [x] And run the 2 commands that homebrew tells you to run to add brew to your PATH.
-
 - [x] Apple Software Update - macOS & App Store
-
 - [x] clean reboot
-
 - [x] Double check setupMac.sh
-
   - [x] Duplicate the Brewfile and name it after that machine so you can maintain a list for each machine if you want.
   - [x] Verify Brewfile packages are what you want (some need to be uncommented due to some always reinstalling)
   - [x] Check what dotfiles from Mackup in iCloud will be linked over to the local machine and delete any from iCloud that are not wanted.
   - [x] Make a backup of the Mackup directory in iCloud
     - In case the mackup restore command messes up
   - [ ] Check what settings you want from configureMacSettings.sh, or if you want to even use that script.
-
 - [x] Clean reboot
-
 - [x] `caffeinate -disu ./setupMac.sh`
-
   - [x] Usually needs a few Mac password prompts
   - [x] After sexy-bash-prompt install, you need to type exit to get out of the bash env that loads so the setupMac.sh script continues.
-
 
 ## 5. Connect Peripherals
 - [x] Keyboards
 - [x] Mice
 - [x] Printers
   - [x] Test print
-
 
 ## 6. Configure remaining Apple **Manual Settings** not set in `configureMacSettings.sh`
 ### Storage Management.app
@@ -132,7 +120,7 @@ Checklist for setting up a new Mac from scratch.
 - [x] Pointer Control - Mouse & Trackpad - Spring loaded delay - second shortest
 - Hot Corners?
 
-### Settings > Extensions
+### Settings > Extensions & Services
 
 - [x] Enable pretty much everything
 
@@ -155,8 +143,10 @@ Checklist for setting up a new Mac from scratch.
     - Pass input as arguments
   - `open -n -b "com.visualstudio.code.oss" --args "$*" `
 
-- [x] Install Brett Terpstra's Markdown Service Tools
-  - [Markdown Service Tools - BrettTerpstra.com](https://brettterpstra.com/projects/markdown-service-tools/)
+- [x] Install Brett Terpstra's Tools
+  - [ ] [Markdown Service Tools - BrettTerpstra.com](https://brettterpstra.com/projects/markdown-service-tools/)
+  - [ ] [SearchLink - BrettTerpstra.com](https://brettterpstra.com/projects/searchlink/)
+  - [ ] [URL Preview - BrettTerpstra.com](https://brettterpstra.com/projects/url-preview/)
 
 
 ### Settings > Security & Privacy
@@ -252,9 +242,10 @@ Checklist for setting up a new Mac from scratch.
 - [x] [Textsoap](https://textsoap.com/mac/)
 - [x] [Amphetamine Enhancer](https://github.com/x74353/Amphetamine-Enhancer/raw/master/Releases/Current/Amphetamine%20Enhancer.dmg)
 - [x] [Copy'em Helper](https://apprywhere.com/ce-helper.html)
+### Archived (Don't Install)
 - [x] [MailSuite](https://smallcubed.com/)
 
-## 8. Configure Remaining 3rd Party App Settings (todo)
+## 8. Configure Remaining App Settings (todo)
 ### Open all applications:
 
 - register licenses, if necessary
@@ -270,6 +261,9 @@ Checklist for setting up a new Mac from scratch.
 - [x] Confluence
 - [x] Jira
 
+### Apple Mail
+- [x] Set Mailbox behaviors (arhive, draft folders, etc.)
+
 ### iTerm
 - Handled by Mackup
 
@@ -277,11 +271,9 @@ Checklist for setting up a new Mac from scratch.
 - [x] Install command line tools
 
 ### VS Codium
-
 - [x] Install command line tools
 
 ### TextMate
-
 - [x] Install command line tools
 
 ### Nova
@@ -303,58 +295,46 @@ Checklist for setting up a new Mac from scratch.
   - [x] Enable Things Cloud
 
 ### Google Chrome
-
 - [x] Set downloads to `~/Dropbox/Devices/Downloads`
 - [x] Sign in to Google account and setup syncing
 
 ### Firefox
-
 - [x] Set downloads to `~/Dropbox/Devices/Downloads`
 - [x] Sign in to Firefox account and setup syncing
 
 ### Raycast
-
 - [ ] Configure Extensions
 
 ### Drafts
-
 - [ ] Install Extensions
   - (Synced with iCloud)
   - Append to Obsidian, etc.
 
-
 ### Banktivity
-
   - [ ] Setup sync to `Local` folder
 
 ### OBS
-
 - [x] Setup OBS profile
 
 ### Workspaces (todo)
 
 ### Bunch
-
 - [x] Make sure bunches are working correctly
 
 ### WriteRoom
-
 - [x] Install themes
   - [x] [Download from](https://blog.hogbaysoftware.com/tagged/writeroomtheme)
   - [x] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
   - [x] Set default theme as SolarizedDarkWriteRoomTheme
 
 ### Yoink
-
 - [ ] Configure extensions, services, behavior, etc.
 
 ## Fonts
-
 - Change iTerm and VS Code Terminal to Powerline Font
   - Powerline font is installed by setupMac.sh and Mackup restores iTerm and VS Code settings
 
 ## 9. Set Default "open with" for file types.
-
 - If duti tool in configureMacSettings.sh didn't work, use SwiftDefaultApps Mac Preference Pane app to fill in the gaps. If neither the duti tool or the SwiftDefaultApps app works, then fall back on the manual/normal method of going to that file type's Get Info panel in Finder and changing it with Open with: > Change All....
 - [x] VS Code Insiders: shell and git editor
 - [x] Nova: general text or no extension, config files, git, bash scripting, sh, dotfiles, etc.
@@ -379,13 +359,10 @@ Checklist for setting up a new Mac from scratch.
 - [x] IINA: Multimedia (mov, mp4, aac, mkv, etc.)
 
 ## 10. Configure Custom Hotkeys
-
 - Use CustomShortcuts app when you can
-
-Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2FPlatforms%2FCustom Apple Hotkeys)
+Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2FPlatforms%2FCustom%20Apple%20Hotkeys)
 
 ## Install and Configure Browser Extensions
-
 - Safari, Firefox, Chrome
 - [ ] 1Password
 - [ ] LastPass
@@ -443,7 +420,6 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
 ### ssh Keys
 
 #### Generate ssh Keys with Passphrase in `~/.ssh` Folder
-
 - ed25519 is newer and better, but might not be supported by default, e.g., Ubuntu
 - [x] `ssh-keygen -t ed25519 -C "id_personal"`
 - [ ] `ssh-keygen -t rsa -b 4096 -C "id_personal_rsa"`
@@ -458,9 +434,7 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
 - [ ] `ssh-add --apple-use-keychain .ssh/id_<work_name>_rsa`
 
 #### Add any hosts to `~/.ssh/config` file
-
 - E.g.:
-
   ```
   **# GitHub.com - Personal**
   Host github.com
@@ -469,20 +443,19 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
   ```
 
 ### Environment Secrets
-
 - [ ] Add to `~/.dotfiles/.env`
 
 ### VPN
-
 vpn - make a .vpn folder?
 
 ### Certificates
 
 ## 15. Backup
-- [ ] Backblaze/Duplicati and/or Dropbox
+- [ ] Backblaze/Duplicati
+- [ ] Dropbox backup feature
 - [ ] Time Machine
 - [ ] Super Duper
-
+- [ ] Carbon Copy Cloner
 
 ## Todo
 - wifi calling
