@@ -27,7 +27,7 @@ tap "ttscoff/thelab" # https://brettterpstra.com
 # To install on all machines - servers, personal, dev, etc.
 brew "mas" # Mac App Store command-line interface
 brew "mackup"
-# mas "1Blocker", id: 1365531024 # always tries to reinstall so comment out after initial install on Mac
+mas "1Blocker", id: 1365531024 # always tries to reinstall so comment out after initial install on Mac
 mas "Amphetamine", id: 937984704
 mas "BBEdit", id: 404009241
 mas "Copy 'Em", id: 876540291
@@ -40,8 +40,10 @@ mas "Hush Nag Blocker", id: 1544743900
 mas "Yoink", id: 457622435
 mas "Mobile Mouse Server", id: 412814284
 mas "Moom", id: 419330170
+cask "obsidian"
 cask "iterm2"
 cask "warp"
+cask "1password"
 cask "bettertouchtool"
 cask "vlc"
 cask "nova"
@@ -63,7 +65,34 @@ cask "qlstephen" # QuickLook plugin that lets you view plain text files without 
 cask "carbon-copy-cloner"
 cask "cheatsheet"
 cask "customshortcuts"
-cask "obsidian"
+cask "hazel"
+cask "raycast"
+cask "downie"
+mas "PopClip", id: 445189367
+cask "bunch"
+cask "keyboard-maestro"
+cask "transmit"
+mas "TaskPaper", id: 1090940630
+mas "Things", id: 904280696
+mas "Disk Speed Test", id: 425264550
+mas "Trello", id: 1278508951
+mas "MultiMarkdown Composer", id: 1275176220
+mas "Expressions", id: 913158085
+cask "markdown-service-tools"
+cask "tunnelblick"
+mas "Due", id: 524373870
+mas "Pastel", id: 413897608
+mas "ColorSlurp", id: 1287239339
+cask "wireshark"
+cask "cleanshot"
+cask "visual-studio-code-insiders"
+cask "fig"
+cask "insomnia"
+cask "nteract"
+cask "tableplus" # Current favorite DBMS interface
+brew "pyenv"
+brew "node"
+brew "nvm"
 #             CLI
 #------------------------------------------------------------------------------
 brew "bash"
@@ -77,38 +106,58 @@ brew "git-lfs"
 brew "git-delta"
 brew "tldr"
 brew "thefuck"
-brew "wtfutil"
+brew "wtfutil" #Personal information dashboard for your terminal
 brew "cheat"
 brew "vim"
 brew "tmux" # Terminal multiplexer
 brew "neofetch" # Fast, highly customisable system info script
 brew "tree" # Display directories as trees (with optional color/HTML output)
-brew "htop"
+brew "htop" #Improved top (interactive process viewer)
 brew "nmap" # Port scanning utility for large networks
 brew "watch" # Executes a program periodically, showing output fullscreen
 brew "watchman" # Watch files and take action when they change
-brew "jq"
-brew "yq"
-brew "jo"
-brew "dnstracer"
-brew "netcat"
+brew "jq" #Lightweight and flexible command-line JSON processor
+brew "yq" #Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "jo" #Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "dnstracer" #Trace a chain of DNS servers to the source
+brew "netcat" #Utility for managing network connections
 brew "openssh"
 brew "openssl"
 brew "ssh-copy-id"
 brew "speedtest-cli"
-brew "terminal-notifier"
-brew "alerter"
-brew "pstree"
-brew "p7zip"
-brew "dockutil"
-brew "duti"
+brew "terminal-notifier" #Send macOS User Notifications from the command-line
+brew "alerter" #Send User Alert Notification on macOS from the command-line
+brew "pstree" #Show ps output as a tree
+brew "p7zip" #7-Zip (high compression file archiver) implementation
+brew "dockutil" #Tool for managing dock items
+brew "duti" #Select default apps for documents and URL schemes on macOS
 brew "7-zip"
+brew "lynx" #Text-based web browser
+brew "ffmpeg"
+brew "glances" #Alternative to top/htop
+brew "imagemagick" # Tools and libraries to manipulate images in many formats
+brew "pv" #Monitor data's progress through a pipe
+brew "aview" #ASCII-art image browser and animation viewer
+brew "bat" #Clone of cat(1) with syntax highlighting and Git integration
+brew "sd" #Intuitive find & replace CLI
+brew "ripgrep" #Search tool like grep and The Silver Searcher
+brew "mosh" #Remote terminal application
+brew "fzf" #Command-line fuzzy finder written in Go
+brew "fd" #Simple, fast and user-friendly alternative to find
+brew "exa" #Modern replacement for 'ls'
+brew "pidof" #Display the PID number for a given process name
+brew "gather-cli" # Readability and Markdown utility for saving web urls and HTML text (Terpstra)
+brew "espeak" #Text to speech, software speech synthesizer
+brew "cowsay"
+brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
+brew "shfmt" # Autoformat shell script source code
 
 
 #==============================================================================
 #                       Personal Packages
 #==============================================================================
 # For personal machines, in addition to core
+cask "typora"
 mas "Mactracker", id: 430255202
 mas "Screens", id: 1224268771
 mas "Acorn", id: 1547371478
@@ -196,6 +245,7 @@ brew "aspell" # dependency for Terpstra's SearchLink
 #             Development
 #------------------------------------------------------------------------------
 cask "fig"
+cask "1password-cli"
 brew "ipython"
 brew "pandoc" # Swiss-army knife of markup format conversion
 brew "node"
@@ -208,32 +258,12 @@ mas "ColorSlurp", id: 1287239339
 cask "visual-studio-code-insiders"
 cask "tableplus" # Current favorite DBMS interface
 cask "sourcetree"
-#             CLI
-#------------------------------------------------------------------------------
-brew "lynx"
-brew "ffmpeg"
-brew "glances"
-brew "imagemagick" # Tools and libraries to manipulate images in many formats
-brew "pv"
-brew "aview"
-brew "bat"
-brew "sd"
-brew "ripgrep"
-brew "mosh"
-brew "fzf"
-brew "fd"
-brew "exa"
-brew "fish"
-brew "pidof"
-brew "gather-cli" # https://brettterpstra.com/projects/gather-cli/
 #             Fun CLI
 #------------------------------------------------------------------------------
 brew "asciinema"
 brew "lolcat"
 brew "cmatrix"
-brew "cowsay"
 brew "fortune"
-brew "espeak"
 brew "asciiquarium"
 
 
@@ -281,8 +311,7 @@ brew "ncurses"
 brew "mitmproxy"
 brew "jmeter"
 brew "selenium-server"
-brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
-brew "shfmt" # Autoformat shell script source code
+
 cask "teacode"
 cask "datadog-agent"
 cask "royal-tsx"
@@ -401,7 +430,7 @@ cask "twitch"
 #==============================================================================
 #                       Inactive
 #==============================================================================
-# mas "1Password 7", id: 1333542190 (1password 8 not in mac app store anymore)
+# brew "fish" - using zsh, oh-mh-zsh, fig, etc. for now
 # cask "onyx"
 # cask "scrivener"
 # cask "skype"
