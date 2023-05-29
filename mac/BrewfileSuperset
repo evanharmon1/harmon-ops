@@ -54,6 +54,7 @@ cask "mission-control-plus"
 cask "firefox"
 cask "daisydisk"
 cask "backblaze"
+cask "balenaetcher"
 cask "betterzip"
 cask "forklift"
 cask "protonvpn"
@@ -187,8 +188,6 @@ mas "Reeder", id: 880001334
 mas "Scapple", id: 568020055
 mas "Noizio", id: 928871589
 mas "Amazon Prime Video", id: 545519333 # always tries to reinstall so comment out after initial install on Mac
-cask "typora"
-cask "balenaetcher"
 cask "bartender"
 cask "google-chrome"
 cask "foldingtext"
