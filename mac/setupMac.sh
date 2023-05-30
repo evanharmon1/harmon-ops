@@ -1,9 +1,10 @@
 #!/bin/bash
 
-# Script to setup a new Mac Server
+# Main script to initiate the automated setup of a new Mac
 # Follow the prerequisite steps listed in CHECKLIST-MAC.md
 # E.g., install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-# Requires `Brewfile` in the same directory.
+# Requires `Brewfile` in the same directory, or modify this script to point brew bundle to the machine-specific Brewfile in infra/{machineName}/Brewfile with:
+# brew bundle -v --file ../infra/{machineName}/Brewfile
 # Run this script from its directory at dev-env/mac: 
 # `caffeinate -disu ./setupMac.sh`
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
@@ -32,6 +33,7 @@ brew cleanup
 echo -e "\033[0;35m  ......Making Directories and Symbolic Links......  \033[0m"
 mkdir /Users/evan/bin
 mkdir /Users/evan/Local
+mkdir /Users/evan/Local/Banktivity
 mkdir /Users/evan/Local/TorrentsIncomplete
 ln -s /Users/evan/Dropbox/dev /Users/evan
 ln -s /Users/evan/Dropbox/dev/DevScripts/dev-scripts /Users/evan/bin
@@ -56,15 +58,31 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 
 #============================================================================
+#                               fish
+#============================================================================
+# Still just using zsh and oh-my-zsh
+
+
+#============================================================================
 #                               Python
 #============================================================================
-# TODO: ../python/setupPython.sh
+# ../python/setupPython.sh
+# TODO: Update python setup
 
 
 #============================================================================
 #                               JavaScript
 #============================================================================
-# TODO: ../javascript/setupJavascript.sh
+# ../javascript/setupJavascript.sh
+# TODO: Update JavaScript setup
+
+
+#============================================================================
+#                               VS Code
+#============================================================================
+# Shouldn't need this anymore with VS Code Settings Sync
+# echo -e "\033[0;35m  ......Installing Fonts......  \033[0m"
+# ../IDEs/vscode/setupVsCode.sh
 
 
 #============================================================================
@@ -89,7 +107,7 @@ mackup restore
 #============================================================================
 #                               macOS Settings via Terminal
 #============================================================================
-# TODO: Try without this next time. Not sure it's worth it. And hard to diagnose bugs. So maybe split it off into a separate file of known commands.
+# TODO: Try without this next time. Not sure it's worth it. And hard to diagnose bugs. So maybe split it off into a separate files - configureMacSettingsSuperset.sh and configureMacSettings.sh for vetted commands that I know work correctly.
 # echo -e "\033[0;35m  ......Configuring Mac settings with terminal commands......  \033[0m"
 # ./configureMacSettings.sh
 
@@ -98,9 +116,10 @@ mackup restore
 #                               Apple launchd Service for updateMac.sh
 #============================================================================
 # Setup updateMac.sh script as a launchd/launchctl service to run automatically once a week and at startup
-echo -e "\033[0;35m  ......Setting up updateMac.sh as an Apple launchd service to run automatically......  \033[0m"
-cp /Users/evan/Dropbox/dev/DevEnv/dev-env/mac/com.evan.updateMac.plist /Users/evan/Library/LaunchAgents
-launchctl load /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist
+# TODO: Try without this next time to see if it doesn't recreate that file not found bug I get on my MacBook Pro
+# echo -e "\033[0;35m  ......Setting up updateMac.sh as an Apple launchd service to run automatically......  \033[0m"
+# cp /Users/evan/Dropbox/dev/DevEnv/dev-env/mac/com.evan.updateMac.plist /Users/evan/Library/LaunchAgents
+# launchctl load /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist
 
 
 echo -e "\033[1;32m  ======Finished setupMac.sh======  \033[0m"

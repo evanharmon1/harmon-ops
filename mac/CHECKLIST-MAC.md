@@ -118,7 +118,7 @@ Checklist for setting up a new Mac
 	- [ ] Google Mail only, not calendar, etc.
 	
 ### Settings > Wallet & Apple Pay
-- [ ] Don't Setup
+- [ ] Setup cards, etc.
 
 ### Settings > Users & Groups
 - In general, it's easier to just have most people be admins. It's kind of annoying otherwise where they can't even restart the computer, etc.
@@ -257,21 +257,26 @@ Checklist for setting up a new Mac
 
 ## 8. Configure Remaining App Settings (todo)
 ### Open all applications:
-- register licenses, if necessary
-- login/setup sync, if necessary
-- accept/deny notifiactions
-- start at login, if necessary
-- Install browser extensions, if necessary
+- [ ] register licenses, if necessary
+- [ ] login/setup sync, if necessary
+- [ ] accept/deny notifiactions
+- [ ] start at login, if necessary
+- [ ] Install browser extensions, if necessary
 
 ### Make webapps local with Fluid.app or Unite.app
 - [ ] Google Voice and add to Dock after Slack
 - [ ] Google Meet and add to dock after Google Voice
+- [ ] Jira (work)
+- [ ] Confluence (work)
 
 ### Apple Mail
-- [ ] Set Mailbox behaviors (arhive, draft folders, etc.)
+- [ ] Set Mailbox behaviors (archive, draft folders, etc.)
 
 ### iTerm
 - Handled by Mackup
+
+### Warp
+- Handled by Mackup?
 
 ### VS Code
 - [ ] Install command line tools
@@ -309,14 +314,30 @@ Checklist for setting up a new Mac
 - [ ] Sign in to Firefox account and setup syncing
 
 ### Raycast
-- [ ] Configure Extensions
+- [ ] Configure Extensions or handled my Mackup?
 
 ## Alfred
+- [ ] Configure Extensions or handled my Mackup?
 
 ### Drafts
 - [ ] Install Extensions
-  - (Synced with iCloud)
-  - Append to Obsidian, etc.
+    (Synced with iCloud)
+    - Append to Obsidian, etc.
+
+### Banktivity
+  - [ ] Setup sync to `Local` folder
+
+### OBS
+- [ ] Setup OBS profile
+
+### Bunch
+- [ ] Make sure bunches are working correctly
+
+### WriteRoom
+- [ ] Install themes
+  - [ ] [Download from](https://blog.hogbaysoftware.com/tagged/writeroomtheme)
+  - [ ] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
+  - [ ] Set default theme as SolarizedDarkWriteRoomTheme  
 
 ### Bunch
 - [ ] Make sure bunches are working correctly
@@ -325,8 +346,8 @@ Checklist for setting up a new Mac
 - [ ] Configure extensions, services, behavior, etc.
 
 ## Fonts
-- Change iTerm and VS Code Terminal to Powerline Font
-  - Powerline font is installed by setupMac.sh and Mackup restores iTerm and VS Code settings
+- [ ] Change iTerm and VS Code Terminal to Powerline Font
+    - [ ] Powerline font is installed by setupMac.sh and Mackup restores iTerm and VS Code settings
 
 ## 9. Set Default "open with" for file types.
 - If duti tool in configureMacSettings.sh didn't work, use SwiftDefaultApps Mac Preference Pane app to fill in the gaps. If neither the duti tool or the SwiftDefaultApps app works, then fall back on the manual/normal method of going to that file type's Get Info panel in Finder and changing it with Open with: > Change All....
@@ -353,8 +374,8 @@ Checklist for setting up a new Mac
 - [ ] IINA: Multimedia (mov, mp4, aac, mkv, etc.)
 
 ## 10. Configure Custom Hotkeys
-- Use CustomShortcuts app when you can
-Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2FPlatforms%2FCustom%20Apple%20Hotkeys)
+- [ ] Use CustomShortcuts app when you can
+- [ ] Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2FPlatforms%2FCustom%20Apple%20Hotkeys)
 
 ## Install and Configure Browser Extensions
 - Safari, Firefox, Chrome
@@ -374,23 +395,38 @@ Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2F
 - [ ] React Developer Tools?
 
 ## 12. Open at Login
+- [ ] Bartender
+- [ ] Batteries
+- [ ] BeFocused
 - [ ] Duplicati?
 - [ ] Fantastical?
+- [ ] FastScripts?
+- [ ] Launchbar?
 - [ ] Mission Control Plus
 - [ ] Mobile Mouse Server
+- [ ] Music
+- [ ] Noizio
+- [ ] Workspaces?
 - [ ] Bunch
 - [ ] 1Password
 - [ ] Amphetamine
+- [ ] Backtrack
 - [ ] BetterTouchTool
 - [ ] Cardhop
 - [ ] Copyem
 - [ ] Dropbox
+- [ ] Google Voice
 - [ ] Mail
 - [ ] Messages
 - [ ] Raycast
+- [ ] Slack
 - [ ] TextExpander
 - [ ] Things
 - [ ] Forklift
+- [ ] OBS
+- [ ] TaskPaper
+- [ ] Obsidian
+- [ ] Session
 - [ ] Yoink
 
 ## 13. Menubar
