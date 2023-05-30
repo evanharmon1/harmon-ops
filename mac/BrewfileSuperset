@@ -54,7 +54,6 @@ cask "mission-control-plus"
 cask "firefox"
 cask "daisydisk"
 cask "backblaze"
-cask "balenaetcher"
 cask "betterzip"
 cask "forklift"
 cask "protonvpn"
@@ -168,6 +167,7 @@ brew "cmake" #Cross-platform make
 cask "alfred" 
 mas "Screens", id: 1224268771
 cask "typora"
+cask "balenaetcher"
 mas "Mactracker", id: 430255202
 mas "Dark Reader for Safari", id: 1438243180
 mas "Deliveries", id: 290986013
