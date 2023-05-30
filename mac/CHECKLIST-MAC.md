@@ -1,21 +1,21 @@
 # CHECKLIST-MAC.md
-Checklist for setting up a new Mac server from scratch.
+Checklist for setting up a new Mac from scratch.
 
 ## 1. **Install macOS** from scratch
-- [x] Full Name: Evan Harmon
-- [x] Account Name: evan
-	- [x] Recover password from iCloud option: no
-- [x] FindMy: yes
-- [x] Location Services: yes
-- [x] Analytics: no
-- [x] Screentime: no
-- [x] Siri: no
-- [x] Improve Siri: no
-- [x] FileVault encryption: yes
-	- [x] Recover passwoed from iCloud option: no
+- [x] Full Name? Evan Harmon
+- [x] Account Name? evan
+	- [x] Recover password from iCloud option? no
+- [x] FindMy? yes
+- [x] Location Services? yes
+- [x] Analytics? no
+- [x] Screentime? no
+- [x] Siri? Yes
+- [x] Improve Siri? No
+- [x] FileVault encryption? yes
+	- [x] Recover passwoed from iCloud option? No
 	- [x] Store FileVault Encryption recovery key in password manager
-- [x] Apple Pay: setup
-- [x] Appearance: Auto
+- [x] Apple Pay? setup
+- [x] Appearance? Auto
 
 ## 2. Sign into **iCloud** and enable everything to start syncing
 - [x] All on, including keychain
