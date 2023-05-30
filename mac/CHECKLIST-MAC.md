@@ -1,7 +1,7 @@
 # CHECKLIST-MAC.md
 Checklist for setting up a new Mac
 
-## 1. **Install macOS** from scratch
+## **Install macOS** from scratch
 - [ ] Erase your Mac with Erase Assistant:
     - [ ] https://support.apple.com/guide/mac-help/erase-and-reinstall-macos-mh27903/mac
 - [ ] If Intel Mac before T2 Security Chip:
@@ -22,14 +22,14 @@ Checklist for setting up a new Mac
 - [ ] Apple Pay: yes (server: no)
 - [ ] Appearance: Auto
 
-## 2. Sign into **iCloud** and enable everything to start syncing
+## Sign into **iCloud** and enable everything to start syncing
 - [ ] All on, including keychain
 - [ ] Turn on sync desktop and documents
 - [ ] Choose profile pic
 - [ ] Optimize Mac Storage: yes, if OS drive is small, no if you want to replicate iCloud to the machine.
 - [ ] private relay - yes
 
-## 3. Download **Dropbox** and start syncing so I can get my Dropbox dev folder with **dev-env** repo and setupMac.sh
+## Download **Dropbox** and start syncing so I can get my Dropbox dev folder with **dev-env** repo and setupMac.sh
 (Alternatively, skip Dropbox installation and git clone the dev-env repo.)
 - [ ] Verify when deleting off of Dropbox: No
 - [ ] Share screenshots and recordings using Dropbox: No (Use CleanShot X)
@@ -40,19 +40,21 @@ Checklist for setting up a new Mac
 - [ ] Default for new files - stored with: Local (not online-only)
 - [ ] Smart sync: No
 
-## 4. Authenticate Mac App Store, download Amphetamine, & install xCode CLI tools
-(xCode CLI Tools includes git, but homebrew will later install a newer git version.)
+## Authenticate **Mac App Store** & download Amphetamine
 - [ ] Install Amphetamine via Mac App Store
+
+## Install **xCode CLI tools**
+(xCode CLI Tools includes git, but homebrew will later install a newer git version.)
 - [ ] `xcode-select --install` (Install xCode CLI Tools)
 
-## 5. Install Homebrew, update macOS and App Store apps, & clean reboot
+## Install **Homebrew**, update macOS and App Store apps, & clean **reboot**
 - [ ] Install homebrew (which also installs git from xCode?):
   ` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
   - [ ] And run the 2 commands that homebrew tells you to run to add brew to your PATH.
 - [ ] Apple Software Update - macOS & App Store
 - [ ] clean reboot
 
-## 6. Create machine-specific IaC in infra/{machineName} folder
+## Create **machine-specific IaC Brewfile** in infra/{machineName} folder
 - [ ] Duplicate the `BrewfileSuperSet` file, name it `Brewfile`, and put it in `infra/{machineName}` folder
 - [ ] Modify that Brewfile based on the machine you're configuring (delete and add any apps/packages you want installed)
 - [ ] Push that Brewfile to the repo.
@@ -60,20 +62,20 @@ Checklist for setting up a new Mac
     (E.g., Mackup functionality for dotfiles, autoupdate functionality, Mac settings via CLI, etc.)
 - Modify these files but don't commit them to the repo unless they are relevant for all machines.
 
-## 7. Run **setupMac.sh** from its directory at dev-env/mac
+## Run **setupMac.sh** from its directory at dev-env/mac
 - [ ] Check what dotfiles from Mackup in iCloud will be linked over to the local machine and delete any from iCloud that are not wanted.
     - [ ] Make a backup of the Mackup directory in iCloud (In case the mackup restore command messes up)
 - [ ] `caffeinate -disu ./setupMac.sh`
   - [ ] Usually needs a few Mac password prompts, so check it periodically
   - [ ] After sexy-bash-prompt install, you need to type exit to get out of the bash env that loads so the setupMac.sh script continues.
 
-## 5. Connect Peripherals
+## Connect **Peripherals**
 - [ ] Keyboards
 - [ ] Mice
 - [ ] Printers
   - [ ] Test print
 
-## 6. Configure remaining Apple **Manual Settings** not set in `configureMacSettings.sh`
+## Configure remaining Apple **Manual Settings** not set in `configureMacSettings.sh`
 ### Storage Management.app
 - [ ] Store in iCloud
 	- [ ] Desktop and Documents
@@ -103,7 +105,6 @@ Checklist for setting up a new Mac
   - [ ] Display as: Folder
   - [ ] View Content as: Grid
 
-
 ### Settings > Mission Control & Spaces
 - [ ] Auto rearrange spaces - no
 
@@ -121,43 +122,34 @@ Checklist for setting up a new Mac
 - [ ] Setup cards, etc.
 
 ### Settings > Users & Groups
-- In general, it's easier to just have most people be admins. It's kind of annoying otherwise where they can't even restart the computer, etc.
-
+(In general, it's easier to just have most people be admins. It's kind of annoying otherwise where they can't even restart the computer, etc.)
 - [ ] Enable guest account if visitors might want to use it.
 
 ### Settings > Accessibility
 - [ ] Zoom - Use scroll gesture with modifier keys to zoom - ctrl
 - [ ] Pointer Control - Mouse & Trackpad - Spring loaded delay - second shortest
-- Hot Corners?
+- [ ] Hot Corners?
 
 ### Settings > Extensions & Services
-
 - [ ] Enable pretty much everything
-
 - [ ] Create Open in... extensions with Automator
-
-  - [Open anything in VS Code using a MacOS quick action](https://www.jimbobbennett.io/open-anything-in-vs-code-using-a-macos-quick-action/)
-
-  - [ ] Open in VS Code
-
-    - Workflow receives current files or folders in any application
-  
-  - Run Shell Script
-    - Pass input as arguments
-
-    - `open -n -b "com.microsoft.VSCode" --args "$*" `
-- [ ] Open in VS Codium
-  
-  - Workflow receives current files or folders in any application
-    - Run Shell Script
-    - Pass input as arguments
-  - `open -n -b "com.visualstudio.code.oss" --args "$*" `
-
+    [Open anything in VS Code using a MacOS quick action](https://www.jimbobbennett.io/open-anything-in-vs-code-using-a-macos-quick-action/)
+    - [ ] Open in VS Code
+        - Workflow receives current files or folders in any application
+        - Run Shell Script
+        - Pass input as arguments
+        - `open -n -b "com.microsoft.VSCode" --args "$*" `
+    - [ ] Open in VS Code Insider's
+        - Workflow receives current files or folders in any application
+        - Run Shell Script
+        - Pass input as arguments
+        - `open -n -b "com.visualstudio.code.oss" --args "$*" `
 - [ ] Install Brett Terpstra's Tools
-  - [ ] [Markdown Service Tools - BrettTerpstra.com](https://brettterpstra.com/projects/markdown-service-tools/)
-  - [ ] [SearchLink - BrettTerpstra.com](https://brettterpstra.com/projects/searchlink/)
-  - [ ] [URL Preview - BrettTerpstra.com](https://brettterpstra.com/projects/url-preview/)
-
+    - [ ] [Markdown Service Tools - BrettTerpstra.com](https://brettterpstra.com/projects/markdown-service-tools/)
+    - [ ] [SearchLink - BrettTerpstra.com](https://brettterpstra.com/projects/searchlink/)
+    - [ ] [URL Preview - BrettTerpstra.com](https://brettterpstra.com/projects/url-preview/)
+    - [ ] Gather?
+    - [ ] Via homebrew now?
 
 ### Settings > Security & Privacy
 - [ ] Require password 5 seconds after sleep or screen saver
@@ -228,12 +220,14 @@ Checklist for setting up a new Mac
 - [ ] AirPlay Receiver - yes
 - [ ] Content caching - on for servers, no for laptops
 
-### Finder (todo)
-// Todo 
+### Finder
+// todo
 - [ ] Add ~/Dropbox/Devices/Downloads to Finder sidebar and remove system Downloads folder
 
-### Safari (todo)
+### Safari
+// todo
 - [ ] Set downloads to `~/Dropbox/Devices/Downloads`
+
 ### Notification Center/Sidebar Thing
 - [ ] Tomorrow
 - [ ] Weather - Current, Hill City
@@ -244,7 +238,7 @@ Checklist for setting up a new Mac
 - [ ] iMessages in iCloud: enable in iMessages app
 - [ ] Enable photo and sharing thing? 
 	
-## 7. Download Remaining 3rd Party Apps that Aren't Available in Homebrew Repos
+## Download Remaining 3rd Party Apps that Aren't Available in Homebrew Repos
 - [ ] [Markdown Service Tools - BrettTerpstra.com](https://brettterpstra.com/projects/markdown-service-tools/)
 - [ ] [Aeon Timeline](https://timeline.app/download/)
 - [ ] [Textsniper](https://textsniper.app/api/downloads/mac-latest)
@@ -252,10 +246,11 @@ Checklist for setting up a new Mac
 - [ ] [Textsoap](https://textsoap.com/mac/)
 - [ ] [Amphetamine Enhancer](https://github.com/x74353/Amphetamine-Enhancer/raw/master/Releases/Current/Amphetamine%20Enhancer.dmg)
 - [ ] [Copy'em Helper](https://apprywhere.com/ce-helper.html)
-### Archived (Don't Install)
+
+### Archived (Don't Install or reevaluate)
 - [ ] [MailSuite](https://smallcubed.com/)
 
-## 8. Configure Remaining App Settings (todo)
+## Configure Remaining App Settings (todo)
 ### Open all applications:
 - [ ] register licenses, if necessary
 - [ ] login/setup sync, if necessary
@@ -294,16 +289,16 @@ Checklist for setting up a new Mac
 - [ ] Install command line tools
 
 ### 1Password
-  - [ ] Safari Extension
-  - [ ] FireFox Extension
-  - [ ] Google Chrome Extension
-  - [ ] Menubar App
-  - [ ] Disable Conceal passwords setting
-  - [ ] Unlock with TouchId
-  - [ ] Unlock with Apple Watch
+- [ ] Safari Extension
+- [ ] FireFox Extension
+- [ ] Google Chrome Extension
+- [ ] Menubar App
+- [ ] Disable Conceal passwords setting
+- [ ] Unlock with TouchId
+- [ ] Unlock with Apple Watch
 
 ### Things
-  - [ ] Enable Things Cloud
+- [ ] Enable Things Cloud
 
 ### Google Chrome
 - [ ] Set downloads to `~/Dropbox/Devices/Downloads`
@@ -321,11 +316,11 @@ Checklist for setting up a new Mac
 
 ### Drafts
 - [ ] Install Extensions
-    (Synced with iCloud)
+(Synced with iCloud)
     - Append to Obsidian, etc.
 
 ### Banktivity
-  - [ ] Setup sync to `Local` folder
+- [ ] Setup sync to `Local` folder
 
 ### OBS
 - [ ] Setup OBS profile
@@ -335,9 +330,9 @@ Checklist for setting up a new Mac
 
 ### WriteRoom
 - [ ] Install themes
-  - [ ] [Download from](https://blog.hogbaysoftware.com/tagged/writeroomtheme)
-  - [ ] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
-  - [ ] Set default theme as SolarizedDarkWriteRoomTheme  
+    - [ ] [Download from](https://blog.hogbaysoftware.com/tagged/writeroomtheme)
+    - [ ] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
+    - [ ] Set default theme as SolarizedDarkWriteRoomTheme  
 
 ### Bunch
 - [ ] Make sure bunches are working correctly
@@ -349,36 +344,37 @@ Checklist for setting up a new Mac
 - [ ] Change iTerm and VS Code Terminal to Powerline Font
     - [ ] Powerline font is installed by setupMac.sh and Mackup restores iTerm and VS Code settings
 
-## 9. Set Default "open with" for file types.
-- If duti tool in configureMacSettings.sh didn't work, use SwiftDefaultApps Mac Preference Pane app to fill in the gaps. If neither the duti tool or the SwiftDefaultApps app works, then fall back on the manual/normal method of going to that file type's Get Info panel in Finder and changing it with Open with: > Change All....
-- [ ] VS Code Insiders: shell and git editor
-- [ ] Nova: general text or no extension, config files, git, bash scripting, sh, dotfiles, etc.
-  - [ ] txt
-  - [ ] pem
-  - [ ] pub
-  - [ ] ini
-  - [ ] xml
-  - [ ] yaml
-  - [ ] json
-  - [ ] diff
-  - [ ] conf
-  - [ ] old
-  - [ ] plist
-  - [ ] log
-  - [ ] csv
-  - [ ] bunch
+## Set Default "open with" for file types.
+(If duti tool in configureMacSettings.sh didn't work, use SwiftDefaultApps Mac Preference Pane app to fill in the gaps. If neither the duti tool or the SwiftDefaultApps app works, then fall back on the manual/normal method of going to that file type's Get Info panel in Finder and changing it with Open with: > Change All....)
 - [ ] VS Code: py, js, ts, go, java, etc. any serious programming.
+- [ ] VS Code Insiders:
+    - [ ] shell and git editor
+- [ ] Nova: general text or no extension, config files, git, bash scripting, sh, dotfiles, etc.
+    - [ ] txt
+    - [ ] pem
+    - [ ] pub
+    - [ ] ini
+    - [ ] xml
+    - [ ] yaml
+    - [ ] json
+    - [ ] diff
+    - [ ] conf
+    - [ ] old
+    - [ ] plist
+    - [ ] log
+    - [ ] csv
+    - [ ] bunch
 - [ ] Typora: md
 - [ ] Transmit: ftp
 - [ ] Mail: email
-- [ ] IINA: Multimedia (mov, mp4, aac, mkv, etc.)
+- [ ] VLC: Multimedia (mov, mp4, aac, mkv, etc.)
 
-## 10. Configure Custom Hotkeys
+## Configure Custom Hotkeys
 - [ ] Use CustomShortcuts app when you can
 - [ ] Set hotkeys from [Custom Apple Hotkeys](obsidian://open?vault=Memex&file=Tech%2FPlatforms%2FCustom%20Apple%20Hotkeys)
 
 ## Install and Configure Browser Extensions
-- Safari, Firefox, Chrome
+(Safari, Firefox, Chrome, et al)
 - [ ] 1Password
 - [ ] LastPass
 - [ ] SuperAgent
@@ -394,7 +390,7 @@ Checklist for setting up a new Mac
 - [ ] AdBlock (non-Safari)?
 - [ ] React Developer Tools?
 
-## 12. Open at Login
+## Open at Login
 - [ ] Bartender
 - [ ] Batteries
 - [ ] BeFocused
@@ -429,12 +425,12 @@ Checklist for setting up a new Mac
 - [ ] Session
 - [ ] Yoink
 
-## 13. Menubar
+## Menubar
 
-## 14. Put secrets like ssh, certs, vpn, etc. in environment
-### ssh Keys
-#### Generate ssh Keys with Passphrase in `~/.ssh` Folder
-- ed25519 is newer and better, but might not be supported by default, e.g., Ubuntu
+## Put secrets like ssh, certs, vpn, etc. in environment
+### ssh keys
+#### Generate ssh keys with passphrase in `~/.ssh` folder
+(ed25519 is newer and better, but might not be supported by default, e.g., Ubuntu)
 - [ ] `ssh-keygen -t ed25519 -C "id_personal"`
 - [ ] `ssh-keygen -t rsa -b 4096 -C "id_personal_rsa"`
 - [ ] `ssh-keygen -t ed25519 -C "id_<work_name>"`
@@ -448,7 +444,7 @@ Checklist for setting up a new Mac
 - [ ] `ssh-add --apple-use-keychain .ssh/id_<work_name>_rsa`
 
 #### Add any hosts to `~/.ssh/config` file
-- E.g.:
+E.g.:
   ```
   **# GitHub.com - Personal**
   Host github.com
@@ -457,14 +453,14 @@ Checklist for setting up a new Mac
   ```
 
 ### Environment Secrets
-- [ ] Add to `~/.dotfiles/.env`
+- [ ] Add to machine's `~/.dotfiles/.env` (which should be excluded from Mackup, etc.)
 
 ### VPN
 vpn - make a .vpn folder?
 
 ### Certificates
 
-## 15. Backup
+## Backup
 - [ ] Backblaze/Duplicati
 - [ ] Dropbox backup feature
 - [ ] Time Machine
