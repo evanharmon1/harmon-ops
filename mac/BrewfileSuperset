@@ -228,6 +228,7 @@ mas "Apollo", id: 979274575 # Install failed
 cask "choosy"
 cask "zotero"
 brew "aspell" # dependency for Terpstra's SearchLink
+cask "karabiner-elements"
 #             Development
 #------------------------------------------------------------------------------
 brew "ipython"
@@ -261,6 +262,7 @@ cask "micro-snitch"
 cask "little-snitch"
 cask "google-drive"
 cask "obs"
+cask "logitech-g-hub"
 mas "Studies", id: 1071676469
 mas "Be Focused Pro", id: 961632517
 
@@ -284,6 +286,7 @@ cask "teacode"
 cask "datadog-agent"
 cask "royal-tsx"
 cask "figma"
+brew "grafana"
 #             Text Editors & IDEs
 #------------------------------------------------------------------------------
 cask "vscodium" #Much slower than VS Code and Insiders
@@ -355,6 +358,7 @@ brew "angular-cli"
 
 #             Python
 #------------------------------------------------------------------------------
+brew "pyyaml"
 #	pyenv dependencies?
 # brew "openssl" # For pyenv & its dependencies?
 # brew "readline" # For pyenv & its dependencies?
@@ -404,6 +408,7 @@ cask "twitch"
 # mas "Session - Pomodoro Focus Timer", id: 1521432881
 # mas "com.apptorium.Workspaces", id: 1219826448
 # brew "fish" - using zsh, oh-mh-zsh, fig, etc. for now
+# brew "telnet" # Insecure, don't install unless needed, and then uninstall
 # cask "onyx"
 # cask "scrivener"
 # cask "skype"
@@ -422,3 +427,8 @@ cask "twitch"
 # mas "CotEditor", id: 1024640650
 # cask "fluid" # for Google Voice or any other webapps I want as local apps (Using Unite now)
 # cask "hyper" # Use iTerm instead
+<<<<<<< Updated upstream
+=======
+# cask "microsoft-teams"
+# cask "chromium"
+>>>>>>> Stashed changes
