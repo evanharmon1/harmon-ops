@@ -1,6 +1,10 @@
 # CHECKLIST-MAC.md
 Checklist for setting up a new Mac
 
+## Create **machine-specific folder** in infra/{machineName}
+(for machine-specific Brewfile, checklist, and any other files, scripts, etc.)
+- [ ] Copy this checklist file to that folder to keep track of config process
+
 ## **Install macOS** from scratch
 - [ ] Erase your Mac with Erase Assistant:
     - [ ] https://support.apple.com/guide/mac-help/erase-and-reinstall-macos-mh27903/mac
@@ -43,12 +47,12 @@ Checklist for setting up a new Mac
 ## Authenticate **Mac App Store** & download Amphetamine
 - [ ] Install Amphetamine via Mac App Store
 
-## Install **xCode CLI tools**
-(xCode CLI Tools includes git, but homebrew will later install a newer git version.)
-- [ ] `xcode-select --install` (Install xCode CLI Tools)
+## Install **Xcode CLI tools**
+(Xcode CLI Tools includes git, but homebrew will later install a newer git version.)
+- [ ] `xcode-select --install` (Install Xcode CLI Tools)
 
 ## Install **Homebrew**, update macOS and App Store apps, & clean **reboot**
-- [ ] Install homebrew (which also installs git from xCode?):
+- [ ] Install homebrew (which also installs git from Xcode?):
   ` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
   - [ ] And run the 2 commands that homebrew tells you to run to add brew to your PATH.
 - [ ] Apple Software Update - macOS & App Store
@@ -246,6 +250,9 @@ Checklist for setting up a new Mac
 - [ ] [Textsoap](https://textsoap.com/mac/)
 - [ ] [Amphetamine Enhancer](https://github.com/x74353/Amphetamine-Enhancer/raw/master/Releases/Current/Amphetamine%20Enhancer.dmg)
 - [ ] [Copy'em Helper](https://apprywhere.com/ce-helper.html)
+- [ ] MacGPT
+- [ ] MacBing
+- [ ] Readwise and Reader and extension
 
 ### Archived (Don't Install or reevaluate)
 - [ ] [MailSuite](https://smallcubed.com/)

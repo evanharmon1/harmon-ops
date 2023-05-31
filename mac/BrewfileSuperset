@@ -1,4 +1,5 @@
 # My list of packages to install on new machines with homebrew
+# Pull from this list to make a machine-specific Brewfile or just use this file directly
 
 # Assumes installation of homebrew, git, and that the Mac App Store is authenticated.
 # Run on new machine from the dev-env repo folder with:
@@ -27,8 +28,15 @@ tap "ttscoff/thelab" # https://brettterpstra.com
 # To install on all machines - servers, personal, dev, etc.
 brew "mas" # Mac App Store command-line interface
 brew "mackup"
-mas "1Blocker", id: 1365531024 # always tries to reinstall so comment out after initial install on Mac
 mas "Amphetamine", id: 937984704
+cask "iterm2"
+cask "warp"
+cask "fig"
+cask "1password"
+cask "1passxword-cli"
+cask "bettertouchtool"
+cask "vlc"
+mas "1Blocker", id: 1365531024 # always tries to reinstall so comment out after initial install on Mac
 mas "BBEdit", id: 404009241
 mas "Copy 'Em", id: 876540291
 mas "Drafts", id: 1435957248
@@ -40,19 +48,11 @@ mas "Hush Nag Blocker", id: 1544743900
 mas "Yoink", id: 457622435
 mas "Mobile Mouse Server", id: 412814284
 mas "Moom", id: 419330170
-cask "obsidian"
-cask "iterm2"
-cask "warp"
-cask "1password"
-cask "1password-cli"
-cask "bettertouchtool"
-cask "vlc"
 cask "visual-studio-code"
 cask "visual-studio-code-insiders"
 cask "nova"
 cask "mission-control-plus"
 cask "firefox"
-cask "daisydisk"
 cask "backblaze"
 cask "betterzip"
 cask "forklift"
@@ -68,6 +68,7 @@ cask "cheatsheet"
 cask "customshortcuts"
 cask "hazel"
 cask "raycast"
+cask "alfred"
 cask "downie"
 mas "PopClip", id: 445189367
 cask "bunch"
@@ -75,29 +76,41 @@ cask "keyboard-maestro"
 cask "transmit"
 mas "TaskPaper", id: 1090940630
 mas "Things", id: 904280696
-mas "Disk Speed Test", id: 425264550
 mas "Trello", id: 1278508951
 mas "MultiMarkdown Composer", id: 1275176220
 mas "Expressions", id: 913158085
 cask "markdown-service-tools"
 cask "tunnelblick"
 mas "Due", id: 524373870
-mas "Pastel", id: 413897608
+mas "The Magic Highlighter", id: 1663033087
 mas "ColorSlurp", id: 1287239339
+mas "Super Agent for Safari", id: 1568262835
 cask "cleanshot"
-cask "fig"
-brew "python"
-brew "pyenv"
-brew "node"
-brew "nvm"
 cask "tableplus" # Current favorite DBMS interface
 cask "nteract"
 cask "insomnia"
 cask "wireshark"
+mas "Short Circuit: AI Assistant", id: 1638522784
+mas "The Camelizer", id: 1532579087
+mas "DuckDuckGo", id: 663592361
+cask "obsidian"
+mas "Screens", id: 1224268771
+cask "typora"
+mas "Cardhop", id: 1290358394
+mas "Acorn", id: 1547371478
+mas "Actions", id: 1586435171
+mas "Dark Reader for Safari", id: 1438243180
+cask "hook"
+mas "Vinegar - Tube Cleaner", id: 1591303229
+mas "Baking Soda - Tube Cleaner", id: 1601151613
 #             CLI
 #------------------------------------------------------------------------------
 brew "bash"
 brew "zsh"
+brew "python"
+brew "pyenv"
+brew "node"
+brew "nvm"
 brew "curl"
 brew "wget"
 brew "grep"
@@ -152,36 +165,34 @@ brew "espeak" #Text to speech, software speech synthesizer
 brew "cowsay"
 brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
 brew "shfmt" # Autoformat shell script source code
-mas "Cardhop", id: 1290358394
-mas "Acorn", id: 1547371478
-mas "Actions", id: 1586435171
 brew "mitmproxy" #Intercept, modify, replay, save HTTP/S traffic
 brew "pre-commit"
 cask "ngrok" #Reverse proxy, secure introspectable tunnels to localhost
 brew "cmake" #Cross-platform make
+brew "ipython"
+brew "pandoc" # Swiss-army knife of markup format conversion
+brew "neovim"
+brew "pyyaml"
 
 
 #==============================================================================
 #                       Personal Packages
 #==============================================================================
 # For personal machines, in addition to core
-cask "alfred" 
-mas "Screens", id: 1224268771
-cask "typora"
 cask "balenaetcher"
+cask "daisydisk"
 mas "Mactracker", id: 430255202
-mas "Dark Reader for Safari", id: 1438243180
 mas "Deliveries", id: 290986013
 mas "Fantastical", id: 975937182
-mas "Fireplace Live HD", id: 468630933
 mas "GarageBand", id: 682658836
 mas "Highlights", id: 1498912833 # always tries to reinstall so comment out after initial install on Mac
+mas "Pastel", id: 413897608
 cask "plex" # More of a regular desktop app? Not plex-media-server.
 cask "plex-media-player" # More of a TV/10-ft interface? Not plex-media-server.
 mas "iMovie", id: 408981434
+mas "Play", id: 1596506190
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
-mas "Koi Pond 3D Lite", id: 534867956
 mas "Notability", id: 360593530
 mas "Numbers", id: 409203825
 mas "OmniOutliner", id: 1142578772
@@ -197,7 +208,6 @@ cask "xee"
 cask "inkscape"
 cask "iina"
 cask "gimp"
-cask "hook"
 cask "swiftdefaultappsprefpane"
 cask "google-earth-pro"
 cask "handbrake"
@@ -207,9 +217,6 @@ cask "unite"
 cask "path-finder"
 cask "batteries"
 cask "houdahspot"
-mas "Honey for Safari", id: 1472777122 # always tries to reinstall so comment out after initial install on Mac
-mas "Vinegar - Tube Cleaner", id: 1591303229
-mas "Baking Soda - Tube Cleaner", id: 1601151613
 mas "Forecast Bar", id: 982710545
 cask "duplicacy-web-edition"
 cask "music-bar"
@@ -232,13 +239,33 @@ cask "zotero"
 cask "bike"
 brew "aspell" # dependency for Terpstra's SearchLink
 cask "karabiner-elements"
-#             Development
-#------------------------------------------------------------------------------
-brew "ipython"
-brew "pandoc" # Swiss-army knife of markup format conversion
-cask "postman"
-cask "dash"
-cask "sourcetree"
+mas "Data Jar", id: 1453273600
+mas "DuckDuckGo Privacy for Safari", id: 1482920575
+mas "Fakespot for Safari", id: 1592541616
+mas "MacFamilyTree 10", id: 1567970985
+mas "FamilySearch Tree", id: 885982973
+mas "Drone Buddy: Fly Drone Safely", id: 992303145
+mas "Home Assistant", id: 1099568401
+mas "Pretty OK - Meh Daily Deal", id: 960524321
+mas "Save to Reader", id: 1640236961
+mas "Session - Pomodoro Focus Timer", id: 1521432881
+mas "Shortform", id: 1489472007
+mas "Lensa AI: photo editor, video", id: 1436732536
+mas "Fotor - Photo Editor, Designer", id: 503039729
+mas "Timery for Toggl", id: 1425368544
+mas "Toggl Track: Hours & Time Log", id: 1291898086
+mas "Actions for Obsidian", id: 1659667937
+mas "Portal - Immersive Escapes", id: 1436994560
+mas "Streaks", id: 963034692
+mas "Elmedia Video Player", id: 1044549675
+mas "Banktivity", id: 1480779512
+cask "logitech-g-hub"
+cask "micro-snitch"
+cask "little-snitch"
+mas "Flighty - Live Flight Tracker", id: 1358823008
+mas "Battery Health - Monitor Stats", id: 490192174
+mas "Disk Diag", id: 672206759
+cask "onyx"
 #             Fun CLI
 #------------------------------------------------------------------------------
 brew "asciinema"
@@ -253,7 +280,7 @@ brew "asciiquarium"
 #==============================================================================
 # Optional packages
 cask "zoom"
-mas "Banktivity", id: 1480779512
+cask "skype"
 mas "Spark", id: 1176895641
 cask "istat-menus"
 cask "xbar"
@@ -261,19 +288,30 @@ mas "Delicious Library", id: 635124250
 mas "WireGuard", id: 1451685025
 mas "Twitter", id: 1482454543
 mas "Type2Phone", id: 472717129
-cask "micro-snitch"
-cask "little-snitch"
 cask "google-drive"
 cask "obs"
-cask "logitech-g-hub"
 mas "Studies", id: 1071676469
 mas "Be Focused Pro", id: 961632517
+mas "Omnivore: Read-it-later", id: 1564031042
+mas "Pluralsight", id: 431748264
+mas "Wavelength Messenger", id: 1584865627
+mas "Friendly Streaming Browser", id: 553245401
+mas "Ivory for Mastodon by Tapbots", id: 6444602274
+mas "Front and Center", id: 1493996622
+mas "Aquarium Live HD screensaver", id: 462563503
+mas "Fireplace Live HD", id: 468630933
+mas "Koi Pond 3D Lite", id: 534867956
+mas "Blackmagic Disk Speed Test", id: 425264550
+cask "scrivener"
 
 
 #==============================================================================
 #                       Additional Developer Packages
 #==============================================================================
 # For personal machines that might be used for development
+cask "postman"
+cask "dash"
+cask "sourcetree"
 brew "go"
 brew "ruby"
 brew "ansible"
@@ -282,6 +320,8 @@ brew "jupyterlab"
 brew "zenity" # GTK+ dialog boxes for the command-line
 mas "Xcode", id: 497799835 
 mas "System Designer", id: 1102494854
+mas "Datadog", id: 1391380318
+mas "TestFlight", id: 899247664
 brew "ncurses" #Text-based UI library
 brew "jmeter"
 brew "selenium-server"
@@ -294,9 +334,8 @@ brew "grafana"
 #------------------------------------------------------------------------------
 cask "vscodium" #Much slower than VS Code and Insiders
 cask "jetbrains-toolbox" # For pycharm, IntelliJ, etc.
-brew "neovim"
-cask "sublime-text"
 cask "mu-editor"
+cask "textmate"
 #             Git
 #------------------------------------------------------------------------------
 cask "github"
@@ -314,11 +353,12 @@ cask "virtualbox" # homebrew fails to install - no Apple Silicon? 2022-03-27
 #             Cloud & Kubernetes
 #------------------------------------------------------------------------------
 brew "awscli"
+brew "eksctl"
+brew "google-cloud-sdk"
+brew "firebase-cli"
 brew "kubernetes-cli"
 brew "minikube"
-brew "eksctl"
 brew "helm"
-brew "firebase-cli"
 brew "netlify-cli"
 #             Terraform & Dependencies
 #------------------------------------------------------------------------------
@@ -361,7 +401,6 @@ brew "angular-cli"
 
 #             Python
 #------------------------------------------------------------------------------
-brew "pyyaml"
 #	pyenv dependencies?
 # brew "openssl" # For pyenv & its dependencies?
 # brew "readline" # For pyenv & its dependencies?
@@ -378,7 +417,15 @@ brew "snyk"
 #             Work - 
 #------------------------------------------------------------------------------
 # mas "Jira Cloud by Atlassian", id: 1475897096
+# mas "Microsoft Word", id: 462054704
+# mas "Microsoft Excel", id: 462058435
+# mas "Microsoft PowerPoint", id: 462062816
+# mas "Microsoft Outlook", id: 985367838
+# mas "Microsoft OneNote", id: 784801555
+# mas "Microsoft OneDrive", id: 823766827
+# mas "Microsoft Remote Desktop", id: 1295203466
 # cask "microsoft-teams"
+# mas "LastPass Password Manager", id: 926036361
 
 
 #==============================================================================
@@ -387,7 +434,7 @@ brew "snyk"
 # For personal machines that might be used for games
 cask "steam"
 mas "Steam Link", id: 1246969117
-# cask "battle-net" # doesn't install right now - 12-05-2021
+cask "battle-net" # doesn't install right now - 12-05-2021
 cask "dolphin"
 cask "openemu"
 cask "twitch"
@@ -402,19 +449,14 @@ cask "twitch"
 
 
 #==============================================================================
-#                       Inactive
+#                       Archive
 #==============================================================================
-# mas "LastPass Password Manager", id: 926036361
 # cask "brave-browser"
 # cask "vivaldi"
 # mas "GoodNotes", id: 1444383602
-# mas "Session - Pomodoro Focus Timer", id: 1521432881
 # mas "com.apptorium.Workspaces", id: 1219826448
 # brew "fish" - using zsh, oh-mh-zsh, fig, etc. for now
 # brew "telnet" # Insecure, don't install unless needed, and then uninstall
-# cask "onyx"
-# cask "scrivener"
-# cask "skype"
 # cask "google-chat"
 # cask "pycharm-ce" # use JetBrains Toolbox instead
 # cask "intellij-idea-ce" # use JetBrains Toolbox instead
@@ -426,8 +468,9 @@ cask "twitch"
 # cask "mosaic" # Using moom instead
 # mas "DevUtils", id: 1533756032 # Costs money
 # mas "quiver", id: 866773894 # Using obsidian and then maybe dendron
-# cask "textmate"
 # mas "CotEditor", id: 1024640650
 # cask "fluid" # for Google Voice or any other webapps I want as local apps (Using Unite now)
-# cask "hyper" # Use iTerm instead
+# cask "hyper" # Use Warp and iTerm instead
 # cask "chromium"
+# mas "Honey for Safari", id: 1472777122 # always tries to reinstall so comment out after initial install on Mac
+# cask "sublime-text" # Haven't used in years - VS Code, Insider's, Nova, BBEdit
