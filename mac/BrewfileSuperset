@@ -154,6 +154,7 @@ brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
 brew "shfmt" # Autoformat shell script source code
 mas "Cardhop", id: 1290358394
 mas "Acorn", id: 1547371478
+mas "Actions", id: 1586435171
 brew "mitmproxy" #Intercept, modify, replay, save HTTP/S traffic
 brew "pre-commit"
 cask "ngrok" #Reverse proxy, secure introspectable tunnels to localhost
@@ -208,6 +209,7 @@ cask "batteries"
 cask "houdahspot"
 mas "Honey for Safari", id: 1472777122 # always tries to reinstall so comment out after initial install on Mac
 mas "Vinegar - Tube Cleaner", id: 1591303229
+mas "Baking Soda - Tube Cleaner", id: 1601151613
 mas "Forecast Bar", id: 982710545
 cask "duplicacy-web-edition"
 cask "music-bar"
@@ -227,6 +229,7 @@ mas "Overcast", id: 888422857 # Install failed
 mas "Apollo", id: 979274575 # Install failed
 cask "choosy"
 cask "zotero"
+cask "bike"
 brew "aspell" # dependency for Terpstra's SearchLink
 cask "karabiner-elements"
 #             Development
@@ -427,8 +430,4 @@ cask "twitch"
 # mas "CotEditor", id: 1024640650
 # cask "fluid" # for Google Voice or any other webapps I want as local apps (Using Unite now)
 # cask "hyper" # Use iTerm instead
-<<<<<<< Updated upstream
-=======
-# cask "microsoft-teams"
 # cask "chromium"
->>>>>>> Stashed changes
