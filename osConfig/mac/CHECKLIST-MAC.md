@@ -216,6 +216,10 @@ Checklist for setting up a new Mac
 - [ ] Wake for network always on
 - [ ] Hard drives to sleep - not sure, prob not for servers, yes otherwise?
 - [ ] Turn display off - 45 minutes on power, 30 min on battery
+- [ ] Set UPS shutdown thresholds if using a UPS
+    - [ ] Turn off when 8 minutes remaining
+    - [ ] Turn off when 5% remaining
+    (Safer with both on - more redundant with multiple thresholds and the 8 min should usually give a little longer to make sure the Mac has enough time to complete shutdown.)
 
 ### Settings > Date & Time
 - [ ] Set date and time auto
