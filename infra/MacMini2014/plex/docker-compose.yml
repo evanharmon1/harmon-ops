@@ -15,12 +15,12 @@ services:
       - 32412:32412/udp
       - 32413:32413/udp
       - 32414:32414/udp
-
+    env_file:
+      - plex.env
     environment:
       - PUID=501
       - PGID=20
       - TZ=America/Chicago
-      - PLEX_CLAIM=claim-bBy6zB1ctXjsHpaV_Pu_ # https://www.plex.tv/claim/ (token expires in 4 minutes)
       - HOSTNAME=”PlexServer”
       - ADVERTISE_IP=http://10.0.4.210:32400/ # IP of host running docker
 

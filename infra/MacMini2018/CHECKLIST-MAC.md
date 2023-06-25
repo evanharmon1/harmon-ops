@@ -3,75 +3,65 @@ Checklist for setting up a new Mac
 
 ## Create **machine-specific folder** in infra/{machineName}
 (for machine-specific Brewfile, checklist, and any other files, scripts, etc.)
-- [ ] Copy this checklist file to that folder to keep track of config process (open in Typora)
+- [x] Copy this checklist file to that folder to keep track of config process (open in Typora)
 
 ## **Install macOS** from scratch
-- [ ] Erase your Mac with Erase Assistant:
-    - [ ] https://support.apple.com/guide/mac-help/erase-and-reinstall-macos-mh27903/mac
-- [ ] If Intel Mac before T2 Security Chip:
-    - If you need to create Bootable media for the macOS version you want to install:
+- [x] Erase your Mac with Erase Assistant:
+    - [x] https://support.apple.com/guide/mac-help/erase-and-reinstall-macos-mh27903/mac
+- [x] If Intel Mac before T2 Security Chip:
+    - [x] If you need to create Bootable media for the macOS version you want to install:
         - https://support.apple.com/en-us/HT201372
-- [ ] Full Name: Evan Harmon
-- [ ] Account Name: evan
-	- [ ] Recover password from iCloud option: no
-- [ ] FindMy: yes
-- [ ] Location Services: yes
-- [ ] Analytics: no
-- [ ] Screentime: yes (server: no)
-- [ ] Siri: yes (server: no)
-- [ ] Improve Siri: no
-- [ ] FileVault encryption: yes
-	- [ ] Recover password from iCloud option: no
+- [x] Full Name: Evan Harmon
+- [x] Account Name: evan
+	- [x] Recover password from iCloud option: no
+- [x] FindMy: yes
+- [x] Location Services: yes
+- [x] Analytics: no
+- [x] Screentime: yes (server: no)
+- [x] Siri: yes (server: no)
+- [x] Improve Siri: no
+- [x] FileVault encryption: yes
+	- [x] Recover passwoed from iCloud option: no
 	- [ ] Store FileVault Encryption recovery key in password manager
-        - Store key locally until later steps install 1Password
-- [ ] Apple Pay: yes (server: no)
-- [ ] Appearance: Auto (server: dark)
+- [x] Apple Pay: yes (server: no)
+- [x] Appearance: Auto (server: dark)
 
 ## Sign into **iCloud** and enable everything to start syncing
-- [ ] All on, including keychain
-- [ ] iCloud Drive: Sync desktop and documents: yes
-- [ ] Optimize Mac Storage: yes, if OS drive is small, no if you want to replicate iCloud to the machine.
-- [ ] Find My Mac: yes
-- [ ] Private relay - yes
-- [ ] Advanced Data Protection: yes
-- [ ] Access iCloud Data on the Web: yes, but consider turning off in the future
+- [x] All on, including keychain
+- [x] Turn on sync desktop and documents
+- [x] Choose profile pic
+- [x] Optimize Mac Storage: yes, if OS drive is small, no if you want to replicate iCloud to the machine.
+- [x] private relay - yes
 
-## Download **Dropbox** and start syncing
-- [ ] https://www.dropbox.com/install
-    - (Lets you skip account signin in the browser)
-- [ ] Choose Folders to sync to this Mac (Selective Sync): all
-- [ ] How should Dropbox sync to this Mac?: Online-only
-    - (if you want to replicate to this Mac, then Local, which downloads everything locally all the time, regardless of use)
-    - (Online-only setting only downloads to local computer when you open it. Then it might also stay local indefinitely?)
-### App Settings
-- [ ] Make sure upgrade to newer Dropbox client is installed (the one that you upgrade in the app so it's compatible with newer Apple security).
-- [ ] Backup: no (not sure if DropBox backup is end-to-end and at rest encrypted or if it's key is fully user-controlled - I don't think it is.)
+## Download **Dropbox** and start syncing so I can get my Dropbox dev folder with **dev-env** repo and setupMac.sh
+(Alternatively, skip Dropbox installation and git clone the dev-env repo.)
 - [ ] Verify when deleting off of Dropbox: No
 - [ ] Share screenshots and recordings using Dropbox: No (Use CleanShot X)
 - [ ] Upload Photos: No
 - [ ] Ask to backup connected external drives: No
+- [x] Choose Folders to sync:
+- [x] Default for new files -online-only
 - [ ] Smart sync: No
 
 ## Authenticate **Mac App Store** & download Amphetamine
-- [ ] Install Amphetamine via Mac App Store
+- [x] Install Amphetamine via Mac App Store
+
+## Install **Xcode CLI tools**
+(Xcode CLI Tools includes git, but homebrew will later install a newer git version.)
+- [x] `xcode-select --install` (Install Xcode CLI Tools)
 
 ## Install **Homebrew**, update macOS and App Store apps, & clean **reboot**
-- [ ] Install homebrew (which also installs git from the Xcode CLI tools):
+- [x] Install homebrew (which also installs git from Xcode?):
   ` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-    - [ ] Run the 2 commands that homebrew tells you to run to add brew to your PATH.
-    - If you want to manually install Xcode CLI tools and git:
-        `xcode-select --install`
-- [ ] Apple Software Update
-    - [ ] Turn on auto update and install for everything - security, macOS, and App Store
-    - [ ] Run Apple Software Update for macOS & App Store
-- [ ] clean reboot
+    - [x] And run the 2 commands that homebrew tells you to run to add brew to your PATH.
+- [x] Apple Software Update - macOS & App Store
+- [x] clean reboot
 
-## Git **clone harmon-ops** repo, create **machine-specific IaC Brewfile** in infra/{machineName} folder
-- [ ] `git clone https://github.com/evanharmon1/harmon-ops.git` to ~ home folder
-- [ ] Duplicate the `BrewfileSuperSet` file, name it `Brewfile`, and put it in `infra/{machineName}` folder (along with the duplicated `CHECKLIST-MAC.md` file from earlier).
+## Create **machine-specific IaC Brewfile** in infra/{machineName} folder
+- [ ] Duplicate the `BrewfileSuperSet` file, name it `Brewfile`, and put it in `infra/{machineName}` folder
 - [ ] Modify that Brewfile based on the machine you're configuring (delete and add any apps/packages you want installed)
+- [ ] Push that Brewfile to the repo in `infra/{machineName}` folder.
 - [ ] Modify `setupMac.sh` to have `brew bundle` point to that machine-specific `Brewfile`.
-- [ ] Eventually, push those changes to the repo and merge into main branch, and delete cloned repo (since you'll have it via Dropbox when it finishes syncing)
 
 ## Run **setupMac.sh** from its directory at dev-env/mac
 - [ ] Verify the `setupMac.sh`, `configureMacSettings.sh`, and `updateMac.sh` are going to do what you want for this machine.
@@ -339,7 +329,7 @@ Checklist for setting up a new Mac
 
 ### Drafts
 - [ ] Install Extensions
-(Synced with iCloud)
+  (Synced with iCloud)
     - Append to Obsidian, etc.
 
 ### Banktivity
