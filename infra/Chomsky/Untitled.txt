@@ -1,4 +1,0 @@
-# Chomsky Ubuntu Linux
-Ubuntu Desktop on Contraption PC
-
-22.04 Jammy Jellyfish
