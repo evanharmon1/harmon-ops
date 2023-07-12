@@ -15,7 +15,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask"
 tap "homebrew/bundle"
-tap "homebrew/cask-drivers"
+
 tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
 tap "hashicorp/tap"
@@ -70,6 +70,7 @@ cask "hazel"
 cask "raycast"
 cask "alfred"
 cask "downie"
+cask "jdownloader"
 mas "PopClip", id: 445189367
 cask "bunch"
 cask "keyboard-maestro"
@@ -100,7 +101,7 @@ mas "Cardhop", id: 1290358394
 mas "Acorn", id: 1547371478
 mas "Actions", id: 1586435171
 mas "Dark Reader for Safari", id: 1438243180
-cask "hook"
+cask "hookmark"
 mas "Vinegar - Tube Cleaner", id: 1591303229
 mas "Baking Soda - Tube Cleaner", id: 1601151613
 cask "font-menlo-for-powerline"
@@ -161,7 +162,7 @@ brew "fzf" #Command-line fuzzy finder written in Go
 brew "fd" #Simple, fast and user-friendly alternative to find
 brew "exa" #Modern replacement for 'ls'
 brew "pidof" #Display the PID number for a given process name
-brew "gather-cli" # Readability and Markdown utility for saving web urls and HTML text (Terpstra)
+brew "gather-cli" # Requires full xCode installation. Readability and Markdown utility for saving web urls and HTML text (Terpstra)
 brew "espeak" #Text to speech, software speech synthesizer
 brew "cowsay"
 brew "shellcheck" # Static analysis and lint tool, for (ba)sh scripts
@@ -180,6 +181,7 @@ brew "gh" #GitHub official CLI tool
 brew "git-extras" #GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
 brew "hub" #Additional GitHub functions for git on the command-line
 brew "autojump" #Shell extension to jump to frequently used directories
+brew "mc"
 
 
 #==============================================================================
@@ -226,7 +228,7 @@ cask "batteries"
 cask "houdahspot"
 mas "Forecast Bar", id: 982710545
 cask "duplicacy-web-edition"
-cask "music-bar"
+mas "MusicBar" id: 2142639431
 cask "drawio"
 cask "notion"
 cask "fastscripts"
@@ -458,7 +460,6 @@ mas "Steam Link", id: 1246969117
 cask "battle-net" # doesn't install right now - 12-05-2021
 cask "dolphin"
 cask "openemu"
-cask "twitch"
 
 
 #==============================================================================

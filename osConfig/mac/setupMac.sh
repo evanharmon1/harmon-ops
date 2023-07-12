@@ -14,16 +14,15 @@ echo -e "\033[0;35m  ......Starting setupMac.sh......  \033[0m"
 #============================================================================
 #                               Apple Software Updates
 #============================================================================
-# Not worth the occasional popup windows and errors. Easier to just let Apple do auto updates for macOS and App Store.
-# echo -e "\033[0;35m  ......Checking for and installing any Apple software updates......  \033[0m"
-# softwareupdate -ia —verbose
+echo -e "\033[0;35m  ......Checking for and installing any Apple software updates......  \033[0m"
+softwareupdate -ia —verbose
 
 
 #============================================================================
 #                               Homebrew
 #============================================================================
 echo -e "\033[0;35m  ......Running brew bundle to install and/or update packages in Brewfile......  \033[0m"
-brew bundle -v --file=../infra/MacMini2014/Brewfile
+brew bundle -v --file=../../infra/MacMini2014/Brewfile
 brew cleanup
 brew bundle dump
 
