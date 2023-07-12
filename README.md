@@ -5,7 +5,7 @@ E.g., it helps me bootstrap new computers with a developer environment customize
 
 It also helps me keep track of and document my evolving homelab setup and architecture with documentation, diagrams, and Infrastructure as Code (IaC). I keep track of config and packages for each machine in `infra/`. All scripts should be idempotent.
 
-## OS config for bootstrapping new machines with a developer environment `osConfig/`
+## OS config for bootstrapping new machines with a developer environment - `osConfig/`
 ### Setup a Mac
 1. Follow `osConfig/mac/CHECKLIST-MAC.md`
 2. Run `osConfig/mac/setupMac.sh`
@@ -38,8 +38,13 @@ This is automatically run from setupMac.sh
 - `docker-compose.yml` with various useful docker images
 - A docker environment setup for Windows that makes developing on Windows easier due to bash, linux, containers, etc.
 
-## Homelab and Infrastructure `infra/`
-Packages, Brewfiles, diagrams, etc.
+## Homelab and Infrastructure - `infra/`
+Packages, Brewfiles, IaC, diagrams, etc.
+
+[My Network and Services Diagram in yEdLive](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/evanharmon1/a57b085867f207b44c2c5d2d721e4433/raw/10f133fb285fcf5296d3e8b4edc821707e2e203b/harmon-ops-network-and-services-2)
+![My Network and Services](infra/harmon-ops-network-and-services.png)
+[My Data and Backups Diagram in yEdLive](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/evanharmon1/cd03a2f4d93bb36876ff512eb3254905/raw/37c961a7100c48e2dc0a581859903ae290d2ce43/Harmon%20Data.graphml%202.graphml.graphml%202.graphml%202)
+![My Data and Backups](infra/harmon-ops-data-and-backups.png)
 
 ## Sources
 - [Homebrew](https://brew.sh/)
