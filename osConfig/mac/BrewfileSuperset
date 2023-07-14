@@ -11,11 +11,8 @@
 #==============================================================================
 #                       Repos
 #==============================================================================
-tap "homebrew/core"
-tap "homebrew/services"
-tap "homebrew/cask"
 tap "homebrew/bundle"
-
+tap "homebrew/services"
 tap "homebrew/cask-versions"
 tap "homebrew/cask-fonts"
 tap "hashicorp/tap"
@@ -348,6 +345,7 @@ cask "datadog-agent"
 cask "royal-tsx"
 cask "figma"
 brew "grafana"
+brew "vault"
 #             Text Editors & IDEs
 #------------------------------------------------------------------------------
 cask "vscodium" #Much slower than VS Code and Insiders
@@ -428,6 +426,7 @@ brew "angular-cli"
 # brew "sqlite3" # For pyenv & its dependencies?
 # brew "xz" # For pyenv & its dependencies?
 # brew "zlib" # For pyenv & its dependencies?
+brew "virtualenv"
 
 #             Security
 #-------------------------------------------------------------------------------

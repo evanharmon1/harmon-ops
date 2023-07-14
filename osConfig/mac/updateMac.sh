@@ -3,13 +3,14 @@
 # Title: updateMac.sh
 # Author: Evan Harmon
 # Shell script to run periodically and/or automatically to keep Mac up to date
-# Run this script from dev-env/mac: 
-# `caffeinate -disu ./updateMac.sh`
+# Run this script from the repo: 
+# `caffeinate -disu bash -x ./updateMac.sh 2>&1 | tee ~/.updateMac.log`
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
 #============================================================================
 #                               Raycast
 #============================================================================
+# To run this script via Raycast
 # Required parameters:
 # @raycast.schemaVersion 1
 # @raycast.title updateMac.sh
@@ -21,7 +22,7 @@
 
 echo -e "\033[0;35m  ......Starting updateMac.sh......  \033[0m"
 terminal-notifier -title "Starting updateMac.sh Script" \
--message "A periodic script that runs to update this Mac. Don't worry if it fails. It will try to run again later." \
+-message "A script that updates this Mac's Homebrew, Mackup dotfiles, etc." \
 -contentImage mac-icon.png \
 -sound Blow
 
@@ -33,33 +34,34 @@ terminal-notifier -title "Starting updateMac.sh Script" \
 echo -e "\033[0;35m  ......Running brew bundle to install and/or update packages in Brewfile......  \033[0m"
 brew update
 BREWOUTPUT=$(brew upgrade -v )
-brew cleanup
 echo "$BREWOUTPUT"
+brew cleanup
+brew bundle dump -v --describe --force --file=~/Brewfile
+THIS_HOST=$(HOSTNAME)
+mkdir "../../infra/${THIS_HOST}/"
+\cp -fR ~/Brewfile "../../infra/${THIS_HOST}/"
 
 
 #============================================================================
-# mackup
+# dotfiles & Mackup
 #============================================================================
 # mackup backs up supported app configs, settings, and dotfiles like .bash_profile to iCloud and then symlinks them back to original location
-# Todo: I don't think I need to run mackup at all since it symlinks to icloud...
+# The only reason I think I need to keep running mackup backup is to catch new files that aren't symlinked to iCloud.
 echo -e "\033[0;35m  ......Running mackup backup to symlink any new dotfiles, config files, etc. to iCloud......  \033[0m"
 # -force argument avoids confirmation dialogs
 mackup backup --force
 
 # Keep any modified dotfiles on machine in sync with dotfiles in this repo
-cp ~/.bashrc ~/Dropbox/dev/DevEnv/dev-env/shell/bash
-cp ~/.zshrc ~/Dropbox/dev/DevEnv/dev-env/shell/zsh
-# cp ~/.fishsomething ~/Dropbox/dev/DevEnv/dev-env/shell/fish
+\cp -fR ~/.bashrc ../shell/bash/
+\cp -fR ~/.zshrc ../shell/zsh/
 
-cp ~/.dotfiles/.aliases ~/Dropbox/dev/DevEnv/dev-env/shell/
-cp ~/.dotfiles/.var ~/Dropbox/dev/DevEnv/dev-env/shell/
-cp ~/.dotfiles/.functions ~/Dropbox/dev/DevEnv/dev-env/shell/
+\cp -fR ~/.dotfiles/ ../shell/.dotfiles/
 
-cp ~/.gitconfig ~/Dropbox/dev/DevEnv/dev-env/git
-cp ~/.gitignore_global ~/Dropbox/dev/DevEnv/dev-env/git
+\cp -fR ~/.gitconfig ../git/
+\cp -fR ~/.gitignore_global ../git/
 
-cp ~/.mackup/myDotFiles.cfg ~/Dropbox/dev/DevEnv/dev-env/mac/.mackup
-cp ~/.mackup.cfg ~/Dropbox/dev/DevEnv/dev-env/mac/.mackup
+\cp -fR ~/.mackup/myDotFiles.cfg .mackup/
+\cp -fR ~/.mackup.cfg .mackup
 
 #============================================================================
 # Python
