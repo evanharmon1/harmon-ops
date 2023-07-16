@@ -50,13 +50,13 @@ cask "visual-studio-code-insiders"
 cask "nova"
 cask "mission-control-plus"
 cask "firefox"
+cask "google-chrome"
 cask "backblaze"
 cask "betterzip"
 cask "forklift"
 cask "protonvpn"
 cask "transmission"
 cask "textexpander"
-cask "superduper"
 cask "appcleaner"
 cask "qlcolorcode" #QuickLook plugin for source code with syntax highlighting.
 cask "qlstephen" # QuickLook plugin that lets you view plain text files without a file extension
@@ -208,7 +208,6 @@ mas "Scapple", id: 568020055
 mas "Noizio", id: 928871589
 mas "Amazon Prime Video", id: 545519333 # always tries to reinstall so comment out after initial install on Mac
 cask "bartender"
-cask "google-chrome"
 cask "foldingtext"
 cask "xee"
 cask "inkscape"
@@ -391,7 +390,6 @@ brew "coreutils"
 brew "checkov"
 brew "terrascan"
 brew "infracost"
-
 #             Databases
 #------------------------------------------------------------------------------
 brew "postgresql"
@@ -417,17 +415,15 @@ brew "yarn"
 brew "typescript"
 brew "gatsby-cli"
 brew "angular-cli"
-
 #             Python
 #------------------------------------------------------------------------------
-#	pyenv dependencies?
+brew "virtualenv"
+# pyenv dependencies?
 # brew "openssl" # For pyenv & its dependencies?
 # brew "readline" # For pyenv & its dependencies?
 # brew "sqlite3" # For pyenv & its dependencies?
 # brew "xz" # For pyenv & its dependencies?
 # brew "zlib" # For pyenv & its dependencies?
-brew "virtualenv"
-
 #             Security
 #-------------------------------------------------------------------------------
 brew "semgrep"
@@ -495,3 +491,4 @@ cask "openemu"
 # cask "chromium"
 # mas "Honey for Safari", id: 1472777122 # always tries to reinstall so comment out after initial install on Mac
 # cask "sublime-text" # Haven't used in years - VS Code, Insider's, Nova, BBEdit
+# cask "superduper" # Using CCC now

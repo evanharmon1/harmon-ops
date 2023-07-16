@@ -4,7 +4,7 @@
 # Author: Evan Harmon
 # Shell script to run periodically and/or automatically to keep Mac up to date
 # Run this script from the repo: 
-# `caffeinate -disu bash -x ./updateMac.sh 2>&1 | tee ~/.updateMac.log`
+# `caffeinate -disu bash -x ./updateMac.sh 2>&1 | tee /var/log/updateMac.sh.log`
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
 #============================================================================
@@ -35,7 +35,7 @@ echo -e "\033[0;35m  ......Running brew bundle to install and/or update packages
 brew update
 BREWOUTPUT=$(brew upgrade -v )
 echo "$BREWOUTPUT"
-brew cleanup
+brew cleanup -v
 brew bundle dump -v --describe --force --file=~/Brewfile
 THIS_HOST=$(HOSTNAME)
 mkdir "../../infra/${THIS_HOST}/"
@@ -52,26 +52,29 @@ echo -e "\033[0;35m  ......Running mackup backup to symlink any new dotfiles, co
 mackup backup --force
 
 # Keep any modified dotfiles on machine in sync with dotfiles in this repo
-\cp -fR ~/.bashrc ../shell/bash/
-\cp -fR ~/.zshrc ../shell/zsh/
+rsync -ah --copy-links ~/.bashrc ../shell/bash
+rsync -ah --copy-links ~/.zshrc ../shell/zsh/
 
-\cp -fR ~/.dotfiles/ ../shell/.dotfiles/
+rsync -ah --copy-links ~/.dotfiles/ ../shell/.dotfiles/
 
-\cp -fR ~/.gitconfig ../git/
-\cp -fR ~/.gitignore_global ../git/
+rsync -ah --copy-links ~/.gitconfig ../git/
+rsync -ah --copy-links ~/.gitignore_global ../git/
 
-\cp -fR ~/.mackup/myDotFiles.cfg .mackup/
-\cp -fR ~/.mackup.cfg .mackup
+rsync -ah --copy-links ~/.mackup/myDotFiles.cfg .mackup/
+rsync -ah --copy-links ~/.mackup.cfg .mackup
+
 
 #============================================================================
 # Python
 #============================================================================
 # ../python/setupPython.sh
 
+
 #============================================================================
 # JavaScript
 #==============================================================================
 # ../javascript/setupJavascript.sh
+
 
 # This pipes the output from brew bundle to the macOS notification
 # This is supposed to open the output file but the command doesn't work.

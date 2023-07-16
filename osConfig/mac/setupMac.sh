@@ -21,22 +21,28 @@ softwareupdate -ia —verbose
 #============================================================================
 #                               Homebrew
 #============================================================================
-echo -e "\033[0;35m  ......Running brew bundle to install and/or update packages in Brewfile......  \033[0m"
-brew bundle -v --file=../../infra/MacMini2014/Brewfile
-brew cleanup
-brew bundle dump
+echo -e "\033[0;35m  ......Running brew bundle to install packages listed in ~/Brewfile......  \033[0m"
+brew update -v
+brew upgrade -v
+brew bundle -v --file=~/Brewfile
+brew bundle dump -v --describe --force --file=~/Brewfile
+THIS_HOST=$(HOSTNAME)
+mkdir "../../infra/${THIS_HOST}/"
+\cp -fR ~/Brewfile "../../infra/${THIS_HOST}/"
 
 
 #============================================================================
 #                               Directories and Symbolic Links
 #============================================================================
 echo -e "\033[0;35m  ......Making Directories and Symbolic Links......  \033[0m"
-mkdir /Users/evan/bin
-mkdir /Users/evan/Local
-mkdir /Users/evan/Local/Banktivity
-mkdir /Users/evan/Local/TorrentsIncomplete
-ln -s /Users/evan/Dropbox/dev /Users/evan
-ln -s /Users/evan/Dropbox/DevEnv/dev-env/shell/bin /Users/evan/bin
+mkdir ~/bin
+mkdir ~/Local
+mkdir ~/Local/Banktivity
+mkdir ~/Local/TorrentsIncomplete
+mkdir ~/.log
+touch ~/.log/updateMac.sh.log
+ln -s ~/Dropbox/dev ~/
+ln -s ~/Dropbox/HarmonOps/harmon-ops/osConfig/shell/bin ~/bin
 
 
 #============================================================================
@@ -100,7 +106,7 @@ git clone https://github.com/powerline/fonts.git
 # mackup config needs the .mackup.cfg in the home directory and a ~/.mackup directory with
 # the myDotFiles.cfg file, but all those should be part of what mackup backup and mackup restore handles
 echo -e "\033[0;35m  ......Running mackup restore to symlink existing app config, settings, and dotfiles from iCloud to their default local locations......  \033[0m"
-ln -s /Users/evan/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup/.mackup.cfg /Users/evan
+ln -s ~/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup/.mackup.cfg ~/
 mackup restore
 
 
