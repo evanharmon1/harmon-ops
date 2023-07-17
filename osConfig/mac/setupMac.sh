@@ -4,7 +4,7 @@
 # Follow the prerequisite steps listed in CHECKLIST-MAC.md
 # E.g., install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 # Run this script from the repo's osConfig/mac directory:
-# `caffeinate -disu bash -x ./setupMac.sh 2>&1 | tee -a ~/.log/setupMac.sh.log`
+# `caffeinate -disu zsh -x ./setupMac.sh 2>&1 | tee -a ~/.log/setupMac.sh.log`
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
 echo -e "\033[0;35m  ......Starting setupMac.sh - $(date) "+%FT%T"......  \033[0m"

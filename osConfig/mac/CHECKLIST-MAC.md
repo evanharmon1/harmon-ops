@@ -70,16 +70,20 @@ Checklist for setting up a new Mac
 - [ ] Modify that Brewfile based on the machine you're configuring (delete and add any apps/packages you want installed)
 - [ ] Eventually, push and merge these changes to the repo.
 
-## Run **setupMac.sh** from its directory at dev-env/mac
+## Run **setupMac.sh** from its directory at osConfig/mac
 - [ ] Verify the `setupMac.sh`, `configureMacSettings.sh`, and `updateMac.sh` are going to do what you want for this machine.
     (E.g., Mackup functionality for dotfiles, autoupdate functionality, Mac settings via CLI, etc.)
     (Modify these files but don't commit them to the repo unless they are relevant for all machines.)
     - [ ] Check what dotfiles from Mackup in iCloud will be linked over to the local machine and delete any from iCloud that are not wanted.
         - setupMac.sh will make a backup of the Mackup directory in iCloud
 - [ ] Turn on Amphetamine for at least a few hours (although the `caffeinate` command should keep the Mac awake).
-- [ ] `caffeinate -disu bash -x ./setupMac.sh 2>&1 | tee ~/.log/setupMac.sh.log`
+- [ ] `caffeinate -disu zsh -x ./setupMac.sh 2>&1 | tee ~/.log/setupMac.sh.log`
     - [ ] Usually needs a few Mac password prompts, so check it periodically
     - [ ] After sexy-bash-prompt install, you need to type exit to get out of the bash env that loads so the setupMac.sh script continues.
+
+## Setup **updateMac.sh** to run automatically as a cronjob
+- [ ] Copy and paste `~osConfig/mac/updateMac.sh.cron` text to crontab with `crontab -e` and set a daily schedule
+    - E.g., 10 19 * * * would be every day at 7:10 PM.
 
 ## Connect **Peripherals**
 - [ ] Keyboards
@@ -472,7 +476,7 @@ E.g.:
   ```
 
 ### Environment Secrets
-- [ ] Add to machine's `~/.dotfiles/.env` (which should be excluded from Mackup, etc.)
+- [ ] Add to machine's `~/Local/.secret` (which should be excluded from Mackup, etc.)
 
 ### VPN
 vpn - make a .vpn folder?

@@ -4,7 +4,7 @@
 # Author: Evan Harmon
 # Shell script to run periodically and/or automatically to keep Mac up to date
 # Run this script from the repo's osConfig/mac directory:
-# `caffeinate -disu bash -x ./updateMac.sh 2>&1 | tee -a ~/.log/updateMac.sh.log`
+# `caffeinate -disu zsh -x ./updateMac.sh 2>&1 | tee -a ~/.log/updateMac.sh.log`
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
 #============================================================================
@@ -20,7 +20,7 @@
 # @raycast.icon 💻
 # @raycast.needsConfirmation false
 
-echo -e "\033[0;35m  ......Starting updateMac.sh - $(date) "+%FT%T"......  \033[0m"
+echo -e "\033[0;35m  ......Starting updateMac.sh - $(date +%FT%T)......  \033[0m"
 terminal-notifier -title "Starting updateMac.sh Script" \
 -message "A script that updates this Mac's Homebrew, Mackup dotfiles, etc." \
 -contentImage mac-icon.png \
@@ -75,11 +75,9 @@ rsync -ah --copy-links ~/.mackup.cfg mackup/
 # ../javascript/setupJavascript.sh
 
 
-# This pipes the output from brew bundle to the macOS notification
-# This is supposed to open the output file but the command doesn't work.
-echo "$BREWOUTPUT" | tail -3 | terminal-notifier -title "Finished updateMac.sh Script" \
--contentImage /Users/evan/Dropbox/dev/DevEnv/dev-env/mac/monitor-icon.icns \
--execute "nova /private/tmp/updateMac.out" \
+terminal-notifier -title "Finished updateMac.sh Script" \
+-message "Finished updateMac.sh Script" \
+-contentImage monitor-icon.icns \
 -sound Glass
 
 echo -e "\033[1;32m  ======Finished updateMac.sh======  \033[0m"
