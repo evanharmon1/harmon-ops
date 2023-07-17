@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Title: updateMac.sh
 # Author: Evan Harmon
 # Shell script to run periodically and/or automatically to keep Mac up to date
-# Run this script from the repo: 
-# `caffeinate -disu bash -x ./updateMac.sh 2>&1 | tee /var/log/updateMac.sh.log`
+# Run this script from the repo's osConfig/mac directory: 
+# `caffeinate -disu bash -x ./updateMac.sh 2>&1 | tee ~/.log/updateMac.sh.log`
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
 #============================================================================

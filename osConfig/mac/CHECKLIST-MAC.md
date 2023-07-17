@@ -1,10 +1,6 @@
 # CHECKLIST-MAC.md
 Checklist for setting up a new Mac
 
-## Create **machine-specific folder** in infra/{machineName}
-(for machine-specific Brewfile, checklist, and any other files, scripts, etc.)
-- [ ] Copy this checklist file to that folder to keep track of config process (open in Typora)
-
 ## **Install macOS** from scratch
 - [ ] Erase your Mac with Erase Assistant:
     - [ ] https://support.apple.com/guide/mac-help/erase-and-reinstall-macos-mh27903/mac
@@ -39,11 +35,11 @@ Checklist for setting up a new Mac
 ## Download **Dropbox** and start syncing
 - [ ] https://www.dropbox.com/install
     - (Lets you skip account signin in the browser)
-- [ ] Choose Folders to sync to this Mac (Selective Sync): all
-- [ ] How should Dropbox sync to this Mac?: Online-only
+- [ ] Choose Folders to sync to this Mac (Selective Sync): only the dev/HarmonOps folder for now
+- [ ] How should Dropbox sync to this Mac?: Local for now, then Online-only
     - (if you want to replicate to this Mac, then Local, which downloads everything locally all the time, regardless of use)
     - (Online-only setting only downloads to local computer when you open it. Then it might also stay local indefinitely?)
-### App Settings
+### Dropbox App Settings
 - [ ] Make sure upgrade to newer Dropbox client is installed (the one that you upgrade in the app so it's compatible with newer Apple security).
 - [ ] Backup: no (not sure if DropBox backup is end-to-end and at rest encrypted or if it's key is fully user-controlled - I don't think it is.)
 - [ ] Verify when deleting off of Dropbox: No
@@ -56,6 +52,7 @@ Checklist for setting up a new Mac
 - [ ] Install Amphetamine via Mac App Store
 
 ## Install **Homebrew**, update macOS and App Store apps, & clean **reboot**
+- Next time try to get the homebrew install and checklist duplicate commands running in setupMac.sh or a new bootStrap.sh that then reboots
 - [ ] Install homebrew (which also installs git from the Xcode CLI tools):
   ` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
     - [ ] Run the 2 commands that homebrew tells you to run to add brew to your PATH.
@@ -63,25 +60,24 @@ Checklist for setting up a new Mac
         `xcode-select --install`
 - [ ] Apple Software Update
     - [ ] Turn on auto update and install for everything - security, macOS, and App Store
-    - [ ] Run Apple Software Update for macOS & App Store
+    - [ ] Run Apple Software Update for macOS & App Store via GUI or `softwareupdate -ia —verbose`
 - [ ] clean reboot
 
-## Git **clone harmon-ops** repo, create **machine-specific IaC Brewfile** in infra/{machineName} folder
-- [ ] `git clone https://github.com/evanharmon1/harmon-ops.git` to ~ home folder
-- [ ] Duplicate the `BrewfileSuperSet` file, name it `Brewfile`, and put it in `infra/{machineName}` folder (along with the duplicated `CHECKLIST-MAC.md` file from earlier).
+## Duplicate BrewfileSuperset and CHECKLIST-MAC.md
+- [ ] `THIS_HOST=$(HOSTNAME) && mkdir "infra/${THIS_HOST}/" && cp osConfig/mac/CHECKLIST-MAC.md "infra/${THIS_HOST}/"`
+    - Use this version of the checklist to keep track of progress of this machine's setup
+- [ ] `cp osConfig/mac/BrewfileSuperset ~/Brewfile` so homebrew can use it in `setupMac.sh`.
 - [ ] Modify that Brewfile based on the machine you're configuring (delete and add any apps/packages you want installed)
-- [ ] Modify `setupMac.sh` to have `brew bundle` point to that machine-specific `Brewfile`.
-- [ ] Eventually, push those changes to the repo and merge into main branch, and delete cloned repo (since you'll have it via Dropbox when it finishes syncing)
+- [ ] Eventually, push and merge these changes to the repo.
 
 ## Run **setupMac.sh** from its directory at dev-env/mac
 - [ ] Verify the `setupMac.sh`, `configureMacSettings.sh`, and `updateMac.sh` are going to do what you want for this machine.
     (E.g., Mackup functionality for dotfiles, autoupdate functionality, Mac settings via CLI, etc.)
     (Modify these files but don't commit them to the repo unless they are relevant for all machines.)
     - [ ] Check what dotfiles from Mackup in iCloud will be linked over to the local machine and delete any from iCloud that are not wanted.
-    - [ ] Make a backup of the Mackup directory in iCloud (In case the mackup restore command messes up)
-    - [ ] Double check that any dotfiles you don't want synced to Mackup/iCloud are excluded in the `~/evan/.mackup.cfg` file. (E.g., sensitive info like ssh.)
+        - setupMac.sh will make a backup of the Mackup directory in iCloud
 - [ ] Turn on Amphetamine for at least a few hours (although the `caffeinate` command should keep the Mac awake).
-- [ ] `caffeinate -disu ./setupMac.sh`
+- [ ] `caffeinate -disu bash -x ./setupMac.sh 2>&1 | tee ~/.log/setupMac.sh.log`
     - [ ] Usually needs a few Mac password prompts, so check it periodically
     - [ ] After sexy-bash-prompt install, you need to type exit to get out of the bash env that loads so the setupMac.sh script continues.
 

@@ -9,13 +9,14 @@ mkdir "../../infra/${THIS_HOST}/"
 #                               Directories and Symbolic Links
 #============================================================================
 echo -e "\033[0;35m  ......Making Directories and Symbolic Links......  \033[0m"
-mkdir ~/bin
 mkdir ~/Local
 mkdir ~/Local/TorrentsIncomplete
 mkdir ~/.log
 touch ~/.log/updateLinux.sh.log
+# You can't use relative paths for symoblic links apparently. E.g. - osCongig/mac/scripts
 ln -s ~/Dropbox/dev ~/
-ln -s ~/Dropbox/HarmonOps/harmon-ops/osConfig/shell/bin ~/bin
+ln -s ~/dev/HarmonOps/harmon-ops/osConfig/shell/bin ~/
+ln -s ~/dev/HarmonOps/harmon-ops/osConfig/linux/scripts ~/
 
 
 #============================================================================
