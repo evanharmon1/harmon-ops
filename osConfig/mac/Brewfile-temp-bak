@@ -24,7 +24,7 @@ tap "hashicorp/tap"
 #============================================================================
 #                       Base Packages
 #============================================================================
-# to install on most machines 
+# to install on most machines
 brew "mas" # Mac App Store command-line interface
 brew "mackup"
 mas "1Password 7", id: 1333542190

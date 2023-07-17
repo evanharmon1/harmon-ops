@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script to setup a new developer environment on a *nix computer
 
@@ -102,4 +102,3 @@ git clone https://github.com/powerline/fonts.git
 apt upgrade
 
 echo -e "\033[0;31m  ======Finished setupLinux.sh======  \033[0m"
-

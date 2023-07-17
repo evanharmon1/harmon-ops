@@ -98,7 +98,7 @@ Checklist for setting up a new Mac
 ### Settings > Desktop & Screensaver
 - [ ] Screensaver
 	- [ ] Start after 20 minutes
-	
+
 ### Settings > Dock & Menu Bar
 - [ ] Double click window title bar to zoom
 - [ ] Battery - show percentage, in menubar and control center
@@ -119,11 +119,11 @@ Checklist for setting up a new Mac
 	- [ ] When display is sleeping - no
 	- [ ] When display is locked - yes
 	- [ ] When mirroring or sharing display - no
-	
+
 ### Settings > Internet Accounts
 - [ ] Google
 	- [ ] Google Mail only, not calendar, etc.
-	
+
 ### Settings > Wallet & Apple Pay
 - [ ] Setup cards, etc.
 
@@ -246,8 +246,8 @@ Checklist for setting up a new Mac
 
 ### Messages
 - [ ] iMessages in iCloud: enable in iMessages app
-- [ ] Enable photo and sharing thing? 
-	
+- [ ] Enable photo and sharing thing?
+
 ## Download Remaining 3rd Party Apps that Aren't Available in Homebrew Repos
 - [ ] [Markdown Service Tools - BrettTerpstra.com](https://brettterpstra.com/projects/markdown-service-tools/)
 - [ ] [Aeon Timeline](https://timeline.app/download/)
@@ -345,7 +345,7 @@ Checklist for setting up a new Mac
 - [ ] Install themes
     - [ ] [Download from](https://blog.hogbaysoftware.com/tagged/writeroomtheme)
     - [ ] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
-    - [ ] Set default theme as SolarizedDarkWriteRoomTheme  
+    - [ ] Set default theme as SolarizedDarkWriteRoomTheme
 
 ### Bunch
 - [ ] Make sure bunches are working correctly

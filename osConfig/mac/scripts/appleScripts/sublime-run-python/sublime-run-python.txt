@@ -1,6 +1,6 @@
-(* Script to automatically take the full path of the currently open file in Sublime Text 3, open macOS's Terminal, 
-and then run Python3 with that file path as its argument. This is a convenient way to automatically run your current 
-code directly in the system terminal and without needing to install any Sublime packages or worrying about caveats 
+(* Script to automatically take the full path of the currently open file in Sublime Text 3, open macOS's Terminal,
+and then run Python3 with that file path as its argument. This is a convenient way to automatically run your current
+code directly in the system terminal and without needing to install any Sublime packages or worrying about caveats
 in an IDE's terminal or Python environments. *)
 
 -- Get file path of current program open in Sublime Text 3. (Needs to have keyboard shortcut setup in the Key Bindings preferences of Sublime to have ctrl+alt+super+k copy_path).

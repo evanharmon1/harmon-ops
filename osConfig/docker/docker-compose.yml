@@ -54,7 +54,7 @@ services:
 #     image: rmohr/activemq:latest
 #     ports:
 #       - 1616:1616
-#       - 161:161  
+#       - 161:161
 #       - 672:672
 #       - 1613:1613
 #       - 883:883

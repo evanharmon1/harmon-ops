@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Script to setup nodejs on a new developer environment.
 # Installing npm packages globally with a package.json file is not supported.
