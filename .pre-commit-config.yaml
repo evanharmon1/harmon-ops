@@ -33,9 +33,8 @@ repos:
     hooks:
       - id: terraform_fmt
       - id: terraform_docs
-      - id: checkov
+      - id: terraform_checkov
       - id: infracost_breakdown
-      - id: terraform_tfsec
   - repo: https://github.com/google/yamlfmt
     rev: v0.9.0
     hooks:
