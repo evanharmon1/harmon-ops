@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # Title: updateMac.sh
 # Author: Evan Harmon

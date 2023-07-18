@@ -1,0 +1,10 @@
+version: "3"
+tasks:
+  validate:
+    cmds:
+      - pre-commit run --all-files
+      - snyk test --file=osConfig/languages/python/requirements.txt
+      # - shellcheck osConfig/mac/updateMac.sh
+      # - shellcheck osConfig/mac/setupMac.sh
+      # - shellcheck osConfig/mac/configureMacSettings.sh
+    silent: true

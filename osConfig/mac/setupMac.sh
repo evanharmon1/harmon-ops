@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/sh
 
 # Main script to initiate the automated setup of a new Mac
 # Follow the prerequisite steps listed in CHECKLIST-MAC.md

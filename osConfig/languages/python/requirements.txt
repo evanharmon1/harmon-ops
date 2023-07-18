@@ -2,10 +2,10 @@
 
 numpy
 pandas
-beautifulsoup
+beautifulsoup4
 requests
 bcrypt
-docker-compose
-PyYAML
+# docker-compose
+# PyYAML
 pandoc
 cookiecutter

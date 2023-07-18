@@ -1,5 +1,4 @@
 version: ‘3.7’
-
 services:
   plex:
     image: plexinc/pms-docker
@@ -23,7 +22,6 @@ services:
       - TZ=America/Chicago
       - HOSTNAME=”PlexServer”
       - ADVERTISE_IP=http://10.0.4.210:32400/ # IP of host running docker
-
     volumes:
       - ~/Local/Docker/plexms/config:/config
       - ~/Local/Docker/plexms/transcode:/transcode

@@ -70,9 +70,9 @@ apt update
 
 apt-add-repository --yes --update ppa:ansible/ansible
 
-apt install ${PACKAGES[@]}
+apt install "${PACKAGES[@]}"
 
-snap install ${SNAPS[@]}
+snap install "${SNAPS[@]}"
 
 
 #============================================================================

@@ -141,6 +141,8 @@ brew "glances"
 brew "gnu-sed"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Task is a task runner/build tool that aims to be simpler and easier to use
+brew "go-task"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Development kit for the Java programming language

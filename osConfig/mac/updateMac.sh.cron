@@ -1,6 +1,6 @@
 # Add this as a cronjob with crontab -e
 
-SHELL=/bin/zsh
+SHELL=/bin/sh
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/homebrew/bin:~/bin:~/scripts:$PATH
 
 10 19 * * * cd ~/dev/HarmonOps/harmon-ops/osConfig/mac && caffeinate -disu zsh -x ./updateMac.sh 2>&1 | tee -a ~/.log/updateMac.sh.log
