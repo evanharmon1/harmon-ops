@@ -29,3 +29,5 @@
 	templateDir = /Users/evan/.git-template
 [alias]
 	ll = log --graph --oneline --decorate
+[push]
+	autoSetupRemote = true

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo -e "\033[1;32m  ......Starting setupPython.sh......  \033[0m"
 # Based on whatever the version homebrew installs

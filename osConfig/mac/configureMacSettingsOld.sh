@@ -18,7 +18,7 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 #============================================================================
-#                               General UI/UX  
+#                               General UI/UX
 #============================================================================
 # Set computer name (as done via System Preferences → Sharing)
 # TODO: Make these variables that the script prompts for.
@@ -953,7 +953,7 @@ duti -s com.panic.Nova bunch
 echo 'com.visualstudio.code.oss   public.plain-text all' | duti
 echo 'com.visualstudio.code.oss   public.unix-executable' | duti
 
-# Didn't work perfectly last time 2021-11-20 
+# Didn't work perfectly last time 2021-11-20
 # Set VS Code for most programming files
 duti -s com.microsoft.VSCode py
 duti -s com.microsoft.VSCode js

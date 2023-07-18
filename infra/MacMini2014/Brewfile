@@ -164,4 +164,3 @@ cask "datadog-agent"
 cask "docker"
 cask "plex-media-server" # Install only for servers
 cask "screens-connect"
-

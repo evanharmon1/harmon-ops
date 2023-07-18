@@ -13,7 +13,7 @@
     <key>PATH</key>
     <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/usr/local/sbin:/opt/homebrew/bin:/Users/evan/bin:/Users/evan/Dropbox/dev/DevEnv/dev-env/mac</string>
   </dict>
-  
+
   <key>Label</key>
   <string>com.evan.updateMac</string>
 

@@ -1,15 +1,13 @@
-#!/bin/bash
+#!/bin/zsh
 
 # Main script to initiate the automated setup of a new Mac
 # Follow the prerequisite steps listed in CHECKLIST-MAC.md
 # E.g., install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-# Requires `Brewfile` in the same directory, or modify this script to point brew bundle to the machine-specific Brewfile in infra/{machineName}/Brewfile with:
-# brew bundle -v --file=../infra/{machineName}/Brewfile
-# Run this script from its directory at dev-env/mac: 
-# `caffeinate -disu ./setupMac.sh`
+# Run this script from the repo's osConfig/mac directory:
+# `caffeinate -disu zsh -x ./setupMac.sh 2>&1 | tee -a ~/.log/setupMac.sh.log`
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
-echo -e "\033[0;35m  ......Starting setupMac.sh......  \033[0m"
+echo -e "\033[0;35m  ......Starting setupMac.sh - $(date) "+%FT%T"......  \033[0m"
 
 #============================================================================
 #                               Apple Software Updates
@@ -21,22 +19,31 @@ softwareupdate -ia —verbose
 #============================================================================
 #                               Homebrew
 #============================================================================
-echo -e "\033[0;35m  ......Running brew bundle to install and/or update packages in Brewfile......  \033[0m"
-brew bundle -v --file=../../infra/MacMini2014/Brewfile
-brew cleanup
-brew bundle dump
+echo -e "\033[0;35m  ......Running brew bundle to install packages listed in ~/Brewfile......  \033[0m"
+brew update -v
+brew upgrade -v
+brew bundle -v --file=~/Brewfile
+brew bundle dump -v --describe --force --file=~/Brewfile
+THIS_HOST=$(HOSTNAME)
+mkdir "../../infra/${THIS_HOST}/"
+\cp -fR ~/Brewfile "../../infra/${THIS_HOST}/"
 
 
 #============================================================================
 #                               Directories and Symbolic Links
 #============================================================================
 echo -e "\033[0;35m  ......Making Directories and Symbolic Links......  \033[0m"
-mkdir /Users/evan/bin
-mkdir /Users/evan/Local
-mkdir /Users/evan/Local/Banktivity
-mkdir /Users/evan/Local/TorrentsIncomplete
-ln -s /Users/evan/Dropbox/dev /Users/evan
-ln -s /Users/evan/Dropbox/DevEnv/dev-env/shell/bin /Users/evan/bin
+mkdir ~/Local
+mkdir ~/Local/Banktivity
+mkdir ~/Local/TorrentsIncomplete
+touch ~/Local/.secret
+mkdir ~/.log
+touch ~/.log/setupMac.sh.log
+touch ~/.log/updateMac.sh.log
+# You can't use relative paths for symoblic links apparently. E.g. - osCongig/mac/scripts
+ln -s ~/Dropbox/dev ~/
+ln -s ~/dev/HarmonOps/harmon-ops/osConfig/shell/bin ~/
+ln -s ~/dev/HarmonOps/harmon-ops/osConfig/mac/scripts ~/
 
 
 #============================================================================
@@ -100,7 +107,10 @@ git clone https://github.com/powerline/fonts.git
 # mackup config needs the .mackup.cfg in the home directory and a ~/.mackup directory with
 # the myDotFiles.cfg file, but all those should be part of what mackup backup and mackup restore handles
 echo -e "\033[0;35m  ......Running mackup restore to symlink existing app config, settings, and dotfiles from iCloud to their default local locations......  \033[0m"
-ln -s /Users/evan/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup/.mackup.cfg /Users/evan
+# Backup current Mackup directory in iCloud in case the restore process messes up anything.
+mkdir -p ~/Library/"Mobile Documents"/com~apple~CloudDocs/Backups/"Mackup Backups/${THIS_HOST}/$(date +%F)"/
+cp ~/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup ~/Library/"Mobile Documents"/com~apple~CloudDocs/Backups/"Mackup Backups/${THIS_HOST}/$(date +%F)"/
+ln -s ~/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup/.mackup.cfg ~/
 mackup restore
 
 
