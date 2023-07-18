@@ -1,5 +1,5 @@
-name: GitHub Actions
-run-name: ${{ github.actor }} is running GitHub Actions
+name: Validate
+run-name: ${{ github.actor }} is running Validate Actions
 on:
   pull_request:
 jobs:
