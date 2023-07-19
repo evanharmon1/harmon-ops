@@ -4,3 +4,10 @@
 function mk() {
   mkdir -p "$@" && cd "$@"
 }
+
+# Git - stage all current changes, commit them, and push them to current remote branch.
+gsend() {
+  git add -A
+  git commit -m ${1:-"merge"}
+  git push
+}
