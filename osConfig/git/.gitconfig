@@ -29,5 +29,11 @@
 	templateDir = /Users/evan/.git-template
 [alias]
 	ll = log --graph --oneline --decorate
+	ss = status
+	aa = add -A
+	cc = commit
+	cm = checkout main
+	co = checkout
+	cb = checkout -b
 [push]
 	autoSetupRemote = true

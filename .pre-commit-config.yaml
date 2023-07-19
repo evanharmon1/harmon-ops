@@ -5,6 +5,7 @@ repos:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
       - id: check-case-conflict
       - id: check-executables-have-shebangs
       - id: check-json
@@ -27,7 +28,14 @@ repos:
     rev: v1.0.6
     hooks:
       - id: shell-lint
-        args: [--format=json, --color=always, --exclude=SC3037, --exclude=SC2148, --severity=error]
+        args:
+          [
+            --format=json,
+            --color=always,
+            --exclude=SC3037,
+            --exclude=SC2148,
+            --severity=error,
+          ]
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.81.0
     hooks:
@@ -35,10 +43,6 @@ repos:
       - id: terraform_docs
       - id: terraform_checkov
       - id: infracost_breakdown
-  - repo: https://github.com/google/yamlfmt
-    rev: v0.9.0
-    hooks:
-      - id: yamlfmt
   - repo: https://github.com/ansible/ansible-lint
     rev: v6.17.2
     hooks:

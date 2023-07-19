@@ -4,3 +4,19 @@
 function mk() {
   mkdir -p "$@" && cd "$@"
 }
+
+# Git - stage all current changes, commit them, and push them to current remote branch.
+# Argument: "commit message". If not present, defaults to "default message".
+gsend() {
+  git add -A
+  git commit -m ${1:-"default message"}
+  git push
+}
+
+gum() {
+  local current_branch=$(git symbolic-ref --short HEAD)
+  branch=${1:-$current_branch}
+  git checkout main
+  git pull
+  git checkout $branch
+}

@@ -151,6 +151,8 @@ brew "openjdk"
 brew "gradle"
 # Gorgeous metric visualizations and dashboards for timeseries databases
 brew "grafana"
+# Command-line tool for common GraphQL development workflows
+brew "graphql-cli"
 # GNU grep, egrep and fgrep
 brew "grep"
 # GSettings schemas for desktop components
