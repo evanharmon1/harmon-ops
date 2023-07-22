@@ -10,7 +10,7 @@ jobs:
       - name: debug pwd
         run: pwd
       - name: Cusotm check for secret files
-        run: ${{ github.workspace }}/osConfig/shell/bin/check_for_pattern.sh ${{ github.workspace }} "*README*"
+        run: ${{ github.workspace }}/osConfig/shell/bin/check_for_pattern.sh ${{ github.workspace }}/ "*README*"
       - name: Install Whispers
         run: sudo pip install whispers
       # Scan repo for secrets
