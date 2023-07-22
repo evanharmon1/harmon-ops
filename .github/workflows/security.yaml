@@ -13,7 +13,7 @@ jobs:
         run: sudo pip install whispers
       # Use whispers to check repo for unecrypted secrets, passwords, etc.
       - name: Run whispers
-        run: whispers --config test/whisperConfig.yml --severity BLOCKER,CRITICAL . > /tmp/scan_output.json
+        run: whispers --config test/whisperConfig.yml . > /tmp/scan_output.json
       # Upload Artifacts
       - name: Upload the scan output
         uses: actions/upload-artifact@v3
