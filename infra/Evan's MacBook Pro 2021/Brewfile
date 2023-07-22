@@ -179,6 +179,8 @@ brew "imagemagick"
 brew "infracost"
 # Interactive computing in Python
 brew "ipython"
+# Development kit for the Java programming language
+brew "openjdk@17"
 # Extendable open source continuous integration server
 brew "jenkins"
 # Manage your Java environment
@@ -624,7 +626,6 @@ mas "Cardhop", id: 1290358394
 mas "ColorSlurp", id: 1287239339
 mas "com.apptorium.Workspaces", id: 1219826448
 mas "Copy 'Em", id: 876540291
-mas "DaisyDisk", id: 411643860
 mas "Dark Noise", id: 1465439395
 mas "Dark Reader for Safari", id: 1438243180
 mas "Data Jar", id: 1453273600
@@ -674,6 +675,7 @@ mas "Microsoft Word", id: 462054704
 mas "Mobile Mouse Server", id: 412814284
 mas "Moom", id: 419330170
 mas "MultiMarkdown Composer", id: 1275176220
+mas "MusicBar", id: 6447295161
 mas "Noizio", id: 928871589
 mas "Notability", id: 360593530
 mas "Notion Web Clipper", id: 1559269364

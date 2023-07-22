@@ -1,5 +1,9 @@
-#!/bin/sh
+#!/bin/sh -x
 
+#==============================================================================
+#                       Setup Mac
+#==============================================================================
+# Author: Evan Harmon
 # Main script to initiate the automated setup of a new Mac
 # Follow the prerequisite steps listed in CHECKLIST-MAC.md
 # E.g., install Homebrew: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
@@ -8,12 +12,14 @@
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
 echo -e "\033[0;35m  ......Starting setupMac.sh - $(date) "+%FT%T"......  \033[0m"
+start_time=$(date +%s)
 
 #============================================================================
 #                               Apple Software Updates
 #============================================================================
 echo -e "\033[0;35m  ......Checking for and installing any Apple software updates......  \033[0m"
-softwareupdate -ia —verbose
+# Mac system software and App Store updates and restart if needed
+softwareupdate --install --all --restart —verbose
 
 
 #============================================================================
@@ -47,17 +53,6 @@ ln -s ~/dev/HarmonOps/harmon-ops/osConfig/mac/scripts ~/
 
 
 #============================================================================
-#                       Bash
-#============================================================================
-#             [sexy-bash-prompt](https://github.com/twolfson/sexy-bash-prompt)
-#------------------------------------------------------------------------------
-# Their one-line installation didn't work last time. I needed to do their
-# manual install method.
-# TODO: Disable?
-(cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
-
-
-#============================================================================
 #                               Zsh
 #============================================================================
 echo -e "\033[0;35m  ......Installing oh-my-zsh......  \033[0m"
@@ -65,29 +60,27 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 
 #============================================================================
-#                               fish
-#============================================================================
-# Still just using zsh and oh-my-zsh
-
-
-#============================================================================
 #                               Python
 #============================================================================
-# ../python/setupPython.sh
-# TODO: Update python setup
+../languages/python/setupPython.sh
 
 
 #============================================================================
 #                               JavaScript
 #============================================================================
-# ../javascript/setupJavascript.sh
-# TODO: Update JavaScript setup
+../languages/javaScript/setupJavaScript.sh
+
+
+#============================================================================
+#                               JavaScript
+#============================================================================
+../languages/java/setupJava.sh
 
 
 #============================================================================
 #                               VS Code
 #============================================================================
-# Shouldn't need this anymore with VS Code Settings Sync
+# Shouldn't need this anymore with VS Code Settings Sync unless I want to start from scratch.
 # echo -e "\033[0;35m  ......Installing Fonts......  \033[0m"
 # ../IDEs/vscode/setupVsCode.sh
 
@@ -132,8 +125,20 @@ mackup restore
 # launchctl load /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist
 
 
+#============================================================================
+#                       Bash
+#============================================================================
+#             [sexy-bash-prompt](https://github.com/twolfson/sexy-bash-prompt)
+#------------------------------------------------------------------------------
+# Their one-line installation didn't work last time. I needed to do their
+# manual install method.
+# I might need to only do this last. Otherwise it exits the system shell and enters bash?
+(cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
+
+end_time=$(date +%s)
+echo "Time elapsed: $(($end_time - $start_time)) seconds"
 echo -e "\033[1;32m  ======Finished setupMac.sh======  \033[0m"
 terminal-notifier -title "Finished setupMac.sh Script" \
--message "The initial setup script that sets up this Mac has finished. You should restart the Mac after this script completes." \
+-message "setupMac.sh has finished. You should restart the Mac after this script completes. Time elapsed: $(($end_time - $start_time)) seconds." \
 -contentImage monitor-icon.icns \
 -sound Glass

@@ -5,7 +5,12 @@ pandas
 beautifulsoup4
 requests
 bcrypt
-# docker-compose
-# PyYAML
 pandoc
 cookiecutter
+whispers
+
+
+#             Optional
+#------------------------------------------------------------------------------
+# docker-compose
+# PyYAML
