@@ -7,8 +7,12 @@ jobs:
     steps:
       - run: echo "Triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v3
+      - name: debug pwd
+        run: pwd
+      - name: debug2
+        run: cat README.md
       - name: Cusotm check for secret files
-        run: ./osConfig/shell/bin/check_for_pattern.sh "secret"
+        run: ./osConfig/shell/bin/check_for_pattern.sh "README"
       - name: Install Whispers
         run: sudo pip install whispers
       # Scan repo for secrets
@@ -16,7 +20,7 @@ jobs:
         run: whispers --config test/whisperConfig.yml --severity BLOCKER,CRITICAL ${{ github.workspace }} > /tmp/scan_output.json
       # Upload Artifacts
       - name: Upload the scan output
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: scan_results
           path: /tmp/scan_output.json
