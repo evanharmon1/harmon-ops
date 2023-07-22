@@ -12,7 +12,7 @@ jobs:
       - name: debug2
         run: cat README.md
       - name: Cusotm check for secret files
-        run: ./osConfig/shell/bin/check_for_pattern.sh "README"
+        run: ${{ github.workspace }}/osConfig/shell/bin/check_for_pattern.sh "README"
       - name: Install Whispers
         run: sudo pip install whispers
       # Scan repo for secrets
