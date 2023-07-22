@@ -7,10 +7,8 @@ jobs:
     steps:
       - run: echo "Triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v3
-      - name: chmod
-        run: chmod +x ${{ github.workspace }}/osConfig/shell/bin/check_for_pattern.sh
       - name: Cusotm check for secret files
-        run: ${{ github.workspace }}/osConfig/shell/bin/check_for_pattern.sh ${{ github.workspace }}/ "*README*"
+        run: ./osConfig/shell/bin/check_for_pattern.sh . "*README*"
       - name: Install Whispers
         run: sudo pip install whispers
       # Scan repo for secrets
