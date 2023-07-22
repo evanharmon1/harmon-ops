@@ -192,8 +192,7 @@ Checklist for setting up a new Mac
 - [ ] Add other fingers
 
 ### Settings > Keyboard
-- [ ] Set caps lock to Escape Key - need to do this for any attached keyboard via the dropdown
-- [ ] Keyboard Key Repeat and Delay Until Repeat to highest
+- [ ] Keyboard Key Repeat and Delay Until Repeat to highest asd
 - [ ] Text Expansion
 	- [ ] Try to keep the main ones in sync with TextExpander
 		- Like “zhome” etc.
@@ -201,6 +200,11 @@ Checklist for setting up a new Mac
 		- The Apple ones will work in any application in iOS e.g.
 - [ ] Enable Dictation
 - [ ] Show input menu in menubar
+- Karabiner (Should be handled by Mackup dotfiles)
+    - Setup Karabiner to treat each external keyboard as the same system keyboard so I can use both at the same time. (Might be all in the config json.)
+    - CapsLock > Esc
+    - CapsLock (Held down) > Quasi-hyper key (Ctrl-Opt-Cmd)
+    - Esc > CapsLock
 
 ### Settings > Trackpad
 - [ ] No tap to click?

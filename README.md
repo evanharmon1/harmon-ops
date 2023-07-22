@@ -5,6 +5,19 @@ E.g., it helps me bootstrap new computers with a developer environment customize
 
 It also helps me keep track of and document my evolving homelab setup and architecture with documentation, diagrams, and Infrastructure as Code (IaC). I keep track of config and packages for each machine in `infra/`. All scripts should be idempotent.
 
+## Project Usage
+### Setup
+`brew install go-task/tap/go-task`
+`brew install pre-commit` or `pip install pre-commit`
+### Taskfile Task Runner (Taskfile.yml)
+https://taskfile.dev/
+`task validate`
+`task security`
+`task snyk`
+
+### Start new dev project
+From `~/dev`: `newProject.sh -n nameOfProject -g gitRepoName`
+
 ## OS config for bootstrapping new machines with a developer environment - `osConfig/`
 ### Setup a Mac
 1. Follow `osConfig/mac/CHECKLIST-MAC.md`

@@ -11,7 +11,7 @@
 # `caffeinate -disu zsh -x ./setupMac.sh 2>&1 | tee -a ~/.log/setupMac.sh.log`
 # Don't run as root or with sudo due to homebrew not wanting to run that way for security reasons.
 
-echo -e "\033[0;35m  ......Starting setupMac.sh - $(date) "+%FT%T"......  \033[0m"
+echo -e "\033[0;35m  ++++++Starting setupMac.sh - $(date) "+%FT%T"++++++  \033[0m"
 start_time=$(date +%s)
 
 #============================================================================
@@ -46,6 +46,9 @@ touch ~/Local/.secret
 mkdir ~/.log
 touch ~/.log/setupMac.sh.log
 touch ~/.log/updateMac.sh.log
+touch ~/.log/updateMacSoftware.sh.log
+touch ~/.log/updateJavaScript.sh.log
+touch ~/.log/updatePython.sh.log
 # You can't use relative paths for symoblic links apparently. E.g. - osCongig/mac/scripts
 ln -s ~/Dropbox/dev ~/
 ln -s ~/dev/HarmonOps/harmon-ops/osConfig/shell/bin ~/

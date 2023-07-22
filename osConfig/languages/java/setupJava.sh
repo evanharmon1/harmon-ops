@@ -5,7 +5,7 @@
 #==============================================================================
 # Script to setup Java on a new developer environment.
 # Homebrew should have already installed openjdk, jenv, maven, and gradle.
-echo -e "\033[1;32m  ......Starting setupJava.sh......  \033[0m"
+echo -e "\033[1;32m  ++++++Starting setupJava.sh++++++  \033[0m"
 
 #             jenv
 #------------------------------------------------------------------------------

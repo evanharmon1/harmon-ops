@@ -6,7 +6,7 @@
 # Script to setup JavaScript, Node.js on a new developer environment.
 # Installing npm packages globally with a package.json file is not supported.
 
-echo -e "\033[1;32m  ......Starting setupJavaScript.sh......  \033[0m"
+echo -e "\033[1;32m  ++++++Starting setupJavaScript.sh++++++  \033[0m"
 
 # Base packages
 npm install grunt --location=global
