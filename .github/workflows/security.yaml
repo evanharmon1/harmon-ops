@@ -7,8 +7,8 @@ jobs:
     steps:
       - run: echo "Triggered by a ${{ github.event_name }} event."
       - uses: actions/checkout@v3
-      - name: debug pwd
-        run: pwd
+      - name: chmod
+        run: chmod +x ${{ github.workspace }}/osConfig/shell/bin/check_for_pattern.sh
       - name: Cusotm check for secret files
         run: ${{ github.workspace }}/osConfig/shell/bin/check_for_pattern.sh ${{ github.workspace }}/ "*README*"
       - name: Install Whispers
