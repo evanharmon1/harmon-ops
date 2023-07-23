@@ -7,6 +7,8 @@ tap "homebrew/services"
 tap "mongodb/brew"
 tap "snyk/tap"
 tap "ttscoff/thelab"
+# Run your GitHub Actions locally
+brew "act"
 # Send User Alert Notification on macOS from the command-line
 brew "alerter"
 # Platform built on V8 to build network applications
@@ -652,7 +654,6 @@ mas "Front and Center", id: 1493996622
 mas "GarageBand", id: 682658836
 mas "Geekbench 5", id: 1478447657
 mas "GIPHY CAPTURE", id: 668208984
-mas "GoodNotes", id: 1444383602
 mas "Highlights", id: 1498912833
 mas "Home Assistant", id: 1099568401
 mas "Hush", id: 1544743900

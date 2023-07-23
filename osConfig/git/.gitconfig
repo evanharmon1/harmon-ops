@@ -35,5 +35,6 @@
 	cm = checkout main
 	co = checkout
 	cb = checkout -b
+	cam = commit -am "quick-commit"
 [push]
 	autoSetupRemote = true

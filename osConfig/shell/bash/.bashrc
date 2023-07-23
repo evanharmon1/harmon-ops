@@ -69,6 +69,7 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+
 #==============================================================================
 #                       Fig
 #==============================================================================

@@ -662,6 +662,8 @@ cask "superduper"
 cask "yed"
 mas "Day One", id: 1055511498
 cask "twitch"
+# This one is the paid one that you don't want.
+brew "ntfy"
 
 
 #                New Packages from Evan's MacBook Pro 2021 2023-07-21
@@ -712,3 +714,8 @@ tap "homebrew/cask-drivers"
 #                New Packages from Evan's MacBook Pro 2021 2023-07-22
 #-------------------------------------------------------------------------------
 mas "Slack", id: 803453959
+
+
+#                New Packages from Evan's MacBook Pro 2021 2023-07-23
+#-------------------------------------------------------------------------------
+brew "act"

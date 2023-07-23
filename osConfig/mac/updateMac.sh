@@ -34,16 +34,32 @@ terminal-notifier -title "Starting updateMac.sh Script" \
 
 
 #============================================================================
+#                       Apple Software Updates
+#============================================================================
+echo -e "\033[0;35m  ......Checking for and updating any Apple software updates......  \033[0m"
+# Mac system software updates and restart if needed
+softwareupdate --install --all —verbose
+
+
+#============================================================================
+#                       Mac App Store Updates
+#============================================================================
+echo -e "\033[0;35m  ......Checking for and updating any Mac App Store software updates......  \033[0m"
+# Mac App Store updates
+mas upgrade
+
+
+#============================================================================
 #                       Homebrew
 #============================================================================
 # Updates Homebrew and then upgrades all software that was installed with Homebrew
 echo -e "\033[0;35m  ......Running brew bundle to install and/or update packages in Brewfile......  \033[0m"
-brew update
+brew update -v
 brew upgrade -v
 brew cleanup -v
 brew bundle dump -v --describe --force --file=~/Brewfile
 
-# Copy this machine's Brewfile to this machine's folder.
+# Copy this machine's Brewfile to this machine's repo folder.
 THIS_HOST=$(HOSTNAME)
 mkdir "../../infra/${THIS_HOST}/"
 \cp -fR ~/Brewfile "../../infra/${THIS_HOST}/"
@@ -98,8 +114,22 @@ rsync -ah --copy-links ~/.mackup.cfg mackup/
 ../languages/javaScript/updateJavaScript.sh
 
 
+#==============================================================================
+#                       Notify
+#==============================================================================
 end_time=$(date +%s)
 echo "Time elapsed: $(($end_time - $start_time)) seconds"
+
+# Pushover
+source ~/Local/.secret
+curl -s \
+  --form-string "token=$PUSHOVER_TOKEN" \
+  --form-string "user=$PUSHOVER_USER" \
+  --form-string "message=Finished updateMac.sh
+
+Time elapsed: $(($end_time - $start_time)) seconds." \
+  https://api.pushover.net/1/messages.json
+
 terminal-notifier -title "Finished updateMac.sh Script" \
 -message "Finished updateMac.sh Script. Time elapsed: $(($end_time - $start_time)) seconds." \
 -contentImage monitor-icon.icns \
