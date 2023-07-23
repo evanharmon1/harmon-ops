@@ -11,8 +11,6 @@ alias rm="rm -iv"
 alias mv="mv -iv"
 alias cp="cp -riv"
 
-alias python=python3
-
 # Docker Aliases
 alias dcu='docker-compose up -d'  #Detached
 alias dcd='docker-compose down'

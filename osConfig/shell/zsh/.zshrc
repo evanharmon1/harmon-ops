@@ -3,7 +3,7 @@
 # My custom .zshrc file
 
 #============================================================================
-#                               oh-my-zsh
+#                       oh-my-zsh
 #============================================================================
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -106,25 +106,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#-----------------------------------------------------------------------------
 
 
 #============================================================================
-#                               My Customizations
+#                       My Customizations
 #============================================================================
 source ~/.dotfiles/.aliases
 source ~/.dotfiles/.var
 source ~/.dotfiles/.functions
 
+
 #============================================================================
-#                               Zsh Terminal Customization
+#                       Zsh Terminal Customization
 #============================================================================
 # GREP Customization to turn matches red like is default on most *nix systems
 export GREP_OPTIONS='--color=auto'
 
 
 #============================================================================
-#                               PATH
+#                       PATH
 #============================================================================
 # homebrew, my dev scripts, and the gcloud CLI
 export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin:/Users/evan/google-cloud-sdk/bin
@@ -138,40 +138,48 @@ export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin:/Users/evan/google-cloud-sdk
 
 
 #============================================================================
-#                    Set default terminal editor
+#                       Set default terminal editor
 #============================================================================
 export EDITOR="code-insiders --new-window --wait"
 export VISUAL="$EDITOR"
 
 
 #============================================================================
-#                               Python
+#                       Python
 #============================================================================
 # pyenv
 eval "$(pyenv init -)"
 
 
+#==============================================================================
+#                       Javascript, Node, & nvm
+#==============================================================================
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+
+#==============================================================================
+#                       Java & jenv
+#==============================================================================
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+
 #============================================================================
-#                               Ansible
+#                       Ansible
 #============================================================================
 ANSIBLE_CONFIG=~/.ansible.cfg
 
 
 #============================================================================
-#                               Terraform
+#                       Terraform
 #============================================================================
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
-#==============================================================================
-#                       nvm
-#==============================================================================
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
 
 #==============================================================================
 #                       Fig
 #==============================================================================
-
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"

@@ -3,8 +3,18 @@ tasks:
   validate:
     cmds:
       - pre-commit run --all-files
-      - snyk test --file=osConfig/languages/python/requirements.txt
+      - task: snyk
       # - shellcheck osConfig/mac/updateMac.sh
       # - shellcheck osConfig/mac/setupMac.sh
       # - shellcheck osConfig/mac/configureMacSettings.sh
+    silent: true
+  security:
+    cmds:
+      - ./osConfig/shell/bin/check_for_pattern.sh "secret"
+      - whispers --config test/whisperConfig.yml --severity BLOCKER,CRITICAL .
+      - task: snyk
+    silent: true
+  snyk:
+    cmds:
+      - snyk test --file=osConfig/languages/python/requirements.txt
     silent: true
