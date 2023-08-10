@@ -1,2 +1,3 @@
 .github/workflows/validate.yaml yaml[truthy]
 .github/workflows/security.yaml yaml[truthy]
+dev/newProjectTemplate/.github/workflows/validate.yaml yaml[truthy]

@@ -5,7 +5,7 @@
 #============================================================================
 #                               Setup
 #============================================================================
-echo -e "\033[0;35m  ......Starting configureMacSettings.sh......  \033[0m"
+echo -e "\033[0;35m  ++++++Starting configureMacSettings.sh++++++  \033[0m"
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change
