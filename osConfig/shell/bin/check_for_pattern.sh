@@ -11,7 +11,7 @@
 # -iname makes find case-insensitive
 check() {
   echo "Searching in: $1"
-  if [[ `find $1 -iname $2` ]]; then
+  if [[ $(find "$1" -iname $2) ]]; then
     echo -e "\033[0;31m  $2 found!  \033[0m"
     exit 1
   else
@@ -28,5 +28,5 @@ elif [[ $2 == "help" || $2 == "--help" || $2 == "-h" ]]; then
 echo "usage: check_for 'location' 'search text'"
   exit 0
 else
-  check $1 $2
+  check "$1" "$2"
 fi

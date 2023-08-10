@@ -55,13 +55,13 @@ mkdir "../../infra/${THIS_HOST}/"
 NEW_BREW_PACKAGES_COUNT=$(bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//') | wc -l")
 echo "New Homebrew packages: $NEW_BREW_PACKAGES_COUNT"
 
-if [ $NEW_BREW_PACKAGES_COUNT -gt 0 ]; then
+if [ "$NEW_BREW_PACKAGES_COUNT" -gt 0 ]; then
     NEW_BREW_PACKAGES=$(bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//')")
-    echo $NEW_BREW_PACKAGES
+    echo "$NEW_BREW_PACKAGES"
 
     # Add new packages to BrewfileSuperset
     echo "\n\n#                New Packages from $(hostname) $(date +%F)\n#-------------------------------------------------------------------------------" >> BrewfileSuperset
-    bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//') >> BrewfileSuperset && echo "$NEW_BREW_PACKAGES_COUNT Homebrew packages were added to the BrewfileSuperset file.""
+    bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//') >> BrewfileSuperset && echo ""$NEW_BREW_PACKAGES_COUNT" Homebrew packages were added to the BrewfileSuperset file.""
 else
     echo "No new Homebrew packages to add to BrewfileSuperset.history"
 fi
@@ -118,6 +118,28 @@ Time elapsed: $(($script_end_time - $script_start_time)) seconds." \
   https://api.pushover.net/1/messages.json
 
 echo -e "\033[1;32m  ======Finished updateMac.sh in $(($script_end_time - $script_start_time)) seconds - $(date +%FT%T)======  \033[0m"
+
+#==============================================================================
+#                       JavaScript
+#==============================================================================
+../languages/javaScript/updateJavaScript.sh
+
+
+#==============================================================================
+#                       Notify
+#==============================================================================
+end_time=$(date +%s)
+echo "Time elapsed: $(($end_time - $start_time)) seconds"
+
+# Pushover
+source ~/Local/.secret
+curl -s \
+  --form-string "token=$PUSHOVER_TOKEN" \
+  --form-string "user=$PUSHOVER_USER" \
+  --form-string "message=Finished updateMac.sh
+
+Time elapsed: $(($end_time - $start_time)) seconds." \
+  https://api.pushover.net/1/messages.json
 
 terminal-notifier -title "Finished updateMac.sh Script" \
 -message "Finished updateMac.sh Script. Time elapsed: $(($script_end_time - $script_start_time)) seconds - $(date +%FT%T)." \
