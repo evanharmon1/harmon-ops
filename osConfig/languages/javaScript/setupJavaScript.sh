@@ -15,6 +15,7 @@ npm install pm2 --location=global
 npm install socketio --location=global
 npm install dotenv --location=global
 npm install puppeteer --location=global
+npm install eslint --location=global
 
 #             Optional packages
 #------------------------------------------------------------------------------
