@@ -13,14 +13,14 @@ Checklist for setting up a new Mac
 - [ ] FindMy: yes
 - [ ] Location Services: yes
 - [ ] Analytics: no
-- [ ] Screentime: yes (server: no)
-- [ ] Siri: yes (server: no)
+- [ ] Screentime: yes
+- [ ] Siri: yes
 - [ ] Improve Siri: no
 - [ ] FileVault encryption: yes
 	- [ ] Recover password from iCloud option: no
 	- [ ] Store FileVault Encryption recovery key in password manager
         - Store key locally until later steps install 1Password
-- [ ] Apple Pay: yes (server: no)
+- [ ] Apple Pay: yes
 - [ ] Appearance: Auto (server: dark)
 
 ## Sign into **iCloud** and enable everything to start syncing

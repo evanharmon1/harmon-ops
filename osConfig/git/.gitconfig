@@ -32,9 +32,18 @@
 	ss = status
 	aa = add -A
 	cc = commit
-	cm = checkout main
+	cm = commit -m
+	com = checkout main
 	co = checkout
-	cb = checkout -b
+	cob = checkout -b
 	cam = commit -am "quick-commit"
 [push]
 	autoSetupRemote = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/evan/.stCommitMsg

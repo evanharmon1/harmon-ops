@@ -11,20 +11,28 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 # Refresh environment variables so you can use the `choco` command
 refreshenv
 
-choco install -y python
-choco install -y nodejs
-choco install -y git
-choco install -y vscode
-choco install -y notepadplusplus
-choco install -y docker-desktop
-choco install -y virtualbox
-choco install -y vagrant
-choco install -y robo3t
+#==============================================================================
+#                       Packages
+#==============================================================================
+#             Superset of Potential Packages to install
+#------------------------------------------------------------------------------
+# notepadplusplus, docker-desktop, virtualbox, vagrant, robo3t
 
-# Running bash scripts on windows needs to be tested
+#             Packages to Install
+#------------------------------------------------------------------------------
+$packages = "wsl", "wsl-ubuntu-2204“, "python”, "nodejs", "git", "vscode", "vscode-insiders", "docker-desktop", "textexpander", "1password", "dropbox", "googledrive", "googlechrome", "firefox", "geforce-experience", "transmission", "vlc", "airsever", "geforce-experience", "razer-synapse-3", "steam", "nircmd", "etcher", "rufus", "geekbench", "hwinfo", "slack", "discord", "twitch", "signal", "mullvad-app", "tailscale", "fah", "valley-benchmark", "heaven-benchmark", "leagueoflegends", "goggalaxy", "epicgameslauncher", "ea-app", "amazongames", "playnite", "7zip", "windirstat", "coretemp", "irfanview", "gimp", "handbrake", "ccleaner"
+
+$machina = "wsl", "wsl-ubuntu-2204“, "python”, "nodejs", "git", "vscode", "vscode-insiders", "docker-desktop", "textexpander", "1password", "dropbox", "googledrive", "googlechrome", "firefox", "geforce-experience", "transmission", "vlc", "airsever", "geforce-experience", "razer-synapse-3", "steam", "nircmd", "etcher", "rufus", "geekbench", "hwinfo", "slack", "discord", "twitch", "signal", "mullvad-app", "tailscale", "fah", "valley-benchmark", "heaven-benchmark", "leagueoflegends", "goggalaxy", "epicgameslauncher", "ea-app", "amazongames", "playnite", "7zip", "windirstat", "coretemp", "irfanview", "gimp", "handbrake", "ccleaner"
+
+$contraption = ""
+
+foreach ($package in $packages){
+	choco install -y $package
+}
+
+# TODO: Running bash scripts on windows needs to be tested
 bash ../python/setupPython.sh
 bash ../node/setupNode.sh
 bash ../git/setupGit.sh
-bash ../vscode/setupVsCode.sh
 
 write-output "======Finished setupWindows.ps1======"

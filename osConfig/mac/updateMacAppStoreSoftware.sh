@@ -1,7 +1,9 @@
 #!/bin/sh -x
 
+# DEPRECATED - not feasbiel to automate softwareupdate command. Added mas command to updateMac.dh
+
 #==============================================================================
-#                       Update Mac Software
+#                       Update Mac App Store Software
 #==============================================================================
 # Author: Evan Harmon
 # Shell script to run periodically and/or automatically to keep Mac App Store up to date via mas cli tool
@@ -26,7 +28,9 @@ echo -e "\033[0;35m  ......Checking for and updating any Apple software updates 
 start_time=$(date +%s)
 
 # Mac system software updates and restart if needed
-timeout $((2 * 1)) softwareupdate --install --all —verbose
+# BUG: The softwareupdate doesn't seem to be very feasible for automating with scripts - often does not behave well or hangs, etc.
+# So I should just let System Settings enable auto updates and do it as needed.
+timeout $((2 * 1)) softwareupdate --install --all --verbose --agree-to-license
 
 end_time=$(date +%s)
 printf "Apple Software Updates finished in $(($end_time - $start_time)) seconds."

@@ -4,11 +4,13 @@
 #                       Paths
 #============================================================================
 export dev="/Users/evan/Dropbox/dev" #Main dev folder
-export devenv="/Users/evan/Dropbox/dev/DevEnv/dev-env"
+export harmonops="/Users/evan/Dropbox/dev/HarmonOps/harmon-ops"
 export scratch="/Users/evan/Dropbox/dev/scratch" #Scratch folder for quick prototyping
 export evanbin="/Users/evan/bin"
 export website="/Users/evan/Dropbox/dev/EvanHarmonWebsite/evan-harmon"
-
+export obsidianDev="$HOME/Local/obsidian-dev"
+export memex="$HOME/Local/Memex"
+export icloud="/Users/evan/Library/Mobile Documents/com~apple~CloudDocs"
 
 #============================================================================
 #                       Color Variables

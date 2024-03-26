@@ -661,9 +661,10 @@ cask "sublime-text"
 cask "superduper"
 cask "yed"
 mas "Day One", id: 1055511498
-cask "twitch"
 # This one is the paid one that you don't want.
 brew "ntfy"
+# Twitch Desktop is discontinued in favor of the web app
+cask "twitch"
 
 
 #                New Packages from Evan's MacBook Pro 2021 2023-07-21
@@ -729,3 +730,140 @@ vscode "deerawan.vscode-dash"
 #                New Packages from Evan's MacBook Pro 2021 2023-08-01
 #-------------------------------------------------------------------------------
 vscode "timonwong.shellcheck"
+
+
+#                New Packages from Evan's MacBook Pro 2021 2024-01-16
+#-------------------------------------------------------------------------------
+brew "at-spi2-core"
+brew "azure-cli"
+brew "black"
+brew "httpie"
+brew "hurl"
+brew "mdless"
+brew "newman"
+brew "php"
+brew "podman"
+brew "sqlcmd"
+brew "ttscoff/thelab/gather-cli"
+cask "arc"
+cask "azure-data-studio"
+cask "curio"
+cask "cyberduck"
+cask "dotnet-sdk"
+cask "dotnet-sdk6-0-400"
+cask "dotnet-sdk7-0-400"
+cask "element"
+cask "firefox-developer-edition"
+cask "fleet"
+cask "http-toolkit"
+cask "httpie"
+cask "inso"
+cask "lm-studio"
+cask "paletro"
+cask "postman-cli"
+cask "signal"
+mas "Ice Cubes", id: 6444915884
+mas "Kindle Classic", id: 405399194
+mas "Kindle", id: 302584613
+mas "MarkDownload - Markdown Web Clipper", id: 1554029832
+mas "OpenIn", id: 1643649331
+mas "Telegram", id: 747648890
+tap "go-task/tap"
+tap "isen-ng/dotnet-sdk-versions"
+vscode "EditorConfig.EditorConfig"
+vscode "formulahendry.code-runner"
+vscode "gitpod.gitpod-desktop"
+vscode "mgmcdermott.vscode-language-babel"
+vscode "ms-dotnettools.csdevkit"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-dotnettools.vscodeintellicode-csharp"
+vscode "ms-mssql.data-workspace-vscode"
+vscode "ms-mssql.mssql"
+vscode "ms-mssql.sql-bindings-vscode"
+vscode "ms-mssql.sql-database-projects-vscode"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode.remote-explorer"
+vscode "naumovs.color-highlight"
+vscode "nidu.copy-json-path"
+vscode "xdebug.php-debug"
+
+
+#                New Packages from Evan's MacBook Pro 2021 2024-02-26
+#-------------------------------------------------------------------------------
+brew "docker"
+brew "tiger-vnc"
+brew "w3m"
+cask "amazon-luna"
+cask "arduino-ide"
+cask "azure-data-studio-insiders"
+cask "raspberry-pi-imager"
+cask "sirimote"
+cask "tigervnc-viewer"
+mas "AllMyBatteries", id: 1621263412
+mas "Dynamo", id: 1445910651
+mas "Hand Mirror", id: 1502839586
+mas "Meshtastic", id: 1586432531
+mas "Pile", id: 1549454338
+mas "Save to Raindrop.io", id: 1549370672
+mas "Transmit", id: 1436522307
+mas "Vimeo", id: 1356686763
+tap "homebrew/cask"
+tap "homebrew/core"
+vscode "dline.cobaltnext"
+vscode "editorconfig.editorconfig"
+vscode "evan harmon.evans-vscode-extension"
+vscode "gitlab.gitlab-workflow"
+vscode "gruntfuggly.todo-tree"
+vscode "ms-python.debugpy"
+vscode "pkief.material-icon-theme"
+vscode "ritwickdey.liveserver"
+vscode "semgrep.semgrep"
+vscode "shiftleft.shiftleft-core"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+
+
+#                New Packages from Evan's MacBook Pro 2021 2024-02-28
+#-------------------------------------------------------------------------------
+brew "pipx"
+brew "python-lsp-server"
+cask "dropzone"
+cask "latest"
+mas "Actions For Obsidian", id: 1659667937
+mas "Pandan", id: 1569600264
+
+
+#                New Packages from Evan's MacBook Pro 2021 2024-02-29
+#-------------------------------------------------------------------------------
+cask "microsoft-auto-update"
+
+
+#                New Packages from Evan's MacBook Pro 2021 2024-02-29
+#-------------------------------------------------------------------------------
+cask "hookmark"
+cask "textsniper"
+
+
+#                New Packages from Evan's MacBook Pro 2021 2024-03-05
+#-------------------------------------------------------------------------------
+cask "meld"
+vscode "brpaz.vscode-obsidianmd"
+vscode "henryhediff.obsidian-code"
+vscode "willasm.obsidian-md-vsc"
+
+
+#                New Packages from Evan's MacBook Pro 2021 2024-03-23
+#-------------------------------------------------------------------------------
+cask "mullvad-browser"
+cask "mullvadvpn"
+cask "qgis"
+mas "Screens 5", id: 1663047912
+mas "Tailscale", id: 1475387142
+mas "Twingate", id: 1501592214
+
+
+#                New Packages from Evan's MacBook Pro 2021 2024-03-26
+#-------------------------------------------------------------------------------
+brew "restic"

@@ -127,7 +127,7 @@ export GREP_OPTIONS='--color=auto'
 #                       PATH
 #============================================================================
 # homebrew, my dev scripts, and the gcloud CLI
-export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin:/Users/evan/google-cloud-sdk/bin
+export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin:/Users/evan/google-cloud-sdk/bin:/Users/evan/scripts
 
 # Scripts on *nix
 #export scripts="~/bin"

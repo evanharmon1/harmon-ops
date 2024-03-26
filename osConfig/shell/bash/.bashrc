@@ -76,3 +76,6 @@ source $(brew --prefix nvm)/nvm.sh
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/bashrc.post.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.post.bash"
+
+# Created by `pipx` on 2024-02-29 16:43:29
+export PATH="$PATH:/Users/evan/.local/bin"

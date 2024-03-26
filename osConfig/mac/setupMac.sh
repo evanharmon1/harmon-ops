@@ -75,7 +75,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 
 #============================================================================
-#                               JavaScript
+#                               Java
 #============================================================================
 ../languages/java/setupJava.sh
 

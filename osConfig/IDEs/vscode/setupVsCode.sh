@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#==============================================================================
+#                       Deprecated - using VS Code Settings Sync
+#==============================================================================
+
 # Use VS Code Settings Aync instead of this script unless you can't use Settings Sync due to work policy, e.g.
 # Script to install VS Code Extensions on a new machine
 # You can generate all currently installed extensions with `code --list-extensions`
