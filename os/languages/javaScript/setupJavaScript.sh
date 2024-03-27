@@ -8,6 +8,9 @@
 
 echo -e "\033[1;32m  ++++++Starting setupJavaScript.sh++++++  \033[0m"
 
+nvm use --lts
+npm update --location=global
+
 # Base packages
 npm install grunt --location=global
 npm install gulp --location=global

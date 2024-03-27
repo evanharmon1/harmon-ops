@@ -6,7 +6,7 @@
 # Script to update JavaScript
 
 # Source local secrets for pushover, etc.
-source ~/Local/.secret
+source ~/.secret
 
 start_time=$(date +%s)
 
