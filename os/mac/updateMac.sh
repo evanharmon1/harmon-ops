@@ -26,7 +26,7 @@
 # @raycast.needsConfirmation false
 
 # Source local secrets for pushover, etc.
-source ~/Local/.secret
+source ~/.secret
 
 script_start_time=$(date +%s)
 echo -e "\033[0;35m  ++++++Starting updateMac.sh - $(date +%FT%T)++++++  \033[0m"

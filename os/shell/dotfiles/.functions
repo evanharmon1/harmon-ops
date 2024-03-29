@@ -2,7 +2,7 @@
 
 # Create a new directory and enter it
 function mk() {
-  mkdir -p "$@" && cd "$@"
+  mkdir -p "$@" && cd "$@" || exit
 }
 
 
@@ -13,7 +13,7 @@ function mk() {
 # Argument: "commit message". If not present, defaults to "default message".
 function gitsend() {
   git add -A
-  git commit -m ${1:-"default message"}
+  git commit -m "${1:-"default message"}"
   git push
 }
 
@@ -23,5 +23,5 @@ function gitum() {
   branch=${1:-$current_branch}
   git checkout main
   git pull
-  git checkout $branch
+  git checkout "$branch"
 }
