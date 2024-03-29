@@ -867,3 +867,13 @@ mas "Twingate", id: 1501592214
 #                New Packages from Evan's MacBook Pro 2021 2024-03-26
 #-------------------------------------------------------------------------------
 brew "restic"
+
+
+#                New Packages from EvansMacBookPro 2024-03-29
+#-------------------------------------------------------------------------------
+cask "cloudflare-warp"
+
+
+#                New Packages from EvansMacBookPro 2024-03-29
+#-------------------------------------------------------------------------------
+brew "cloudflared"

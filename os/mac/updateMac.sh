@@ -93,18 +93,18 @@ mkdir "../../infra/${THIS_HOST}/"
 \cp -fR ~/Brewfile "../../infra/${THIS_HOST}/"
 
 # Add any newly installed Homebrew packages from this machine to the BrewfileSuperset file.
-NEW_BREW_PACKAGES_COUNT=$(bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//') | wc -l")
+NEW_BREW_PACKAGES_COUNT=$(bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort ../brew/BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//') | wc -l")
 echo "New Homebrew packages: $NEW_BREW_PACKAGES_COUNT"
 
 if [ "$NEW_BREW_PACKAGES_COUNT" -gt 0 ]; then
-    NEW_BREW_PACKAGES=$(bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//')")
+    NEW_BREW_PACKAGES=$(bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort ../brew/BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//')")
     echo "$NEW_BREW_PACKAGES"
 
     # Add new packages to BrewfileSuperset
-    echo "\n\n#                New Packages from $(hostname) $(date +%F)\n#-------------------------------------------------------------------------------" >> BrewfileSuperset
-    bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//') >> BrewfileSuperset && echo ""$NEW_BREW_PACKAGES_COUNT" Homebrew packages were added to the BrewfileSuperset file.""
+    echo "\n\n#                New Packages from $(hostname) $(date +%F)\n#-------------------------------------------------------------------------------" >> ../brew/BrewfileSuperset
+    bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort ../brew/BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//') >> ../brew/BrewfileSuperset && echo ""$NEW_BREW_PACKAGES_COUNT" Homebrew packages were added to the BrewfileSuperset file.""
 else
-    echo "No new Homebrew packages to add to BrewfileSuperset.history"
+    echo "No new Homebrew packages to add to BrewfileSuperset."
 fi
 
 end_time=$(date +%s)
@@ -133,7 +133,8 @@ start_time=$(date +%s)
 # Due to macOS Sonoma security issue surrounding symlinks, the normal way Mackup works with symlinks is not reliable.
 # Known issue which Mackup will eventually update to have more commands for backing up, etc.
 # So I'm just using it for 1 way backup via the below command method which is recommended for now.
-mackup backup --force && mackup uninstall --force
+mackup backup --force
+mackup uninstall --force
 
 
 # If any other scripts or installations append anything to .zshrc, these commands move the fig lines to the bottom so they can still work.
@@ -144,7 +145,7 @@ move_line_to_bottom.sh '[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin so
 rsync -ah --copy-links ~/.bashrc ../shell/bash/
 rsync -ah --copy-links ~/.zshrc ../shell/zsh/
 
-rsync -ah --copy-links ~/.dotfiles/ ../shell/.dotfiles/
+rsync -ah --copy-links ~/dotfiles/ ../shell/dotfiles/
 
 rsync -ah --copy-links ~/.gitconfig ../git/
 rsync -ah --copy-links ~/.gitignore_global ../git/

@@ -53,6 +53,8 @@ brew "boost"
 brew "cheat"
 # Prevent cloud misconfigurations during build-time for IaC tools
 brew "checkov"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
@@ -421,6 +423,8 @@ cask "choosy"
 cask "chromium"
 # Screen capturing tool
 cask "cleanshot"
+# Free app that makes your Internet safer
+cask "cloudflare-warp"
 # Note-taking and organisation tool
 cask "curio"
 # Customise menu item keyboard shortcuts

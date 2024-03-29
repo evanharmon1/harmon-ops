@@ -111,9 +111,9 @@ source $ZSH/oh-my-zsh.sh
 #============================================================================
 #                       My Customizations
 #============================================================================
-source ~/.dotfiles/.aliases
-source ~/.dotfiles/.var
-source ~/.dotfiles/.functions
+source ~/dotfiles/.aliases
+source ~/dotfiles/.var
+source ~/dotfiles/.functions
 
 
 #============================================================================

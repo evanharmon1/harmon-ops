@@ -33,6 +33,8 @@ brew upgrade -v
 brew bundle -v --file=~/Brewfile
 cp ~/Brewfile ~/Brewfile.original
 brew bundle dump -v --describe --force --file=~/Brewfile
+
+# Copy dumped brewfile to harmon-ops repo's infra folder for this machine.
 THIS_HOST=$(HOSTNAME)
 mkdir "../../infra/${THIS_HOST}/"
 \cp -fR ~/Brewfile "../../infra/${THIS_HOST}/Brewfile-$(date +%F)"
@@ -56,7 +58,6 @@ touch ~/.log/updateJavaScript.sh.log
 touch ~/.log/updateJava.sh.log
 # You can't use relative paths for symoblic links apparently. E.g. - os/mac/scripts
 ln -s ~/git/harmon-ops/os/shell/bin ~/
-ln -s ~/git/harmon-ops/os/mac/scripts ~/
 
 
 #============================================================================
