@@ -32,6 +32,57 @@ Checklist for setting up a new Mac
 - [ ] Advanced Data Protection: yes
 - [ ] Access iCloud Data on the Web: yes, but consider turning off in the future
 
+## Authenticate **Mac App Store** & download Amphetamine & setup remote access
+- [ ] Install Amphetamine via Mac App Store
+- [ ] Turn on Amphetamine indefinitely to make sure it stays on and you can connect etc. until you get the machine mostly setup. (Although the `caffeinate` command should keep the Mac awake while that script is running.)
+- [ ] Install Screens Connect via Mac App Store
+    - [ ] Sign in and get remote access working so you can check in on progress of setup from anywhere.
+
+## Download or Airdrop harmon-ops repo (this repo) to `~/git`
+- [ ] [harmon-ops](https://github.com/evanharmon1/harmon-ops)]
+
+## Run bootstrapMac.sh (sets hostnames, installs Homebrew, runs `softwareupdate`, copies `Brewfile` & `CHECKLIST.md`)
+- [ ] Run `bootstrapMac.sh` with **sudo** from `os/mac`:
+`cd ~/git/harmon-ops/os/mac && sudo caffeinate -disu zsh ./bootstrapMac.sh 2>&1 | tee -a ~/.log/bootstrapMac.sh.log`
+- [ ] Script will ask you to set hostnames for this machine.
+- [ ] Make sure to run the commands that Homebrew says in order to add `brew` to `$PATH` correctly.
+- [ ] Homebrew should install git automatically, but if you need to manually install Xcode CLI tools and git: `xcode-select --install`.
+- [ ] Restart, if needed by `softwareupdate`. Probably should restart regardless.
+
+## `BrewfileSuperset` and `CHECKLIST-MAC.md`
+- [ ] Use the newly copied `CHECKLIST-MAC.md` in `infra/<this-machine>` to keep track of progress of this machine's setup.
+- [ ] Modify the newly copied `BrewfileSuperset` renamed at `~/Brewfile` based on the machine you're configuring (delete and add any apps/packages you want installed to this machine).
+- [ ] Eventually, push and merge these changes to the repo, but merging is not required to move on to the following steps.
+
+## Run `setupMac.sh`
+- [ ] Double check that the `setupMac.sh` script is doing what you want for this machine.
+- [ ] Run `setupMac.sh` from `os/mac`:
+`cd ~/git/harmon-ops/os/mac && caffeinate -disu zsh -x ./setupMac.sh 2>&1 | tee -a ~/.log/setupMac.sh.log`
+- The script usually needs a few Mac password prompts, so check it periodically.
+
+## Setup 1Password & Secrets
+- [ ] Open 1Password and authenticate:
+`open -a 1Password`
+- [ ] Copy secret file to ~/.secret
+
+## Run `updateMac.sh`
+- [ ] Make sure there are no remaining Mac system software updates and restart if needed: `softwareupdate --install --all --restart`
+- [ ] Double check that `updateMac.sh` is going to do what you want for this machine.
+- [ ] Run `updateMac.sh` from `os/mac` and take note of any errors:
+`cd ~/git/harmon-ops/os/mac && caffeinate -disu zsh -x ./updateMac.sh 2>&1 | tee -a ~/.log/updateMac.sh.log`
+- [ ] If `updateMac.sh` runs correctly, then setup `updateMac.sh` to run automatically as a cronjob:
+    - [ ] Copy and paste `os/mac/updateMac.sh.cron` text into crontab: `export VISUAL=vim && crontab -e` and set a daily schedule.
+        - E.g., 10 19 * * * would be every day at 7:10 PM.
+- [ ] Double check cronjob works automatically as scheduled. #TODO: add logs to log aggregator.
+- [ ] Add `updateMac.sh` script to Raycast scripts for an easy way to manually run updateMac.sh when needed.
+
+
+
+
+
+
+
+
 ## Download **Dropbox** and start syncing
 - [ ] https://www.dropbox.com/install
     - (Lets you skip account signin in the browser)
@@ -48,48 +99,27 @@ Checklist for setting up a new Mac
 - [ ] Ask to backup connected external drives: No
 - [ ] Smart sync: No
 
-## Authenticate **Mac App Store** & download Amphetamine
-- [ ] Install Amphetamine via Mac App Store
 
-## Install **Homebrew**, update macOS and App Store apps, & clean **reboot**
-- Next time try to get the homebrew install and checklist duplicate commands running in setupMac.sh or a new bootStrap.sh that then reboots
-- [ ] Install homebrew (which also installs git from the Xcode CLI tools):
-  ` /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-    - [ ] Run the 2 commands that homebrew tells you to run to add brew to your PATH.
-    - If you want to manually install Xcode CLI tools and git:
-        `xcode-select --install`
-- [ ] Apple Software Update
-    - [ ] Turn on auto update and install for everything - security, macOS, and App Store
-    - [ ] Run Apple Software Update for macOS & App Store via GUI or `softwareupdate -ia —verbose`
-- [ ] clean reboot
 
-## Duplicate BrewfileSuperset and CHECKLIST-MAC.md
-- [ ] `THIS_HOST=$(HOSTNAME) && mkdir "infra/${THIS_HOST}/" && cp osConfig/mac/CHECKLIST-MAC.md "infra/${THIS_HOST}/"`
-    - Use this version of the checklist to keep track of progress of this machine's setup
-- [ ] `cp osConfig/mac/BrewfileSuperset ~/Brewfile` so homebrew can use it in `setupMac.sh`.
-- [ ] Modify that Brewfile based on the machine you're configuring (delete and add any apps/packages you want installed)
-- [ ] Eventually, push and merge these changes to the repo.
 
-## Run **setupMac.sh** from its directory at osConfig/mac
-- [ ] Verify the `setupMac.sh`, `configureMacSettings.sh`, and `updateMac.sh` are going to do what you want for this machine.
-    (E.g., Mackup functionality for dotfiles, autoupdate functionality, Mac settings via CLI, etc.)
-    (Modify these files but don't commit them to the repo unless they are relevant for all machines.)
-    - [ ] Check what dotfiles from Mackup in iCloud will be linked over to the local machine and delete any from iCloud that are not wanted.
-        - setupMac.sh will make a backup of the Mackup directory in iCloud
-- [ ] Turn on Amphetamine for at least a few hours (although the `caffeinate` command should keep the Mac awake).
-- [ ] `caffeinate -disu zsh -x ./setupMac.sh 2>&1 | tee ~/.log/setupMac.sh.log`
-    - [ ] Usually needs a few Mac password prompts, so check it periodically
-    - [ ] After sexy-bash-prompt install, you need to type exit to get out of the bash env that loads so the setupMac.sh script continues.
 
-## Setup **updateMac.sh** to run automatically as a cronjob
-- [ ] Copy and paste `~osConfig/mac/updateMac.sh.cron` text to crontab with `crontab -e` and set a daily schedule
-    - E.g., 10 19 * * * would be every day at 7:10 PM.
 
 ## Connect **Peripherals**
 - [ ] Keyboards
 - [ ] Mice
 - [ ] Printers
   - [ ] Test print
+
+
+
+
+
+
+- [ ] Apple Software Update
+    - [ ] Turn on auto update and install for everything - security, macOS, and App Store
+
+
+
 
 ## Configure remaining Apple **Manual Settings** not set in `configureMacSettings.sh`
 ### Storage Management.app
@@ -338,9 +368,6 @@ Checklist for setting up a new Mac
 ### Raycast
 - [ ] Configure Extensions or handled my Mackup?
 
-## Alfred
-- [ ] Configure Extensions or handled my Mackup?
-
 ### Drafts
 - [ ] Install Extensions
 (Synced with iCloud)
@@ -360,9 +387,6 @@ Checklist for setting up a new Mac
     - [ ] [Download from](https://blog.hogbaysoftware.com/tagged/writeroomtheme)
     - [ ] [Copy to](/Users/evan/Library/Containers/com.hogbaysoftware.WriteRoom.mac/Data/Library/Application Support/WriteRoom/Themes)
     - [ ] Set default theme as SolarizedDarkWriteRoomTheme
-
-### Bunch
-- [ ] Make sure bunches are working correctly
 
 ### Yoink
 - [ ] Configure extensions, services, behavior, etc.
@@ -478,9 +502,6 @@ E.g.:
     PreferredAuthentications publickey
     IdentityFile ~/.ssh/id_personal
   ```
-
-### Environment Secrets
-- [ ] Add to machine's `~/Local/.secret` (which should be excluded from Mackup, etc.)
 
 ### VPN
 vpn - make a .vpn folder?

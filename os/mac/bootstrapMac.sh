@@ -38,6 +38,10 @@ dscacheutil -flushcache
 #==============================================================================
 #                       Install Homebrew
 #==============================================================================
+# Homebrew also installs git from the Xcode CLI tools):
+# Be sure to run the 2 commands that homebrew tells you to run to add brew to your PATH.
+# If you want to manually install Xcode CLI tools and git:
+# `xcode-select --install`
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 

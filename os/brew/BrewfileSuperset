@@ -18,10 +18,12 @@ tap "homebrew/cask-fonts"
 tap "hashicorp/tap"
 # https://brettterpstra.com
 tap "ttscoff/thelab"
+tap "homebrew/core"
+tap "homebrew/cask"
 
 
 #==============================================================================
-#                       Core Packages
+#                       Core
 #==============================================================================
 # To install on all machines - servers, personal, dev, etc.
 # Mac App Store command-line interface
@@ -29,7 +31,7 @@ brew "mas"
 brew "mackup"
 mas "Amphetamine", id: 937984704
 cask "iterm2"
-cask "warp"
+cask "geekbench"
 cask "fig"
 cask "1password"
 mas "1Password for Safari", id: 1569813296
@@ -41,26 +43,20 @@ mas "1Blocker", id: 1365531024
 mas "BBEdit", id: 404009241
 mas "Copy 'Em", id: 876540291
 mas "Drafts", id: 1435957248
-mas "Geekbench 5", id: 1478447657
 mas "Speedtest", id: 1153157709
 mas "StopTheMadness", id: 1376402589
 mas "The Unarchiver", id: 425424353
 mas "Hush", id: 1544743900
-mas "Yoink", id: 457622435
 mas "Mobile Mouse Server", id: 412814284
 mas "Moom", id: 419330170
 cask "visual-studio-code"
 cask "visual-studio-code-insiders"
-cask "nova"
 cask "mission-control-plus"
 cask "firefox"
 cask "google-chrome"
-cask "backblaze"
 cask "betterzip"
 cask "forklift"
-cask "protonvpn"
 cask "transmission"
-cask "textexpander"
 cask "appcleaner"
 # QuickLook plugin for source code with syntax highlighting.
 cask "qlcolorcode"
@@ -71,21 +67,13 @@ cask "cheatsheet"
 cask "customshortcuts"
 cask "hazel"
 cask "raycast"
-cask "alfred"
 cask "downie"
 cask "jdownloader"
 mas "PopClip", id: 445189367
 cask "bunch"
 cask "keyboard-maestro"
 cask "transmit"
-mas "TaskPaper", id: 1090940630
-mas "Things", id: 904280696
-mas "Trello", id: 1278508951
-mas "MultiMarkdown Composer", id: 1275176220
-mas "Expressions", id: 913158085
 cask "markdown-service-tools"
-cask "tunnelblick"
-mas "Due", id: 524373870
 mas "The Magic Highlighter", id: 1663033087
 mas "ColorSlurp", id: 1287239339
 mas "Super Agent for Safari", id: 1568262835
@@ -96,8 +84,6 @@ cask "nteract"
 cask "insomnia"
 cask "wireshark"
 mas "Short Circuit: AI Assistant", id: 1638522784
-mas "The Camelizer", id: 1532579087
-mas "DuckDuckGo", id: 663592361
 cask "obsidian"
 mas "Screens", id: 1224268771
 cask "typora"
@@ -105,17 +91,40 @@ mas "Cardhop", id: 1290358394
 mas "Acorn", id: 1547371478
 mas "Actions", id: 1586435171
 mas "Dark Reader for Safari", id: 1438243180
-cask "hook"
 mas "Vinegar", id: 1591303229
 mas "Baking Soda", id: 1601151613
 cask "font-menlo-for-powerline"
-#             CLI
+cask "arc"
+cask "cyberduck"
+cask "paletro"
+cask "signal"
+cask "tigervnc-viewer"
+mas "Transmit", id: 1436522307
+cask "mullvadvpn"
+mas "Screens 5", id: 1663047912
+mas "Tailscale", id: 1475387142
+cask "hookmark"
+cask "latest"
+cask "screens-connect"
+cask "balenaetcher"
+# Use the non-Mac-App-Store version - it has more features.
+cask "daisydisk"
+mas "Mactracker", id: 430255202
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+cask "bartender"
+cask "gimp"
+cask "handbrake"
+cask "audacity"
+#             Shell & Programming Languages
 #------------------------------------------------------------------------------
-brew "bash"
 brew "zsh"
-brew "python"
+brew "bash"
+# Use pyenv to manage python installations
 brew "pyenv"
-brew "node"
+brew "pipx"
+brew "ipython"
+# Use nvm to manage node installations
 brew "nvm"
 brew "curl"
 brew "wget"
@@ -214,7 +223,6 @@ brew "pre-commit"
 cask "ngrok"
 # Cross-platform make
 brew "cmake"
-brew "ipython"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 brew "neovim"
@@ -232,16 +240,26 @@ brew "hub"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 brew "mc"
+brew "hurl"
+brew "mdless"
+brew "w3m"
+brew "sevenzip"
 
 
 #==============================================================================
-#                       Personal Packages
+#                       Personal
 #==============================================================================
 # For personal machines, in addition to core
-cask "balenaetcher"
-# Use the non-Mac-App-Store version - it has more features.
-cask "daisydisk"
-mas "Mactracker", id: 430255202
+cask "screens-connect"
+mas "Yoink", id: 457622435
+cask "textexpander"
+mas "TaskPaper", id: 1090940630
+mas "Things", id: 904280696
+mas "Trello", id: 1278508951
+mas "MultiMarkdown Composer", id: 1275176220
+mas "Expressions", id: 913158085
+mas "The Camelizer", id: 1532579087
+mas "DuckDuckGo", id: 663592361
 mas "Deliveries", id: 290986013
 mas "Fantastical", id: 975937182
 mas "GarageBand", id: 682658836
@@ -257,31 +275,19 @@ mas "Play", id: 1596506190
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Notability", id: 360593530
-mas "Numbers", id: 409203825
 mas "OmniOutliner", id: 1142578772
-mas "Pages", id: 409201541
-mas "Reeder", id: 880001334
 mas "Scapple", id: 568020055
 mas "Noizio", id: 928871589
 # always tries to reinstall so comment out after initial install on Mac
 mas "Prime Video", id: 545519333
-cask "bartender"
 cask "foldingtext"
 cask "xee"
 cask "inkscape"
 cask "iina"
-cask "gimp"
 cask "swiftdefaultappsprefpane"
 cask "google-earth-pro"
-cask "handbrake"
-cask "audacity"
-cask "permute"
-cask "unite"
-cask "path-finder"
-cask "batteries"
-cask "houdahspot"
 mas "Forecast Bar", id: 982710545
-cask "duplicacy-web-edition"
+# TODO: Which one do I want?
 mas "MusicBar", id: 6447295161
 cask "music-bar"
 cask "drawio"
@@ -300,8 +306,7 @@ cask "default-folder-x"
 mas "Backtrack", id: 1477089520
 # Install failed
 mas "Overcast", id: 888422857
-# Install failed
-mas "Apollo", id: 979274575
+# TODO: Choosy or openIn?
 cask "choosy"
 cask "zotero"
 cask "bike"
@@ -310,35 +315,44 @@ brew "aspell"
 cask "karabiner-elements"
 mas "Data Jar", id: 1453273600
 mas "DuckDuckGo Privacy for Safari", id: 1482920575
-mas "Fakespot for Safari", id: 1592541616
 mas "MacFamilyTree 10", id: 1567970985
 mas "FamilySearch Tree", id: 885982973
 mas "Drone Buddy: Fly Drone Safely", id: 992303145
 mas "Home Assistant", id: 1099568401
-mas "Pretty OK - Meh Daily Deal", id: 960524321
 mas "Save to Reader", id: 1640236961
-mas "Session", id: 1521432881
-mas "Shortform", id: 1489472007
 mas "Lensa", id: 1436732536
 mas "Fotor - Photo Editor, Designer", id: 503039729
+mas "Actions for Obsidian", id: 1659667937
 mas "Timery", id: 1425368544
 mas "Toggl Track", id: 1291898086
-mas "Actions for Obsidian", id: 1659667937
-mas "Portal", id: 1436994560
 mas "Streaks", id: 963034692
-mas "Elmedia Video Player", id: 1044549675
+mas "Portal", id: 1436994560
 mas "Banktivity", id: 1480779512
-cask "logitech-g-hub"
 cask "micro-snitch"
 cask "little-snitch"
 mas "Flighty - Live Flight Tracker", id: 1358823008
 mas "Battery Health", id: 490192174
 mas "Disk Diag", id: 672206759
-cask "onyx"
-mas "FakespotSafari", id: 1592541616
+
 mas "Super Agent", id: 1568262835
-brew "sevenzip"
-#             Fun CLI
+mas "AllMyBatteries", id: 1621263412
+cask "element"
+cask "firefox-developer-edition"
+cask "fleet"
+brew "ttscoff/thelab/gather-cli"
+mas "Kindle", id: 302584613
+mas "Ice Cubes", id: 6444915884
+mas "MarkDownload - Markdown Web Clipper", id: 1554029832
+cask "sirimote"
+mas "Meshtastic", id: 1586432531
+cask "mullvad-browser"
+cask "qgis"
+# TODO: dropzone or yoink?
+cask "dropzone"
+mas "Actions For Obsidian", id: 1659667937
+mas "Disk Speed Test", id: 425264550
+
+#             Additional Shell
 #------------------------------------------------------------------------------
 brew "lolcat"
 brew "cmatrix"
@@ -348,39 +362,32 @@ brew "ponysay"
 
 
 #==============================================================================
-#                       Optional Packages
+#                       Optional/Depends/Miscellaneous...
 #==============================================================================
 # Optional packages
-cask "screens-connect"
+cask "warp"
 cask "zoom"
 cask "skype"
 mas "Spark", id: 1176895641
 cask "istat-menus"
 cask "xbar"
 mas "Delicious Library", id: 635124250
-mas "WireGuard", id: 1451685025
-mas "Twitter", id: 1482454543
-mas "Type2Phone", id: 472717129
-cask "google-drive"
 cask "obs"
 mas "Studies", id: 1071676469
 mas "Be Focused Pro", id: 961632517
 mas "Omnivore", id: 1564031042
 mas "Pluralsight", id: 431748264
-mas "Wavelength", id: 1584865627
 mas "Friendly Streaming", id: 553245401
+# Using Ice cubes Mastodon for now.
 mas "Ivory", id: 6444602274
 mas "Front and Center", id: 1493996622
 mas "Aquarium Live HD", id: 462563503
 mas "Fireplace Live HD", id: 468630933
 mas "Koi Pond 3D Lite", id: 534867956
-mas "Disk Speed Test", id: 425264550
 cask "scrivener"
 cask "adobe-creative-cloud"
 # Apple TV Aerial screensaver
 cask "aerial"
-# 2FA from Twilio
-cask "authy"
 # GUI for homebrew
 cask "cakebrew"
 # Noise cancelling application - helpful for video calls in a coffee shop, e.g.
@@ -389,6 +396,21 @@ mas "Bluesky Social", id: 6444370199
 mas "Flighty", id: 1358823008
 mas "Fotor Photo Editor", id: 503039729
 mas "GIPHY CAPTURE", id: 668208984
+# Not planning to pay for it anymore
+mas "Due", id: 524373870
+# Paid - use handbrake normally
+cask "permute"
+# Trying builtin macos ability instead
+cask "unite"
+cask "houdahspot"
+mas "Pretty OK - Meh Daily Deal", id: 960524321
+mas "Fakespot for Safari", id: 1592541616
+mas "Session", id: 1521432881
+mas "Shortform", id: 1489472007
+mas "Elmedia Video Player", id: 1044549675
+cask "logitech-g-hub"
+cask "onyx"
+cask "textsniper"
 #             Other Fonts
 #------------------------------------------------------------------------------
 cask "font-hack-nerd-font"
@@ -396,53 +418,126 @@ cask "font-fontawesome"
 
 
 #==============================================================================
-#                       Developer Packages
+#                       Cloud Storage
+#==============================================================================
+cask "dropbox"
+cask "google-drive"
+mas "OneDrive", id: 823766827
+
+
+#==============================================================================
+#                       Data & Backup
+#==============================================================================
+brew "rclone"
+brew "rclone-browser"
+brew "restic"
+cask "backblaze"
+cask "duplicacy-web-edition"
+
+
+#==============================================================================
+#                       Server, Infrastructure, Homelab, & Self-hosted
+#==============================================================================
+# For servers, depending on type
+cask "plex-media-server"
+brew "gitlab-runner"
+
+
+#==============================================================================
+#                       Work
+#==============================================================================
+mas "Jira", id: 1475897096
+mas "Microsoft Word", id: 462054704
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft OneNote", id: 784801555
+mas "OneDrive", id: 823766827
+mas "Microsoft Remote Desktop", id: 1295203466
+cask "microsoft-teams"
+mas "LastPass", id: 926036361
+
+
+#==============================================================================
+#                       Games & Related Packages
+#==============================================================================
+# For personal machines that might be used for games
+cask "steam"
+mas "Steam Link", id: 1246969117
+cask "gog-galaxy"
+cask "epic-games"
+# Transitioning from origin to EA Games platform/launcher but its origin for the time-being.
+cask "origin"
+# doesn't install right now - 12-05-2021
+cask "battle-net"
+cask "amazon-luna"
+#             Emulation
+#------------------------------------------------------------------------------
+cask "dolphin"
+cask "openemu"
+
+
+#==============================================================================
+#                       Networking & VPN
+#==============================================================================
+mas "WireGuard", id: 1451685025
+cask "screens-connect"
+cask "protonvpn"
+cask "tunnelblick"
+cask "cloudflare-warp"
+brew "unbound"
+
+#==============================================================================
+#                       Development & Cloud
 #==============================================================================
 # For personal machines that might be used for development
-cask "postman"
 cask "dash"
-cask "sourcetree"
-brew "go"
-brew "ruby"
-brew "ansible"
+cask "figma"
 brew "screen"
+brew "hashicorp/tap/vault"
+brew "vault"
 brew "jupyterlab"
 # GTK+ dialog boxes for the command-line
 brew "zenity"
-mas "Xcode", id: 497799835
 mas "System Designer", id: 1102494854
-mas "Datadog", id: 1391380318
-mas "TestFlight", id: 899247664
 # Text-based UI library
 brew "ncurses"
-brew "jmeter"
-brew "selenium-server"
 cask "teacode"
-cask "datadog-agent"
 cask "royal-tsx"
-cask "figma"
-brew "grafana"
-brew "hashicorp/tap/vault"
-brew "vault"
+# Task runner
 brew "go-task"
-brew "graphql-cli"
 #             Text Editors & IDEs
 #------------------------------------------------------------------------------
-# Much slower than VS Code and Insiders
-cask "vscodium"
+mas "Xcode", id: 497799835
+# paid, not planning to use it.
+cask "nova"
 # For pycharm, IntelliJ, etc.
 cask "jetbrains-toolbox"
-cask "mu-editor"
 cask "textmate"
+cask "mu-editor"
 #             Git
 #------------------------------------------------------------------------------
 cask "github"
 cask "gitkraken"
 cask "gitup"
 cask "tower"
-#             Servers & Virtualization
+cask "sourcetree"
+#             APIs
+#------------------------------------------------------------------------------
+cask "postman"
+brew "newman"
+brew "httpie"
+cask "http-toolkit"
+cask "httpie"
+cask "postman-cli"
+brew "graphql-cli"
+#             Mobile Development
+#------------------------------------------------------------------------------
+mas "TestFlight", id: 899247664
+#             Servers, Containers, Docker, & Virtualization
 #------------------------------------------------------------------------------
 cask "docker"
+brew "podman"
 brew "whalebrew"
 brew "hashicorp/tap/packer"
 brew "packer"
@@ -450,20 +545,30 @@ brew "packer"
 cask "vagrant"
 # homebrew fails to install - on Apple Silicon 2023-06-03
 cask "virtualbox"
+#             Cloud, Web, & Kubernetes
+#------------------------------------------------------------------------------
+brew "netlify-cli"
+# Zero Trust
+mas "Twingate", id: 1501592214
+brew "cloudflared"
+# Web Servers
 brew "nginx"
 brew "httpd"
 brew "lighttpd"
-brew "jenkins"
-#             Cloud & Kubernetes
-#------------------------------------------------------------------------------
+# AWS
 brew "awscli"
 brew "eksctl"
+# GCP
 brew "google-cloud-sdk"
 brew "firebase-cli"
+# Azure
+brew "azure-cli"
+cask "azure-data-studio"
+cask "azure-data-studio-insiders"
+# Kubernetes
 brew "kubernetes-cli"
 brew "minikube"
 brew "helm"
-brew "netlify-cli"
 #             Terraform & Dependencies
 #------------------------------------------------------------------------------
 # update warns due to tfenv managing the terraform binary
@@ -480,31 +585,47 @@ brew "terrascan"
 brew "infracost"
 #             Databases
 #------------------------------------------------------------------------------
+cask "mamp"
+cask "dbvisualizer"
+# Postgres
 brew "postgresql"
+# MySQL
 brew "mysql"
 cask "mysqlworkbench"
+# SQLite
 brew "sqlite"
 cask "sqlitestudio"
+cask "db-browser-for-sqlite"
+# MongoDB
 tap "mongodb/brew"
 cask "robo-3t"
 cask "mongodb-compass"
 brew "mongodb/brew/mongodb-community"
-cask "db-browser-for-sqlite"
-cask "mamp"
-cask "dbvisualizer"
-#             Java
+# CLI for MS SQL Server
+brew "sqlcmd"
+#             AI
 #------------------------------------------------------------------------------
-brew "jenv"
-brew "openjdk"
-brew "openjdk@17"
-brew "gradle"
-brew "maven"
-#             JavaScript
-#-----------------------------------------------------------------------------
-brew "yarn"
-brew "typescript"
-brew "gatsby-cli"
-brew "angular-cli"
+cask "lm-studio"
+#             Automation, CI/CI, Workflows, & Configuration Management
+#------------------------------------------------------------------------------
+brew "ansible"
+brew "jenkins"
+#             Observability, Measurement, Logging, Dashboards, & Monitoring
+#------------------------------------------------------------------------------
+mas "Datadog", id: 1391380318
+cask "datadog-agent"
+brew "jmeter"
+brew "selenium-server"
+brew "grafana"
+#             Security
+#-------------------------------------------------------------------------------
+brew "semgrep"
+tap "snyk/tap"
+brew "snyk/tap/snyk"
+#             IOT, Microelectronics, Embedded, Radio, SBCs, & Raspberry Pi
+#------------------------------------------------------------------------------
+cask "raspberry-pi-imager"
+cask "arduino-ide"
 #             Python
 #------------------------------------------------------------------------------
 brew "virtualenv"
@@ -519,13 +640,41 @@ brew "sqlite3"
 brew "xz"
 # For pyenv & its dependencies?
 brew "zlib"
-#             Security
-#-------------------------------------------------------------------------------
-brew "semgrep"
-tap "snyk/tap"
-brew "snyk/tap/snyk"
+brew "black"
+#             JavaScript
+#-----------------------------------------------------------------------------
+brew "yarn"
+brew "typescript"
+brew "gatsby-cli"
+brew "angular-cli"
+#             Java
+#------------------------------------------------------------------------------
+brew "jenv"
+brew "openjdk"
+brew "openjdk@17"
+brew "gradle"
+brew "maven"
+#             Go
+#------------------------------------------------------------------------------
+brew "go"
+#             Ruby
+#------------------------------------------------------------------------------
+brew "ruby"
+#             PHP
+#------------------------------------------------------------------------------
+brew "php"
+#             C
+#------------------------------------------------------------------------------
+#             C# & .NET
+cask "dotnet-sdk"
+#------------------------------------------------------------------------------
+#             Rust
+#------------------------------------------------------------------------------
+#             Swift
+#------------------------------------------------------------------------------
 #             VS Code Extensions
 #------------------------------------------------------------------------------
+# Normally don't use brew to install vscode extensions; just sync with VS Code Settings Sync
 vscode "4ops.terraform"
 vscode "Evan Harmon.evans-vscode-extension"
 vscode "GitLab.gitlab-workflow"
@@ -575,44 +724,41 @@ vscode "stkb.rewrap"
 vscode "vscode-icons-team.vscode-icons"
 vscode "wesbos.theme-cobalt2"
 vscode "withfig.fig"
-
-
-#==============================================================================
-#                       Work
-#==============================================================================
-mas "Jira", id: 1475897096
-mas "Microsoft Word", id: 462054704
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft PowerPoint", id: 462062816
-mas "Microsoft Outlook", id: 985367838
-mas "Microsoft OneNote", id: 784801555
-mas "OneDrive", id: 823766827
-mas "Microsoft Remote Desktop", id: 1295203466
-cask "microsoft-teams"
-mas "LastPass", id: 926036361
-
-
-#==============================================================================
-#                       Games and Related Packages
-#==============================================================================
-# For personal machines that might be used for games
-cask "steam"
-mas "Steam Link", id: 1246969117
-# doesn't install right now - 12-05-2021
-cask "battle-net"
-cask "dolphin"
-cask "openemu"
-cask "epic-games"
-
-
-#==============================================================================
-#                       Server & Infrastructure
-#==============================================================================
-# For servers, depending on type
-cask "plex-media-server"
-cask "screens-connect"
-brew "gitlab-runner"
-brew "unbound"
+vscode "brpaz.vscode-obsidianmd"
+vscode "henryhediff.obsidian-code"
+vscode "willasm.obsidian-md-vsc"
+vscode "dline.cobaltnext"
+vscode "editorconfig.editorconfig"
+vscode "evan harmon.evans-vscode-extension"
+vscode "gitlab.gitlab-workflow"
+vscode "gruntfuggly.todo-tree"
+vscode "ms-python.debugpy"
+vscode "pkief.material-icon-theme"
+vscode "ritwickdey.liveserver"
+vscode "semgrep.semgrep"
+vscode "shiftleft.shiftleft-core"
+vscode "visualstudioexptteam.intellicode-api-usage-examples"
+vscode "visualstudioexptteam.vscodeintellicode"
+vscode "EditorConfig.EditorConfig"
+vscode "formulahendry.code-runner"
+vscode "gitpod.gitpod-desktop"
+vscode "mgmcdermott.vscode-language-babel"
+vscode "ms-dotnettools.csdevkit"
+vscode "ms-dotnettools.csharp"
+vscode "ms-dotnettools.vscode-dotnet-runtime"
+vscode "ms-dotnettools.vscodeintellicode-csharp"
+vscode "ms-mssql.data-workspace-vscode"
+vscode "ms-mssql.mssql"
+vscode "ms-mssql.sql-bindings-vscode"
+vscode "ms-mssql.sql-database-projects-vscode"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode.remote-explorer"
+vscode "naumovs.color-highlight"
+vscode "nidu.copy-json-path"
+vscode "xdebug.php-debug"
+vscode "deerawan.vscode-dash"
+vscode "timonwong.shellcheck"
 
 
 #==============================================================================
@@ -633,8 +779,6 @@ cask "pycharm-ce"
 cask "intellij-idea-ce"
 # mamp is better than xampp
 cask "xampp"
-# needs to install first. So, easier to just do it manually.
-cask "dropbox"
  # Trying raycast
 cask "launchbar"
 # too buggy 
@@ -665,8 +809,27 @@ mas "Day One", id: 1055511498
 brew "ntfy"
 # Twitch Desktop is discontinued in favor of the web app
 cask "twitch"
+# Much slower than VS Code and Insiders
+cask "vscodium"
+mas "Geekbench 5", id: 1478447657
+# Using Raycast only now
+cask "alfred"
+mas "Reeder", id: 880001334
+# Using Forklift instead
+cask "path-finder"
+# Using allmybatteries instead
+cask "batteries"
+# Reddit killed it.
+mas "Apollo", id: 979274575
+mas "Twitter", id: 1482454543
+mas "Type2Phone", id: 472717129
+mas "Wavelength", id: 1584865627
+# Deprecated - going away 2FA from Twilio
+cask "authy"
 
-
+#==============================================================================
+#                       Miscellaneous, Uncategorized, Added via setupMac.sh...
+#==============================================================================
 #                New Packages from Evan's MacBook Pro 2021 2023-07-21
 #-------------------------------------------------------------------------------
 brew "apr-util"
@@ -712,126 +875,39 @@ brew "wangle"
 tap "homebrew/cask-drivers"
 
 
-#                New Packages from Evan's MacBook Pro 2021 2023-07-22
-#-------------------------------------------------------------------------------
-mas "Slack", id: 803453959
-
-
 #                New Packages from Evan's MacBook Pro 2021 2023-07-23
 #-------------------------------------------------------------------------------
 brew "act"
 
 
-#                New Packages from Evan's MacBook Pro 2021 2023-07-24
-#-------------------------------------------------------------------------------
-vscode "deerawan.vscode-dash"
-
-
-#                New Packages from Evan's MacBook Pro 2021 2023-08-01
-#-------------------------------------------------------------------------------
-vscode "timonwong.shellcheck"
-
-
 #                New Packages from Evan's MacBook Pro 2021 2024-01-16
 #-------------------------------------------------------------------------------
 brew "at-spi2-core"
-brew "azure-cli"
-brew "black"
-brew "httpie"
-brew "hurl"
-brew "mdless"
-brew "newman"
-brew "php"
-brew "podman"
-brew "sqlcmd"
-brew "ttscoff/thelab/gather-cli"
-cask "arc"
-cask "azure-data-studio"
 cask "curio"
-cask "cyberduck"
-cask "dotnet-sdk"
 cask "dotnet-sdk6-0-400"
 cask "dotnet-sdk7-0-400"
-cask "element"
-cask "firefox-developer-edition"
-cask "fleet"
-cask "http-toolkit"
-cask "httpie"
 cask "inso"
-cask "lm-studio"
-cask "paletro"
-cask "postman-cli"
-cask "signal"
-mas "Ice Cubes", id: 6444915884
 mas "Kindle Classic", id: 405399194
-mas "Kindle", id: 302584613
-mas "MarkDownload - Markdown Web Clipper", id: 1554029832
 mas "OpenIn", id: 1643649331
 mas "Telegram", id: 747648890
 tap "go-task/tap"
 tap "isen-ng/dotnet-sdk-versions"
-vscode "EditorConfig.EditorConfig"
-vscode "formulahendry.code-runner"
-vscode "gitpod.gitpod-desktop"
-vscode "mgmcdermott.vscode-language-babel"
-vscode "ms-dotnettools.csdevkit"
-vscode "ms-dotnettools.csharp"
-vscode "ms-dotnettools.vscode-dotnet-runtime"
-vscode "ms-dotnettools.vscodeintellicode-csharp"
-vscode "ms-mssql.data-workspace-vscode"
-vscode "ms-mssql.mssql"
-vscode "ms-mssql.sql-bindings-vscode"
-vscode "ms-mssql.sql-database-projects-vscode"
-vscode "ms-vscode-remote.remote-ssh"
-vscode "ms-vscode-remote.remote-ssh-edit"
-vscode "ms-vscode.remote-explorer"
-vscode "naumovs.color-highlight"
-vscode "nidu.copy-json-path"
-vscode "xdebug.php-debug"
 
 
 #                New Packages from Evan's MacBook Pro 2021 2024-02-26
 #-------------------------------------------------------------------------------
 brew "docker"
 brew "tiger-vnc"
-brew "w3m"
-cask "amazon-luna"
-cask "arduino-ide"
-cask "azure-data-studio-insiders"
-cask "raspberry-pi-imager"
-cask "sirimote"
-cask "tigervnc-viewer"
-mas "AllMyBatteries", id: 1621263412
 mas "Dynamo", id: 1445910651
 mas "Hand Mirror", id: 1502839586
-mas "Meshtastic", id: 1586432531
 mas "Pile", id: 1549454338
 mas "Save to Raindrop.io", id: 1549370672
-mas "Transmit", id: 1436522307
 mas "Vimeo", id: 1356686763
-tap "homebrew/cask"
-tap "homebrew/core"
-vscode "dline.cobaltnext"
-vscode "editorconfig.editorconfig"
-vscode "evan harmon.evans-vscode-extension"
-vscode "gitlab.gitlab-workflow"
-vscode "gruntfuggly.todo-tree"
-vscode "ms-python.debugpy"
-vscode "pkief.material-icon-theme"
-vscode "ritwickdey.liveserver"
-vscode "semgrep.semgrep"
-vscode "shiftleft.shiftleft-core"
-vscode "visualstudioexptteam.intellicode-api-usage-examples"
-vscode "visualstudioexptteam.vscodeintellicode"
 
 
 #                New Packages from Evan's MacBook Pro 2021 2024-02-28
 #-------------------------------------------------------------------------------
-brew "pipx"
 brew "python-lsp-server"
-cask "dropzone"
-cask "latest"
-mas "Actions For Obsidian", id: 1659667937
 mas "Pandan", id: 1569600264
 
 
@@ -840,40 +916,6 @@ mas "Pandan", id: 1569600264
 cask "microsoft-auto-update"
 
 
-#                New Packages from Evan's MacBook Pro 2021 2024-02-29
-#-------------------------------------------------------------------------------
-cask "hookmark"
-cask "textsniper"
-
-
 #                New Packages from Evan's MacBook Pro 2021 2024-03-05
 #-------------------------------------------------------------------------------
 cask "meld"
-vscode "brpaz.vscode-obsidianmd"
-vscode "henryhediff.obsidian-code"
-vscode "willasm.obsidian-md-vsc"
-
-
-#                New Packages from Evan's MacBook Pro 2021 2024-03-23
-#-------------------------------------------------------------------------------
-cask "mullvad-browser"
-cask "mullvadvpn"
-cask "qgis"
-mas "Screens 5", id: 1663047912
-mas "Tailscale", id: 1475387142
-mas "Twingate", id: 1501592214
-
-
-#                New Packages from Evan's MacBook Pro 2021 2024-03-26
-#-------------------------------------------------------------------------------
-brew "restic"
-
-
-#                New Packages from EvansMacBookPro 2024-03-29
-#-------------------------------------------------------------------------------
-cask "cloudflare-warp"
-
-
-#                New Packages from EvansMacBookPro 2024-03-29
-#-------------------------------------------------------------------------------
-brew "cloudflared"
