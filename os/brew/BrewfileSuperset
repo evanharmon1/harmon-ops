@@ -19,7 +19,6 @@ tap "hashicorp/tap"
 # https://brettterpstra.com
 tap "ttscoff/thelab"
 tap "homebrew/core"
-tap "homebrew/cask"
 
 
 #==============================================================================
@@ -919,3 +918,74 @@ cask "microsoft-auto-update"
 #                New Packages from Evan's MacBook Pro 2021 2024-03-05
 #-------------------------------------------------------------------------------
 cask "meld"
+
+
+#                New Packages from EvansMacBookPro 2024-04-09
+#-------------------------------------------------------------------------------
+brew "node"
+cask "hook"
+cask "league-of-legends"
+cask "nvidia-geforce-now"
+cask "rclone-browser"
+mas "FakespotSafari", id: 1592541616
+mas "Slack", id: 803453959
+vscode "alefragnani.bookmarks"
+
+
+#                New Packages from EvansMacBookPro 2024-05-12
+#-------------------------------------------------------------------------------
+brew "youtube-dl"
+brew "yt-dlp"
+vscode "unifiedjs.vscode-mdx"
+
+
+#                New Packages from EvansMacBookPro 2024-05-20
+#-------------------------------------------------------------------------------
+brew "ollama"
+vscode "redhat.ansible"
+
+
+#                New Packages from EvansMacBookPro 2024-05-30
+#-------------------------------------------------------------------------------
+brew "ctop"
+cask "hdhomerun"
+cask "ollama"
+cask "retroarch-metal"
+mas "HDHomeRun", id: 949582631
+
+
+#                New Packages from EvansMacBookPro 2024-06-14
+#-------------------------------------------------------------------------------
+mas "PCalc", id: 403504866
+
+
+#                New Packages from EvansMacBookPro 2024-06-30
+#-------------------------------------------------------------------------------
+cask "anaconda"
+cask "miniconda"
+cask "yacreader"
+mas "Simple Comic", id: 1497435571
+
+
+#                New Packages from EvansMacBookPro 2024-07-14
+#-------------------------------------------------------------------------------
+cask "azure-data-studio@insiders"
+cask "firefox@developer-edition"
+cask "visual-studio-code@insiders"
+
+
+#                New Packages from EvansMacBookPro 2024-07-22
+#-------------------------------------------------------------------------------
+cask "duet"
+cask "moonlight"
+
+
+#                New Packages from EvansMacBookPro 2024-08-14
+#-------------------------------------------------------------------------------
+cask "diffusionbee"
+cask "minecraft"
+cask "mochi-diffusion"
+mas "Draw Things", id: 6444050820
+mas "Yomu", id: 562211012
+vscode "github.vscode-github-actions"
+whalebrew "directory"

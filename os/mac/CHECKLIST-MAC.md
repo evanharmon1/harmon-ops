@@ -35,17 +35,18 @@ Checklist for setting up a new Mac
 ## Authenticate **Mac App Store** & download Amphetamine & setup remote access
 - [ ] Install Amphetamine via Mac App Store
 - [ ] Turn on Amphetamine indefinitely to make sure it stays on and you can connect etc. until you get the machine mostly setup. (Although the `caffeinate` command should keep the Mac awake while that script is running.)
-- [ ] Install Screens Connect via Mac App Store
-    - [ ] Sign in and get remote access working so you can check in on progress of setup from anywhere.
+- [ ] Install Screens Connect and get remote access working so you can check in on progress of setup from anywhere.
 
 ## Download or Airdrop harmon-ops repo (this repo) to `~/git`
 - [ ] [harmon-ops](https://github.com/evanharmon1/harmon-ops)]
 
 ## Run bootstrapMac.sh (sets hostnames, installs Homebrew, runs `softwareupdate`, copies `Brewfile` & `CHECKLIST.md`)
-- [ ] Run `bootstrapMac.sh` with **sudo** from `os/mac`:
-`cd ~/git/harmon-ops/os/mac && sudo caffeinate -disu zsh ./bootstrapMac.sh 2>&1 | tee -a ~/.log/bootstrapMac.sh.log`
+- [ ] Run `bootstrapMac.sh` from `os/mac`:
+`cd ~/git/harmon-ops/os/mac && caffeinate -disu ./bootstrapMac.sh
 - [ ] Script will ask you to set hostnames for this machine.
-- [ ] Make sure to run the commands that Homebrew says in order to add `brew` to `$PATH` correctly.
+- [ ] Make sure to run the commands that Homebrew says in order to add `brew` to `$PATH` correctly:
+    - [ ] `(echo; echo 'eval "$(/usr/local/bin/brew shellenv)"') >> /Users/evan/.zprofile`
+    - [ ] `eval "$(/usr/local/bin/brew shellenv)"`
 - [ ] Homebrew should install git automatically, but if you need to manually install Xcode CLI tools and git: `xcode-select --install`.
 - [ ] Restart, if needed by `softwareupdate`. Probably should restart regardless.
 
@@ -59,6 +60,7 @@ Checklist for setting up a new Mac
 - [ ] Run `setupMac.sh` from `os/mac`:
 `cd ~/git/harmon-ops/os/mac && caffeinate -disu zsh -x ./setupMac.sh 2>&1 | tee -a ~/.log/setupMac.sh.log`
 - The script usually needs a few Mac password prompts, so check it periodically.
+- You need to type "exit" when oh-my-zsh is installed to exit that terminal and return to the rest of the setupMac.sh script
 
 ## Setup 1Password & Secrets
 - [ ] Open 1Password and authenticate:

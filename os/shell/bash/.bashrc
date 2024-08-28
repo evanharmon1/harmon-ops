@@ -2,9 +2,9 @@
 [[ -f "$HOME/.fig/shell/bashrc.pre.bash" ]] && builtin source "$HOME/.fig/shell/bashrc.pre.bash"
 # My custom .bashrc file
 
-source ~/.dotfiles/.aliases
-source ~/.dotfiles/.var
-source ~/.dotfiles/.functions
+source ~/dotfiles/.aliases
+source ~/dotfiles/.var
+source ~/dotfiles/.functions
 
 #============================================================================
 #                               Bash Terminal Customization

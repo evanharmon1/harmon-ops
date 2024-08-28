@@ -1,0 +1,23 @@
+$ORIGIN harmonops.com.   ; designates the start of this zone file in the namespace
+$TTL 3600                ; default expiration time (in seconds) of all RRs without their own TTL value
+
+@	        3600	IN	SOA	dahlia.ns.cloudflare.com. dns.cloudflare.com. (
+                        2046374909      ; serial number YYMMDDNN
+                        10000           ; Refresh
+                        2400            ; Retry
+                        604800          ; Expire
+                        3600            ; Min TTL
+			)
+;; NS Records
+@       	86400	IN	NS	dahlia.ns.cloudflare.com.
+@       	86400	IN	NS	damian.ns.cloudflare.com.
+
+;; MX Records
+@       	86400	IN	MX	10 mail.harmonops.com.
+
+;; CNAME Records
+valheim.harmonops.com.	3600	IN	CNAME	evans.harmonops.com. ; valheim dedicated server
+www.harmonops.com.	3600	IN	CNAME	harmonops.com.
+
+;; A Records
+evans.harmonops.com.	1	IN	A	136.33.143.149

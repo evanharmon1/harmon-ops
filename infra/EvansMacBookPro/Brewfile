@@ -17,6 +17,8 @@ brew "alerter"
 brew "node"
 # CLI tool for Angular
 brew "angular-cli"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
 # Automate deployment, configuration, and upgrading
 brew "ansible"
 # Companion library to apr, the Apache Portable Runtime library
@@ -63,6 +65,8 @@ brew "cmatrix"
 brew "coreutils"
 # Configurable talking characters in ASCII art
 brew "cowsay"
+# Top-like interface for container metrics
+brew "ctop"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
 # Trace a chain of DNS servers to the source
@@ -105,8 +109,6 @@ brew "leptonica"
 brew "libarchive"
 # Subtitle renderer for the ASS/SSA subtitle format
 brew "libass"
-# C library SSHv1/SSHv2 client and server protocols
-brew "libssh"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # OCR (Optical Character Recognition) engine
@@ -289,6 +291,8 @@ brew "pyenv"
 brew "python-lsp-server"
 # Pretty-print tabular data in Python
 brew "python-tabulate"
+# Rsync for cloud storage
+brew "rclone"
 # Fast, efficient and secure backup program
 brew "restic"
 # Search tool like grep and The Silver Searcher
@@ -346,7 +350,7 @@ brew "tree"
 # Language for application scale JavaScript development
 brew "typescript"
 # Vi 'workalike' with many additional features
-brew "vim", link: false
+brew "vim"
 # Pager/text based browser
 brew "w3m"
 # Executes a program periodically, showing output fullscreen
@@ -361,8 +365,12 @@ brew "whalebrew"
 brew "wtfutil"
 # JavaScript package manager
 brew "yarn", link: false
+# Download YouTube videos from the command-line
+brew "youtube-dl"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
 # GTK+ dialog boxes for the command-line
 brew "zenity"
 # UNIX shell (command interpreter)
@@ -385,6 +393,8 @@ cask "aerial"
 cask "alfred"
 # Play your favorite games straight from the cloud
 cask "amazon-luna"
+# Distribution of the Python and R programming languages for scientific computing
+cask "anaconda"
 # Application uninstaller
 cask "appcleaner"
 # Chromium based browser
@@ -398,7 +408,7 @@ cask "authy"
 # Data management tool that enables working with SQL Server
 cask "azure-data-studio"
 # Data management tool that enables working with SQL Server
-cask "azure-data-studio-insiders"
+cask "azure-data-studio@insiders"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Menu bar icon organiser
@@ -439,6 +449,8 @@ cask "db-browser-for-sqlite"
 cask "dbvisualizer"
 # Utility to enhance the Open and Save dialogs in applications
 cask "default-folder-x"
+# Run Stable Diffusion locally
+cask "diffusionbee"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerised applications and microservices
@@ -457,6 +469,8 @@ cask "downie"
 cask "drawio"
 # Productivity app
 cask "dropzone"
+# Remote desktop and second display tool
+cask "duet"
 # Cloud backup tool
 cask "duplicacy-web-edition"
 # Matrix collaboration client
@@ -468,16 +482,14 @@ cask "figma"
 # Web browser
 cask "firefox"
 # Web browser
-cask "firefox-developer-edition"
+cask "firefox@developer-edition"
 # Hybrid IDE and text editor
 cask "fleet"
 # Tool to turn a website into a desktop app
 cask "fluid"
 # Markdown text editor with productivity features
 cask "foldingtext"
-# Icon set and toolkit
 cask "font-fontawesome"
-# Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
 cask "font-menlo-for-powerline"
 # Finder replacement and FTP, SFTP, WebDAV and Amazon s3 client
@@ -500,6 +512,8 @@ cask "google-earth-pro"
 cask "handbrake"
 # Automated organisation
 cask "hazel"
+# Client for HDHomeRun streamer
+cask "hdhomerun"
 # Link and retrieve key information
 cask "hook"
 # Link and retrieve key information
@@ -534,10 +548,14 @@ cask "keyboard-maestro"
 cask "krisp"
 # Utility that shows the latest app updates
 cask "latest"
+# Multiplayer online battle arena game
+cask "league-of-legends"
 # Host-based application firewall
 cask "little-snitch"
 # Discover, download, and run local LLMs
 cask "lm-studio"
+# Support for Logitech G gear
+cask "logitech-g-hub"
 # Web development solution with Apache, Nginx, PHP & MySQL
 cask "mamp"
 # Collection of services for Markdown-formatted text
@@ -550,10 +568,18 @@ cask "micro-snitch"
 cask "microsoft-auto-update"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
+# Sandbox construction video game
+cask "minecraft"
+# Minimal installer for conda
+cask "miniconda"
 # Manage your windows in Mission Control
 cask "mission-control-plus"
+# Run Stable Diffusion natively
+cask "mochi-diffusion"
 # Interactive tool for analyzing MongoDB data
 cask "mongodb-compass"
+# GameStream client
+cask "moonlight"
 # Resize and reposition apps
 cask "mosaic"
 # Small, simple editor for beginner Python programmers
@@ -572,10 +598,14 @@ cask "ngrok"
 cask "notion"
 # Interactive computing suite
 cask "nteract"
+# Cloud gaming platform
+cask "nvidia-geforce-now"
 # Open-source software for live streaming and screen recording
 cask "obs"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Get up and running with large language models locally
+cask "ollama"
 # Verify system files structure, run miscellaneous maintenance and more
 cask "onyx"
 # Retro video game emulation
@@ -608,6 +638,10 @@ cask "qlstephen"
 cask "raspberry-pi-imager"
 # Control your tools with a few keystrokes
 cask "raycast"
+# GUI for rclone
+cask "rclone-browser"
+# Frontend for emulators, game engines and media players (Metal graphics API)
+cask "retroarch-metal"
 # MongoDB management tool
 cask "robo-3t"
 # Remote management solution
@@ -666,7 +700,7 @@ cask "vagrant"
 # Open-source code editor
 cask "visual-studio-code"
 # Code editor
-cask "visual-studio-code-insiders"
+cask "visual-studio-code@insiders"
 # Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
 # Multimedia player
@@ -677,6 +711,8 @@ cask "wireshark"
 cask "xbar"
 # Image viewer and file browser
 cask "xee"
+# Comic reader
+cask "yacreader"
 # Create diagrams manually, or import external data for analysis
 cask "yed"
 # Video communication and virtual meeting platform
@@ -711,6 +747,7 @@ mas "DevUtils", id: 1533756032
 mas "Disk Diag", id: 672206759
 mas "Disk Speed Test", id: 425264550
 mas "Drafts", id: 1435957248
+mas "Draw Things", id: 6444050820
 mas "DuckDuckGo", id: 663592361
 mas "DuckDuckGo Privacy for Safari", id: 1482920575
 mas "Due", id: 524373870
@@ -729,6 +766,7 @@ mas "GarageBand", id: 682658836
 mas "Geekbench 5", id: 1478447657
 mas "GIPHY CAPTURE", id: 668208984
 mas "Hand Mirror", id: 1502839586
+mas "HDHomeRun", id: 949582631
 mas "Highlights", id: 1498912833
 mas "Home Assistant", id: 1099568401
 mas "Hush", id: 1544743900
@@ -767,6 +805,7 @@ mas "Pages", id: 409201541
 mas "Pandan", id: 1569600264
 mas "Paprika Recipe Manager 3", id: 1303222628
 mas "Pastel", id: 413897608
+mas "PCalc", id: 403504866
 mas "Pile", id: 1549454338
 mas "Play", id: 1596506190
 mas "Pluralsight", id: 431748264
@@ -782,6 +821,7 @@ mas "Scapple", id: 568020055
 mas "Screens", id: 1224268771
 mas "Screens 5", id: 1663047912
 mas "Session", id: 1521432881
+mas "Simple Comic", id: 1497435571
 mas "Simplenote", id: 692867256
 mas "Slack", id: 803453959
 mas "Slack", id: 803453959
@@ -802,7 +842,6 @@ mas "The Unarchiver", id: 425424353
 mas "Things", id: 904280696
 mas "Timery", id: 1425368544
 mas "Toggl Track", id: 1291898086
-mas "Transmit", id: 1436522307
 mas "Trello", id: 1278508951
 mas "Twingate", id: 1501592214
 mas "Twitter", id: 1482454543
@@ -814,7 +853,10 @@ mas "WireGuard", id: 1451685025
 mas "WriteRoom", id: 417967324
 mas "Xcode", id: 497799835
 mas "Yoink", id: 457622435
+mas "Yomu", id: 562211012
+whalebrew "directory"
 vscode "4ops.terraform"
+vscode "alefragnani.bookmarks"
 vscode "astro-build.astro-vscode"
 vscode "bradlc.vscode-tailwindcss"
 vscode "brpaz.vscode-obsidianmd"
@@ -831,6 +873,7 @@ vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
 vscode "evan harmon.evans-vscode-extension"
 vscode "formulahendry.code-runner"
+vscode "github.vscode-github-actions"
 vscode "gitlab.gitlab-workflow"
 vscode "gitpod.gitpod-desktop"
 vscode "gruntfuggly.todo-tree"
@@ -871,6 +914,7 @@ vscode "naumovs.color-highlight"
 vscode "nidu.copy-json-path"
 vscode "oderwat.indent-rainbow"
 vscode "pkief.material-icon-theme"
+vscode "redhat.ansible"
 vscode "redhat.vscode-yaml"
 vscode "ritwickdey.liveserver"
 vscode "semgrep.semgrep"
@@ -879,6 +923,7 @@ vscode "shiftleft.shiftleft-core"
 vscode "snyk-security.snyk-vulnerability-scanner"
 vscode "stkb.rewrap"
 vscode "timonwong.shellcheck"
+vscode "unifiedjs.vscode-mdx"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
 vscode "visualstudioexptteam.vscodeintellicode"
 vscode "vscode-icons-team.vscode-icons"

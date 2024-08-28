@@ -7,8 +7,7 @@
 # First script to run to bootstrap the automated setup of a new Mac
 # Follow the prerequisite steps listed in CHECKLIST-MAC.md
 # Run this script from the repo's os/mac directory:
-# To run unattended: `sudo caffeinate -disu zsh ./bootstrapMac.sh 2>&1 | tee -a ~/.log/bootstrapMac.sh.log`
-# IMPORTANT: Run as root with sudo
+# To run unattended: `caffeinate -disu ./bootstrapMac.sh
 
 echo -e "\033[0;35m  ++++++Starting bootstrapMac.sh - $(date) "+%FT%T"++++++  \033[0m"
 start_time=$(date +%s)
@@ -49,7 +48,7 @@ dscacheutil -flushcache
 #                       Copy Brewfile and CHECKLIST for this machine
 #==============================================================================
 mkdir "../../infra/${hostName}/"
-cp BrewfileSuperset ~/Brewfile
+cp ../brew/BrewfileSuperset ~/Brewfile
 cp CHECKLIST-MAC.md "../../infra/${hostName}/"
 
 
@@ -58,7 +57,7 @@ cp CHECKLIST-MAC.md "../../infra/${hostName}/"
 #==============================================================================
 echo -e "\033[0;35m  ......Checking for and installing any Apple software updates......  \033[0m"
 # Mac system software and App Store updates and restart if needed
-softwareupdate --install --all --restart
+softwareupdate --install --all
 
 end_time=$(date +%s)
 echo "Time elapsed: $(($end_time - $start_time)) seconds"

@@ -21,7 +21,7 @@ start_time=$(date +%s)
 #============================================================================
 echo -e "\033[0;35m  ......Checking for and installing any Apple software updates......  \033[0m"
 # Mac system software and App Store updates and restart if needed
-softwareupdate --install --all --restart
+softwareupdate --install --all
 
 
 #============================================================================
@@ -49,8 +49,6 @@ mkdir ~/Data
 mkdir ~/Data/Banktivity
 mkdir ~/Data/TorrentsIncomplete
 mkdir ~/.log
-touch ~/.log/bootstrapMac.sh.log
-touch ~/.log/setupMac.sh.log
 touch ~/.log/updateMac.sh.log
 touch ~/.log/updateMacSoftware.sh.log
 touch ~/.log/updatePython.sh.log
@@ -58,13 +56,6 @@ touch ~/.log/updateJavaScript.sh.log
 touch ~/.log/updateJava.sh.log
 # You can't use relative paths for symoblic links apparently. E.g. - os/mac/scripts
 ln -s ~/git/harmon-ops/os/shell/bin ~/
-
-
-#============================================================================
-#                               Zsh
-#============================================================================
-echo -e "\033[0;35m  ......Installing oh-my-zsh......  \033[0m"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
 #============================================================================
@@ -101,6 +92,14 @@ git clone https://github.com/powerline/fonts.git
 
 
 #============================================================================
+#                               Zsh
+#============================================================================
+# Need to type "exit" when oh-my-zsh is installed to exit that terminal and return to rest of setupMac.sh script
+echo -e "\033[0;35m  ......Installing oh-my-zsh......  \033[0m"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+#============================================================================
 #                               mackup for dotfiles
 #============================================================================
 # `mackup` backs up supported app configs, settings, and dotfiles like .bash_profile to iCloud and then symlinks them back to original location
@@ -110,8 +109,9 @@ git clone https://github.com/powerline/fonts.git
 # Now, mackup doesn't work well due to symlink security restrictions. So just use the mackup backup & restore workflow.
 echo -e "\033[0;35m  ......Running mackup restore to symlink existing app config, settings, and dotfiles from iCloud to their default local locations......  \033[0m"
 # Backup current Mackup directory in iCloud in case the restore process messes up anything.
+# BUG: Doesn't create directories correctly.
 mkdir -p ~/Library/"Mobile Documents"/com~apple~CloudDocs/Backups/"Mackup Backups/${THIS_HOST}/$(date +%F)"/
-cp ~/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup ~/Library/"Mobile Documents"/com~apple~CloudDocs/Backups/"Mackup Backups/${THIS_HOST}/$(date +%F)"/
+cp -r ~/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup ~/Library/"Mobile Documents"/com~apple~CloudDocs/Backups/"Mackup Backups/${THIS_HOST}/$(date +%F)"/
 cp ~/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup/.mackup.cfg ~/
 mackup restore
 
