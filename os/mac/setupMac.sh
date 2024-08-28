@@ -16,17 +16,17 @@ echo -e "\033[0;35m  ++++++Starting setupMac.sh - $(date) "+%FT%T"++++++  \033[0
 start_time=$(date +%s)
 
 
-#============================================================================
-#                               Apple Software Updates
-#============================================================================
+#==============================================================================
+#                       Apple Software Updates
+#==============================================================================
 echo -e "\033[0;35m  ......Checking for and installing any Apple software updates......  \033[0m"
 # Mac system software and App Store updates and restart if needed
 softwareupdate --install --all
 
 
-#============================================================================
-#                               Homebrew
-#============================================================================
+#==============================================================================
+#                       Homebrew
+#==============================================================================
 echo -e "\033[0;35m  ......Running brew bundle to install packages listed in ~/Brewfile......  \033[0m"
 brew update -v
 brew upgrade -v
@@ -41,9 +41,9 @@ mkdir "../../infra/${THIS_HOST}/"
 \cp -fR ~/Brewfile.original "../../infra/${THIS_HOST}/"
 
 
-#============================================================================
-#                               Directories and Symbolic Links
-#============================================================================
+#==============================================================================
+#                       Directories and Symbolic Links
+#==============================================================================
 echo -e "\033[0;35m  ......Making Directories and Symbolic Links......  \033[0m"
 mkdir ~/Data
 mkdir ~/Data/Banktivity
@@ -58,50 +58,50 @@ touch ~/.log/updateJava.sh.log
 ln -s ~/git/harmon-ops/os/shell/bin ~/
 
 
-#============================================================================
-#                               Python
-#============================================================================
+#==============================================================================
+#                       Python
+#==============================================================================
 ../languages/python/setupPython.sh
 
 
-#============================================================================
-#                               JavaScript
-#============================================================================
+#==============================================================================
+#                       JavaScript
+#==============================================================================
 ../languages/javaScript/setupJavaScript.sh
 
 
-#============================================================================
-#                               Java
-#============================================================================
+#==============================================================================
+#                       Java
+#==============================================================================
 # ../languages/java/setupJava.sh
 # TODO: Update java setup
 
-#============================================================================
-#                               VS Code
-#============================================================================
+#==============================================================================
+#                       VS Code
+#==============================================================================
 # Shouldn't need this anymore with VS Code Settings Sync unless I want to start from scratch.
 # echo -e "\033[0;35m  ......Installing Fonts......  \033[0m"
 # ../IDEs/vscode/setupVsCode.sh
 
 
 #============================================================================
-#                               Fonts
+#                       Fonts
 #============================================================================
 git clone https://github.com/powerline/fonts.git
 ./fonts/install.sh
 
 
 #============================================================================
-#                               Zsh
+#                       Zsh
 #============================================================================
 # Need to type "exit" when oh-my-zsh is installed to exit that terminal and return to rest of setupMac.sh script
 echo -e "\033[0;35m  ......Installing oh-my-zsh......  \033[0m"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
-#============================================================================
-#                               mackup for dotfiles
-#============================================================================
+#==============================================================================
+#                       mackup for dotfiles
+#==============================================================================
 # `mackup` backs up supported app configs, settings, and dotfiles like .bash_profile to iCloud and then symlinks them back to original location
 # .mackup.cfg specifies cloud storage destination. It needs to be in home directory
 # mackup config needs the .mackup.cfg in the home directory and a ~/.mackup directory with
@@ -116,17 +116,17 @@ cp ~/Library/"Mobile Documents"/com~apple~CloudDocs/Mackup/.mackup.cfg ~/
 mackup restore
 
 
-#============================================================================
-#                               macOS Settings via Terminal
-#============================================================================
+#==============================================================================
+#                       macOS Settings via Terminal
+#==============================================================================
 # TODO: Try without this next time. Not sure it's worth it. And hard to diagnose bugs. So maybe split it off into a separate files - configureMacSettingsSuperset.sh and configureMacSettings.sh for vetted commands that I know work correctly.
 # echo -e "\033[0;35m  ......Configuring Mac settings with terminal commands......  \033[0m"
 # ./configureMacSettings.sh
 
 
-#============================================================================
-#                               Apple launchd Service for updateMac.sh
-#============================================================================
+#==============================================================================
+#                       Apple launchd Service for updateMac.sh
+#==============================================================================
 # Setup updateMac.sh script as a launchd/launchctl service to run automatically once a week and at startup
 # TODO: Try without this next time to see if it doesn't recreate that file not found bug I get on my MacBook Pro
 # echo -e "\033[0;35m  ......Setting up updateMac.sh as an Apple launchd service to run automatically......  \033[0m"
@@ -134,9 +134,9 @@ mackup restore
 # launchctl load /Users/evan/Library/LaunchAgents/com.evan.updateMac.plist
 
 
-#============================================================================
+#==============================================================================
 #                       Bash
-#============================================================================
+#==============================================================================
 #             [sexy-bash-prompt](https://github.com/twolfson/sexy-bash-prompt)
 #------------------------------------------------------------------------------
 # Their one-line installation didn't work last time. I needed to do their
