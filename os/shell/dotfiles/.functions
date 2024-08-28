@@ -36,7 +36,7 @@ function seqn() {
     # If it exists, increment it by 1
     ((INCREMENT_NUMBER_COUNT++))
   fi
-  
+
   # Return the current value
   echo $INCREMENT_NUMBER_COUNT
 }
