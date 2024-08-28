@@ -1,0 +1,42 @@
+# My Shell Functions
+
+# Create a new directory and enter it
+function mk() {
+  mkdir -p "$@" && cd "$@" || exit
+}
+
+
+#==============================================================================
+#                       git
+#==============================================================================
+# Git - stage all current changes, commit them, and push them to current remote branch.
+# Argument: "commit message". If not present, defaults to "default message".
+function gitsend() {
+  git add -A
+  git commit -m "${1:-"default message"}"
+  git push
+}
+
+# Git - from any branch, checkout main, pull any changes, then switch back to the original branch.
+function gitum() {
+  local current_branch=$(git symbolic-ref --short HEAD)
+  branch=${1:-$current_branch}
+  git checkout main
+  git pull
+  git checkout "$branch"
+}
+
+# Function to return a number n, and then n+1 on subsequent calls.
+function seqn() {
+  # Check if the static variable exists ()
+  if [ -z "$INCREMENT_NUMBER_COUNT" ]; then
+    # If it doesn't exist, initialize it to 1
+    INCREMENT_NUMBER_COUNT=1
+  else
+    # If it exists, increment it by 1
+    ((INCREMENT_NUMBER_COUNT++))
+  fi
+
+  # Return the current value
+  echo $INCREMENT_NUMBER_COUNT
+}

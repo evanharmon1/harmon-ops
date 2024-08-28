@@ -1,0 +1,12 @@
+# You need to add this to your crontab with `crontab -e`
+SHELL=/bin/sh
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/opt/homebrew/bin:~/bin:~/scripts:$PATH
+
+# Every day at 6:05PM
+05 18 * * * cd ~/dev/HarmonOps/harmon-ops/osConfig/mac && echo "STARTING CRONJOB with PATH = $PATH" | tee -a ~/.log/updateMac.sh.log && su - evan -c caffeinate -disu zsh -x ./updateMac.sh 2>&1 | tee -a ~/.log/updateMac.sh.log
+# Saturdays and Sundays at 9:05AM
+05 09 * * 6/7 cd ~/dev/HarmonOps/harmon-ops/osConfig/mac && caffeinate -disu zsh -x ./updateMac.sh 2>&1 | tee -a ~/.log/updateMac.sh.log
+# Saturdays and Sundays at 11:05AM
+# 05 11 * * 6/7 cd ~/dev/HarmonOps/harmon-ops/languages/javaScript && caffeinate -disu zsh -x ./updateJavaScript.sh 2>&1 | tee -a ~/.log/updateJavaScript.sh.log
+# Saturdays and Sundays at 1:05PM
+# 05 13 * * 6/7 cd ~/dev/HarmonOps/harmon-ops/languages/python && caffeinate -disu zsh -x ./updatePython.sh 2>&1 | tee -a ~/.log/updatePython.sh.log
