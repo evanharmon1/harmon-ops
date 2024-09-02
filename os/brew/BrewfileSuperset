@@ -989,3 +989,21 @@ mas "Draw Things", id: 6444050820
 mas "Yomu", id: 562211012
 vscode "github.vscode-github-actions"
 whalebrew "directory"
+
+
+#                New Packages from EvansMacBookPro 2024-08-29
+#-------------------------------------------------------------------------------
+brew "colima"
+brew "jesseduffield/lazygit/lazygit"
+brew "tig"
+cask "chatgpt"
+cask "cursor"
+tap "jesseduffield/lazygit"
+vscode "supermaven.supermaven"
+
+
+#                New Packages from EvansMacBookPro 2024-09-01
+#-------------------------------------------------------------------------------
+brew "brew-gem"
+brew "gem-na"
+vscode "kotfu.bunch"

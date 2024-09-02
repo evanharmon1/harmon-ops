@@ -6,6 +6,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "isen-ng/dotnet-sdk-versions"
+tap "jesseduffield/lazygit"
 tap "mongodb/brew"
 tap "snyk/tap"
 tap "ttscoff/thelab"
@@ -51,6 +52,8 @@ brew "bat"
 brew "black"
 # Collection of portable C++ source libraries
 brew "boost"
+# Install RubyGems as Homebrew formulae
+brew "brew-gem"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
 # Prevent cloud misconfigurations during build-time for IaC tools
@@ -61,6 +64,12 @@ brew "cloudflared"
 brew "cmake"
 # Console Matrix
 brew "cmatrix"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Configurable talking characters in ASCII art
@@ -97,10 +106,6 @@ brew "espeak"
 brew "exa"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Image processing and image analysis library
@@ -127,6 +132,7 @@ brew "fzf"
 brew "gatsby-cli", link: false
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
+brew "gem-na"
 # GitHub command-line tool
 brew "gh"
 # Interpreter for PostScript and PDF
@@ -181,8 +187,6 @@ brew "hurl"
 brew "shared-mime-info"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Library for reading RAW files from digital photo cameras
 brew "libraw"
 # Tools and libraries to manipulate images in many formats
@@ -291,6 +295,8 @@ brew "pyenv"
 brew "python-lsp-server"
 # Pretty-print tabular data in Python
 brew "python-tabulate"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Rsync for cloud storage
 brew "rclone"
 # Fast, efficient and secure backup program
@@ -339,6 +345,8 @@ brew "tflint"
 brew "tfsec"
 # Programmatically correct mistyped console commands
 brew "thefuck"
+# Text interface for Git repositories
+brew "tig"
 # High-performance, platform-neutral implementation of VNC
 brew "tiger-vnc"
 # Simplified and community-driven man pages
@@ -377,6 +385,8 @@ brew "zenity"
 brew "zsh"
 # Vault
 brew "hashicorp/tap/vault"
+# A simple terminal UI for git commands, written in Go
+brew "jesseduffield/lazygit/lazygit"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
 # High-performance, schema-free, document-oriented database
@@ -425,6 +435,8 @@ cask "bunch"
 cask "cakebrew"
 # Hard disk backup and cloning utility
 cask "carbon-copy-cloner"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Tool to list all active shortcuts of the current application
 cask "cheatsheet"
 # Open links in any browser
@@ -437,6 +449,8 @@ cask "cleanshot"
 cask "cloudflare-warp"
 # Note-taking and organisation tool
 cask "curio"
+# Write, edit, and chat about your code with AI
+cask "cursor"
 # Customise menu item keyboard shortcuts
 cask "customshortcuts"
 # Server and cloud storage browser
@@ -818,7 +832,6 @@ mas "Reeder", id: 880001334
 mas "Save to Raindrop.io", id: 1549370672
 mas "Save to Reader", id: 1640236961
 mas "Scapple", id: 568020055
-mas "Screens", id: 1224268771
 mas "Screens 5", id: 1663047912
 mas "Session", id: 1521432881
 mas "Simple Comic", id: 1497435571
@@ -882,6 +895,7 @@ vscode "henryhediff.obsidian-code"
 vscode "hoovercj.vscode-power-mode"
 vscode "jianbingfang.dupchecker"
 vscode "johnpapa.vscode-peacock"
+vscode "kotfu.bunch"
 vscode "lewisardern.semgrep-snippets"
 vscode "mechatroner.rainbow-csv"
 vscode "mgmcdermott.vscode-language-babel"
@@ -922,6 +936,7 @@ vscode "shailen.netlify"
 vscode "shiftleft.shiftleft-core"
 vscode "snyk-security.snyk-vulnerability-scanner"
 vscode "stkb.rewrap"
+vscode "supermaven.supermaven"
 vscode "timonwong.shellcheck"
 vscode "unifiedjs.vscode-mdx"
 vscode "visualstudioexptteam.intellicode-api-usage-examples"
