@@ -1,7 +1,7 @@
 #!/bin/sh
 
  #==============================================================================
- #                       shellScriptTemplate.sh
+ #                      shellScriptTemplate.sh
  #==============================================================================
 # Template to create new shell scripts.
 # Author: Evan Harmon

@@ -1,0 +1,38 @@
+{
+    "project_name": "New Project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "project_description": "New project description.",
+    "project_type": ["basic", "astro", "nextjs", "python", "business", "fastapi", "flask", "django", "go", "script", "infrastructure", "terraform", "pulumi", "aws", "gcp", "firebase", "do", "docker-compose", "netlify", "vercel", "datascience", "java"],
+    "license": ["mit", "private"],
+    "include_devcontainer": "no",
+    "init_git": "yes",
+    "add_github": "no",
+    "init_na": "yes",
+    "add_obsidian_project": "no",
+    "run_task_bootstrap": "no",
+    "run_task_install": "no",
+    "first_name": "Evan",
+    "last_name": "Harmon" ,
+    "organization": "Tetrad Development",
+    "email": "evan@evanharmon.com",
+    "website": "https://evanharmon.com",
+    "github_username": "evanharmon1",
+    "projects_directory": "~/git",
+    "projects_directory_full": "/Users/{{ cookiecutter.first_name }}/git",
+    "docker_hub_username": "TODO",
+    "docker_image": "TODO",
+    "data": {
+        "full_name": "{{ cookiecutter.first_name ~ ' ' ~ cookiecutter.last_name }}",
+        "country": "United States",
+        "state": "Kansas",
+        "project_color": "todo - cookiecutter.random_color",
+        "year": "todo",
+        "datestamp": "todo",
+        "timestamp": "todo"
+    },
+    "_copy_without_render": [
+        "*.html",
+        "*.github",
+        "*scriptTemplates"
+    ]
+}

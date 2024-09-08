@@ -4,6 +4,7 @@
 [core]
 	excludesfile = /Users/evan/.gitignore_global
 	editor = code-insiders --wait --new-window
+	hooksPath = /Users/evan/.gitHooks
 [merge]
 	tool = code-insiders
 [mergetool "code-insiders"]
@@ -33,10 +34,11 @@
 	aa = add -A
 	cc = commit
 	cm = commit -m
+	aam = "!f() { MSG=\"$*\"; git add -A && git commit -m \"$MSG\"; }; f"
 	com = checkout main
 	co = checkout
 	cob = checkout -b
-	cam = "!source ~/dotfiles/.functions && git commit -am \"quick-$(seqn)\""
+	cam = "!source ~/dotfiles/.functions && git add -A && git commit -m \"quick-$(seqn)\""
 [push]
 	autoSetupRemote = true
 [difftool "sourcetree"]

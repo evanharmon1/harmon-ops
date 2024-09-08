@@ -989,3 +989,42 @@ mas "Draw Things", id: 6444050820
 mas "Yomu", id: 562211012
 vscode "github.vscode-github-actions"
 whalebrew "directory"
+
+
+#                New Packages from EvansMacBookPro 2024-08-29
+#-------------------------------------------------------------------------------
+brew "colima"
+brew "jesseduffield/lazygit/lazygit"
+brew "tig"
+cask "chatgpt"
+cask "cursor"
+tap "jesseduffield/lazygit"
+vscode "supermaven.supermaven"
+
+
+#                New Packages from EvansMacBookPro 2024-09-01
+#-------------------------------------------------------------------------------
+brew "brew-gem"
+brew "gem-na"
+vscode "kotfu.bunch"
+
+
+#                New Packages from EvansMacBookPro 2024-09-08
+#-------------------------------------------------------------------------------
+brew "cookiecutter"
+brew "just"
+cask "qlmarkdown"
+vscode "artelin.favorite-folders"
+vscode "davidanson.vscode-markdownlint"
+vscode "firefox-devtools.vscode-firefox-debug"
+vscode "foam.foam-vscode"
+vscode "github.codespaces"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-pull-request-github"
+vscode "golang.go"
+vscode "lextudio.restructuredtext"
+vscode "ms-edgedevtools.vscode-edge-devtools"
+vscode "swyddfa.esbonio"
+vscode "trond-snekvik.simple-rst"
+vscode "yzhang.markdown-all-in-one"

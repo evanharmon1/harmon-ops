@@ -27,16 +27,14 @@ function gitum() {
 }
 
 # Function to return a number n, and then n+1 on subsequent calls.
-function seqn() {
-  # Check if the static variable exists ()
-  if [ -z "$INCREMENT_NUMBER_COUNT" ]; then
-    # If it doesn't exist, initialize it to 1
-    INCREMENT_NUMBER_COUNT=1
-  else
-    # If it exists, increment it by 1
-    ((INCREMENT_NUMBER_COUNT++))
-  fi
-
-  # Return the current value
-  echo $INCREMENT_NUMBER_COUNT
+# In order to ensure the global value, output the value to a file. Otherwise, value is reset from new terminal sessions via gitconfig e.g.
+SEQN_FILE="$HOME/dotfiles/.seqn_counter"
+seqn() {
+    if [ ! -f "$SEQN_FILE" ]; then
+        echo 1 > "$SEQN_FILE"
+    else
+        current=$(cat "$SEQN_FILE")
+        echo $((current + 1)) > "$SEQN_FILE"
+    fi
+    cat "$SEQN_FILE"
 }
