@@ -1,5 +1,5 @@
 # {{ cookiecutter.project_name }}
-{{ cookiecutter.project_description }}
+Author: {{ cookiecutter.data.full_name }}
 
 ## Setup & Installation
 

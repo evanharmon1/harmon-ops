@@ -2,50 +2,37 @@
     "project_name": "New Project",
     "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
     "project_description": "New project description.",
-    "project_type": ["basic", "astro", "nextjs", "python", "fastapi", "flask", "django", "go", "script", "infrastructure", "terraform", "pulumi", "aws", "gcp", "firebase", "do", "docker-compose", "netlify", "vercel", "datascience", "java"],
-    "project_color": "{{ cookiecutter.random_color }}",
+    "project_type": ["basic", "astro", "nextjs", "python", "business", "fastapi", "flask", "django", "go", "script", "infrastructure", "terraform", "pulumi", "aws", "gcp", "firebase", "do", "docker-compose", "netlify", "vercel", "datascience", "java"],
     "license": ["mit", "private"],
     "include_devcontainer": "no",
     "init_git": "yes",
-    "init_github": "no",
+    "add_github": "no",
     "init_na": "yes",
-    "obsidian_project": "no",
-    "task_bootstrap": "yes",
-    "task_install": "yes",
-    "full_name": "Evan Harmon",
-    "author": "{{ cookiecutter.full_name}}",
+    "add_obsidian_project": "no",
+    "run_task_bootstrap": "no",
+    "run_task_install": "no",
     "first_name": "Evan",
     "last_name": "Harmon" ,
     "organization": "Tetrad Development",
     "email": "evan@evanharmon.com",
     "website": "https://evanharmon.com",
     "github_username": "evanharmon1",
-    "country": "United States",
-    "state": "Kansas",
     "projects_directory": "~/git",
-    "projects_directory_full": "/Users/evan/git",
-    "docker_hu_username": "TODO",
+    "projects_directory_full": "/Users/{{ cookiecutter.first_name }}/git",
+    "docker_hub_username": "TODO",
     "docker_image": "TODO",
     "data": {
-        "png": {
-            "name": "Portable Network Graphic",
-            "library": "libpng",
-            "apps": [
-                "GIMP"
-            ]
-        },
-        "bmp": {
-            "name": "Bitmap",
-            "library": "libbmp",
-            "apps": [
-                "Paint",
-                "GIMP"
-            ]
-        }
+        "full_name": "{{ cookiecutter.first_name ~ ' ' ~ cookiecutter.last_name }}",
+        "country": "United States",
+        "state": "Kansas",
+        "project_color": "todo - cookiecutter.random_color",
+        "year": "todo",
+        "datestamp": "todo",
+        "timestamp": "todo"
     },
     "_copy_without_render": [
         "*.html",
         "*.github",
-        "*templates"
+        "*scriptTemplates"
     ]
 }

@@ -1,7 +1,7 @@
 {%- if cookiecutter.license == "mit" -%}
 MIT License
 
-Copyright (c) 2024 {{ cookiecutter.author }}
+Copyright (c) 2024 {{ cookiecutter.data.full_name }}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -24,7 +24,7 @@ SOFTWARE.
 {%- elif cookiecutter.license == "private" -%}
 {{ cookiecutter.project_name }} License Agreement
 
-Version 1.0, {{ cookiecutter.year }}
+Version 1.0, {{ cookiecutter.data.year }}
 
 1. Grant of License
 
@@ -57,7 +57,7 @@ TO THE EXTENT PERMITTED BY APPLICABLE LAW, LICENSOR SHALL NOT BE LIABLE FOR ANY 
 
 7. Governing Law
 
-This License shall be governed by and construed in accordance with the laws of {{ cookiecutter.country }}. Any legal action or proceeding arising under this License shall be brought exclusively in the courts located in {{ cookiecutter.country }}.
+This License shall be governed by and construed in accordance with the laws of {{ cookiecutter.data.country }}. Any legal action or proceeding arising under this License shall be brought exclusively in the courts located in {{ cookiecutter.data.country }}.
 
 8. Entire Agreement
 
