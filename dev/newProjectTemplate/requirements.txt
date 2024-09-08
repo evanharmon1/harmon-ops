@@ -1,3 +1,0 @@
-# Python requirements for harmon-ops
-
-whispers

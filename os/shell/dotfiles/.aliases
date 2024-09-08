@@ -1,8 +1,11 @@
-# My Shell Aliases
-
+#==============================================================================
+#                       My Shell Aliases
+#==============================================================================
 alias c='clear'
 alias ll='ls -lah'
 
+#             Shell
+#------------------------------------------------------------------------------
 alias ..="cd .."
 alias ...="cd ../.."
 alias cd..="cd .."
@@ -11,7 +14,8 @@ alias rm="rm -iv"
 alias mv="mv -iv"
 alias cp="cp -riv"
 
-# Docker Aliases
+#             Docker
+#------------------------------------------------------------------------------
 alias dcu='docker-compose up -d'  #Detached
 alias dcd='docker-compose down'
 alias dcs='docker-compose stop'  #Stops your containers, but doesn't remove them.
@@ -19,3 +23,8 @@ alias dcr='docker-compose down -v && docker-compose up --build -d'  #Reset (-v =
 alias dcei='docker container exec -it ******* /bin/ash -l'  #Shell into ****** to-be-named container
 alias dclogs='docker-compose logs' #Show logs of all running containers
 alias dsp="docker system prune --all"
+
+#             na - Next Action (Terpstra)
+#------------------------------------------------------------------------------
+alias nadone='na finish'
+alias naarch='na archive'
