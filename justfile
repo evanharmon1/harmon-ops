@@ -2,7 +2,13 @@
 
 alias b := build
 
-host := `uname -a`
+# New Project (Cookiecutter)
+newProject:
+    cookiecutter dev/newProjectTemplate --output-dir ~/git
+
+# print host
+phost:
+    uname -a
 
 # build main
 build:

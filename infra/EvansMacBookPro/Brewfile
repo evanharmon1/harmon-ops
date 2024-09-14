@@ -409,6 +409,8 @@ cask "alfred"
 cask "amazon-luna"
 # Distribution of the Python and R programming languages for scientific computing
 cask "anaconda"
+# Local-first and end-to-end encrypted notes app
+cask "anytype"
 # Application uninstaller
 cask "appcleaner"
 # Chromium based browser
@@ -437,6 +439,8 @@ cask "betterzip"
 cask "bunch"
 # GUI app for Homebrew
 cask "cakebrew"
+# App to write and organise your ideas
+cask "capacities"
 # Hard disk backup and cloning utility
 cask "carbon-copy-cloner"
 # OpenAI's official ChatGPT desktop app
@@ -753,10 +757,12 @@ mas "Banktivity", id: 1480779512
 mas "Battery Health", id: 490192174
 mas "BBEdit", id: 404009241
 mas "Be Focused Pro", id: 961632517
+mas "Canva", id: 897446215
 mas "Cardhop", id: 1290358394
 mas "ColorSlurp", id: 1287239339
 mas "com.apptorium.Workspaces", id: 1219826448
 mas "Copy 'Em", id: 876540291
+mas "Craft", id: 1487937127
 mas "Dark Noise", id: 1465439395
 mas "Dark Reader for Safari", id: 1438243180
 mas "Data Jar", id: 1453273600
@@ -868,6 +874,7 @@ mas "Type2Phone", id: 472717129
 mas "Vimeo", id: 1356686763
 mas "Vinegar", id: 1591303229
 mas "Wavelength", id: 1584865627
+mas "webextension", id: 6502697899
 mas "WireGuard", id: 1451685025
 mas "WriteRoom", id: 417967324
 mas "Xcode", id: 497799835

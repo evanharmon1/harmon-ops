@@ -1028,3 +1028,12 @@ vscode "ms-edgedevtools.vscode-edge-devtools"
 vscode "swyddfa.esbonio"
 vscode "trond-snekvik.simple-rst"
 vscode "yzhang.markdown-all-in-one"
+
+
+#                New Packages from EvansMacBookPro 2024-09-13
+#-------------------------------------------------------------------------------
+cask "anytype"
+cask "capacities"
+mas "Canva", id: 897446215
+mas "Craft", id: 1487937127
+mas "webextension", id: 6502697899
