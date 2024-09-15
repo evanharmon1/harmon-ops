@@ -10,6 +10,7 @@ echo -e "\033[1;32m  ++++++Starting setupPython.sh++++++  \033[0m"
 # Development Python packages to be installed globally
 
 pipx install cookiecutter
+pipx install copier
 pipx install whispers
 
 #             Optional Global Packages
