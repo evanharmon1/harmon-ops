@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # My custom .zshrc file
 
 #============================================================================
@@ -149,6 +147,8 @@ export VISUAL="$EDITOR"
 #============================================================================
 # pyenv
 eval "$(pyenv init -)"
+export PIPX_HOME="$HOME/.local/pipx"
+export PIPX_BIN_DIR="$HOME/.local/bin"
 
 
 #==============================================================================
@@ -176,8 +176,6 @@ ANSIBLE_CONFIG=~/.ansible.cfg
 #============================================================================
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 # Created by `pipx` on 2024-05-20 13:51:33
 export PATH="$PATH:/Users/evan/.local/bin"

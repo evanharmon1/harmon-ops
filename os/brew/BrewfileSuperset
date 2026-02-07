@@ -1037,3 +1037,171 @@ cask "capacities"
 mas "Canva", id: 897446215
 mas "Craft", id: 1487937127
 mas "webextension", id: 6502697899
+
+
+#                New Packages from EvansMacBookPro 2024-09-22
+#-------------------------------------------------------------------------------
+brew "yamllint"
+mas "Moom Classic", id: 419330170
+vscode "bierner.markdown-mermaid"
+
+
+#                New Packages from EvansMacBookPro 2024-09-25
+#-------------------------------------------------------------------------------
+mas "Bigin", id: 1454212098
+mas "Cliq", id: 1205882554
+mas "Doc Scanner", id: 1486334259
+mas "Invoice Generator", id: 1061863220
+mas "Notebook", id: 1173152781
+mas "Windows App", id: 1295203466
+mas "ZiaSearch", id: 1595570784
+mas "Zoho Billing", id: 1184196693
+mas "Zoho Books", id: 1476500403
+mas "Zoho Expense", id: 1455824625
+mas "Zoho Expense", id: 1477152278
+mas "Zoho Inventory", id: 1477506694
+mas "Zoho Invoice", id: 1477507499
+mas "Zoho Sheet", id: 1667284173
+mas "Zoho Sign", id: 1476226908
+mas "zShare", id: 1479959045
+
+
+#                New Packages from EvansMacBookPro 2024-09-27
+#-------------------------------------------------------------------------------
+mas "MenubarX", id: 1575588022
+mas "Zoho TeamInbox", id: 1523646131
+
+
+#                New Packages from EvansMacBookPro 2024-10-12
+#-------------------------------------------------------------------------------
+mas "OneAuth", id: 1142928979
+mas "Purchase Order Generator", id: 1539392262
+mas "SalesIQ", id: 1293108732
+
+
+#                New Packages from EvansMacBookPro 2024-11-12
+#-------------------------------------------------------------------------------
+brew "icu4c@76"
+brew "pkgconf"
+cask "zoho-mail"
+cask "zoho-workdrive"
+mas "Capacities Web Extension", id: 6502697899
+mas "Perplexity", id: 6714467650
+
+
+#                New Packages from EvansMacBookPro 2025-01-13
+#-------------------------------------------------------------------------------
+cask "ringcentral"
+mas "Jibble - Time Tracking", id: 6467188805
+mas "Private LLM", id: 6448106860
+mas "Workspaces", id: 1219826448
+vscode "gdp.delugelang"
+vscode "zohocorporation.vs-catalyst"
+
+
+#                New Packages from EvansMacBookPro 2025-01-26
+#-------------------------------------------------------------------------------
+vscode "ms-vscode.cpptools"
+
+
+#                New Packages from EvansMacBookPro 2025-02-07
+#-------------------------------------------------------------------------------
+mas "superagent", id: 1568262835
+
+
+#                New Packages from EvansMacBookPro 2025-04-01
+#-------------------------------------------------------------------------------
+mas "Pro Tour Golf", id: 6545262709
+
+
+#                New Packages from EvansMacBookPro 2025-04-14
+#-------------------------------------------------------------------------------
+mas "Backtrack Beta", id: 1477089520
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "Castlevania Grimoire of Souls", id: 1552347138
+mas "Cypher 007", id: 1586958842
+mas "Delicious Library 3", id: 635124250
+mas "Fakespot", id: 1592541616
+mas "InfinityGene", id: 6450520348
+mas "Katamari Damacy Rolling LIVE", id: 6449352814
+mas "puffies", id: 1659992476
+mas "Punch Kick Duck+", id: 6480396367
+mas "PurchaseOrderGenerator", id: 1539392262
+mas "RCT Classic+", id: 6702028686
+mas "RTK HEROES", id: 6448407603
+mas "Skate City New York", id: 6448986810
+mas "Slack 2", id: 803453959
+mas "ZohoExpense", id: 1455824625
+mas "ZohoSign", id: 1476226908
+vscode "docker.docker"
+
+
+#                New Packages from EvansMacBookPro 2025-07-19
+#-------------------------------------------------------------------------------
+cask "anythingllm"
+cask "bruno"
+cask "docker-desktop"
+cask "gitup-app"
+cask "handbrake-app"
+cask "httpie-desktop"
+cask "mullvad-vpn"
+cask "ollama-app"
+cask "orbstack"
+cask "wireshark-app"
+mas "Obsidian Web Clipper", id: 6720708363
+mas "Zoho Translate", id: 6447339121
+vscode "ms-azuretools.vscode-containers"
+vscode "yoavbls.pretty-ts-errors"
+
+
+#                New Packages from EvansMacBookPro 2025-07-31
+#-------------------------------------------------------------------------------
+vscode "ms-python.vscode-python-envs"
+
+
+#                New Packages from EvansMacBookPro 2025-11-02
+#-------------------------------------------------------------------------------
+brew "lazygit"
+cask "almighty"
+cask "claude-code"
+cask "claude"
+cask "krita"
+cask "quit-all"
+cask "shortcutdetective"
+go "golang.org/x/tools/gopls"
+go "honnef.co/go/tools/cmd/staticcheck"
+mas "iScape", id: 439688430
+mas "uBlock Origin Lite", id: 6745342698
+vscode "anthropic.claude-code"
+vscode "chrisjsewell.myst-tml-syntax"
+
+
+#                New Packages from EvansMacBookPro 2026-02-06
+#-------------------------------------------------------------------------------
+brew "lychee"
+brew "midnight-commander"
+brew "mise"
+brew "pydantic"
+brew "stripe/stripe-cli/stripe"
+brew "z"
+brew "zellij"
+cask "frame0"
+cask "ghostty"
+cask "isen-ng/dotnet-sdk-versions/dotnet-sdk6-0-400"
+cask "isen-ng/dotnet-sdk-versions/dotnet-sdk7-0-400"
+cask "linear-linear"
+cask "miro"
+cask "tigervnc"
+mas "Bitwarden", id: 1352778147
+mas "Copilot", id: 6738511300
+mas "Eter Radio", id: 1523221566
+mas "MarkChart", id: 6475648822
+mas "Read Aloud", id: 6747257186
+mas "WhisperBar", id: 6753730407
+tap "stripe/stripe-cli"
+vscode "github.remotehub"
+vscode "mermaidchart.vscode-mermaid-chart"
+vscode "ms-vscode.azure-repos"
+vscode "ms-vscode.remote-repositories"
+vscode "tomoyukim.vscode-mermaid-editor"
+vscode "vstirbu.vscode-mermaid-preview"

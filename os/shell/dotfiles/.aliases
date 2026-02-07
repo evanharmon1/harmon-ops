@@ -28,3 +28,16 @@ alias dsp="docker system prune --all"
 #------------------------------------------------------------------------------
 alias nadone='na finish'
 alias naarch='na archive'
+
+#             GitHub (gh)
+#------------------------------------------------------------------------------
+alias ghb='gh browse'
+alias ghppr='git push && gh pr create --fill'
+alias ghpprd='git push && gh pr create --fill --draft'
+alias ghpprm='git push && gh pr create --fill && gh pr merge --auto --squash --delete-branch'
+alias ghil='gh issue list'
+alias ghic='gh issue create'
+
+#             LazyGit
+#------------------------------------------------------------------------------
+alias lazy='lazygit'
