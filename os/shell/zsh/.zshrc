@@ -158,13 +158,6 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 
-#==============================================================================
-#                       Java & jenv
-#==============================================================================
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-
 #============================================================================
 #                       Ansible
 #============================================================================
@@ -179,3 +172,4 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # Created by `pipx` on 2024-05-20 13:51:33
 export PATH="$PATH:/Users/evan/.local/bin"
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"

@@ -173,14 +173,7 @@ terminal-notifier -title "Starting Mackup backup" \
 #------------------------------------------------------------------------------
 # -force argument avoids confirmation dialogs to allow automation.
 # Due to macOS Sonoma security issue surrounding symlinks, the normal way Mackup works with symlinks is not reliable.
-# Known issue which Mackup will eventually update to have more commands for backing up, etc.
-# So I'm just using it for 1 way backup via the below command method which is recommended for now.
 mackup backup --force
-mackup uninstall --force
-
-# If any other scripts or installations append anything to .zshrc, these commands move the fig lines to the bottom so they can still work.
-move_line_to_bottom.sh '# Fig post block. Keep at the bottom of this file.' "/Users/evan/.zshrc"
-move_line_to_bottom.sh '[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"' "/Users/evan/.zshrc"
 
 # Keep any modified dotfiles on machine in sync with dotfiles in this repo
 rsync -ah --copy-links ~/.bashrc ../shell/bash/

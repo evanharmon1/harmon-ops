@@ -1205,3 +1205,10 @@ vscode "ms-vscode.azure-repos"
 vscode "ms-vscode.remote-repositories"
 vscode "tomoyukim.vscode-mermaid-editor"
 vscode "vstirbu.vscode-mermaid-preview"
+
+
+#                New Packages from EvansMacBookPro 2026-02-07
+#-------------------------------------------------------------------------------
+brew "anomalyco/tap/opencode"
+mas "GrandPerspective", id: 1111570163
+tap "anomalyco/tap"
