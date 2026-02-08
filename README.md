@@ -104,9 +104,36 @@ Packages, Brewfiles, IaC, diagrams, etc.
 
 - A docker environment setup for Windows that makes developing on Windows easier due to bash, linux, containers, etc.
 
-## Sources
+## Heplful Sources
 
 - [Homebrew](https://brew.sh/)
 - [mas](https://github.com/mas-cli/mas)
 - [mackup](https://github.com/lra/mackup)
 - <https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716>
+
+## My Current Developer Environment
+
+  - Ghostty
+  - iTerm2 (alternate)
+- Shell
+  - Oh-my-zsh
+  - Bash (alternate)
+- IDE
+  - VS Code
+  - VS Code Insiders (alternate)
+- Dotfiles
+  - Mackup
+  - Chezmoi
+- Version management
+  - mise
+  - uv (Python)
+- AI
+  - Claude Code
+  - Codex (alternate)
+  - OpenCode (altercate)
+- Git
+  - Git
+  - GitHUb
+  - GitHub Actions
+  - Copier
+  - gh cli
