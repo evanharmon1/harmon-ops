@@ -23,6 +23,36 @@ task security
 task snyk
 ```
 
+## dotfiles
+
+Uses Mackup for backing up both shell dotfiles and Mac app preferences to iCloud, as well as chezmois as a declarative source of truth for my shell dotfiles
+
+Uses Mackup for backing up both shell dotfiles and Mac app preferences to iCloud, as well as chezmois as a declarative source of truth for my shell dotfiles
+
+```mermaid
+flowchart LR
+    subgraph Mac["Mac Dev Machine"]
+        Home["Home Directory (~)"]
+    end
+
+    subgraph Chezmoi["Chezmoi (Source of Truth)"]
+        ChezmoiState["Chezmoi Source State"]
+        HarmanOpsRepo["Harman Ops Git Repo"]
+    end
+
+    subgraph Mackup["Mackup (Backup System)"]
+        MackupBackup["Mackup Backup Folder"]
+        iCloud["iCloud Drive"]
+    end
+
+    ChezmoiState -->|applies dotfiles to| Home
+    HarmanOpsRepo -->|stores| ChezmoiState
+
+    Home -->|backs up dotfiles| MackupBackup
+    Home -->|backs up mac app preferences| MackupBackup
+    MackupBackup -->|syncs to| iCloud
+```
+
 ## OS config for bootstrapping new machines with a developer environment - `os/`
 
 ### Setup a Mac
