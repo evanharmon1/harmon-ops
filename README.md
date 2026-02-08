@@ -113,11 +113,14 @@ Packages, Brewfiles, IaC, diagrams, etc.
 
 ## My Current Developer Environment
 
+- Terminal
   - Ghostty
   - iTerm2 (alternate)
 - Shell
   - Oh-my-zsh
   - Bash (alternate)
+- Package Management
+  - Homebrew
 - IDE
   - VS Code
   - VS Code Insiders (alternate)
@@ -137,3 +140,5 @@ Packages, Brewfiles, IaC, diagrams, etc.
   - GitHub Actions
   - Copier
   - gh cli
+- Task Runner
+  - go-task (Taskfile.yml)
