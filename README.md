@@ -25,9 +25,7 @@ task snyk
 
 ## dotfiles
 
-Uses Mackup for backing up both shell dotfiles and Mac app preferences to iCloud, as well as chezmois as a declarative source of truth for my shell dotfiles
-
-Uses Mackup for backing up both shell dotfiles and Mac app preferences to iCloud, as well as chezmois as a declarative source of truth for my shell dotfiles
+Uses Mackup for backing up both shell dotfiles and Mac app preferences to iCloud, as well as Chezmoi as a declarative source of truth for my shell dotfiles
 
 ```mermaid
 flowchart LR
