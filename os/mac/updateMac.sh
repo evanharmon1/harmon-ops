@@ -37,7 +37,7 @@ echo -e "\033[0;35m  ++++++Starting updateMac.sh - $(date +%FT%T)++++++  \033[0m
 echo "Path var = $PATH"
 
 terminal-notifier -title "Starting updateMac.sh Script" \
--message "A script that updates this Mac's Homebrew, Mackup dotfiles, etc. " \
+-message "A script that updates this Mac's Homebrew, Mackup preferences, Chezmoi dotfiles, etc. " \
 -contentImage mac-icon.png \
 -sound Blow
 
@@ -155,44 +155,38 @@ curl -s \
 
 
 #============================================================================
-#                       Dotfiles & Mackup
+#                       Mackup, Dotfiles, & Chezmoi
 #============================================================================
-# Mackup backs up supported app configs, settings, and dotfiles like .bash_profile to iCloud and then symlinks them back to original location
-# The only reason I think I need to keep running mackup backup is to catch new files that aren't symlinked to iCloud.
+# Mackup backs up supported app configs, settings, and dotfiles like .zshrc to iCloud 
+# Chezmoi manages dotfiles and syncs them to the git repo
+
 #             Notify starting Mackup backup
 #------------------------------------------------------------------------------
-echo -e "\033[0;35m  ......Starting Mackup backup to symlink any new dotfiles, config files, etc. to iCloud......  \033[0m"
+echo -e "\033[0;35m  ......Starting Mackup backup & Chezmoi to backup any new dotfiles, config files, etc. to iCloud......  \033[0m"
 start_time=$(date +%s)
 
-terminal-notifier -title "Starting Mackup backup" \
--message "mackup backup --force, mackup uninstall --force" \
+terminal-notifier -title "Starting Mackup backup & Chezmoi" \
+-message "mackup backup --force" \
 -contentImage mac-icon.png \
 -sound Blow
 
-#             Run Mackup backup and copy new dotfiles to repo
+#             Run Mackup backup
 #------------------------------------------------------------------------------
 # -force argument avoids confirmation dialogs to allow automation.
-# Due to macOS Sonoma security issue surrounding symlinks, the normal way Mackup works with symlinks is not reliable.
+# Due to macOS Sonoma security issue surrounding symlinks, the older/original way Mackup worked with symlinks is not reliable. So now what 'mackup backup' does is just copies files to iCloud as a regular backup that you can also restore
 mackup backup --force
 
-# Keep any modified dotfiles on machine in sync with dotfiles in this repo
-rsync -ah --copy-links ~/.bashrc ../shell/bash/
-rsync -ah --copy-links ~/.zshrc ../shell/zsh/
-
-rsync -ah --copy-links ~/dotfiles/ ../shell/dotfiles/
-
-rsync -ah --copy-links ~/.gitconfig ../git/
-rsync -ah --copy-links ~/.gitignore_global ../git/
-
-rsync -ah --copy-links ~/.mackup/myDotFiles.cfg mackup/
-rsync -ah --copy-links ~/.mackup.cfg mackup/
+#           Run Chezmoi to re-add any changed local dotfiles to chezmoi source
+#------------------------------------------------------------------------------
+chezmoi diff
+chezmoi re-add
 
 #             Notify finished Mackup backup
 #------------------------------------------------------------------------------
 end_time=$(date +%s)
-printf "Finished Mackup backup & dotfiles sync in $(($end_time - $start_time)) seconds."
+printf "Finished Mackup backup & Chezmoi in $(($end_time - $start_time)) seconds."
 
-terminal-notifier -title "Finished Mackup backup & dotfiles sync" \
+terminal-notifier -title "Finished Mackup backup & Chezmoi" \
 -message "Time elapsed: $(($end_time - $start_time)) seconds - $(date +%FT%T)." \
 -contentImage monitor-icon.icns \
 -sound Glass
@@ -202,19 +196,13 @@ curl -s \
   --form-string "token=$PUSHOVER_TOKEN" \
   --form-string "user=$PUSHOVER_USER" \
   --form-string "priority=-2" \
-  --form-string "message=Finished mackup backup & dotfiles sync \
+  --form-string "message=Finished mackup backup & chezmoi \
   Time elapsed: $(($end_time - $start_time)) seconds." \
   https://api.pushover.net/1/messages.json
 
 
 #==============================================================================
-#                       JavaScript
-#==============================================================================
-../languages/javaScript/updateJavaScript.sh
-
-
-#==============================================================================
-#                       JavaScript
+#                       Python
 #==============================================================================
 ../languages/python/updatePython.sh
 

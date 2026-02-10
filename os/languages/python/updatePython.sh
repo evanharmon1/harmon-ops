@@ -17,9 +17,6 @@ terminal-notifier -title "Starting updatePython.sh Script" \
 -contentImage mac-icon.png \
 -sound Blow
 
-python3 -m pip install --upgrade pip
-brew install pipx
-pipx ensurepath
 pipx upgrade-all
 
 end_time=$(date +%s)

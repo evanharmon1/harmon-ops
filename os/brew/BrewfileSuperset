@@ -1212,3 +1212,30 @@ vscode "vstirbu.vscode-mermaid-preview"
 brew "anomalyco/tap/opencode"
 mas "GrandPerspective", id: 1111570163
 tap "anomalyco/tap"
+
+
+#                New Packages from EvansMacBookPro 2026-02-08
+#-------------------------------------------------------------------------------
+brew "chezmoi"
+brew "micro"
+vscode "bpruitt-goddard.mermaid-markdown-syntax-highlighting"
+
+
+#                New Packages from EvansMacBookPro 2026-02-09
+#-------------------------------------------------------------------------------
+brew "starship"
+cask "zed"
+
+
+#                New Packages from EvansMacBookPro 2026-02-09
+#-------------------------------------------------------------------------------
+brew "aichat"
+brew "glow"
+brew "llm"
+
+
+#                New Packages from EvansMacBookPro 2026-02-09
+#-------------------------------------------------------------------------------
+brew "charmbracelet/tap/crush"
+mas "Floating", id: 1508833245
+tap "charmbracelet/tap"

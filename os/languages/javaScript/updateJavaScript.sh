@@ -3,6 +3,7 @@
 #==============================================================================
 #                       Update JavaScript
 #==============================================================================
+# DEPRECATED
 # Script to update JavaScript
 
 # Source local secrets for pushover, etc.

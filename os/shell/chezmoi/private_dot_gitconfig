@@ -1,0 +1,51 @@
+[user]
+	name = Evan Harmon
+	email = evan@evanharmon.com
+[core]
+	excludesfile = /Users/evan/.gitignore_global
+	editor = code-insiders --wait --new-window
+	hooksPath = /Users/evan/.gitHooks
+[merge]
+	tool = code-insiders
+[mergetool "code-insiders"]
+	cmd = code-insiders --new-window --wait $MERGED
+[diff]
+	tool = code-insiders
+[difftool "code-insiders"]
+	cmd = code-insiders --wait --new-window --diff $LOCAL $REMOTE
+[color]
+	status = always
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+# Conditional to use a specific .gitconfig file if repo is in the specified folder. E.g., for work git user.
+# Trailing slash should make it apply to all subfolders as well.
+[includeIf "gitdir:~/Local/RevLogical/"]
+	path = ~/Local/RevLogical/.gitconfig
+[includeIf "gitdir:~/Local/AltRevLogical/"]
+	path = ~/Local/AltRevLogical/.gitconfig
+[init]
+	templateDir = /Users/evan/.git-template
+[alias]
+	ll = log --graph --oneline --decorate
+	ss = status
+	aa = add -A
+	cc = commit
+	cm = commit -m
+	aam = "!f() { MSG=\"$*\"; git add -A && git commit -m \"$MSG\"; }; f"
+	com = checkout main
+	co = checkout
+	cob = checkout -b
+	cam = "!source ~/dotfiles/.functions && git add -A && git commit -m \"quick-$(seqn)\""
+[push]
+	autoSetupRemote = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/evan/.stCommitMsg
