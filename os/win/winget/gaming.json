@@ -4,10 +4,8 @@
 		{
 			"Packages": [
 				{ "PackageIdentifier": "Valve.Steam" },
-				{ "PackageIdentifier": "Nvidia.GeForceExperience" },
 				{ "PackageIdentifier": "RazerInc.RazerInstaller" },
 				{ "PackageIdentifier": "Discord.Discord" },
-				{ "PackageIdentifier": "Twitch.Twitch" },
 				{ "PackageIdentifier": "GOG.Galaxy" },
 				{ "PackageIdentifier": "EpicGames.EpicGamesLauncher" },
 				{ "PackageIdentifier": "ElectronicArts.EADesktop" },

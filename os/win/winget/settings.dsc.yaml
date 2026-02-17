@@ -1,3 +1,6 @@
+# Not currently used — setupWindows.ps1 applies these via registry commands instead.
+# Kept for future use when winget configure (DSC) is more widely available.
+# Usage: winget configure --file settings.dsc.yaml --accept-configuration-agreements
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 properties:
   configurationVersion: 0.2.0

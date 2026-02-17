@@ -5,7 +5,7 @@
 			"Packages": [
 				{ "PackageIdentifier": "Microsoft.WSL" },
 				{ "PackageIdentifier": "Canonical.Ubuntu.2404" },
-				{ "PackageIdentifier": "Python.Python.3" },
+				{ "PackageIdentifier": "Python.Python.3.13" },
 				{ "PackageIdentifier": "OpenJS.NodeJS" },
 				{ "PackageIdentifier": "Microsoft.VisualStudioCode" },
 				{ "PackageIdentifier": "Microsoft.VisualStudioCode.Insiders" },
