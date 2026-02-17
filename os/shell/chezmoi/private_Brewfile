@@ -10,6 +10,7 @@ tap "homebrew/services"
 tap "isen-ng/dotnet-sdk-versions"
 tap "jesseduffield/lazygit"
 tap "mongodb/brew"
+tap "rafaelswi/menubarusb"
 tap "snyk/tap"
 tap "stripe/stripe-cli"
 tap "ttscoff/thelab"
@@ -85,6 +86,8 @@ brew "coreutils"
 brew "cowsay"
 # Top-like interface for container metrics
 brew "ctop"
+# Power of curl, ease of use of httpie
+brew "curlie"
 # Good-lookin' diffs with diff-highlight and more
 brew "diff-so-fancy"
 # Trace a chain of DNS servers to the source
@@ -113,6 +116,8 @@ brew "eksctl"
 brew "espeak"
 # Modern replacement for 'ls'
 brew "exa"
+# Modern, maintained replacement for ls
+brew "eza"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream select audio and video codecs
@@ -292,14 +297,14 @@ brew "nginx"
 brew "nmap"
 # Platform built on V8 to build network applications
 brew "node@14"
+# Modern shell for the GitHub era
+brew "nushell"
 # Manage multiple Node.js versions
 brew "nvm"
 # Development kit for the Java programming language
 brew "openjdk@11"
 # Development kit for the Java programming language
 brew "openjdk@17"
-# OpenBSD freely-licensed SSH connectivity tools
-brew "openssh"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # General-purpose scripting language
@@ -314,6 +319,8 @@ brew "podman"
 brew "ponysay"
 # Object-relational database system
 brew "postgresql@14"
+# Modern API client that lives in your terminal
+brew "posting"
 # Framework for managing multi-language pre-commit hooks
 brew "pre-commit"
 # Show ps output as a tree
@@ -388,6 +395,8 @@ brew "tldr"
 brew "tmux"
 # Language for application scale JavaScript development
 brew "typescript"
+# Your CLI home video recorder
+brew "vhs"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Pager/text based browser
@@ -402,6 +411,8 @@ brew "wget"
 brew "whalebrew"
 # Personal information dashboard for your terminal
 brew "wtfutil"
+# Friendly and fast tool for sending HTTP requests
+brew "xh"
 # Linter for YAML files
 brew "yamllint"
 # JavaScript package manager
@@ -418,12 +429,16 @@ brew "z"
 brew "zellij"
 # GTK+ dialog boxes for the command-line
 brew "zenity"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # UNIX shell (command interpreter)
 brew "zsh"
 # The AI coding agent built for the terminal.
 brew "anomalyco/tap/opencode"
 # A powerful terminal-based AI assistant for developers, providing intelligent coding assistance directly in your terminal.
 brew "charmbracelet/tap/crush"
+# Generate images of code and terminal output.
+brew "charmbracelet/tap/freeze"
 # Packer
 brew "hashicorp/tap/packer"
 # Vault
@@ -522,6 +537,8 @@ cask "default-folder-x"
 cask "diffusionbee"
 # Voice and text chat software
 cask "discord"
+# Window peeking utility app
+cask "dockdoor"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Emulator to play GameCube and Wii games
@@ -558,6 +575,7 @@ cask "fluid"
 cask "foldingtext"
 cask "font-fontawesome"
 cask "font-hack-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-menlo-for-powerline"
 # Finder replacement and FTP, SFTP, WebDAV and Amazon s3 client
 cask "forklift"
@@ -637,6 +655,8 @@ cask "mamp"
 cask "markdown-service-tools"
 # Visual diff and merge tool
 cask "meld"
+# Track your USB devices in the macOS menu bar
+cask "rafaelswi/menubarusb/menubarusb"
 # Monitors and reports any microphone and camera activity
 cask "micro-snitch"
 # Provides updates to various Microsoft products
@@ -830,7 +850,10 @@ mas "Canva", id: 897446215
 mas "Cardhop", id: 1290358394
 mas "Cliq", id: 1205882554
 mas "ColorSlurp", id: 1287239339
+mas "Copilot", id: 6738511300
 mas "Copy 'Em", id: 876540291
+mas "DaisyDisk", id: 411643860
+mas "Dark Noise", id: 1465439395
 mas "Dark Reader for Safari", id: 1438243180
 mas "Data Jar", id: 1453273600
 mas "Day One", id: 1055511498
@@ -840,6 +863,7 @@ mas "DevUtils", id: 1533756032
 mas "Disk Diag", id: 672206759
 mas "Doc Scanner", id: 1486334259
 mas "Drafts", id: 1435957248
+mas "Dropover", id: 1355679052
 mas "DuckDuckGo", id: 663592361
 mas "DuckDuckGo Privacy for Safari", id: 1482920575
 mas "Due", id: 524373870
@@ -853,6 +877,7 @@ mas "Flighty", id: 1358823008
 mas "Floating", id: 1508833245
 mas "Forecast Bar", id: 982710545
 mas "Fotor Photo Editor", id: 503039729
+mas "Friendly Streaming", id: 553245401
 mas "Front and Center", id: 1493996622
 mas "GarageBand", id: 682658836
 mas "Geekbench 5", id: 1478447657
@@ -867,6 +892,7 @@ mas "Ice Cubes", id: 6444915884
 mas "iMovie", id: 408981434
 mas "Invoice Generator", id: 1061863220
 mas "iScape", id: 439688430
+mas "Jira", id: 1475897096
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
 mas "Kindle Classic", id: 405399194
@@ -879,7 +905,6 @@ mas "MarkDownload - Markdown Web Clipper", id: 1554029832
 mas "MenubarX", id: 1575588022
 mas "Meshtastic", id: 1586432531
 mas "Mobile Mouse Server", id: 412814284
-mas "Moom Classic", id: 419330170
 mas "MultiMarkdown Composer", id: 1275176220
 mas "MusicBar", id: 6447295161
 mas "Noizio", id: 928871589

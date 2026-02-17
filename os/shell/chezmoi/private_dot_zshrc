@@ -75,7 +75,7 @@ ZSH_THEME=""
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos dirhistory bgnotify per-directory-history colored-man-pages zsh-ai)
+plugins=(git macos dirhistory bgnotify per-directory-history colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -104,14 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-#============================================================================
-#                       My Customizations
-#============================================================================
-source ~/.dotfiles/.aliases
-source ~/.dotfiles/.var
-source ~/.dotfiles/.functions
-[[ -f ~/.secrets ]] && source ~/.secrets
 
 
 #============================================================================
@@ -151,9 +143,9 @@ export PIPX_HOME="$HOME/.local/pipx"
 export PIPX_BIN_DIR="$HOME/.local/bin"
 
 
-#==============================================================================
+#============================================================================
 #                       Javascript, Node, & nvm
-#==============================================================================
+#============================================================================
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
@@ -181,7 +173,24 @@ export CHEZMOI_SOURCE_DIR=~/git/harmon-ops/os/shell/chezmoi
 export PATH="$PATH:/Users/evan/.local/bin"
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
 
+
 #============================================================================
 #                       Starship
 #============================================================================
 eval "$(starship init zsh)"
+
+
+#============================================================================
+#                       Zoxide
+#============================================================================
+eval "$(zoxide init zsh)"
+
+
+#============================================================================
+#                       My Customizations
+#============================================================================
+source ~/.dotfiles/.aliases
+source ~/.dotfiles/.var
+source ~/.dotfiles/.functions
+[[ -f ~/.secrets ]] && source ~/.secrets
+

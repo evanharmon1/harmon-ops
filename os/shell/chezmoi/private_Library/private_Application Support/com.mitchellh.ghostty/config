@@ -54,3 +54,7 @@ quick-terminal-position = top
 
 # Bind F12 globally to toggle the drop-down terminal
 keybind = global:cmd+opt+ctrl+g=toggle_quick_terminal
+
+# Modify default split hotkeys so that I can use Cmd-D for select next occurrence in general
+keybind = cmd+shift+d=new_split:right
+keybind = opt+shift+d=new_split:down

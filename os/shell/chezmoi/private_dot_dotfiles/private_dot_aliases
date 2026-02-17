@@ -2,7 +2,8 @@
 #                       My Shell Aliases
 #==============================================================================
 alias c='clear'
-alias ll='ls -lah'
+alias ll='eza --long --all --git --icons=always --group-directories-first --header --created --time-style relative --color=always --color-scale=all --color-scale-mode=gradient -h'
+alias lt='eza --tree --level=2 --icons=always --color=always
 
 #             Shell
 #------------------------------------------------------------------------------
