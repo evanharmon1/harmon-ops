@@ -5,34 +5,32 @@
 
 write-output "......Starting setupWindows.ps1......"
 
-# Download and install Chocolately
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-
-# Refresh environment variables so you can use the `choco` command
-refreshenv
+#==============================================================================
+#                       WinGet Configuration
+#==============================================================================
+# Apply Windows settings via DSC (dark mode, dev mode, taskbar, explorer)
+write-output "--- Applying Windows settings via DSC ---"
+winget configure --file "$PSScriptRoot\winget\settings.dsc.yaml" --accept-configuration-agreements
 
 #==============================================================================
-#                       Packages
+#                       Package Installation
 #==============================================================================
-#             Superset of Potential Packages to install
-#------------------------------------------------------------------------------
-# notepadplusplus, docker-desktop, virtualbox, vagrant, robo3t
+# Unavailable on WinGet (install manually): TextExpander, AirServer, Ventoy
 
-#             Packages to Install
-#------------------------------------------------------------------------------
-$packages = "wsl", "wsl-ubuntu-2204", "python", "nodejs", "vscode", "vscode-insiders", "docker-desktop", "textexpander", "1password", "dropbox", "googledrive", "googlechrome", "firefox", "geforce-experience", "transmission", "vlc", "airserver", "razer-synapse-3", "steam", "nircmd", "etcher", "rufus", "ventoy", "geekbench", "hwinfo", "slack", "discord", "twitch", "signal", "mullvad-app", "tailscale", "fah", "valley-benchmark", "heaven-benchmark", "leagueoflegends", "goggalaxy", "epicgameslauncher", "ea-app", "amazongames", "playnite", "7zip", "windirstat", "coretemp", "irfanview", "gimp", "handbrake", "ccleaner"
+write-output "--- Installing development packages ---"
+winget import --import-file "$PSScriptRoot\winget\development.json" --accept-package-agreements --accept-source-agreements
 
-$machina = "wsl", "wsl-ubuntu-2204", "python", "nodejs", "vscode", "vscode-insiders", "docker-desktop", "textexpander", "1password", "dropbox", "googledrive", "googlechrome", "firefox", "geforce-experience", "transmission", "vlc", "airserver", "razer-synapse-3", "steam", "nircmd", "etcher", "rufus", "ventoy", "geekbench", "hwinfo", "slack", "discord", "twitch", "signal", "mullvad-app", "tailscale", "fah", "valley-benchmark", "heaven-benchmark", "leagueoflegends", "goggalaxy", "epicgameslauncher", "ea-app", "amazongames", "playnite", "7zip", "windirstat", "coretemp", "irfanview", "gimp", "handbrake", "ccleaner"
+write-output "--- Installing productivity packages ---"
+winget import --import-file "$PSScriptRoot\winget\productivity.json" --accept-package-agreements --accept-source-agreements
 
-$contraption = ""
+write-output "--- Installing gaming packages ---"
+winget import --import-file "$PSScriptRoot\winget\gaming.json" --accept-package-agreements --accept-source-agreements
 
-foreach ($package in $packages){
-	choco install -y $package
-}
-
-# TODO: Running bash scripts on windows needs to be tested
-bash ../python/setupPython.sh
-bash ../node/setupNode.sh
-bash ../git/setupGit.sh
+#==============================================================================
+#                       Machine-Specific Notes
+#==============================================================================
+# $machina    - 
+# $contraption - all three: development, productivity, gaming
+# $tars - all three: development, productivity, gaming
 
 write-output "======Finished setupWindows.ps1======"

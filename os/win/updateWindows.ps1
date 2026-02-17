@@ -6,7 +6,7 @@
 
 write-output "......Starting updateWindows.ps1......"
 
-choco update all
+winget upgrade --all --accept-package-agreements --accept-source-agreements
 
 # TODO: Update python, node, go, etc.
 

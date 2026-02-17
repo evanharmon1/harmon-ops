@@ -1,0 +1,32 @@
+{
+	"$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+	"Sources": [
+		{
+			"Packages": [
+				{ "PackageIdentifier": "Valve.Steam" },
+				{ "PackageIdentifier": "Nvidia.GeForceExperience" },
+				{ "PackageIdentifier": "RazerInc.RazerInstaller" },
+				{ "PackageIdentifier": "Discord.Discord" },
+				{ "PackageIdentifier": "Twitch.Twitch" },
+				{ "PackageIdentifier": "GOG.Galaxy" },
+				{ "PackageIdentifier": "EpicGames.EpicGamesLauncher" },
+				{ "PackageIdentifier": "ElectronicArts.EADesktop" },
+				{ "PackageIdentifier": "Amazon.Games" },
+				{ "PackageIdentifier": "Playnite.Playnite" },
+				{ "PackageIdentifier": "RiotGames.LeagueOfLegends.NA" },
+				{ "PackageIdentifier": "REALiX.HWiNFO" },
+				{ "PackageIdentifier": "ALCPU.CoreTemp" },
+				{ "PackageIdentifier": "PrimateLabs.Geekbench.6" },
+				{ "PackageIdentifier": "FoldingAtHome.FoldingAtHome" },
+				{ "PackageIdentifier": "Unigine.ValleyBenchmark" },
+				{ "PackageIdentifier": "Unigine.HeavenBenchmark" }
+			],
+			"SourceDetails": {
+				"Argument": "https://cdn.winget.microsoft.com/cache",
+				"Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+				"Name": "winget",
+				"Type": "Microsoft.PreIndexed.Package"
+			}
+		}
+	]
+}

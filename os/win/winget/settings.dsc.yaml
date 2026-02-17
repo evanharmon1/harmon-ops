@@ -1,0 +1,38 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  # Fail if not running Windows 11 (build 22000+)
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.22000"
+  resources:
+    # Allow sideloading apps, accessing device portal, and other dev features
+    - resource: Microsoft.Windows.Developer/DeveloperMode
+      directives:
+        allowPrerelease: true
+      settings:
+        Ensure: Present
+    # Set both app and system theme to dark mode; restarts Explorer to apply
+    - resource: Microsoft.Windows.Developer/EnableDarkMode
+      directives:
+        allowPrerelease: true
+      settings:
+        Ensure: Present
+        RestartExplorer: true
+    # Move the taskbar icons to the left (Windows 11 defaults to center) and hide the search box
+    - resource: Microsoft.Windows.Developer/Taskbar
+      directives:
+        allowPrerelease: true
+      settings:
+        Alignment: Left
+        SearchboxMode: Hide
+    # Show file extensions (e.g. .txt, .exe) and hidden files/folders in Explorer
+    - resource: Microsoft.Windows.Developer/WindowsExplorer
+      directives:
+        allowPrerelease: true
+      settings:
+        FileExtensions: Show
+        HiddenFiles: Show
