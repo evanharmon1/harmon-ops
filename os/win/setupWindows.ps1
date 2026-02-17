@@ -32,20 +32,70 @@ Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
 #==============================================================================
 # Unavailable on WinGet (install manually): TextExpander, AirServer, Ventoy, Nvidia App, Twitch
 
-write-output "--- Installing development packages ---"
-winget import --import-file "$PSScriptRoot\winget\development.json" --accept-package-agreements --accept-source-agreements
+$development = @(
+	"Microsoft.WSL"
+	"Canonical.Ubuntu.2204"
+	"Python.Python.3.13"
+	"OpenJS.NodeJS"
+	"Microsoft.VisualStudioCode"
+	"Microsoft.VisualStudioCode.Insiders"
+	"Docker.DockerDesktop"
+	"7zip.7zip"
+	"Git.Git"
+)
 
-write-output "--- Installing productivity packages ---"
-winget import --import-file "$PSScriptRoot\winget\productivity.json" --accept-package-agreements --accept-source-agreements
+$productivity = @(
+	"AgileBits.1Password"
+	"Dropbox.Dropbox"
+	"Google.GoogleDrive"
+	"Google.Chrome"
+	"Mozilla.Firefox"
+	"VideoLAN.VLC"
+	"SlackTechnologies.Slack"
+	"OpenWhisperSystems.Signal"
+	"MullvadVPN.MullvadVPN"
+	"Tailscale.Tailscale"
+	"Transmission.Transmission"
+	"NirSoft.NirCmd"
+	"IrfanSkiljan.IrfanView"
+	"GIMP.GIMP"
+	"HandBrake.HandBrake"
+	"Piriform.CCleaner"
+	"WinDirStat.WinDirStat"
+	"Balena.Etcher"
+	"Rufus.Rufus"
+)
 
-write-output "--- Installing gaming packages ---"
-winget import --import-file "$PSScriptRoot\winget\gaming.json" --accept-package-agreements --accept-source-agreements
+$gaming = @(
+	"Valve.Steam"
+	"RazerInc.RazerInstaller"
+	"Discord.Discord"
+	"GOG.Galaxy"
+	"EpicGames.EpicGamesLauncher"
+	"ElectronicArts.EADesktop"
+	"Amazon.Games"
+	"Playnite.Playnite"
+	"RiotGames.LeagueOfLegends.NA"
+	"REALiX.HWiNFO"
+	"ALCPU.CoreTemp"
+	"PrimateLabs.Geekbench.6"
+	"FoldingAtHome.FoldingAtHome"
+	"Unigine.ValleyBenchmark"
+	"Unigine.HeavenBenchmark"
+)
 
 #==============================================================================
 #                       Machine-Specific Notes
 #==============================================================================
-# $machina    - 
-# $contraption - all three: development, productivity, gaming
-# $tars - all three: development, productivity, gaming
+# $machina     -
+# $contraption - development, productivity, gaming
+# $tars        - development, productivity, gaming
+
+$packages = $development + $productivity + $gaming
+
+write-output "--- Installing $($packages.Count) packages ---"
+foreach ($package in $packages) {
+	winget install --exact --id $package --accept-package-agreements --accept-source-agreements
+}
 
 write-output "======Finished setupWindows.ps1======"
