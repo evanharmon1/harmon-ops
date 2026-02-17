@@ -85,6 +85,8 @@ $gaming = @(
 	"FoldingAtHome.FoldingAtHome"
 	"Unigine.ValleyBenchmark"
 	"Unigine.HeavenBenchmark"
+	"LizardByte.Sunshine"
+	"MoonlightGameStreamingProject.Moonlight"
 )
 
 #==============================================================================
