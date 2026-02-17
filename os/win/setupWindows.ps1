@@ -24,6 +24,9 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Search" 
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "HideFileExt" -Value 0
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "Hidden" -Value 1
 
+# Time zone
+Set-TimeZone -Id "Central Standard Time"
+
 # Restart Explorer to apply theme/taskbar changes
 Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
 
