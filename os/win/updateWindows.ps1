@@ -1,7 +1,6 @@
-# Open powershell as admin
-# Type `Set-ExecutionPolicy RemoteSigned`
+# Open PowerShell as admin
+# Type `Set-ExecutionPolicy Bypass -Scope Process` (applies only to current session)
 # Navigate to this script and run it in powershell
-# Type `Set-ExecutionPolicy Restricted` to reset execution policy
 # TODO: Add automation and logging
 
 write-output "......Starting updateWindows.ps1......"
