@@ -27,6 +27,11 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 # Time zone
 Set-TimeZone -Id "Central Standard Time"
 
+# Pin folders to Quick Access
+$shell = New-Object -ComObject Shell.Application
+$shell.Namespace("$env:USERPROFILE").Self.InvokeVerb("pintohome")
+$shell.Namespace("$env:USERPROFILE\git").Self.InvokeVerb("pintohome")
+
 # Restart Explorer to apply theme/taskbar changes
 Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
 
