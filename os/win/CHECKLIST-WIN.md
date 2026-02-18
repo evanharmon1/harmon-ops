@@ -1,7 +1,41 @@
 # CHECKLIST-WIN.md
+
 Checklist for manual steps to install a new Windows machine from scratch.
 
-1. Install Windows from scratch
-
-2. Docker Developer Environment on Windows
-- In order to get the dockerVol shared/mounted folder working inside running docker containers, Docker settings need to share the local C drive. Sometimes a restart is required. Sometimes you need to make sure to confirm any pop up windows about sharing volumes. I think I solved some problems by putting my docker-compose and dockerVol at the C:/ root level on Windows systems. There are also some Windows features that need to be enabled like Hyper-V.
+- [ ] Configure BIOS
+  - Verify component temperatures are ok
+  - Verify all fans are spinning
+  - Verify all hardware is detected correctly
+  - Set boot order
+  - Disable Fast Boot
+  - Update BIOS firmware
+  - Set cooling and fan profiles
+  - Enable UEFI/Secure Boot
+    - Secure Boot can cause issues with Unraid and some Linux distros. You may want to enable UEFI but leave Secure Boot disabled
+  - Enable XMP/DOCP and set correct RAM speed and timings
+    - On newer ASUS AMD boards this is labeled EXPO/DOCP II
+  - Enable TPM/Trusted Computing
+    - Enable fTPM
+  - Enable Motherboard Devices
+    - Bluetooth
+    - LAN
+    - WiFi
+  - Storage
+    - Set NVMe/SATA mode (AHCI vs RAID)
+  - Power
+    - Restore AC Power Loss
+    - Set C-States to enabled — better idle power for 24/7 operation
+  - Network
+    - Enable Wake-on-LAN
+  - Virtualization
+    - Enable SVM (AMD-V) — required for virtualization
+    - Enable IOMMU — needed for PCIe passthrough to VMs
+    - Set ACS Enable if available — better IOMMU grouping
+- [ ] Install Windows from scratch
+- [ ] Run setupWindows.ps1 setup script
+  - Download this repo (harmon-os) to C:\Users\evanh\git
+  - Open PowerShell as admin
+  - Type `Set-ExecutionPolicy Bypass -Scope Process` (applies only to current session)
+  - Navigate to this script and run it in powershell
+- [ ] Setup Docker Developer Environment on Windows
+  - In order to get the dockerVol shared/mounted folder working inside running docker containers, Docker settings need to share the local C drive. Sometimes a restart is required. Sometimes you need to make sure to confirm any pop up windows about sharing volumes. I think I solved some problems by putting my docker-compose and dockerVol at the C:/ root level on Windows systems. There are also some Windows features that need to be enabled like Hyper-V.

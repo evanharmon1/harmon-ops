@@ -68,7 +68,6 @@ $productivity = @(
 	"IrfanSkiljan.IrfanView"
 	"GIMP.GIMP"
 	"HandBrake.HandBrake"
-	"Piriform.CCleaner"
 	"WinDirStat.WinDirStat"
 	"Balena.Etcher"
 	"Rufus.Rufus"
@@ -93,6 +92,15 @@ $gaming = @(
 	"LizardByte.Sunshine"
 	"MoonlightGameStreamingProject.Moonlight"
 )
+
+$other = @(
+)
+
+# Manual installs (no winget ID or better from official source):
+# MSI Afterburner - GPU monitoring/OC
+# CUDA Toolkit - via NVIDIA (if doing GPU AI work)
+# ComfyUI / Automatic1111 - image gen (Python-based)
+# AMD Software Adrenalin - if using RX 9070 XT (use AMD's installer)
 
 #==============================================================================
 #                       Machine-Specific Notes
