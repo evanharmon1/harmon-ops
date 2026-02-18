@@ -41,8 +41,8 @@ $pinnedPaths = $quickAccess.Items() |
 
 # Folders we want pinned
 $foldersToPin = @(
-    $env:USERPROFILE,
-    Join-Path $env:USERPROFILE "git"
+    $env:USERPROFILE
+    (Join-Path $env:USERPROFILE "git")
 )
 
 foreach ($folder in $foldersToPin) {
