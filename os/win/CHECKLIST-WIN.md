@@ -32,10 +32,13 @@ Checklist for manual steps to install a new Windows machine from scratch.
     - Enable IOMMU — needed for PCIe passthrough to VMs
     - Set ACS Enable if available — better IOMMU grouping
 - [ ] Install Windows from scratch
+  - Use official Microsoft media creator tool
+  - Sign in with Microsoft account
 - [ ] Run setupWindows.ps1 setup script
   - Download this repo (harmon-os) to C:\Users\evanh\git
   - Open PowerShell as admin
   - Type `Set-ExecutionPolicy Bypass -Scope Process` (applies only to current session)
   - Navigate to this script and run it in powershell
+- [ ] Install apps that can't be installed automatically (listed in setupWindows.ps1)
 - [ ] Setup Docker Developer Environment on Windows
   - In order to get the dockerVol shared/mounted folder working inside running docker containers, Docker settings need to share the local C drive. Sometimes a restart is required. Sometimes you need to make sure to confirm any pop up windows about sharing volumes. I think I solved some problems by putting my docker-compose and dockerVol at the C:/ root level on Windows systems. There are also some Windows features that need to be enabled like Hyper-V.

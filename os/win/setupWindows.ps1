@@ -28,9 +28,30 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 Set-TimeZone -Id "Central Standard Time"
 
 # Pin folders to Quick Access
+# Create Shell COM object once
 $shell = New-Object -ComObject Shell.Application
-$shell.Namespace("$env:USERPROFILE").Self.InvokeVerb("pintohome")
-$shell.Namespace("$env:USERPROFILE\git").Self.InvokeVerb("pintohome")
+
+# Quick Access shell namespace
+$quickAccess = $shell.Namespace("shell:::{679f85cb-0220-4080-b29b-5540cc05aab6}")
+
+# Collect currently pinned paths
+$pinnedPaths = $quickAccess.Items() |
+    Where-Object { $_.Path } |
+    ForEach-Object { $_.Path }
+
+# Folders we want pinned
+$foldersToPin = @(
+    $env:USERPROFILE,
+    Join-Path $env:USERPROFILE "git"
+)
+
+foreach ($folder in $foldersToPin) {
+    if (Test-Path $folder -PathType Container) {
+        if ($pinnedPaths -notcontains $folder) {
+            $shell.Namespace($folder).Self.InvokeVerb("pintohome")
+        }
+    }
+}
 
 # Restart Explorer to apply theme/taskbar changes
 Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
@@ -38,7 +59,6 @@ Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
 #==============================================================================
 #                       Package Installation
 #==============================================================================
-# Unavailable on WinGet (install manually): TextExpander, AirServer, Ventoy, Nvidia App, Twitch
 
 $development = @(
 	"Microsoft.WSL"
@@ -50,6 +70,27 @@ $development = @(
 	"Docker.DockerDesktop"
 	"7zip.7zip"
 	"Git.Git"
+	"GitHub.GitHubDesktop"
+	"GitHub.cli"
+	"Microsoft.WindowsTerminal"
+	"wez.wezterm"
+	"Starship.Starship"
+	"ajeetdsouza.zoxide"
+	"sharkdp.bat"
+	"eza-community.eza"
+	"BurntSushi.ripgrep.MSVC"
+	"sharkdp.fd"
+	"junegunn.fzf"
+	"jqlang.jq"
+	"astral-sh.uv"
+	"Rustlang.Rustup"
+	"GoLang.Go"
+	"Microsoft.PowerShell"
+	"JanDeDobbeleer.OhMyPosh"
+	"Axosoft.GitKraken"
+	"Bruno.Bruno"
+	"Anthropic.ClaudeCode"
+	"OpenAI.Codex"
 )
 
 $productivity = @(
@@ -71,6 +112,15 @@ $productivity = @(
 	"WinDirStat.WinDirStat"
 	"Balena.Etcher"
 	"Rufus.Rufus"
+	"Obsidian.Obsidian"
+	"Microsoft.PowerToys"
+	"voidtools.Everything"
+	"Notepad++.Notepad++"
+	"Ventoy.Ventoy"
+	"TextExpander.TextExpander"
+	"AppDynamic.AirServer"
+	"Ookla.Speedtest"
+
 )
 
 $gaming = @(
@@ -91,25 +141,60 @@ $gaming = @(
 	"Unigine.HeavenBenchmark"
 	"LizardByte.Sunshine"
 	"MoonlightGameStreamingProject.Moonlight"
+	"Nvidia.GeForceExperience"
+	"CPUID.CPU-Z"
+	"TechPowerUp.GPU-Z"
 )
 
-$other = @(
+$localai = @(
+	"Ollama.Ollama"
+	"lm-studio.lm-studio"
+)
+
+$media = @(
+	"AmazonVideo.PrimeVideo"
+	"Plex.Plex"
+)
+
+$homelab = @(
+	"Netdata.Netdata"
+	"WireGuard.WireGuard"
+	"WinSCP.WinSCP"
+	"Nmap.Nmap"
+	"angryziber.AngryIPScanner"
+	"Hashicorp.Terraform"
+	"Portainer.Portainer"
+	"Microsoft.Sysinternals"
+	"WiresharkFoundation.Wireshark"
 )
 
 # Manual installs (no winget ID or better from official source):
-# MSI Afterburner - GPU monitoring/OC
+# MSI Afterburner - GPU monitoring/OC (no winget ID)
 # CUDA Toolkit - via NVIDIA (if doing GPU AI work)
 # ComfyUI / Automatic1111 - image gen (Python-based)
 # AMD Software Adrenalin - if using RX 9070 XT (use AMD's installer)
+# Raycast - Windows version in beta
+# Claude
+# Perplexity
+# ChatGPT
+# Pluto TV
+# Tubi
+# Apple TV
+# Apple Music
+# Peacock
+# Disney+
+# Netflix
+# HBO
+# Paramount+
 
 #==============================================================================
 #                       Machine-Specific Notes
 #==============================================================================
 # $machina     -
-# $contraption - development, productivity, gaming
-# $tars        - development, productivity, gaming
+# $contraption - development, productivity, gaming, localai, homelab, media
+# $tars        - development, productivity, gaming, localai, homelab, media
 
-$packages = $development + $productivity + $gaming
+$packages = $development + $productivity + $gaming + $localai + $homelab + $media
 
 write-output "--- Installing $($packages.Count) packages ---"
 foreach ($package in $packages) {
