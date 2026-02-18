@@ -63,9 +63,7 @@ flowchart LR
 1. Follow `os/linux/CHECKLIST-LINUX.md`
 2. Run `os/linux/setupLinux.sh`
 
-### Setup a Windows machine (Not well-developed)
-
-**Might need to clone to a fresh `windows` branch from main for windows machines due to file path incompatibilities in the mac folder. You would need to delete the mac folder on that branch to avoid the errors.**
+### Setup a Windows machine
 
 1. Follow `os/win/CHECKLIST-WIN.md`
 2. Run `os/win/setupWindows.ps1`

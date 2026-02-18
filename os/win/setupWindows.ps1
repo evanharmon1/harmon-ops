@@ -104,6 +104,8 @@ $productivity = @(
 	"OpenWhisperSystems.Signal"
 	"MullvadVPN.MullvadVPN"
 	"Tailscale.Tailscale"
+	"RealVNC.VNCServer"
+	"Ditto.Ditto"
 	"Transmission.Transmission"
 	"NirSoft.NirCmd"
 	"IrfanSkiljan.IrfanView"
