@@ -517,6 +517,10 @@ cask "claude-code"
 cask "cleanshot"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# OpenAI's Codex desktop app for managing coding agents
+cask "codex-app"
 # Note-taking and organisation tool
 cask "curio"
 # Write, edit, and chat about your code with AI
@@ -581,6 +585,8 @@ cask "font-menlo-for-powerline"
 cask "forklift"
 # Wireframing tool
 cask "frame0"
+# Manage eBay Listings
+cask "garagesale"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Free and open-source image editor
@@ -629,6 +635,8 @@ cask "istat-menus"
 cask "iterm2"
 # JetBrains tools manager
 cask "jetbrains-toolbox"
+# Menu bar manager
+cask "jordanbaird-ice"
 # Keyboard customiser
 cask "karabiner-elements"
 # Automation software
@@ -1013,7 +1021,6 @@ vscode "editorconfig.editorconfig"
 vscode "esbenp.prettier-vscode"
 vscode "evan harmon.evans-vscode-extension"
 vscode "firefox-devtools.vscode-firefox-debug"
-vscode "foam.foam-vscode"
 vscode "formulahendry.code-runner"
 vscode "gdp.delugelang"
 vscode "github.codespaces"

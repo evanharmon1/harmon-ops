@@ -33,7 +33,8 @@ Checklist for manual steps to install a new Windows machine from scratch.
     - Set ACS Enable if available — better IOMMU grouping
 - [ ] Install Windows from scratch
   - Use official Microsoft media creator tool
-  - Sign in with Microsoft account
+  - Installation Wizard
+    - Sign in with Microsoft account
 - [ ] Run setupWindows.ps1 setup script
   - Download this repo (harmon-os) to C:\Users\evanh\git
   - Open PowerShell as admin
@@ -44,10 +45,40 @@ Checklist for manual steps to install a new Windows machine from scratch.
   - Open PowerToys Settings > Keyboard Manager > Enable Keyboard Manager.
   - Click “Remap a key.”
   - Select Caps Lock as the “From” key, then map it to Escape as the “To” key.
+- [ ] Sign in to apps and accounts
+  - 1Password
+  - TextExpander
+  - Google Chrome
+  - Google Drive
+  - DropBox
+  - Discord
+  - Claude
+  - ChatGPT
+  - Perplexity
+- [ ] Setup WSL
 - [ ] Setup SSH
 - [ ] Setup Tailscale
   - Join a Tailnet for remote access
+  - "Run Tailscale on the Windows host, not inside WSL2. This is Tailscale's official recommendation. Tailscale When Tailscale runs on Windows, its routing and DNS changes are automatically visible inside WSL2 — you can resolve Tailscale hostnames and reach tailnet nodes from within WSL. Running Tailscale inside WSL2 causes double-encapsulation (Tailscale packets inside Tailscale packets) and MTU issues. Tailscale The one exception: if you want WSL2 to appear as a separate node on your tailnet with its own identity, you can install Tailscale inside WSL2, but you'll need to manually set MTU to 1500 Mhlakhani and accept some DNS quirks."
 - [ ] Setup VNC
   - Install a VNC server like RealVNC Server which works well with Mac Screens
-- [ ] Setup Docker Developer Environment on Windows
-  - In order to get the dockerVol shared/mounted folder working inside running docker containers, Docker settings need to share the local C drive. Sometimes a restart is required. Sometimes you need to make sure to confirm any pop up windows about sharing volumes. I think I solved some problems by putting my docker-compose and dockerVol at the C:/ root level on Windows systems. There are also some Windows features that need to be enabled like Hyper-V.
+- [ ] Setup VS Code Remote
+- [ ] Setup Docker
+  - During installation, ensure "Use WSL 2 instead of Hyper-V" is selected (it's the default on Windows 11)
+  - After installation, open Docker Desktop → Settings → Resources → WSL Integration. Ensure your Ubuntu distro has the toggle enabled. This makes docker and docker compose commands available inside your WSL2 terminal. Set Ubuntu as your default WSL distro if it isn't already: `wsl --set-default Ubuntu-24.04`. Verify from inside WSL2: `docker version` and `docker compose version`.
+  - All resource limits come from your .wslconfig file.
+  - Optional: Setup Docker Developer Environment on Windows
+    - In order to get the dockerVol shared/mounted folder working inside running docker containers, Docker settings need to share the local C drive. Sometimes a restart is required. Sometimes you need to make sure to confirm any pop up windows about sharing volumes. I think I solved some problems by putting my docker-compose and dockerVol at the C:/ root level on Windows systems. There are also some Windows features that need to be enabled like Hyper-V.
+- [ ] Chezmoi
+- [ ] Setup as a server
+  - Disable Sleep & Hibernate
+    - Control Panel → Power Options → Change Plan Settings → Advanced Power Settings
+      - Set:
+        - Put the computer to sleep: Never
+        - Hibernate after: Never
+        - Turn off hard disk after: Never (or very high value)
+        - Allow wake timers: Disabled (optional)
+  - Display/Peripherals Power
+    - It’s usually fine to let the display turn off — that saves a little power, and the OS stays awake. But tools like USB selective suspend or turning off drives can interfere with server performance or device availability. You can set those to disabled if you’re running external drives or network services.
+  - Power Options
+    - Use a power plan like Balanced/High Performance depending on workload

@@ -194,3 +194,6 @@ source ~/.dotfiles/.var
 source ~/.dotfiles/.functions
 [[ -f ~/.secrets ]] && source ~/.secrets
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/evan/.cache/lm-studio/bin"

@@ -1261,3 +1261,11 @@ cask "dockdoor"
 cask "rafaelswi/menubarusb/menubarusb"
 mas "DaisyDisk", id: 411643860
 tap "rafaelswi/menubarusb"
+
+
+#                New Packages from EvansMacBookPro 2026-02-19
+#-------------------------------------------------------------------------------
+cask "codex-app"
+cask "codex"
+cask "garagesale"
+cask "jordanbaird-ice"

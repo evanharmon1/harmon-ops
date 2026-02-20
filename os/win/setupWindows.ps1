@@ -63,30 +63,13 @@ Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
 $development = @(
 	"Microsoft.WSL"
 	"Canonical.Ubuntu.2204"
-	"Python.Python.3.13"
-	"OpenJS.NodeJS"
 	"Microsoft.VisualStudioCode"
 	"Microsoft.VisualStudioCode.Insiders"
 	"Docker.DockerDesktop"
-	"7zip.7zip"
-	"Git.Git"
 	"GitHub.GitHubDesktop"
-	"GitHub.cli"
 	"Microsoft.WindowsTerminal"
 	"wez.wezterm"
-	"Starship.Starship"
-	"ajeetdsouza.zoxide"
-	"sharkdp.bat"
-	"eza-community.eza"
-	"BurntSushi.ripgrep.MSVC"
-	"sharkdp.fd"
-	"junegunn.fzf"
-	"jqlang.jq"
-	"astral-sh.uv"
-	"Rustlang.Rustup"
-	"GoLang.Go"
 	"Microsoft.PowerShell"
-	"JanDeDobbeleer.OhMyPosh"
 	"Axosoft.GitKraken"
 	"Bruno.Bruno"
 	"Anthropic.ClaudeCode"
@@ -100,11 +83,12 @@ $productivity = @(
 	"Google.Chrome"
 	"Mozilla.Firefox"
 	"VideoLAN.VLC"
+	"7zip.7zip"
 	"SlackTechnologies.Slack"
 	"OpenWhisperSystems.Signal"
 	"MullvadVPN.MullvadVPN"
 	"Tailscale.Tailscale"
-	"RealVNC.VNCServer"
+	"uvncbvba.UltraVNC"
 	"Ditto.Ditto"
 	"Transmission.Transmission"
 	"NirSoft.NirCmd"
@@ -122,29 +106,8 @@ $productivity = @(
 	"TextExpander.TextExpander"
 	"AppDynamic.AirServer"
 	"Ookla.Speedtest"
-
-)
-
-$gaming = @(
-	"Valve.Steam"
-	"RazerInc.RazerInstaller"
-	"Discord.Discord"
-	"GOG.Galaxy"
-	"EpicGames.EpicGamesLauncher"
-	"ElectronicArts.EADesktop"
-	"Amazon.Games"
-	"Playnite.Playnite"
-	"RiotGames.LeagueOfLegends.NA"
 	"REALiX.HWiNFO"
 	"ALCPU.CoreTemp"
-	"PrimateLabs.Geekbench.6"
-	"FoldingAtHome.FoldingAtHome"
-	"Unigine.HeavenBenchmark"
-	"Unigine.ValleyBenchmark"
-	"Unigine.SuperpositionBenchmark"
-	"LizardByte.Sunshine"
-	"MoonlightGameStreamingProject.Moonlight"
-	"Nvidia.GeForceExperience"
 	"CPUID.CPU-Z"
 	"TechPowerUp.GPU-Z"
 )
@@ -163,12 +126,29 @@ $homelab = @(
 	"Netdata.Netdata"
 	"WireGuard.WireGuard"
 	"WinSCP.WinSCP"
-	"Nmap.Nmap"
 	"angryziber.AngryIPScanner"
-	"Hashicorp.Terraform"
-	"Portainer.Portainer"
 	"Microsoft.Sysinternals"
 	"WiresharkFoundation.Wireshark"
+	"FoldingAtHome.FoldingAtHome"
+)
+
+$gaming = @(
+	"Valve.Steam"
+	"RazerInc.RazerInstaller"
+	"Discord.Discord"
+	"GOG.Galaxy"
+	"EpicGames.EpicGamesLauncher"
+	"ElectronicArts.EADesktop"
+	"Amazon.Games"
+	"Playnite.Playnite"
+	"RiotGames.LeagueOfLegends.NA"
+	"PrimateLabs.Geekbench.6"
+	"Unigine.HeavenBenchmark"
+	"Unigine.ValleyBenchmark"
+	"Unigine.SuperpositionBenchmark"
+	"LizardByte.Sunshine"
+	"MoonlightGameStreamingProject.Moonlight"
+	"Nvidia.GeForceExperience"
 )
 
 # Manual installs (no winget ID or better from official source):
@@ -177,6 +157,7 @@ $homelab = @(
 # ComfyUI / Automatic1111 - image gen (Python-based)
 # AMD Software Adrenalin - if using RX 9070 XT (use AMD's installer)
 # Raycast - Windows version in beta
+# Willow Voice
 # Claude
 # Perplexity
 # ChatGPT
