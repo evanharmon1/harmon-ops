@@ -11,8 +11,7 @@ identity_validation:
     require_second_factor: true
   reset_password:
     jwt_lifespan: "5 minutes"
-    jwt_secret:
-      { { secret "/secrets/jwt_secret.txt" | mindent 0 "|" | msquote } }
+    jwt_secret: file:///secrets/jwt_secret.txt
 
 totp:
   disable: false
@@ -48,7 +47,7 @@ access_control:
 
 session:
   name: "authelia_session"
-  secret: { { secret "/secrets/session_secret.txt" | mindent 0 "|" | msquote } }
+  secret: file:///secrets/session_secret.txt
   cookies:
     - domain: "harmonops.com"
       authelia_url: "https://auth.harmonops.com"
@@ -59,12 +58,7 @@ regulation:
   ban_time: 300
 
 storage:
-  encryption_key:
-    {
-      {
-        secret "/secrets/storage_encryption_key.txt" | mindent 0 "|" | msquote,
-      },
-    }
+  encryption_key: file:///secrets/storage_encryption_key.txt
   local:
     path: "/config/db.sqlite3"
 
