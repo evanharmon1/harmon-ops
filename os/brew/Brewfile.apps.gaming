@@ -1,0 +1,25 @@
+# Mac gaming-related casks/apps
+
+#==============================================================================
+#                       Games & Related Packages
+#==============================================================================
+# For personal machines that might be used for games
+cask "steam"
+mas "Steam Link", id: 1246969117
+cask "gog-galaxy"
+cask "epic-games"
+# Transitioning from origin to EA Games platform/launcher but its origin for the time-being.
+cask "origin"
+# doesn't install right now - 12-05-2021
+cask "battle-net"
+cask "moonlight"
+cask "nvidia-geforce-now"
+#             Emulation
+#------------------------------------------------------------------------------
+cask "dolphin"
+cask "openemu"
+cask "retroarch-metal"
+# Games
+#------------------------------------------------------------------------------
+cask "league-of-legends"
+cask "minecraft"

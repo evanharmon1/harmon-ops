@@ -948,9 +948,9 @@ vscode "redhat.ansible"
 #                New Packages from EvansMacBookPro 2024-05-30
 #-------------------------------------------------------------------------------
 brew "ctop"
-cask "hdhomerun"
 cask "ollama"
 cask "retroarch-metal"
+cask "hdhomerun"
 mas "HDHomeRun", id: 949582631
 
 

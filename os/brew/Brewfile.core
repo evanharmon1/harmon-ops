@@ -1,0 +1,259 @@
+# Packages that can and should be installed on both Macs and Linux machines, including Windows WSL
+
+#             Shell
+#------------------------------------------------------------------------------
+brew "zsh"
+brew "curl"
+brew "wget"
+brew "grep"
+brew "rsync"
+brew "tldr"
+brew "jupyterlab"
+brew "thefuck"
+# Personal information dashboard for your terminal
+brew "wtfutil"
+brew "cheat"
+brew "git"
+brew "git-lfs"
+brew "git-delta"
+brew "lazygit"
+brew "tig"
+# Terminal multiplexer
+brew "tmux"
+# Fast, highly customisable system info script
+brew "fastfetch"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Improved top (interactive process viewer)
+brew "htop"
+# Port scanning utility for large networks
+brew "nmap"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Watch files and take action when they change
+brew "watchman"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "jo"
+# Trace a chain of DNS servers to the source
+brew "dnstracer"
+# Utility for managing network connections
+brew "netcat"
+brew "openssh"
+brew "openssl"
+brew "ssh-copy-id"
+tap "teamookla/speedtest"
+brew "speedtest"
+# Show ps output as a tree
+brew "pstree"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# Text-based web browser
+brew "lynx"
+brew "ffmpeg"
+# Alternative to top/htop
+brew "glances"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
+# Monitor data's progress through a pipe
+brew "pv"
+# ASCII-art image browser and animation viewer
+brew "aview"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Intuitive find & replace CLI
+brew "sd"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Remote terminal application
+brew "mosh"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Modern replacement for 'ls'
+brew "eza"
+#Display the PID number for a given process name
+brew "pidof"
+# Text to speech, software speech synthesizer
+brew "espeak-ng"
+brew "cowsay"
+# Static analysis and lint tool, for (ba)sh scripts
+brew "shellcheck"
+# Autoformat shell script source code
+brew "shfmt"
+# Intercept, modify, replay, save HTTP/S traffic
+brew "mitmproxy"
+brew "pre-commit"
+# Cross-platform make
+brew "cmake"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+brew "neovim"
+# Record and share your terminal sessions
+brew "asciinema"
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+# GitHub official CLI tool
+brew "gh"
+# GIT utilities -- repo summary, repl, changelog population, author commit percentages and more
+brew "git-extras"
+brew "hurl"
+brew "mdless"
+brew "w3m"
+brew "ollama"
+brew "ctop"
+brew "cookiecutter"
+brew "just"
+brew "yamllint"
+brew "lychee"
+brew "midnight-commander"
+brew "mise"
+brew "zellij"
+brew "chezmoi"
+brew "micro"
+brew "starship"
+brew "aichat"
+brew "glow"
+brew "llm"
+brew "curlie"
+brew "nushell"
+brew "posting"
+brew "xh"
+brew "zoxide"
+tap "charmbracelet/tap"
+brew "charmbracelet/tap/freeze"
+brew "vhs"
+brew "yt-dlp"
+brew "atuin"
+brew "ruff"
+brew "hyperfine"
+brew "doggo"
+brew "duf"
+
+
+#             Additional Shell
+#------------------------------------------------------------------------------
+brew "lolcat"
+brew "cmatrix"
+brew "fortune"
+brew "asciiquarium"
+brew "ponysay"
+
+#             Docker
+#------------------------------------------------------------------------------
+brew "docker"
+brew "docker-compose"
+brew "lazydocker"
+brew "dive"
+
+#             Data & Backup
+#------------------------------------------------------------------------------
+brew "rclone"
+brew "restic"
+
+#             Development
+#------------------------------------------------------------------------------
+# Text-based UI library
+brew "ncurses"
+# Task runner
+brew "go-task"
+brew "newman"
+brew "httpie"
+brew "podman"
+brew "whalebrew"
+brew "act"
+brew "direnv"
+
+#             Cloud & Web
+#------------------------------------------------------------------------------
+brew "netlify-cli"
+# Zero Trust
+brew "cloudflared"
+# AWS
+brew "awscli"
+brew "firebase-cli"
+
+#             Terraform & Dependencies
+#------------------------------------------------------------------------------
+# Use mise to manage terraform versions
+brew "terraform-docs"
+brew "terragrunt"
+brew "tflint"
+brew "coreutils"
+brew "checkov"
+brew "terrascan"
+brew "infracost"
+
+#             Data
+#------------------------------------------------------------------------------
+# SQLite
+brew "sqlite"
+# Postgres
+brew "postgresql"
+# MySQL
+brew "mysql"
+# CLI for MS SQL Server
+brew "sqlcmd"
+
+#             Automation, CI/CI, Workflows, & Configuration Management
+#------------------------------------------------------------------------------
+brew "ansible"
+
+#             Observability, Measurement, Logging, Dashboards, & Monitoring
+#------------------------------------------------------------------------------
+brew "telegraf"
+brew "btop"
+brew "bottom"
+
+#             Security
+#-------------------------------------------------------------------------------
+brew "semgrep"
+tap "snyk/tap"
+brew "snyk/tap/snyk"
+brew "trivy"
+brew "grype"
+brew "syft"
+brew "trufflehog"
+
+
+#             Python
+#------------------------------------------------------------------------------
+# Use mise to manage Python versions
+brew "uv"
+brew "ipython"
+
+#             JavaScript
+#-----------------------------------------------------------------------------
+# Use mise to manage Node versions
+
+#             Rust
+#------------------------------------------------------------------------------
+# Use mise to manage Rust versions
+
+#             Go
+#------------------------------------------------------------------------------
+# Use mise to manage Go versions
+
+#             Ruby
+#------------------------------------------------------------------------------
+# Use mise to manage Ruby versions
+
+#             PHP
+#------------------------------------------------------------------------------
+# Use mise to manage PHP versions
+
+#             C
+#------------------------------------------------------------------------------
+
+#             Java
+#------------------------------------------------------------------------------
+
+#             C# & .NET
+#------------------------------------------------------------------------------
+
+#             Swift
+#------------------------------------------------------------------------------

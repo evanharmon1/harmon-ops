@@ -1,0 +1,21 @@
+# Non-cask packages that only work on Mac
+
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# Send User Alert Notification on macOS from the command-line
+brew "alerter"
+# Tool for managing dock items
+brew "dockutil"
+# Select default apps for documents and URL schemes on macOS
+brew "duti"
+# Requires full xCode installation. Readability and Markdown utility for saving web urls and HTML text (Terpstra)
+brew "gather-cli"
+# dependency for Terpstra's SearchLink
+brew "ttscoff/thelab/gather-cli"
+brew "aspell"
+brew "colima"
+# GTK+ dialog boxes for the command-line
+brew "zenity"
+brew "grafana"
+brew "gcloud-cli"
+brew "mongodb/brew/mongodb-community"

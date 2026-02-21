@@ -1,0 +1,67 @@
+# Don't install anymore. Just keeping for reference in case something changes.
+
+cask "cleanshot"
+cask "iterm2"
+mas "Yoink", id: 457622435
+brew "unbound"
+# paid, not planning to use it.
+cask "nova"
+cask "jetbrains-toolbox"
+mas "GoodNotes", id: 1444383602
+mas "com.apptorium.Workspaces", id: 1219826448
+# - using zsh, oh-mh-zsh, fig, etc. for now
+brew "fish"
+# Insecure, don't install unless needed, and then uninstall
+brew "telnet"
+cask "google-chat"
+# use JetBrains Toolbox instead
+cask "pycharm-ce"
+# use JetBrains Toolbox instead
+cask "intellij-idea-ce"
+# mamp is better than xampp
+cask "xampp"
+ # Trying raycast
+cask "launchbar"
+# Using moom instead
+mas "Magnet", id: 441258766
+# Using moom instead
+cask "mosaic"
+# Costs money
+mas "DevUtils", id: 1533756032
+# Using obsidian and then maybe dendron
+mas "Quiver", id: 866773894
+mas "CotEditor", id: 1024640650
+# for Google Voice or any other webapps I want as local apps (Using Unite now)
+cask "fluid"
+# Use Warp and iTerm instead
+cask "hyper"
+cask "chromium"
+# Not worth the UI nagging
+mas "Honey for Safari", id: 1472777122
+# Haven't used in years - VS Code, Insider's, Nova, BBEdit
+cask "sublime-text"
+# Using CCC now
+cask "superduper"
+cask "yed"
+mas "Day One", id: 1055511498
+# This one is the paid one that you don't want.
+brew "ntfy"
+# Twitch Desktop is discontinued in favor of the web app
+cask "twitch"
+# Much slower than VS Code and Insiders
+cask "vscodium"
+mas "Geekbench 5", id: 1478447657
+# Using Raycast only now
+cask "alfred"
+mas "Reeder", id: 880001334
+# Using Forklift instead
+cask "path-finder"
+# Using allmybatteries instead
+cask "batteries"
+# Reddit killed it.
+mas "Apollo", id: 979274575
+mas "Twitter", id: 1482454543
+mas "Type2Phone", id: 472717129
+mas "Wavelength", id: 1584865627
+# Deprecated - going away 2FA from Twilio
+cask "authy"

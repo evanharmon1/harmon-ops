@@ -1,0 +1,71 @@
+# Dev-specific Mac GUI apps
+
+#==============================================================================
+#                       Development & Cloud
+#==============================================================================
+# For personal machines that might be used for development
+cask "dash"
+cask "figma"
+mas "System Designer", id: 1102494854
+cask "teacode"
+cask "royal-tsx"
+cask "orbstack"
+cask "firefox@developer-edition"
+
+#             Text Editors & IDEs
+#------------------------------------------------------------------------------
+mas "Xcode", id: 497799835
+cask "textmate"
+
+#             Git
+#------------------------------------------------------------------------------
+cask "github"
+cask "tower"
+cask "sourcetree"
+cask "gitup-app"
+
+#             APIs
+#------------------------------------------------------------------------------
+cask "http-toolkit"
+cask "httpie"
+cask "proxyman"
+
+#             Mobile Development
+#------------------------------------------------------------------------------
+mas "TestFlight", id: 899247664
+
+#             Databases
+#------------------------------------------------------------------------------
+cask "dbvisualizer"
+cask "mysqlworkbench"
+cask "sqlitestudio"
+cask "db-browser-for-sqlite"
+# MongoDB
+tap "mongodb/brew"
+cask "mongodb-compass"
+
+#             AI
+#------------------------------------------------------------------------------
+cask "lm-studio"
+cask "ollama"
+cask "cursor"
+cask "claude-code"
+cask "codex-app"
+cask "codex"
+cask "diffusionbee"
+cask "mochi-diffusion"
+cask "msty"
+cask "enchanted"
+
+#             Observability, Measurement, Logging, Dashboards, & Monitoring
+#------------------------------------------------------------------------------
+mas "Datadog", id: 1391380318
+cask "datadog-agent"
+
+#             Security
+#-------------------------------------------------------------------------------
+
+#             IOT, Microelectronics, Embedded, Radio, SBCs, & Raspberry Pi
+#------------------------------------------------------------------------------
+cask "raspberry-pi-imager"
+cask "arduino-ide"

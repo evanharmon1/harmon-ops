@@ -1,0 +1,104 @@
+# Optional packages or Mac GUI Apps - don't normally install. Only use in certain situations.
+
+brew "docker"
+cask "bartender"
+brew "prometheus"
+cask "warp"
+cask "skype"
+mas "Spark", id: 1176895641
+cask "istat-menus"
+cask "xbar"
+cask "obs"
+cask "protonvpn"
+cask "cloudflare-warp"
+cask "gitkraken"
+cask "postman"
+cask "postman-cli"
+cask "insomnia"
+mas "Pluralsight", id: 431748264
+mas "Aquarium Live HD", id: 462563503
+mas "Fireplace Live HD", id: 468630933
+# Using Ice cubes Mastodon for now.
+mas "Ivory", id: 6444602274
+mas "Front and Center", id: 1493996622
+cask "scrivener"
+cask "adobe-creative-cloud"
+# Noise cancelling application - helpful for video calls in a coffee shop, e.g.
+cask "krisp"
+mas "GIPHY CAPTURE", id: 668208984
+# Not planning to pay for it anymore
+mas "Due", id: 524373870
+# Trying builtin macos ability instead
+cask "unite"
+mas "Pretty OK - Meh Daily Deal", id: 960524321
+mas "Fakespot for Safari", id: 1592541616
+mas "Session", id: 1521432881
+mas "Shortform", id: 1489472007
+mas "Elmedia Video Player", id: 1044549675
+brew "screen"
+brew "hashicorp/tap/vault"
+brew "vault"
+cask "mu-editor"
+# Failed to install - no Apple Silicon? 2023-06-03
+cask "vagrant"
+# homebrew fails to install - on Apple Silicon 2023-06-03
+cask "virtualbox"
+brew "hashicorp/tap/packer"
+brew "packer"
+# Use orbstack instead of docker desktop
+cask "docker"
+cask "docker-desktop"
+mas "Twingate", id: 1501592214
+# Kubernetes
+brew "kubernetes-cli"
+brew "minikube"
+brew "helm"
+# Azure
+brew "azure-cli"
+cask "azure-data-studio"
+cask "azure-data-studio-insiders"
+brew "eksctl"
+# Web Servers
+brew "nginx"
+brew "httpd"
+brew "lighttpd"
+cask "mamp"
+brew "jenkins"
+brew "jmeter"
+brew "selenium-server"
+brew "gitlab-runner"
+# pyenv dependencies?
+# For pyenv & its dependencies?
+brew "openssl"
+# For pyenv & its dependencies?
+brew "readline"
+# For pyenv & its dependencies?
+brew "sqlite3"
+# For pyenv & its dependencies?
+brew "xz"
+# For pyenv & its dependencies?
+brew "zlib"
+brew "gatsby-cli"
+brew "angular-cli"
+cask "brave-browser"
+cask "vivaldi"
+# too buggy 
+cask "razer-synapse"
+mas "Kindle Classic", id: 405399194
+mas "OpenIn", id: 1643649331
+mas "Telegram", id: 747648890
+cask "curio"
+cask "anytype"
+cask "capacities"
+mas "Backtrack Beta", id: 1477089520
+cask "amazon-luna"
+#             Java
+#------------------------------------------------------------------------------
+brew "jenv"
+brew "openjdk"
+brew "openjdk@17"
+brew "gradle"
+brew "maven"
+#             C# & .NET
+#------------------------------------------------------------------------------
+cask "dotnet-sdk"

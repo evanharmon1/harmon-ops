@@ -1,0 +1,33 @@
+# Work-related Mac GUI apps
+
+mas "Cliq", id: 1205882554
+mas "Doc Scanner", id: 1486334259
+mas "Invoice Generator", id: 1061863220
+mas "Notebook", id: 1173152781
+mas "ZiaSearch", id: 1595570784
+mas "Zoho Billing", id: 1184196693
+mas "Zoho Books", id: 1476500403
+mas "Zoho Expense", id: 1455824625
+mas "Zoho Expense", id: 1477152278
+mas "Zoho Inventory", id: 1477506694
+mas "Zoho Invoice", id: 1477507499
+mas "Zoho Sheet", id: 1667284173
+mas "Zoho Sign", id: 1476226908
+mas "Zoho TeamInbox", id: 1523646131
+mas "Zoho Translate", id: 6447339121
+mas "OneAuth", id: 1142928979
+mas "Purchase Order Generator", id: 1539392262
+mas "SalesIQ", id: 1293108732
+cask "zoho-mail"
+cask "zoho-workdrive"
+mas "zShare", id: 1479959045
+mas "Jira", id: 1475897096
+mas "Microsoft Word", id: 462054704
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Microsoft Outlook", id: 985367838
+mas "Microsoft OneNote", id: 784801555
+mas "OneDrive", id: 823766827
+mas "Microsoft Remote Desktop", id: 1295203466
+cask "microsoft-teams"
+mas "LastPass", id: 926036361

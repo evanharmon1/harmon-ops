@@ -1,0 +1,5 @@
+# Homelab-specific Mac GUI apps
+
+cask "plex-media-server"
+cask "hdhomerun"
+mas "HDHomeRun", id: 949582631
