@@ -1,0 +1,74 @@
+server:
+  address: "tcp4://:9091"
+
+log:
+  level: debug
+  file_path: "/var/log/authelia/authelia.log"
+  keep_stdout: true
+
+identity_validation:
+  elevated_session:
+    require_second_factor: true
+  reset_password:
+    jwt_lifespan: "5 minutes"
+    jwt_secret:
+      { { secret "/secrets/jwt_secret.txt" | mindent 0 "|" | msquote } }
+
+totp:
+  disable: false
+  issuer: "harmonops.com"
+  period: 30
+  skew: 1
+
+password_policy:
+  zxcvbn:
+    enabled: true
+    min_score: 4
+
+authentication_backend:
+  file:
+    path: "/config/users.yml"
+    password:
+      algorithm: "argon2"
+      argon2:
+        variant: "argon2id"
+        iterations: 3
+        memory: 65535
+        parallelism: 4
+        key_length: 32
+        salt_length: 16
+
+access_control:
+  default_policy: "deny"
+  rules:
+    - domain: "traefik.harmonops.com"
+      policy: "one_factor"
+    - domain: "whoami-secure.harmonops.com"
+      policy: "two_factor"
+
+session:
+  name: "authelia_session"
+  secret: { { secret "/secrets/session_secret.txt" | mindent 0 "|" | msquote } }
+  cookies:
+    - domain: "harmonops.com"
+      authelia_url: "https://auth.harmonops.com"
+
+regulation:
+  max_retries: 4
+  find_time: 120
+  ban_time: 300
+
+storage:
+  encryption_key:
+    {
+      {
+        secret "/secrets/storage_encryption_key.txt" | mindent 0 "|" | msquote,
+      },
+    }
+  local:
+    path: "/config/db.sqlite3"
+
+notifier:
+  disable_startup_check: false
+  filesystem:
+    filename: "/config/notification.txt"
