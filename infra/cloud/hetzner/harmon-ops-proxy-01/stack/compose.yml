@@ -14,7 +14,7 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      TZ: "America/Chicago" ## see below
+      TZ: "America/Chicago"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./traefik/config/traefik.yml:/traefik.yml:ro"
@@ -55,11 +55,11 @@ services:
       traefik.http.routers.authelia.rule: "Host(`auth.harmonops.com`)"
       traefik.http.routers.authelia.entrypoints: "https"
       ## Setup Authelia ForwardAuth Middlewares
-      traefik.http.middlewares.authelia.forwardAuth.address: "https://authelia:9091/api/authz/forward-auth"
+      traefik.http.middlewares.authelia.forwardAuth.address: "http://authelia:9091/api/authz/forward-auth"
       traefik.http.middlewares.authelia.forwardAuth.trustForwardHeader: "true"
       traefik.http.middlewares.authelia.forwardAuth.authResponseHeaders: "Remote-User,Remote-Groups,Remote-Name,Remote-Email"
     environment:
-      TZ: "America/Los_Angeles"
+      TZ: "America/Chicago"
       X_AUTHELIA_CONFIG_FILTERS: "template"
 
   whoami-secure:

@@ -34,6 +34,7 @@ providers:
 certificatesResolvers:
   myresolver:
     acme:
+      email: "evan@evanharmon.com"
       storage: "/data/acme.json"
       httpChallenge:
         entryPoint: "http"
