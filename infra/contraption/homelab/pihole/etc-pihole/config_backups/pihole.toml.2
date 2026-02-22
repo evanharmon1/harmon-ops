@@ -11,7 +11,10 @@
   #
   # Allowed values are:
   #     Array of IP addresses and/or hostnames, optionally with a port (#...)
-  upstreams = []
+  upstreams = [
+    "8.8.8.8",
+    "8.8.4.4"
+  ] ### CHANGED, default = []
 
   # Use this option to control deep CNAME inspection. Disabling it might be beneficial
   # for very low-end devices
@@ -1713,6 +1716,6 @@
   all = false
 
 # Configuration statistics:
-# 166 total entries out of which 165 entries are default
-# --> 1 entry is modified
+# 166 total entries out of which 164 entries are default
+# --> 2 entries are modified
 

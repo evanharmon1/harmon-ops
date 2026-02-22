@@ -1,7 +1,7 @@
 # Pi-hole configuration file (v6.5)
 # Encoding: UTF-8
 # This file is managed by pihole-FTL
-# Last updated on 2026-02-22 12:38:28 CST
+# Last updated on 2026-02-21 07:57:38 CST
 
 [dns]
   # Upstream DNS Servers to be used by Pi-hole. If this is not set, Pi-hole will not
@@ -11,10 +11,7 @@
   #
   # Allowed values are:
   #     Array of IP addresses and/or hostnames, optionally with a port (#...)
-  upstreams = [
-    "8.8.8.8",
-    "8.8.4.4"
-  ] ### CHANGED, default = []
+  upstreams = []
 
   # Use this option to control deep CNAME inspection. Disabling it might be beneficial
   # for very low-end devices
@@ -1128,7 +1125,7 @@
     #
     # Allowed values are:
     #     A valid Pi-hole password hash
-    pwhash = "$BALLOON-SHA256$v=1$s=1024,t=32$AAxLRRLu9m5Bi6uV9hJUEw==$6F94O3GM3LC3P7E4ySeAve5Gf1hDvKwrWCiwBDYDlOM=" ### CHANGED, default = ""
+    pwhash = ""
 
     # Pi-hole 2FA TOTP secret. When set to something different than "", 2FA authentication
     # will be enforced for the API and the web interface. This setting is write-only, you
@@ -1716,6 +1713,6 @@
   all = false
 
 # Configuration statistics:
-# 166 total entries out of which 163 entries are default
-# --> 3 entries are modified
+# 166 total entries out of which 165 entries are default
+# --> 1 entry is modified
 

@@ -1,18 +1,30 @@
 ## Traefik dynamic configuration - homelab services routed via Tailscale
-## Replace HOMELAB_TAILSCALE_IP with the actual 100.x.y.z IP from `tailscale ip -4` on the homelab machine
 
 http:
   routers:
-    whoami-homelab:
-      rule: "Host(`whoami-homelab.harmonops.com`)"
+    portainer:
+      rule: "Host(`portainer.harmonops.com`)"
       entryPoints:
         - "https"
       middlewares:
         - "authelia@docker"
-      service: "whoami-homelab"
+      service: "portainer"
+
+    pihole:
+      rule: "Host(`pihole.harmonops.com`)"
+      entryPoints:
+        - "https"
+      middlewares:
+        - "authelia@docker"
+      service: "pihole"
 
   services:
-    whoami-homelab:
+    portainer:
       loadBalancer:
         servers:
-          - url: "http://100.111.111.101:8080"
+          - url: "http://100.111.111.101:9000"
+
+    pihole:
+      loadBalancer:
+        servers:
+          - url: "http://100.111.111.101:80"
