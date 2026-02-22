@@ -1,1 +1,18 @@
-## This file can be used to define dynamic routers/services/middlewares.
+## Traefik dynamic configuration - homelab services routed via Tailscale
+## Replace HOMELAB_TAILSCALE_IP with the actual 100.x.y.z IP from `tailscale ip -4` on the homelab machine
+
+http:
+  routers:
+    whoami-homelab:
+      rule: "Host(`whoami-homelab.harmonops.com`)"
+      entryPoints:
+        - "https"
+      middlewares:
+        - "authelia@docker"
+      service: "whoami-homelab"
+
+  services:
+    whoami-homelab:
+      loadBalancer:
+        servers:
+          - url: "http://100.111.111.101:8080"

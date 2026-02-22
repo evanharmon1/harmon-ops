@@ -56,6 +56,11 @@ runcmd:
   - systemctl enable fail2ban
   - systemctl start fail2ban
 
+  # --- Tailscale ---
+  - curl -fsSL https://tailscale.com/install.sh | sh
+  - systemctl enable tailscaled
+  - systemctl start tailscaled
+
   # --- Unattended upgrades ---
   - systemctl enable unattended-upgrades
 

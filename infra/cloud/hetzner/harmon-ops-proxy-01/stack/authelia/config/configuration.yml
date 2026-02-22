@@ -44,6 +44,8 @@ access_control:
       policy: "one_factor"
     - domain: "whoami-secure.harmonops.com"
       policy: "two_factor"
+    - domain: "whoami-homelab.harmonops.com"
+      policy: "one_factor"
 
 session:
   name: "authelia_session"

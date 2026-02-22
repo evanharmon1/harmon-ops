@@ -30,6 +30,7 @@ providers:
     exposedByDefault: false
   file:
     filename: "/dynamic.yml"
+    watch: true
 
 certificatesResolvers:
   myresolver:
