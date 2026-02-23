@@ -69,3 +69,17 @@ todo.md
 **/.env.*
 # Ignore any directory named .env
 .env/
+
+
+secrets
+users.yml
+
+# Pi-hole runtime
+pihole-FTL.db*
+cli_pw
+
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+crash.log
