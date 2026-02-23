@@ -1269,3 +1269,12 @@ cask "codex-app"
 cask "codex"
 cask "garagesale"
 cask "jordanbaird-ice"
+
+
+#                New Packages from EvansMacBookPro 2026-02-23
+#-------------------------------------------------------------------------------
+brew "chafa"
+brew "csvlens"
+brew "llmfit"
+brew "mkcert"
+brew "tailscale"

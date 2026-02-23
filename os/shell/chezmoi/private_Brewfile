@@ -62,6 +62,14 @@ brew "black"
 brew "boost"
 # Install RubyGems as Homebrew formulae
 brew "brew-gem"
+# Toolkit for image loading and pixel buffer manipulation
+brew "gdk-pixbuf"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# Versatile and fast Unicode/ASCII/ANSI graphics renderer
+brew "chafa"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
 # Data validation using Python type hints
@@ -84,6 +92,8 @@ brew "cookiecutter", link: false
 brew "coreutils"
 # Apjanke's fork of the classic cowsay project
 brew "cowsay"
+# Command-line csv viewer
+brew "csvlens"
 # Top-like interface for container metrics
 brew "ctop"
 # Power of curl, ease of use of httpie
@@ -132,19 +142,13 @@ brew "fortune"
 brew "fzf"
 # Gatsby command-line interface
 brew "gatsby-cli", link: false
-# Toolkit for image loading and pixel buffer manipulation
-brew "gdk-pixbuf"
 brew "gem-na"
 # GitHub command-line tool
 brew "gh"
-# OpenType text shaping engine
-brew "harfbuzz"
 # Image processing and image analysis library
 brew "leptonica"
 # Multi-format archive and compression library
 brew "libarchive"
-# Framework for layout and rendering of i18n text
-brew "pango"
 # OCR (Optical Character Recognition) engine
 brew "tesseract"
 # Interpreter for PostScript and PDF
@@ -247,6 +251,8 @@ brew "libraw"
 brew "lighttpd"
 # Access large language models from the command-line
 brew "llm"
+# Find what models run on your hardware
+brew "llmfit"
 # Rainbows and unicorns in your console!
 brew "lolcat"
 # Bare libuv bindings for lua
@@ -273,6 +279,8 @@ brew "minikube"
 brew "mise"
 # Intercept, modify, replay, save HTTP/S traffic
 brew "mitmproxy"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
 # Remote terminal application
@@ -365,6 +373,8 @@ brew "sqlcmd"
 brew "ssh-copy-id"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Easiest, most secure way to use WireGuard and 2FA
+brew "tailscale"
 # User interface to the TELNET protocol
 brew "telnet"
 # Send macOS User Notifications from the command-line
@@ -587,6 +597,8 @@ cask "forklift"
 cask "frame0"
 # Manage eBay Listings
 cask "garagesale"
+# Tool to measure the computer system's performance
+cask "geekbench"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # Free and open-source image editor
@@ -854,14 +866,11 @@ mas "Be Focused Pro", id: 961632517
 mas "Bigin", id: 1454212098
 mas "Bitwarden", id: 1352778147
 mas "Blackmagic Disk Speed Test", id: 425264550
-mas "Canva", id: 897446215
 mas "Cardhop", id: 1290358394
 mas "Cliq", id: 1205882554
 mas "ColorSlurp", id: 1287239339
-mas "Copilot", id: 6738511300
 mas "Copy 'Em", id: 876540291
 mas "DaisyDisk", id: 411643860
-mas "Dark Noise", id: 1465439395
 mas "Dark Reader for Safari", id: 1438243180
 mas "Data Jar", id: 1453273600
 mas "Day One", id: 1055511498
@@ -885,7 +894,6 @@ mas "Flighty", id: 1358823008
 mas "Floating", id: 1508833245
 mas "Forecast Bar", id: 982710545
 mas "Fotor Photo Editor", id: 503039729
-mas "Friendly Streaming", id: 553245401
 mas "Front and Center", id: 1493996622
 mas "GarageBand", id: 682658836
 mas "Geekbench 5", id: 1478447657
@@ -900,7 +908,6 @@ mas "Ice Cubes", id: 6444915884
 mas "iMovie", id: 408981434
 mas "Invoice Generator", id: 1061863220
 mas "iScape", id: 439688430
-mas "Jira", id: 1475897096
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
 mas "Kindle Classic", id: 405399194
@@ -986,7 +993,6 @@ mas "Yoink", id: 457622435
 mas "Yomu", id: 562211012
 mas "ZiaSearch", id: 1595570784
 mas "Zoho Billing", id: 1184196693
-mas "Zoho Books", id: 1476500403
 mas "Zoho Expense", id: 1477152278
 mas "Zoho Inventory", id: 1477506694
 mas "Zoho Invoice", id: 1477507499

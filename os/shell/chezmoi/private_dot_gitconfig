@@ -28,6 +28,7 @@
 	path = ~/Local/AltRevLogical/.gitconfig
 [init]
 	templateDir = /Users/evan/.git-template
+	defaultBranch = main
 [alias]
 	ll = log --graph --oneline --decorate
 	ss = status
