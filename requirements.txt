@@ -1,3 +1,3 @@
-# Python requirements for harmon-ops
+# Python requirements for Harmon Ops
 
 whispers
