@@ -1,0 +1,18 @@
+# Changes here will be overwritten by Copier
+_commit: v2.3.1
+_src_path: harmon-init
+bunch_add: true
+devcontainer: false
+git_init: false
+github_collaboration_templates: true
+github_release_init: false
+github_remote_create: false
+license: mit
+obsidian_project_add: false
+project_description: Various scripts, dotfiles, and automation for my developer environment
+    and homelab infrastructure.
+project_name: Harmon Ops
+project_slug: harmon-ops
+project_url: https://harmonlab.net
+run_task_bootstrap: false
+run_task_install: false
