@@ -125,21 +125,9 @@ This is automatically run from setupMac.sh
 
 `os/languages/java/setupJava.sh` (currently commented out in setupMac.sh)
 
-### Docker
+## Machines
 
-- `docker-compose.yml` with various useful docker images
-- A docker environment setup for Windows that makes developing on Windows easier due to bash, linux, containers, etc.
-
-## Homelab and Infrastructure - `machines/`
-
-Packages, Brewfiles, IaC, diagrams, etc.
-
-[My Network and Services Diagram in yEdLive](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/evanharmon1/a57b085867f207b44c2c5d2d721e4433/raw/10f133fb285fcf5296d3e8b4edc821707e2e203b/harmon-ops-network-and-services-2)
-![My Network and Services](machines/harmon-ops-network-and-services.png)
-[My Data and Backups Diagram in yEdLive](https://www.yworks.com/yed-live/?file=https://gist.githubusercontent.com/evanharmon1/cd03a2f4d93bb36876ff512eb3254905/raw/37c961a7100c48e2dc0a581859903ae290d2ce43/Harmon%20Data.graphml%202.graphml.graphml%202.graphml%202)
-![My Data and Backups](machines/harmon-ops-data-and-backups.png)
-
-- A docker environment setup for Windows that makes developing on Windows easier due to bash, linux, containers, etc.
+Each machine that I configure is tracked in `machines/` where I can track packages, Brewfiles, etc.
 
 ## Heplful Sources
 
