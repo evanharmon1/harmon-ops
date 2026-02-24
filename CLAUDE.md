@@ -47,10 +47,8 @@ From `~/dev`: `newProject.sh -n nameOfProject -g gitRepoName`
   - `brew/BrewfileSuperset` - Master Homebrew package template
   - `git/` - Global git configuration
   - `IDEs/` - IDE setup (VS Code)
-- **`infra/`** - Per-machine configs and infrastructure
+- **`machines/`** - Per-machine configs and Brewfiles
   - Machine-specific directories (e.g., `EvansMacBookPro/`, `MacMini2014/`) with Brewfiles
-  - `cloud/` - Cloud provider configs (AWS, Azure, GCP, Cloudflare, etc.) with Terraform placeholders
-  - Infrastructure diagrams (graphml + PNG, edited with yWorks yEd)
 - **`test/`** - Whispers secret detection config
 - **`docs/`** - Additional documentation
 
@@ -66,7 +64,7 @@ Run with caffeinate to prevent sleep: `caffeinate -disu zsh -x ./setupMac.sh 2>&
 
 ### Machine-Specific Configuration
 
-Each machine gets a directory under `infra/<hostname>/` containing its Brewfile and checklist. The `os/brew/BrewfileSuperset` serves as the master template from which machine-specific Brewfiles are derived.
+Each machine gets a directory under `machines/<hostname>/` containing its Brewfile and checklist. The `os/brew/BrewfileSuperset` serves as the master template from which machine-specific Brewfiles are derived.
 
 ## CI/CD
 

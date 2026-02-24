@@ -3,7 +3,7 @@
 # Script to setup a new developer environment on a *nix computer
 
 echo -e "\033[0;35m  ++++++Starting setupLinux.sh++++++  \033[0m"
-mkdir "../../infra/${THIS_HOST}/"
+mkdir "../../machines/${THIS_HOST}/"
 
 #============================================================================
 #                               Directories and Symbolic Links

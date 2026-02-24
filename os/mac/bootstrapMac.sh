@@ -47,9 +47,9 @@ dscacheutil -flushcache
 #==============================================================================
 #                       Copy Brewfile and CHECKLIST for this machine
 #==============================================================================
-mkdir "../../infra/${hostName}/"
+mkdir "../../machines/${hostName}/"
 cp ../brew/BrewfileSuperset ~/Brewfile
-cp CHECKLIST-MAC.md "../../infra/${hostName}/"
+cp CHECKLIST-MAC.md "../../machines/${hostName}/"
 
 
 #==============================================================================

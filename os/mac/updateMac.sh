@@ -116,8 +116,8 @@ brew bundle dump -v --describe --force --file=~/Brewfile
 
 # Copy this machine's Brewfile to this machine's repo folder.
 THIS_HOST=$(HOSTNAME)
-mkdir "../../infra/${THIS_HOST}/"
-\cp -fR ~/Brewfile "../../infra/${THIS_HOST}/"
+mkdir "../../machines/${THIS_HOST}/"
+\cp -fR ~/Brewfile "../../machines/${THIS_HOST}/"
 
 # Add any newly installed Homebrew packages from this machine to the BrewfileSuperset file.
 NEW_BREW_PACKAGES_COUNT=$(bash -c "comm -23 <(sort ~/Brewfile | grep -v '^#' | sed 's/, link: false\$//') <(sort ../brew/BrewfileSuperset | grep -v '^#'| sed 's/, link: false\$//') | wc -l")

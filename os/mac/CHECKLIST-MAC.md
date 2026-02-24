@@ -51,7 +51,7 @@ Checklist for setting up a new Mac
 - [ ] Restart, if needed by `softwareupdate`. Probably should restart regardless.
 
 ## `BrewfileSuperset` and `CHECKLIST-MAC.md`
-- [ ] Use the newly copied `CHECKLIST-MAC.md` in `infra/<this-machine>` to keep track of progress of this machine's setup.
+- [ ] Use the newly copied `CHECKLIST-MAC.md` in `machines/<this-machine>` to keep track of progress of this machine's setup.
 - [ ] Modify the newly copied `BrewfileSuperset` renamed at `~/Brewfile` based on the machine you're configuring (delete and add any apps/packages you want installed to this machine).
 - [ ] Eventually, push and merge these changes to the repo, but merging is not required to move on to the following steps.
 

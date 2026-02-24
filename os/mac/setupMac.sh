@@ -34,11 +34,11 @@ brew bundle -v --file=~/Brewfile
 cp ~/Brewfile ~/Brewfile.original
 brew bundle dump -v --describe --force --file=~/Brewfile
 
-# Copy dumped brewfile to harmon-ops repo's infra folder for this machine.
+# Copy dumped brewfile to harmon-ops repo's machines folder for this machine.
 THIS_HOST=$(HOSTNAME)
-mkdir "../../infra/${THIS_HOST}/"
-\cp -fR ~/Brewfile "../../infra/${THIS_HOST}/Brewfile-$(date +%F)"
-\cp -fR ~/Brewfile.original "../../infra/${THIS_HOST}/"
+mkdir "../../machines/${THIS_HOST}/"
+\cp -fR ~/Brewfile "../../machines/${THIS_HOST}/Brewfile-$(date +%F)"
+\cp -fR ~/Brewfile.original "../../machines/${THIS_HOST}/"
 
 
 #==============================================================================

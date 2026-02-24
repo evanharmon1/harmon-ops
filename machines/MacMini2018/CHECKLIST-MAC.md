@@ -1,7 +1,7 @@
 # CHECKLIST-MAC.md
 Checklist for setting up a new Mac
 
-## Create **machine-specific folder** in infra/{machineName}
+## Create **machine-specific folder** in machines/{machineName}
 (for machine-specific Brewfile, checklist, and any other files, scripts, etc.)
 - [x] Copy this checklist file to that folder to keep track of config process (open in Typora)
 
@@ -57,10 +57,10 @@ Checklist for setting up a new Mac
 - [x] Apple Software Update - macOS & App Store
 - [x] clean reboot
 
-## Create **machine-specific IaC Brewfile** in infra/{machineName} folder
-- [ ] Duplicate the `BrewfileSuperSet` file, name it `Brewfile`, and put it in `infra/{machineName}` folder
+## Create **machine-specific IaC Brewfile** in machines/{machineName} folder
+- [ ] Duplicate the `BrewfileSuperSet` file, name it `Brewfile`, and put it in `machines/{machineName}` folder
 - [ ] Modify that Brewfile based on the machine you're configuring (delete and add any apps/packages you want installed)
-- [ ] Push that Brewfile to the repo in `infra/{machineName}` folder.
+- [ ] Push that Brewfile to the repo in `machines/{machineName}` folder.
 - [ ] Modify `setupMac.sh` to have `brew bundle` point to that machine-specific `Brewfile`.
 
 ## Run **setupMac.sh** from its directory at dev-env/mac
