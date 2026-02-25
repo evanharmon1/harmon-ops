@@ -35,8 +35,19 @@ Checklist for manual steps to install a new Windows machine from scratch.
   - Use official Microsoft media creator tool
   - Installation Wizard
     - Sign in with Microsoft account
+    - Usually you'd want to install from scratch instead of restore from backup
+    - Select "No" for essentiall all of the Microsoft integrations like location data, diagnostic data, linking to your phone, photos, use cases (development, gaming, etc.) since they seem to just be enabling ads for no benefit that I want.
+- [ ] Activate Windows
+- [ ] Google Chrome
+  - Download, install, and sign into Google Chrome
+- [ ] 1Password
+  - Download, install, and sign into 1Password
+- [ ] Windows Update
+  - Do 2-3 rounds of windows updates and restarts until it seems like windows is fully up to date
+- [ ] Hardware and chipset drivers
+  - Install any and all drivers from the motherboard manufacturer, GPU, and any other hardware you need to install drivers for.
 - [ ] Run setupWindows.ps1 setup script
-  - Download this repo (harmon-os) to C:\Users\evanh\git
+  - Download this repo (harmon-os) to C:\Users\evanh\git (<https://github.com/evanharmon1/harmon-ops>)
   - Open PowerShell as admin
   - Type `Set-ExecutionPolicy Bypass -Scope Process` (applies only to current session)
   - Navigate to this script and run it in powershell
@@ -45,17 +56,34 @@ Checklist for manual steps to install a new Windows machine from scratch.
   - Open PowerToys Settings > Keyboard Manager > Enable Keyboard Manager.
   - Click “Remap a key.”
   - Select Caps Lock as the “From” key, then map it to Escape as the “To” key.
-- [ ] Sign in to apps and accounts
-  - 1Password
+- [ ] Sign in to other apps and accounts
   - TextExpander
-  - Google Chrome
   - Google Drive
   - DropBox
   - Discord
   - Claude
   - ChatGPT
   - Perplexity
-- [ ] Setup WSL
+- [ ] Install WSL
+  - Hardware virtualization (Intel VT-x or AMD-V/SVM) must be enabled in your BIOS.
+  - Open an elevated PowerShell (right-click → Run as administrator) and run the single install command. On Windows 11 Pro, this enables the Virtual Machine Platform, installs the WSL kernel, and downloads Ubuntu in one shot:
+    - `wsl --install`
+  - Choose a username and password: `evan`
+  - After the initial setup completes, update WSL itself and verify your versions (make sure you're running wsl version 2 or higher):
+    - `wsl --update`
+    - `wsl --version`
+- [ ] Configure WSL
+  - Configure .wslconfig (global WSL2 settings)
+    - This file lives on the Windows side at C:\Users\<YourUsername>\.wslconfig and controls the WSL2 VM's resource allocation. It does not exist by default — create it. This is where you make the single most important configuration choice for your homelab: networking mode.
+    - After saving, always run wsl --shutdown from PowerShell to apply changes, then relaunch your distro.
+  - Configure wsl.conf (per-distro settings)
+    - This file lives inside Ubuntu at /etc/wsl.conf and controls distro-specific behavior.
+- [ ] Configure Windows Terminal
+  - In Windows Terminal Settings
+    - Set your Ubuntu profile as the default profile under Startup → Default profile.
+    - Set the starting directory to your WSL home. In the Ubuntu profile's settings, set Starting directory to: \\wsl.localhost\Ubuntu-24.04\home\evan
+    - Install a Nerd Font (like CascadiaCode NF) for proper icon rendering in tools like starship
+    - In settings.json, the profile should look like the `os/win/windowsTerminal/settings.json` file.
 - [ ] Setup SSH
 - [ ] Setup Tailscale
   - Join a Tailnet for remote access

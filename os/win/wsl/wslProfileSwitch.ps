@@ -1,0 +1,32 @@
+# C:\Scripts\wslProfileSwitch.ps1
+param(
+    [ValidateSet("gaming", "homelab")]
+    [string]$Mode = "gaming"
+)
+
+$configPath = "$env:USERPROFILE\.wslconfig"
+$content = Get-Content $configPath -Raw
+
+switch ($Mode) {
+    "gaming" {
+        $content = $content -replace 'memory=\d+GB', 'memory=32GB'
+        $content = $content -replace 'processors=\d+', 'processors=8'
+        Write-Host "Switching to gaming mode (32GB / 8 threads)..."
+    }
+    "homelab" {
+        $content = $content -replace 'memory=\d+GB', 'memory=40GB'
+        $content = $content -replace 'processors=\d+', 'processors=12'
+        Write-Host "Switching to homelab mode (40GB / 12 threads)..."
+    }
+}
+
+Set-Content $configPath $content
+wsl --shutdown
+Write-Host "WSL shut down. It will restart with new settings on next access."
+Write-Host "Containers with restart policies will come back automatically."
+
+# Optionally restart WSL immediately
+if ($Mode -eq "homelab") {
+    Start-Process wsl -ArgumentList "-d Ubuntu-24.04 -- sleep infinity" -WindowStyle Hidden
+    Write-Host "WSL restarted in background."
+}

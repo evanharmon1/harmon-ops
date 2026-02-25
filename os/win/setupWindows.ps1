@@ -62,7 +62,7 @@ Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
 
 $development = @(
 	"Microsoft.WSL"
-	"Canonical.Ubuntu.2204"
+	"Canonical.Ubuntu.2404"
 	"Microsoft.VisualStudioCode"
 	"Microsoft.VisualStudioCode.Insiders"
 	"Docker.DockerDesktop"
@@ -114,7 +114,7 @@ $productivity = @(
 
 $localai = @(
 	"Ollama.Ollama"
-	"lm-studio.lm-studio"
+	"ElementLabs.LMStudio"
 )
 
 $media = @(
@@ -148,10 +148,10 @@ $gaming = @(
 	"Unigine.SuperpositionBenchmark"
 	"LizardByte.Sunshine"
 	"MoonlightGameStreamingProject.Moonlight"
-	"Nvidia.GeForceExperience"
 )
 
 # Manual installs (no winget ID or better from official source):
+# Nvidia App
 # MSI Afterburner - GPU monitoring/OC (no winget ID)
 # CUDA Toolkit - via NVIDIA (if doing GPU AI work)
 # ComfyUI / Automatic1111 - image gen (Python-based)
