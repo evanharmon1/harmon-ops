@@ -100,11 +100,11 @@ Checklist for manual steps to install a new Windows machine from scratch.
 - [x] Configure Windows Terminal
   - In Windows Terminal Settings
     - Set your Ubuntu profile as the default profile under Startup → Default profile.
-- [ ] Install zsh and oh-my-zsh in wsl
+- [x] Install zsh and oh-my-zsh in wsl
   - `sudo apt update && sudo apt install -y zsh`
   - Verify it's there: `which zsh`
   - `chsh -s $(which zsh)`
-  - Close and reopen your wsl terminal to make sure zsh is working
+  - Close and reopen your wsl terminal to make sure zsh is working. You can run `echo $0` to output the currently running shell.
   - Install Oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - [x] Setup SSH to wsl
   - Install and configure OpenSSH server within wsl. Inside wsl:
@@ -143,7 +143,7 @@ Checklist for manual steps to install a new Windows machine from scratch.
       - Settings tab: Uncheck "Stop the task if it runs longer than". Enable "Run task as soon as possible after a scheduled start is missed".
     - This starts a lightweight sleep infinity process inside WSL2 that keeps the VM alive indefinitely with near-zero CPU usage.
 - [ ] Setup VS Code Remote
-- [ ] Install Homebrew packages inside wsl with Homebrew
+- [x] Install Homebrew packages inside wsl with Homebrew
   - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
   - Then follow the printed instructions to add it to your  PATH , usually something like: eval `"$(~/.linuxbrew/bin/brew shellenv)"`
   - Permanently add that line to your shell config (e.g., ~/.zshrc or ~/.bashrc).

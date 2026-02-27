@@ -105,7 +105,7 @@ Checklist for manual steps to install a new Windows machine from scratch.
   - `sudo apt update && sudo apt install -y zsh`
   - Verify it's there: `which zsh`
   - `chsh -s $(which zsh)`
-  - Close and reopen your wsl terminal to make sure zsh is working
+  - Close and reopen your wsl terminal to make sure zsh is working. You can run `echo $0` to output the currently running shell.
   - Install Oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 - [ ] Setup SSH to wsl
   - Install and configure OpenSSH server within wsl. Inside wsl:

@@ -13,9 +13,5 @@ brew "gather-cli"
 # dependency for Terpstra's SearchLink
 brew "ttscoff/thelab/gather-cli"
 brew "aspell"
-brew "colima"
-# GTK+ dialog boxes for the command-line
-brew "zenity"
-brew "grafana"
-brew "gcloud-cli"
-brew "mongodb/brew/mongodb-community"
+#Display the PID number for a given process name
+brew "pidof"

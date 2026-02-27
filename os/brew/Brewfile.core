@@ -48,8 +48,6 @@ brew "dnstracer"
 # Utility for managing network connections
 brew "netcat"
 brew "ssh-copy-id"
-tap "teamookla/speedtest"
-brew "speedtest"
 # Show ps output as a tree
 brew "pstree"
 # 7-Zip (high compression file archiver) implementation
@@ -79,8 +77,6 @@ brew "fzf"
 brew "fd"
 # Modern replacement for 'ls'
 brew "eza"
-#Display the PID number for a given process name
-brew "pidof"
 # Text to speech, software speech synthesizer
 brew "espeak-ng"
 brew "cowsay"
@@ -88,8 +84,6 @@ brew "cowsay"
 brew "shellcheck"
 # Autoformat shell script source code
 brew "shfmt"
-# Intercept, modify, replay, save HTTP/S traffic
-brew "mitmproxy"
 brew "pre-commit"
 # Cross-platform make
 brew "cmake"
@@ -133,7 +127,6 @@ brew "duf"
 
 #             Additional Shell
 #------------------------------------------------------------------------------
-brew "lolcat"
 brew "cmatrix"
 brew "fortune"
 brew "asciiquarium"
