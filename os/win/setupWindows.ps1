@@ -60,23 +60,7 @@ Stop-Process -Name explorer -Force -ErrorAction SilentlyContinue
 #                       Package Installation
 #==============================================================================
 
-$development = @(
-	"Microsoft.WSL"
-	"Canonical.Ubuntu.2404"
-	"Microsoft.VisualStudioCode"
-	"Microsoft.VisualStudioCode.Insiders"
-	"Docker.DockerDesktop"
-	"GitHub.GitHubDesktop"
-	"Microsoft.WindowsTerminal"
-	"wez.wezterm"
-	"Microsoft.PowerShell"
-	"Axosoft.GitKraken"
-	"Bruno.Bruno"
-	"Anthropic.ClaudeCode"
-	"OpenAI.Codex"
-)
-
-$productivity = @(
+$base = @(
 	"AgileBits.1Password"
 	"Dropbox.Dropbox"
 	"Google.GoogleDrive"
@@ -110,23 +94,38 @@ $productivity = @(
 	"ALCPU.CoreTemp"
 	"CPUID.CPU-Z"
 	"TechPowerUp.GPU-Z"
+	"AmazonVideo.PrimeVideo"
+	"Plex.Plex"
+	"WinSCP.WinSCP"
+	"angryziber.AngryIPScanner"
+	"Microsoft.VisualStudioCode"
+	"PrimateLabs.Geekbench.6"
+	"Discord.Discord"
+	"RazerInc.RazerInstaller"
+	"ShareX.ShareX"
+	"qBittorrent.qBittorrent"
+	"Bitwarden.Bitwarden"
+	"DEVCOM.JetBrainsMonoNerdFont"
+)
+
+$development = @(
+	"Microsoft.VisualStudioCode.Insiders"
+	"GitHub.GitHubDesktop"
+	"wez.wezterm"
+	"Axosoft.GitKraken"
+	"Bruno.Bruno"
+	"Anthropic.ClaudeCode"
+	"OpenAI.Codex"
 )
 
 $localai = @(
 	"Ollama.Ollama"
 	"ElementLabs.LMStudio"
-)
-
-$media = @(
-	"AmazonVideo.PrimeVideo"
-	"Plex.Plex"
-)
+))
 
 $homelab = @(
 	"Netdata.Netdata"
 	"WireGuard.WireGuard"
-	"WinSCP.WinSCP"
-	"angryziber.AngryIPScanner"
 	"Microsoft.Sysinternals"
 	"WiresharkFoundation.Wireshark"
 	"FoldingAtHome.FoldingAtHome"
@@ -134,20 +133,22 @@ $homelab = @(
 
 $gaming = @(
 	"Valve.Steam"
-	"RazerInc.RazerInstaller"
-	"Discord.Discord"
 	"GOG.Galaxy"
 	"EpicGames.EpicGamesLauncher"
 	"ElectronicArts.EADesktop"
+	"CloudImperiumGames.RSILauncher"
 	"Amazon.Games"
 	"Playnite.Playnite"
 	"RiotGames.LeagueOfLegends.NA"
-	"PrimateLabs.Geekbench.6"
 	"Unigine.HeavenBenchmark"
 	"Unigine.ValleyBenchmark"
 	"Unigine.SuperpositionBenchmark"
 	"LizardByte.Sunshine"
 	"MoonlightGameStreamingProject.Moonlight"
+)
+
+$optional = @(
+	"Docker.DockerDesktop"
 )
 
 # Manual installs (no winget ID or better from official source):
@@ -178,7 +179,7 @@ $gaming = @(
 # $contraption - development, productivity, gaming, localai, homelab, media
 # $tars        - development, productivity, gaming, localai, homelab, media
 
-$packages = $development + $productivity + $gaming + $localai + $homelab + $media
+$packages = $base + $development + $gaming + $localai + $homelab
 
 write-output "--- Installing $($packages.Count) packages ---"
 foreach ($package in $packages) {

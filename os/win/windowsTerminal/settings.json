@@ -1,9 +1,0 @@
-{
-  "guid": "{your-guid-here}",
-  "name": "Ubuntu 24.04",
-  "source": "Windows.Terminal.Wsl",
-  "startingDirectory": "//wsl.localhost/Ubuntu-24.04/home/evan",
-  "fontFace": "CascadiaCode Nerd Font",
-  "fontSize": 11,
-  "colorScheme": "One Half Dark"
-}

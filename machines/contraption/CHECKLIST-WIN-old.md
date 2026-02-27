@@ -31,22 +31,22 @@ Checklist for manual steps to install a new Windows machine from scratch.
     - Enable SVM (AMD-V) — required for virtualization
     - Enable IOMMU — needed for PCIe passthrough to VMs
     - Set ACS Enable if available — better IOMMU grouping
-- [ ] Install Windows from scratch
+- [x] Install Windows from scratch
   - Use official Microsoft media creator tool
   - Installation Wizard
     - Sign in with Microsoft account
     - Usually you'd want to install from scratch instead of restore from backup
     - Select "No" for essentiall all of the Microsoft integrations like location data, diagnostic data, linking to your phone, photos, use cases (development, gaming, etc.) since they seem to just be enabling ads for no benefit that I want.
-- [ ] Activate Windows
-- [ ] Google Chrome
+- [x] Activate Windows
+- [x] Google Chrome
   - Download, install, and sign into Google Chrome
-- [ ] 1Password
+- [x] 1Password
   - Download, install, and sign into 1Password
-- [ ] Windows Update
+- [x] Windows Update
   - Do 2-3 rounds of windows updates and restarts until it seems like windows is fully up to date
-- [ ] Hardware and chipset drivers
+- [x] Hardware and chipset drivers
   - Install any and all drivers from the motherboard manufacturer, GPU, and any other hardware you need to install drivers for.
-- [ ] Setup as a server
+- [x] Setup as a server (if it will be used as a server)
   - Disable Sleep & Hibernate
     - Control Panel → Power Options → Change Plan Settings → Advanced Power Settings
       - Set:
@@ -58,24 +58,22 @@ Checklist for manual steps to install a new Windows machine from scratch.
     - It’s usually fine to let the display turn off — that saves a little power, and the OS stays awake. But tools like USB selective suspend or turning off drives can interfere with server performance or device availability. You can set those to disabled if you’re running external drives or network services.
   - Power Options
     - Use a power plan like Balanced/High Performance depending on workload
-  - Set Windows Update Active Hours so that the PC only restarts in the middle of the night
-- [ ] Run setupWindows.ps1 setup script
+- [x] Run setupWindows.ps1 setup script
   - Download this repo (harmon-os) to C:\Users\evanh\git (<https://github.com/evanharmon1/harmon-ops>)
   - Open PowerShell as admin
   - Type `Set-ExecutionPolicy Bypass -Scope Process` (applies only to current session)
   - Navigate to this script and run it in powershell
-- [ ] Setup Tailscale
+- [x] Setup Tailscale
   - Join a Tailnet for remote access
   - "Run Tailscale on the Windows host, not inside WSL2. This is Tailscale's official recommendation. Tailscale When Tailscale runs on Windows, its routing and DNS changes are automatically visible inside WSL2 — you can resolve Tailscale hostnames and reach tailnet nodes from within WSL. Running Tailscale inside WSL2 causes double-encapsulation (Tailscale packets inside Tailscale packets) and MTU issues. Tailscale The one exception: if you want WSL2 to appear as a separate node on your tailnet with its own identity, you can install Tailscale inside WSL2, but you'll need to manually set MTU to 1500 Mhlakhani and accept some DNS quirks."
-- [ ] Setup VNC
+- [x] Setup VNC
   - Install a VNC server like UltraVNC Server which works well with Mac Screens
-  - After VNC config install the VNC server as a service so it runs reliably (usually an option within VNC such as UltraVNC).
-- [ ] Map Capslock to Escape key
+- [x] Install apps that can't be installed automatically (listed in setupWindows.ps1)
+- [x] Map Capslock to Escape key
   - Open PowerToys Settings > Keyboard Manager > Enable Keyboard Manager.
   - Click “Remap a key.”
   - Select Caps Lock as the “From” key, then map it to Escape as the “To” key.
-- [ ] Install apps that can't be installed automatically (listed in setupWindows.ps1)
-- [ ] Sign in to other apps and accounts
+- [x] Sign in to other apps and accounts
   - TextExpander
   - Google Drive
   - DropBox
@@ -83,7 +81,7 @@ Checklist for manual steps to install a new Windows machine from scratch.
   - Claude
   - ChatGPT
   - Perplexity
-- [ ] Install WSL
+- [x] Install WSL
   - Hardware virtualization (Intel VT-x or AMD-V/SVM) must be enabled in your BIOS.
   - Open an elevated PowerShell (right-click → Run as administrator) and run the single install command. On Windows 11 Pro, this enables the Virtual Machine Platform, installs the WSL kernel, and downloads Ubuntu in one shot:
     - `wsl --install`
@@ -91,46 +89,48 @@ Checklist for manual steps to install a new Windows machine from scratch.
   - After the initial setup completes, update WSL itself and verify your versions (make sure you're running wsl version 2 or higher):
     - `wsl --update`
     - `wsl --version`
-- [ ] Configure WSL
-  - [ ] Configure .wslconfig (global WSL2 settings) with either the config file or the gui WSL application
-    - This file lives on the Windows side at C:\Users\<YourUsername>\.wslconfig and controls the WSL2 VM's resource allocation. It does not exist by default — create it. This is where you make the single most important configuration choice for your homelab: networking mode.
+- [x] Configure WSL
+  - [x] Configure .wslconfig (global WSL2 settings) with either the config file or the gui WSL application
+    - This file lives on the Windows side at C:\Users\<YourUsername>\.wslconfig and controls the WSL2 VM's resource allocation. It does not exist by default — create it. This is where you make the single most important configuration choice for your homelab: networking mode, which will be "mirrored".
     - After saving, always run wsl --shutdown from PowerShell to apply changes, then relaunch your distro.
-  - [ ] Configure wsl.conf (per-distro settings)
+  - [x] Configure wsl.conf (per-distro settings)
     - This file lives inside Ubuntu at /etc/wsl.conf and controls distro-specific behavior.
-- [ ] Configure Windows Terminal
+- [x] Configure Windows Terminal
   - In Windows Terminal Settings
     - Set your Ubuntu profile as the default profile under Startup → Default profile.
-    - Configure a Nerd Font (like JetBrainsMonoNerdFont which should already be installed from the setup script) for proper icon rendering in tools like starship
-- [ ] Install zsh and oh-my-zsh in wsl
-  - `sudo apt update && sudo apt install -y zsh`
-  - Verify it's there: `which zsh`
-  - `chsh -s $(which zsh)`
-  - Close and reopen your wsl terminal to make sure zsh is working
-  - Install Oh-my-zsh: `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+    - Set the starting directory to your WSL home. In the Ubuntu profile's settings, set Starting directory to: \\wsl.localhost\Ubuntu-24.04\home\evan
+    - Install a Nerd Font (like CascadiaCode NF) for proper icon rendering in tools like starship
+    - In settings.json, the profile should look like the `os/win/windowsTerminal/settings.json` file.
 - [ ] Setup SSH to wsl
   - Install and configure OpenSSH server within wsl. Inside wsl:
     - `sudo apt update && sudo apt install openssh-server -y`
   - Edit the SSH daemon configuration:
     - `sudo nano /etc/ssh/sshd_config`
-      - (Use port 2222, not 22. Windows has its own OpenSSH server that may bind to port 22 and intercept connections before they reach WSL2. Port 2222 avoids this conflict entirely.)
+      - Port 2222
+      - ListenAddress 0.0.0.0
+      - PermitRootLogin no
+      - PubkeyAuthentication yes
+      - AuthorizedKeysFile .ssh/authorized_keys
+      - PasswordAuthentication yes # Leave enabled initially for first key setup, then disable
+    - Use port 2222, not 22. Windows has its own OpenSSH server that may bind to port 22 and intercept connections before they reach WSL2. Port 2222 avoids this conflict entirely.
   - Enable and start SSH via systemd:
     - `sudo systemctl enable ssh`
     - `sudo systemctl start ssh`
     - `sudo systemctl status ssh`
-  - Firewall rules for SSH access:
-    - With mirrored networking mode, WSL2 shares your Windows host's IP address. A client on your LAN connects to <windows-ip>:2222 and reaches WSL2 directly — no port forwarding needed. However, you must open the Hyper-V firewall that sits between the network and the WSL2 VM.
-    - Run these in an elevated PowerShell:
-      - `New-NetFirewallHyperVRule -DisplayName "WSL SSH Inbound" -Direction Inbound -LocalPorts 2222 -Action Allow -Protocol TCP`
-      - `New-NetFirewallRule -DisplayName "WSL SSH Access" -Direction Inbound -Protocol TCP -LocalPort 2222 -Action Allow`
   - Copy the public key to your WSL2 instance. If password auth is still enabled:
     - `ssh-copy-id -p 2222 yourlinuxusername@<windows-machine-ip>`
   - Once key auth works, disable password authentication by editing /etc/ssh/sshd_config:
     - `PasswordAuthentication no`
   - Then `sudo systemctl restart ssh`
+  - Firewall rules for SSH access:
+    - With mirrored networking mode, WSL2 shares your Windows host's IP address. A client on your LAN connects to <windows-ip>:2222 and reaches WSL2 directly — no port forwarding needed. However, you must open the Hyper-V firewall that sits between the network and the WSL2 VM.
+    - Run these in an elevated PowerShell:
+      - `New-NetFirewallHyperVRule -DisplayName "WSL SSH Inbound" -Direction Inbound -LocalPorts 2222 -Action Allow -Protocol TCP`
+      - `New-NetFirewallRule -DisplayName "WSL SSH Access" -Direction Inbound -Protocol TCP -LocalPort 2222 -Action Allow`
   - Now you can ssh directly into wsl from another machine with:
     - `ssh evan@<windows-machine-ip> -p 2222`
 - [ ] Configure WSL2 to stay running for 24/7 SSH and docker container access
-  - WSL2 has an idle timeout — if all terminal windows are closed, it shuts down after roughly 60 seconds, killing SSH and all services. For a homelab, you need to prevent this.
+  - WSL2 has an idle timeout — if all terminal windows are closed, it shuts down after roughly 60 seconds, killing SSH and all services. Buka KnowledgeGitHub For a homelab, you need to prevent this.
   - [ ] Double check that VM idle timeout is set to infinite in .wslconfig
     - [wsl2]
     - vmIdleTimeout=-1
@@ -140,30 +140,16 @@ Checklist for manual steps to install a new Windows machine from scratch.
       - Click Create Task (not "Create Basic Task")
       - General tab: Name it "WSL2 Keepalive", check "Run whether or not user is logged in", check "Run with highest privileges"
       - Triggers tab: New → Begin the task "At startup", add a 30-second delay to let networking initialize
-      - Actions tab: New → Program: C:\Windows\System32\wsl.exe, Arguments: -d Ubuntu-24.04 -- sleep infinity
-      - Settings tab: Uncheck "Stop the task if it runs longer than". Enable "Run task as soon as possible after a scheduled start is missed".
+      - Actions tab: New → Program: C:\Windows\System32\wsl.exe, Arguments: -d Ubuntu-24.04 -- sleep infinity Cod3r
+      - Settings tab: Uncheck "Stop the task if it runs longer than"
     - This starts a lightweight sleep infinity process inside WSL2 that keeps the VM alive indefinitely with near-zero CPU usage.
 - [ ] Setup VS Code Remote
+- [ ] Install brew packages inside wsl with homebrew
+  - Update packages and install build dependencies first—these are essential for compilation.
+    - `sudo apt update && sudo apt install -y build-essential procps curl file git`
+  - Install Homebrew
+    - /bin/bash -c "$(curl -fsSL <https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh>)"
+- [ ] Install Starship
 - [ ] Setup Docker
   - For servers, don't install Docker Desktop. Install Docker Engine in WSL. And use mirrored networking mode.
-  - Install Docker Engine CE
-    - Inside wsl use this repo's script - `wsl/installDockerEngine.sh`.
-  - Docker daemon configuration
-    - Inside wsl, edit the /etc/docker/daemon.json file so it matches this repo's file - `wsl/daemon.json`.
-  - If running local AI in docker, install the NVIDIA Container Toolkit inside wsl with `wsl/installNvidiaContainerToolkit.sh`.
-  - Restart Docker
-    - `sudo systemctl restart docker`
-  - Add whatever docker containers, docker compose stacks you want as normal in /opt/stacks/aDockerProject
-    - `sudo mkdir -p /opt/stacks`
-    - `sudo chown -R $USER:$USER /opt/stacks`
-- [ ] Install Homebrew packages inside wsl with Homebrew
-  - `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-  - Then follow the printed instructions to add it to your  PATH , usually something like: eval `"$(~/.linuxbrew/bin/brew shellenv)"`
-  - Permanently add that line to your shell config (e.g., ~/.zshrc or ~/.bashrc).
-  - Then you can install packages from a specific Brewfile: `brew bundle install --file=~/.Brewfile`
-    - Look through `os/brew` in this repo for which apps or Brewfiles you want to install.
-  - Prefer Homebrew for CLI tools and dev dependencies; for system‑level packages (network, kernel, etc.), keep using  apt  and reserve Homebrew for “developer‑managed” tooling to avoid conflicts.
 - [ ] Chezmoi
-  - `chezmoi init https://github.com/evanharmon1/harmon-ops.git`
-  - `chezmoi diff` to preview what it would apply.
-  - `chezmoi apply` apply the config files.

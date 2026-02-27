@@ -1,10 +1,11 @@
-# C:\Users\<YourUsername>\.wslconfig
+# C:\Users\evan\.wslconfig
 [wsl2]
 memory=40GB
 processors=20
-swap=8GB
+swap=16GB
 networkingMode=mirrored
 dnsTunneling=true
+dnsProxy=true
 firewall=true
 autoProxy=true
 nestedVirtualization=false
@@ -13,6 +14,7 @@ vmIdleTimeout=-1
 guiApplications=false
 
 [experimental]
-autoMemoryReclaim=gradual
+autoMemoryReclaim=dropcache
 sparseVhd=true
 hostAddressLoopback=true
+bestEffortDnsParsing=true
