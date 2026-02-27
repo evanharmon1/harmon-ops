@@ -1,8 +1,10 @@
 # harmon-ops
 
-Various scripts, dotfiles, and automation for my developer environment and homelab infrastructure.
+Various scripts, dotfiles, and automation for bootstrapping and maintaining my developer environment across macOS, Windows, and Linux machines.
 
 E.g., it helps me bootstrap new computers with a developer environment customized to my liking with shell scripts, dotfiles, package managers, OS settings, IDE preferences, extensions, git customizations, shell aliases, cli packages, programming languages, Dockerfiles, etc. so that my machine is fully setup in a day instead of continually encountering all the numerous customizations that I have gotten used to and then have to gradually fix over weeks.
+
+> Homelab infrastructure (Terraform, Ansible, Docker Compose services) lives in the companion repo: **[harmon-infra](https://github.com/evanharmon1/harmon-infra)**
 
 [![Validate](https://github.com/evanharmon1/harmon-ops/actions/workflows/validate.yml/badge.svg)](https://github.com/evanharmon1/harmon-ops/actions/workflows/validate.yml)
 
@@ -74,7 +76,7 @@ flowchart LR
 
     subgraph Chezmoi["Chezmoi (Source of Truth)"]
         ChezmoiState["Chezmoi Source State"]
-        HarmanOpsRepo["Harman Ops Git Repo"]
+        HarmonOpsRepo["Harmon Ops Git Repo"]
     end
 
     subgraph Mackup["Mackup (Backup System)"]
@@ -83,7 +85,7 @@ flowchart LR
     end
 
     ChezmoiState -->|applies dotfiles to| Home
-    HarmanOpsRepo -->|stores| ChezmoiState
+    HarmonOpsRepo -->|stores| ChezmoiState
 
     Home -->|backs up dotfiles| MackupBackup
     Home -->|backs up mac app preferences| MackupBackup
@@ -106,6 +108,7 @@ flowchart LR
 
 1. Follow `os/win/CHECKLIST-WIN.md`
 2. Run `os/win/setupWindows.ps1`
+3. For WSL2 Docker setup, see configs in `os/win/wsl/` (Docker Engine, NVIDIA Container Toolkit, SSH, networking)
 
 ### Shell Environments
 
@@ -125,11 +128,17 @@ This is automatically run from setupMac.sh
 
 `os/languages/java/setupJava.sh` (currently commented out in setupMac.sh)
 
+### Docker
+
+Docker Compose files for standalone services live in `os/docker/` (e.g., `n8n-compose/`). Machine-specific Docker stacks are managed in [harmon-infra](https://github.com/evanharmon1/harmon-infra) under `services/`.
+
 ## Machines
 
 Each machine that I configure is tracked in `machines/` where I can track packages, Brewfiles, etc.
 
-## Heplful Sources
+Current machines: `EvansMacBookPro`, `mac-server`, `MacMini2014`, `MacMini2018`, `sharons-mac-mini`, `contraption`, `tars`, `unraidContraption`, `unraidMachina`
+
+## Helpful Sources
 
 - [Homebrew](https://brew.sh/)
 - [mas](https://github.com/mas-cli/mas)
@@ -158,10 +167,10 @@ Each machine that I configure is tracked in `machines/` where I can track packag
 - AI
   - Claude Code
   - Codex (alternate)
-  - OpenCode (altercate)
+  - OpenCode (alternate)
 - Git
   - Git
-  - GitHUb
+  - GitHub
   - GitHub Actions
   - Copier
   - gh cli

@@ -8,7 +8,11 @@
       "WebFetch(domain:winstall.app)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(ls:*)"
     ]
-  }
+  },
+  "additionalDirectories": [
+    "~/git/harmon-infra"
+  ]
 }

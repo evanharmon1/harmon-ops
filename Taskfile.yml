@@ -1,7 +1,7 @@
 # Taskfile for Harmon Ops
 version: '3'
 tasks:
-  boostrap:
+  bootstrap:
     cmds:
       - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       - brew install python #TODO: Might need to use a non-homebrew method
@@ -9,7 +9,7 @@ tasks:
   install:
     cmds:
       - brew bundle --file=Brewfile
-      - python install -r requirements.txt
+      - pip install -r requirements.txt
     silent: true
   validate:
     cmds:
@@ -22,7 +22,6 @@ tasks:
     silent: true
   check:
     cmds:
-      - npm run check:astro
       - npm run check:eslint
       - cmd: npm run check:prettier
         # - shellcheck osConfig/mac/updateMac.sh

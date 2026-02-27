@@ -150,7 +150,7 @@ Checklist for manual steps to install a new Windows machine from scratch.
   - Then you can install packages from a specific Brewfile: `brew bundle install --file=~/.Brewfile`
     - Look through `os/brew` in this repo for which apps or Brewfiles you want to install.
   - Prefer Homebrew for CLI tools and dev dependencies; for system‑level packages (network, kernel, etc.), keep using  apt  and reserve Homebrew for “developer‑managed” tooling to avoid conflicts.
-- [ ] Setup Docker
+- [x] Setup Docker
   - For servers, don't install Docker Desktop. Install Docker Engine in WSL. And use mirrored networking mode.
   - Install Docker Engine CE
     - Inside wsl use this repo's script - `wsl/installDockerEngine.sh`.

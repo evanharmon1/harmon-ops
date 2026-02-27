@@ -10,16 +10,29 @@ harmon-ops is a personal developer operations repository. It serves two purposes
 
 All scripts are designed to be **idempotent** (safe to re-run).
 
+### Companion Repository
+
+Infrastructure-as-code (Terraform, Ansible, Docker Compose services, cloud-init) lives in the separate **[harmon-infra](https://github.com/evanharmon1/harmon-infra)** repository. harmon-ops handles dev environment setup and dotfiles; harmon-infra handles homelab infrastructure provisioning and service deployment. The two repos reference each other — e.g., harmon-infra's Windows/WSL Docker setup docs point to `os/win/` in this repo for OS-level setup scripts.
+
 ## Common Commands
 
 ### Task Runner (go-task)
 ```bash
 task validate     # Runs pre-commit hooks + npm checks (eslint, prettier)
+task check        # Runs eslint and prettier checks
+task fix          # Auto-format with eslint + prettier
 task security     # Runs secrets scanning (pattern detection + whispers) + SAST (Snyk)
+task secrets      # Runs secret scanning only (pattern detection + whispers)
 task preCommit    # Runs pre-commit hooks only
-task sast         # Runs Snyk dependency and code scans
+task sast         # Runs Snyk dependency and code scans (composite of sast-dependencies + sast-code)
 task bootstrap    # Installs Homebrew and Python
 task install      # Runs brew bundle and pip install
+task vBumpPatch   # Bump patch version, tag, and create GitHub release
+task vBumpMinor   # Bump minor version, tag, and create GitHub release
+task vBumpMajor   # Bump major version, tag, and create GitHub release
+task ghReleaseInit # Initialize first GitHub release (v0.0.1)
+task bunchAdd     # Move Bunch file to iCloud and symlink back
+task obsidianAdd  # Move Obsidian note to vault and symlink back
 ```
 
 ### Pre-commit
@@ -37,19 +50,27 @@ From `~/dev`: `newProject.sh -n nameOfProject -g gitRepoName`
 
 - **`os/`** - OS-specific setup and configuration
   - `mac/` - macOS bootstrap, setup, and update scripts (primary platform)
-  - `linux/`, `win/` - Less-developed platform support
-  - `shell/bin/` - Utility scripts symlinked to `~/bin`
+  - `win/` - Windows setup: `setupWindows.ps1`, `updateWindows.ps1`, `CHECKLIST-WIN.md`
+  - `win/wsl/` - WSL2 configuration: `.wslconfig`, `wsl.conf`, `daemon.json`, `sshd_config`, Docker Engine and NVIDIA Container Toolkit install scripts
+  - `linux/` - Linux setup (minimal)
+  - `docker/` - Docker Compose files (e.g., `n8n-compose/`)
+  - `shell/bin/` - Utility scripts symlinked to `~/bin` (`newProject.sh`, `check_for_pattern.sh`, `getSystemInfo.sh`, `geo.sh`, etc.)
   - `shell/chezmoi/` - Chezmoi source of truth for dotfiles (declarative dotfile management)
   - `shell/dotfiles/` - Traditional dotfiles (`.aliases`, `.functions`, `.var`)
+  - `shell/bash/` - Bash config (`.bashrc`)
+  - `shell/zsh/` - Zsh config (`.zshrc`)
   - `languages/` - Per-language setup scripts (Python, JavaScript, Java)
   - `brew/` - Modular Brewfile templates (`Brewfile.core`, `Brewfile.apps`, `Brewfile.apps.dev`, `Brewfile.apps.gaming`, `Brewfile.apps.homelab`, `Brewfile.apps.work`, `Brewfile.optional`, `BrewfileSuperset`)
   - `git/` - Global git configuration (`.gitconfig`, `.gitignore_global`)
   - `IDEs/vscode/` - VS Code setup and settings
 - **`machines/`** - Per-machine configs and Brewfiles
-  - Machine-specific directories (e.g., `EvansMacBookPro/`, `mac-server/`, `MacMini2014/`) with Brewfiles and checklists
+  - `EvansMacBookPro/`, `mac-server/`, `MacMini2014/`, `MacMini2018/`, `sharons-mac-mini/` - Mac machines
+  - `contraption/`, `tars/` - Windows 11 Pro PCs (with WSL2 Docker)
+  - `unraidContraption/`, `unraidMachina/` - Unraid servers
+- **`infra/`** - Legacy/placeholder infrastructure configs (e.g., Pi-hole config for contraption)
 - **`test/`** - Whispers secret detection config
 - **`docs/`** - Additional documentation
-- **`.meta/`** - Project metadata (Bunch files)
+- **`.meta/`** - Project metadata (Bunch files, Obsidian notes)
 
 ### Dotfile Management
 
@@ -67,9 +88,25 @@ The macOS setup follows a layered workflow, run from `os/mac/`:
 
 Run with caffeinate to prevent sleep: `caffeinate -disu zsh -x ./setupMac.sh 2>&1 | tee -a ~/.log/setupMac.sh.log`
 
+### Windows Setup Flow
+
+Windows setup scripts live in `os/win/`:
+1. **`CHECKLIST-WIN.md`** - Manual steps (BIOS, drivers, Windows settings)
+2. **`setupWindows.ps1`** - PowerShell setup script (package installation, configuration)
+3. **`updateWindows.ps1`** - Ongoing maintenance
+
+WSL2 configuration in `os/win/wsl/`:
+- **`wsl.conf`** / **`.wslconfig`** - WSL2 distro and global settings (mirrored networking, resource limits)
+- **`daemon.json`** - Docker Engine configuration (overlay2, NVIDIA runtime, BuildKit, address pools, log rotation)
+- **`sshd_config`** - SSH server config (port 2222 to avoid Windows intercepting port 22)
+- **`installDockerEngine.sh`** - Installs Docker Engine CE in WSL2 (not Docker Desktop)
+- **`installNvidiaContainerToolkit.sh`** - Installs NVIDIA Container Toolkit for GPU workloads
+
+Machine-specific Windows checklists also exist under `machines/<hostname>/CHECKLIST-WIN.md`.
+
 ### Machine-Specific Configuration
 
-Each machine gets a directory under `machines/<hostname>/` containing its Brewfile and checklist. The `os/brew/BrewfileSuperset` serves as the master template from which machine-specific Brewfiles are derived.
+Each machine gets a directory under `machines/<hostname>/` containing its Brewfile and/or checklist. The `os/brew/BrewfileSuperset` serves as the master template from which machine-specific Brewfiles are derived.
 
 ## CI/CD
 
@@ -84,10 +121,10 @@ Note: Legacy `.yaml` versions of validate and security workflows also exist alon
 ## Linting and Validation
 
 Pre-commit hooks handle all linting (`.pre-commit-config.yaml`):
-- **ShellCheck** - Bash script linting (severity: error)
+- **shell-lint** (`pre-commit-shell`) - Shell script linting via ShellCheck (severity: error, excludes SC3037/SC2148)
 - **Black** - Python formatting
-- **Terraform** - fmt, docs, checkov, infracost
-- **Ansible-lint** - Playbook validation
+- **Terraform** - fmt, docs, checkov, infracost (vestigial — no `.tf` files in this repo; Terraform code lives in harmon-infra)
+- **Ansible-lint** - Playbook validation (vestigial — no Ansible playbooks in this repo; Ansible code lives in harmon-infra)
 - **yamllint** - YAML linting
 - General checks: YAML, JSON, TOML, XML validation; private key detection; merge conflict markers; no direct commits to main branch
 
