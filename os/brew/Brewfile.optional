@@ -1,6 +1,12 @@
 # Optional packages or Mac GUI Apps - don't normally install. Only use in certain situations.
 
+brew "coreutils"
+brew "ollama"
 brew "docker"
+brew "docker-compose"
+brew "podman"
+brew "openssl"
+brew "openssh"
 cask "bartender"
 brew "prometheus"
 cask "warp"
@@ -12,6 +18,17 @@ cask "obs"
 cask "protonvpn"
 cask "cloudflare-warp"
 cask "gitkraken"
+cask "brave-browser"
+cask "vivaldi"
+# Failed to install - no Apple Silicon? 2023-06-03
+cask "vagrant"
+# homebrew fails to install - on Apple Silicon 2023-06-03
+cask "virtualbox"
+brew "hashicorp/tap/packer"
+brew "packer"
+# Use orbstack instead of docker desktop
+cask "docker"
+cask "docker-desktop"
 cask "postman"
 cask "postman-cli"
 cask "insomnia"
@@ -39,15 +56,6 @@ brew "screen"
 brew "hashicorp/tap/vault"
 brew "vault"
 cask "mu-editor"
-# Failed to install - no Apple Silicon? 2023-06-03
-cask "vagrant"
-# homebrew fails to install - on Apple Silicon 2023-06-03
-cask "virtualbox"
-brew "hashicorp/tap/packer"
-brew "packer"
-# Use orbstack instead of docker desktop
-cask "docker"
-cask "docker-desktop"
 mas "Twingate", id: 1501592214
 # Kubernetes
 brew "kubernetes-cli"
@@ -80,8 +88,6 @@ brew "xz"
 brew "zlib"
 brew "gatsby-cli"
 brew "angular-cli"
-cask "brave-browser"
-cask "vivaldi"
 # too buggy 
 cask "razer-synapse"
 mas "Kindle Classic", id: 405399194
@@ -92,6 +98,25 @@ cask "anytype"
 cask "capacities"
 mas "Backtrack Beta", id: 1477089520
 cask "amazon-luna"
+brew "telegraf"
+#             Cloud & Web
+#------------------------------------------------------------------------------
+brew "netlify-cli"
+# Zero Trust
+brew "cloudflared"
+# AWS
+brew "awscli"
+brew "firebase-cli"
+#             Data
+#------------------------------------------------------------------------------
+# SQLite
+brew "sqlite"
+# Postgres
+brew "postgresql"
+# MySQL
+brew "mysql"
+# CLI for MS SQL Server
+brew "sqlcmd"
 #             Java
 #------------------------------------------------------------------------------
 brew "jenv"
@@ -102,3 +127,42 @@ brew "maven"
 #             C# & .NET
 #------------------------------------------------------------------------------
 cask "dotnet-sdk"
+
+
+#             Python
+#------------------------------------------------------------------------------
+# Use mise to manage Python versions
+brew "uv"
+brew "ipython"
+
+#             JavaScript
+#-----------------------------------------------------------------------------
+# Use mise to manage Node versions
+
+#             Rust
+#------------------------------------------------------------------------------
+# Use mise to manage Rust versions
+
+#             Go
+#------------------------------------------------------------------------------
+# Use mise to manage Go versions
+
+#             Ruby
+#------------------------------------------------------------------------------
+# Use mise to manage Ruby versions
+
+#             PHP
+#------------------------------------------------------------------------------
+# Use mise to manage PHP versions
+
+#             C
+#------------------------------------------------------------------------------
+
+#             Java
+#------------------------------------------------------------------------------
+
+#             C# & .NET
+#------------------------------------------------------------------------------
+
+#             Swift
+#------------------------------------------------------------------------------

@@ -2,7 +2,12 @@
 
 #             Shell
 #------------------------------------------------------------------------------
-brew "zsh"
+brew "starship"
+brew "mise"
+brew "zellij"
+brew "chezmoi"
+brew "micro"
+brew "zoxide"
 brew "curl"
 brew "wget"
 brew "grep"
@@ -42,8 +47,6 @@ brew "jo"
 brew "dnstracer"
 # Utility for managing network connections
 brew "netcat"
-brew "openssh"
-brew "openssl"
 brew "ssh-copy-id"
 tap "teamookla/speedtest"
 brew "speedtest"
@@ -104,18 +107,12 @@ brew "git-extras"
 brew "hurl"
 brew "mdless"
 brew "w3m"
-brew "ollama"
 brew "ctop"
 brew "cookiecutter"
 brew "just"
 brew "yamllint"
 brew "lychee"
 brew "midnight-commander"
-brew "mise"
-brew "zellij"
-brew "chezmoi"
-brew "micro"
-brew "starship"
 brew "aichat"
 brew "glow"
 brew "llm"
@@ -123,7 +120,6 @@ brew "curlie"
 brew "nushell"
 brew "posting"
 brew "xh"
-brew "zoxide"
 tap "charmbracelet/tap"
 brew "charmbracelet/tap/freeze"
 brew "vhs"
@@ -145,8 +141,6 @@ brew "ponysay"
 
 #             Docker
 #------------------------------------------------------------------------------
-brew "docker"
-brew "docker-compose"
 brew "lazydocker"
 brew "dive"
 
@@ -163,19 +157,10 @@ brew "ncurses"
 brew "go-task"
 brew "newman"
 brew "httpie"
-brew "podman"
 brew "whalebrew"
 brew "act"
 brew "direnv"
 
-#             Cloud & Web
-#------------------------------------------------------------------------------
-brew "netlify-cli"
-# Zero Trust
-brew "cloudflared"
-# AWS
-brew "awscli"
-brew "firebase-cli"
 
 #             Terraform & Dependencies
 #------------------------------------------------------------------------------
@@ -183,21 +168,9 @@ brew "firebase-cli"
 brew "terraform-docs"
 brew "terragrunt"
 brew "tflint"
-brew "coreutils"
 brew "checkov"
 brew "terrascan"
 brew "infracost"
-
-#             Data
-#------------------------------------------------------------------------------
-# SQLite
-brew "sqlite"
-# Postgres
-brew "postgresql"
-# MySQL
-brew "mysql"
-# CLI for MS SQL Server
-brew "sqlcmd"
 
 #             Automation, CI/CI, Workflows, & Configuration Management
 #------------------------------------------------------------------------------
@@ -205,7 +178,6 @@ brew "ansible"
 
 #             Observability, Measurement, Logging, Dashboards, & Monitoring
 #------------------------------------------------------------------------------
-brew "telegraf"
 brew "btop"
 brew "bottom"
 
@@ -218,42 +190,3 @@ brew "trivy"
 brew "grype"
 brew "syft"
 brew "trufflehog"
-
-
-#             Python
-#------------------------------------------------------------------------------
-# Use mise to manage Python versions
-brew "uv"
-brew "ipython"
-
-#             JavaScript
-#-----------------------------------------------------------------------------
-# Use mise to manage Node versions
-
-#             Rust
-#------------------------------------------------------------------------------
-# Use mise to manage Rust versions
-
-#             Go
-#------------------------------------------------------------------------------
-# Use mise to manage Go versions
-
-#             Ruby
-#------------------------------------------------------------------------------
-# Use mise to manage Ruby versions
-
-#             PHP
-#------------------------------------------------------------------------------
-# Use mise to manage PHP versions
-
-#             C
-#------------------------------------------------------------------------------
-
-#             Java
-#------------------------------------------------------------------------------
-
-#             C# & .NET
-#------------------------------------------------------------------------------
-
-#             Swift
-#------------------------------------------------------------------------------
