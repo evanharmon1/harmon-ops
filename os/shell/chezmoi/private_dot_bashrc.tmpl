@@ -1,5 +1,12 @@
 # My custom .bashrc file
 
+# Homebrew - must be early so brew commands work below
+{{- if eq .chezmoi.os "darwin" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- else if stat "/home/linuxbrew/.linuxbrew/bin/brew" }}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{- end }}
+
 source ~/.dotfiles/.aliases
 source ~/.dotfiles/.var
 source ~/.dotfiles/.functions
@@ -18,8 +25,8 @@ export CLICOLOR=1
 #============================================================================
 #                               PATH
 #============================================================================
-# homebrew & my dev scripts
-export PATH="$PATH:$(brew --prefix)/bin:$HOME/bin"
+# my dev scripts
+export PATH="$PATH:$HOME/bin"
 
 # Scripts on *nix
 #export scripts="~/bin"

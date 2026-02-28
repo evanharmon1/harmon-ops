@@ -868,14 +868,11 @@ mas "Be Focused Pro", id: 961632517
 mas "Bigin", id: 1454212098
 mas "Bitwarden", id: 1352778147
 mas "Blackmagic Disk Speed Test", id: 425264550
-mas "Canva", id: 897446215
 mas "Cardhop", id: 1290358394
 mas "Cliq", id: 1205882554
 mas "ColorSlurp", id: 1287239339
-mas "Copilot", id: 6738511300
 mas "Copy 'Em", id: 876540291
 mas "DaisyDisk", id: 411643860
-mas "Dark Noise", id: 1465439395
 mas "Dark Reader for Safari", id: 1438243180
 mas "Data Jar", id: 1453273600
 mas "Day One", id: 1055511498
@@ -899,7 +896,6 @@ mas "Flighty", id: 1358823008
 mas "Floating", id: 1508833245
 mas "Forecast Bar", id: 982710545
 mas "Fotor Photo Editor", id: 503039729
-mas "Friendly Streaming", id: 553245401
 mas "Front and Center", id: 1493996622
 mas "GarageBand", id: 682658836
 mas "Geekbench 5", id: 1478447657
@@ -914,7 +910,6 @@ mas "Ice Cubes", id: 6444915884
 mas "iMovie", id: 408981434
 mas "Invoice Generator", id: 1061863220
 mas "iScape", id: 439688430
-mas "Jira", id: 1475897096
 mas "Keynote", id: 409183694
 mas "Kindle", id: 302584613
 mas "Kindle Classic", id: 405399194
@@ -996,12 +991,10 @@ mas "Windows App", id: 1295203466
 mas "WireGuard", id: 1451685025
 mas "Workspaces", id: 1219826448
 mas "WriteRoom", id: 417967324
-mas "Xcode", id: 497799835
 mas "Yoink", id: 457622435
 mas "Yomu", id: 562211012
 mas "ZiaSearch", id: 1595570784
 mas "Zoho Billing", id: 1184196693
-mas "Zoho Books", id: 1476500403
 mas "Zoho Expense", id: 1477152278
 mas "Zoho Inventory", id: 1477506694
 mas "Zoho Invoice", id: 1477507499
