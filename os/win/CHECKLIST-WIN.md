@@ -164,8 +164,7 @@ Checklist for manual steps to install a new Windows machine from scratch.
     - Look through `os/brew` in this repo for which apps or Brewfiles you want to install.
   - Prefer Homebrew for CLI tools and dev dependencies; for system‑level packages (network, kernel, etc.), keep using  apt  and reserve Homebrew for “developer‑managed” tooling to avoid conflicts.
 - [ ] Chezmoi
-  - Chezmoi defaults to ~/.local/share/chezmoi as its source. You need to tell it to use your repo instead.
-  - `git clone https://github.com/evanharmon1/harmon-ops.git ~/git/harmon-ops`
-  - `chezmoi init --source ~/git/harmon-ops/os/shell/chezmoi`
+  - The dotfiles managed by Chezmoi are stored in a different git repo: `https://github.com/evanharmon1/harmon-dotfiles.git`.
+  - `chezmoi init https://github.com/evanharmon1/harmon-dotfiles.git`
   - `chezmoi diff` to preview what it would apply.
   - `chezmoi apply` apply the config files.

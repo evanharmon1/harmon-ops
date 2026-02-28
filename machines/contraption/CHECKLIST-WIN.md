@@ -162,7 +162,4 @@ Checklist for manual steps to install a new Windows machine from scratch.
   - Add whatever docker containers, docker compose stacks you want as normal in /opt/stacks/aDockerProject
     - `sudo mkdir -p /opt/stacks`
     - `sudo chown -R $USER:$USER /opt/stacks`
-- [ ] Chezmoi
-  - `chezmoi init https://github.com/evanharmon1/harmon-ops.git`
-  - `chezmoi diff` to preview what it would apply.
-  - `chezmoi apply` apply the config files if it's all correct or make changes with `chezmoi edit $FILE`
+- [x] Chezmoi

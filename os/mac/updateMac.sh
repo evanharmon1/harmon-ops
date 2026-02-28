@@ -157,7 +157,7 @@ curl -s \
 #============================================================================
 #                       Mackup, Dotfiles, & Chezmoi
 #============================================================================
-# Mackup backs up supported app configs, settings, and dotfiles like .zshrc to iCloud 
+# Mackup backs up supported app configs, settings, and dotfiles like .zshrc to iCloud
 # Chezmoi manages dotfiles and syncs them to the git repo
 
 #             Notify starting Mackup backup
@@ -178,6 +178,7 @@ mackup backup --force
 
 #           Run Chezmoi to re-add any changed local dotfiles to chezmoi source
 #------------------------------------------------------------------------------
+chezmoi update          # pull remote changes + apply
 chezmoi diff
 chezmoi re-add
 
