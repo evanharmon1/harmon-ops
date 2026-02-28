@@ -81,6 +81,13 @@ plugins=(git macos dirhistory bgnotify per-directory-history colored-man-pages d
 plugins=(git dirhistory bgnotify per-directory-history colored-man-pages docker docker-compose terraform python node command-not-found extract jsontools aliases ansible rsync direnv pip)
 {{- end }}
 
+# Homebrew
+{{- if eq .chezmoi.os "darwin" }}
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- else if stat "/home/linuxbrew/.linuxbrew/bin/brew" }}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{- end }}
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -121,7 +128,7 @@ export GREP_OPTIONS='--color=auto'
 #                       PATH
 #============================================================================
 # homebrew and my dev scripts
-export PATH="$PATH:$(brew --prefix)/bin:$HOME/bin"
+export PATH="$PATH:$HOME/bin"
 {{- if eq .chezmoi.os "darwin" }}
 export PATH="$PATH:$HOME/google-cloud-sdk/bin:$HOME/scripts"
 {{- end }}
@@ -178,7 +185,6 @@ export CHEZMOI_SOURCE_DIR=~/git/harmon-ops/os/shell/chezmoi
 
 # Created by `pipx` on 2024-05-20 13:51:33
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$(brew --prefix)/bin:$(brew --prefix)/sbin:$PATH"
 
 
 #============================================================================
