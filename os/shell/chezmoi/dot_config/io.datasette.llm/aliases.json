@@ -1,0 +1,5 @@
+{
+    "q8": "mlx-community/Qwen3-8B-4bit",
+    "q30": "mlx-community/Qwen3-30B-A3B-4bit",
+    "qc30": "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit"
+}

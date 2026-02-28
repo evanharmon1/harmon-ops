@@ -75,5 +75,9 @@ llmq30g() {
 }
 
 e() {
+{{- if eq .chezmoi.os "darwin" }}
   llm -m qc30 -s "Output ONLY the shell command. No explanation, no markdown, no code fences. Shell: zsh. OS: macOS." "$*"
+{{- else }}
+  llm -m qc30 -s "Output ONLY the shell command. No explanation, no markdown, no code fences. Shell: zsh. OS: Linux." "$*"
+{{- end }}
 }

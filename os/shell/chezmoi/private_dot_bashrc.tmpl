@@ -19,7 +19,7 @@ export CLICOLOR=1
 #                               PATH
 #============================================================================
 # homebrew & my dev scripts
-export PATH=$PATH:/opt/homebrew/bin:/Users/evan/bin
+export PATH="$PATH:$(brew --prefix)/bin:$HOME/bin"
 
 # Scripts on *nix
 #export scripts="~/bin"
@@ -53,13 +53,13 @@ ANSIBLE_CONFIG=~/.ansible.cfg
 #                               Terraform
 #============================================================================
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+complete -o nospace -C $(brew --prefix)/bin/terraform terraform
 
 #==============================================================================
 #                       Sexy Bash Prompt
 #==============================================================================
 # Run twolfson/sexy-bash-prompt
-. ~/.bash_prompt
+[[ -f ~/.bash_prompt ]] && . ~/.bash_prompt
 
 #==============================================================================
 #                       nvm
@@ -68,7 +68,9 @@ export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Created by `pipx` on 2024-02-29 16:43:29
-export PATH="$PATH:/Users/evan/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
+{{- if eq .chezmoi.os "darwin" }}
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/evan/.cache/lm-studio/bin"
+export PATH="$PATH:$HOME/.cache/lm-studio/bin"
+{{- end }}

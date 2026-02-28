@@ -1,0 +1,14 @@
+{{- if ne .chezmoi.os "darwin" }}
+# macOS-only: Library paths (app configs stored in macOS-specific locations)
+Library/**
+# macOS-only: Mackup (iCloud-based backup)
+.mackup.cfg
+.mackup/**
+{{- end }}
+
+{{- if ne .chezmoi.os "linux" }}
+# Linux-only: XDG paths for apps that use ~/Library/ on macOS
+.config/ghostty/**
+.config/aichat/**
+.config/io.datasette.llm/**
+{{- end }}

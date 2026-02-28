@@ -2,9 +2,9 @@
 	name = Evan Harmon
 	email = evan@evanharmon.com
 [core]
-	excludesfile = /Users/evan/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = code-insiders --wait --new-window
-	hooksPath = /Users/evan/.gitHooks
+	hooksPath = ~/.gitHooks
 [merge]
 	tool = code-insiders
 [mergetool "code-insiders"]
@@ -27,7 +27,7 @@
 [includeIf "gitdir:~/Local/AltRevLogical/"]
 	path = ~/Local/AltRevLogical/.gitconfig
 [init]
-	templateDir = /Users/evan/.git-template
+	templateDir = ~/.git-template
 	defaultBranch = main
 [alias]
 	ll = log --graph --oneline --decorate
@@ -49,4 +49,4 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
-	template = /Users/evan/.stCommitMsg
+	template = ~/.stCommitMsg

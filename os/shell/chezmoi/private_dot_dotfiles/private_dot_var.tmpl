@@ -3,14 +3,20 @@
 #============================================================================
 #                       Paths
 #============================================================================
-export dev="/Users/evan/Dropbox/dev" #Main dev folder
-export harmonops="/Users/evan/Dropbox/dev/HarmonOps/harmon-ops"
-export scratch="/Users/evan/Dropbox/dev/scratch" #Scratch folder for quick prototyping
-export evanbin="/Users/evan/bin"
-export website="/Users/evan/Dropbox/dev/EvanHarmonWebsite/evan-harmon"
+export evanbin="$HOME/bin"
 export obsidianDev="$HOME/Local/obsidian-dev"
 export memex="$HOME/Local/Memex"
-export icloud="/Users/evan/Library/Mobile Documents/com~apple~CloudDocs"
+{{- if eq .chezmoi.os "darwin" }}
+export dev="$HOME/Dropbox/dev" #Main dev folder
+export harmonops="$HOME/Dropbox/dev/HarmonOps/harmon-ops"
+export scratch="$HOME/Dropbox/dev/scratch" #Scratch folder for quick prototyping
+export website="$HOME/Dropbox/dev/EvanHarmonWebsite/evan-harmon"
+export icloud="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+{{- else }}
+export dev="$HOME/dev"
+export harmonops="$HOME/git/harmon-ops"
+export scratch="$HOME/dev/scratch"
+{{- end }}
 
 #============================================================================
 #                       Color Variables
@@ -33,9 +39,11 @@ LIGHTPURPLE='\033[1;35m'
 LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 
+{{- if eq .chezmoi.os "darwin" }}
 
 #============================================================================
 #                       Work
 #============================================================================
-export work="/Users/evan/Local/RevLogical"
-export poss="/Users/evan/Local/RevLogical/poss"
+export work="$HOME/Local/RevLogical"
+export poss="$HOME/Local/RevLogical/poss"
+{{- end }}

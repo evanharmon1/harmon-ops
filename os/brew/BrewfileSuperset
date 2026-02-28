@@ -1278,3 +1278,9 @@ brew "csvlens"
 brew "llmfit"
 brew "mkcert"
 brew "tailscale"
+
+
+#                New Packages from EvansMacBookPro 2026-02-27
+#-------------------------------------------------------------------------------
+brew "hcloud"
+mas "Prompt", id: 1594420480

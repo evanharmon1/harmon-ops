@@ -1,4 +1,8 @@
 {
   "model": "opus",
-  "effortLevel": "high"
+  "effortLevel": "high",
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  }
 }

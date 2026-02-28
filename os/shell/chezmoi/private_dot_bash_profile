@@ -1,8 +1,0 @@
-# Trigger ~/.bashrc commands
-. ~/.bashrc
-
-# Created by `pipx` on 2024-02-29 16:43:29
-export PATH="$PATH:/Users/evan/.local/bin"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/evan/.cache/lm-studio/bin"
